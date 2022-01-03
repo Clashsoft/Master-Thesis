@@ -1,0 +1,107 @@
+% geometry
+\usepackage[bindingoffset=1cm, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+% Headline
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\ #1}{}}
+\lhead{\leftmark} \rhead{\thepage}
+\cfoot{}
+\fancypagestyle{plain}{}
+
+\RedeclareSectionCommand[beforeskip=1.5cm,afterskip=1cm]{chapter}
+
+% Select input encodung, usually utf8 is the best choice, on windows, \usepackage[latin1]{inputenc} maybe required
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Colors
+\usepackage{color}
+\usepackage{colortbl}
+
+% Tables
+\usepackage{tabularx}
+\usepackage{multirow}
+
+% Drawing graphs etc.
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+
+% math
+\usepackage{amsmath}
+
+% lists
+\usepackage{paralist}
+
+% Figures
+\usepackage{graphicx, wrapfig}
+
+% Hyperlinks
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\hypersetup{colorlinks, citecolor=black, linkcolor=black, urlcolor=black}
+
+% Minted
+\usepackage[chapter]{minted}
+%\usemintedstyle{xcode}
+\setminted{frame=single,tabsize=2,linenos}
+
+\newmintinline[code]{text}{breaklines}
+\newmintinline[mdcode]{md}{breaklines}
+\newmintinline[jcode]{java}{breaklines}
+
+\newminted[codeblock]{text}{autogobble,frame=none,linenos=false,breaklines}
+\newminted[mdcodeblock]{md}{autogobble,frame=none,linenos=false,breaklines}
+\newminted[jcodeblock]{java}{autogobble,frame=none,linenos=false}
+
+\newcommand{\codelisting}[4]{%
+    \begin{listing}[htp]
+        \inputminted{#1}{#2/#3}
+        \caption{#4}
+        \label{lst:#3}
+    \end{listing}%
+}
+
+% list of abbreviations
+\usepackage[printonlyused]{acronym}
+
+% Set line pitch
+\usepackage{setspace}
+\onehalfspacing              % anderthalbzeilig (oder auch \doublespace)
+
+% Newcommand TODO (red in text)
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
+
+% Newcommand TODOM (red at border)
+\newcommand{\todom}[1]{\marginpar{\parbox{1.5cm}{\textcolor{red}{TODO:\\ #1}}}}
+
+%fancyBox
+%\usepackage{fancybox}
+
+% Layout corrections (Schusterjungen)
+\clubpenalty = 10000
+% Layout corrections (Hurenkinder) 
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+% Figures
+\usepackage{caption}
+\usepackage[hypcap=true,labelformat=simple]{subcaption}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
+
+% Tables
+\usepackage{booktabs}
+
+% Frequently used column types
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % centering column type with fixed width
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % right aligned column type with fixed width
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % left aligned column type with fixed width
+
+% Shortcuts for referencing floats:
+\newcommand{\fig}[1]{\figurename~\ref{#1}} %shortcut for a figure reference
+\newcommand{\tab}[1]{Table~\ref{#1}} %shortcut for a table reference
+\newcommand{\eq}[1]{(\ref{#1})} %shortcut for an equation reference
+\newcommand{\lst}[1]{Listing~\ref{#1}} %shortcut for a listing reference
+\newcommand{\sect}[1]{Section~\ref{#1}} %shortcut for a Section reference
+

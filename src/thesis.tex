@@ -1,0 +1,68 @@
+\documentclass[
+    %draft,
+    pdftex,
+    a4paper,
+    oneside,
+    parskip,
+    numbers=noenddot,
+    listof=totoc,
+    bibliography=totoc,
+    hyperfootnotes=false
+]{scrreprt}
+\setuptoc{toc}{totoc}
+
+\newcommand{\thesistitle}{Automatisches Feedback für objektorientierte Programmierübungen}
+\newcommand{\thesistype}{M A S T E R A R B E I T}
+\newcommand{\thesistypedesc}{im Fachbereich Elektrotechnik/Informatik \\
+    der Universität Kassel}
+\newcommand{\thesisauthorname}{Adrian Kunz}
+\newcommand{\thesisauthorhomestreet}{***REMOVED***}
+\newcommand{\thesisauthorhometown}{***REMOVED***}
+\newcommand{\thesisauthormatrikelnumber}{35013235}
+\newcommand{\thesisauthoremail}{***REMOVED***}
+\newcommand{\thesisdepartment}{Fachgebiet Software Engineering}
+\newcommand{\thesisfirstreviewer}{Prof.\ Dr.\ Albert Zündorf}
+\newcommand{\thesissecondreviewer}{Prof.\ Dr.\ Claude Draude}
+\newcommand{\thesissupervisor}{Sebastian Copei,\ M.Sc.}
+\newcommand{\thesisdate}{31.\ März 2022}
+
+\input{header}
+\usepackage[ngerman]{babel}
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+\defaulthyphenchar=127
+
+\begin{document}
+
+    \pagenumbering{roman}
+
+    \input{titlepage}
+    \input{abstract}
+
+    \tableofcontents
+
+    \input{acronyms}
+
+    \pagebreak
+    \pagenumbering{arabic}
+    \addtocontents{toc}{\protect\vspace{1.0cm}}
+
+    \input{chapter/introduction}
+    \input{chapter/goals}
+    \input{chapter/results}
+
+    \addtocontents{toc}{\protect\vspace{1.0cm}}
+
+    \bibliographystyle{alphadin}
+    \bibliography{thesis}
+
+    \listoffigures
+    \listoftables
+    \renewcommand{\listoflistingscaption}{Listing-Verzeichnis}
+    \listoflistings
+
+    \appendix
+    \input{appendix}
+
+    \input{declaration}
+\end{document}

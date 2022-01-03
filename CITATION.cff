@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Cite my thesis as shown below."
+authors:
+- family-names: "Kunz"
+  given-names: "Adrian"
+title: "Automatic Feedback for Object-Oriented Programming Assignments"
+version: 1.0.0
+date-released: TBA
+url: "https://github.com/Clashsoft/Master-Thesis"

@@ -5,3 +5,56 @@
     Platzhalter in Code Search Snippets.
     Anbindung anderer Abgabesysteme (Moodle?).
 }
+
+\paragraph{Umbenennung von Bezeichnern und andere Refactorings}
+
+\todom{
+    Hier muss alles neu geschrieben werden, war nur ein kurzer Info Dump der dazu diente, die aktuelle vorhandene
+    Idee der Variablenumbenennung zu verewigen, welche zuvor an einem unerfolgreichen Abend zusammengehackt wurde,
+    sich aber als fruchtlos herausstellte. Bis ich wirklich hier ankomme ist das alles lange her, deshalb steht hier
+    jetzt schon mal ein bisschen was zum Gedankengang.
+}
+
+Umbenennung von Variablen bei in sich geschlossenen Codeschnipseln möglich.
+Beispiel:
+
+\begin{minted}{java}
+public static void main(String[] args) {
+    int i = 6;
+    int j = 7;
+    int answer = i * j;
+    String greeting = "Hello";
+    System.out.println(greeting);
+    System.out.println("Answer: " + answer);
+}
+\end{minted}
+
+Ersetzung von langen Bezeichnern durch Typ-Anfangsbuchstabe + laufende Nummer.
+Beibehaltung von Offsets.
+
+\begin{minted}{java}
+public static void main(String[] s0  ) {
+    int i = 6;
+    int j = 7;
+    int i0     = i * j;
+    String s1       = "Hello";
+    System.out.println(s1      );
+    System.out.println("Answer: " + i0    );
+}
+\end{minted}
+
+Problem: Variablendeklaration nicht zwangsweise in der Suchanfrage:
+
+\begin{minted}{java}
+    System.out.println(greeting);
+    System.out.println("Answer: " + answer);
+\end{minted}
+
+greeting und answer können von außerhalb stammen;
+Typ ist nicht bekannt -
+Umbenennung kann nicht reproduziert werden.
+
+Typ-Problem kann gelöst werden durch Benennung wie var0, var1, \ldots.
+Nummerierung dann weiterhin Problem.
+
+Alternative: Alle Bezeichner gleich behandeln - dann aber Verlust von Semantikinformationen.

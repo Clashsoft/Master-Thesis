@@ -76,10 +76,27 @@ Somit konnte eine Gesamtpunktzahl errechnet werden.
 
 \subsection{Visual Studio Code}\label{subsec:visual-studio-code}
 
-\todo{
-    Umgebung für fulibFeedback plugin.
-    Gewählt wegen modernen Plugin API (LSP), Anwendung in der Fallstudie, Einfachheit gegenüber IntelliJ.
-}
+\ac{vsc}\footnote{\url{https://code.visualstudio.com/}} ist ein erweiterbarer Code-Editor von Microsoft.
+Neben den Grundfunktionen eines Texteditors hat \ac{vsc} Funktionen zur Entwicklerproduktivitäts wie Syntax-Highlighting und Autovervollständigung.
+Durch vorinstallierte Erweiterungen kann Versionsverwaltung mit Git verwendet werden.
+Verschiedene Spracherweiterungen ermöglichen bessere Autovervollständigung und Semantisches Highlighting abhängig von Typinformationen sowie die Darstellung von Syntax-Fehlern und Warnmeldung im Quellcode.
+Darüber hinaus ist die Anwendung beliebig mit Erweiterungen anpassbar, die aus einem von Microsoft bereitgestellten Marketplace bezogen werden können\footnote{\url{https://marketplace.visualstudio.com/VSCode}}.
+Die Schnittstellen für Erweiterungen sind ausführlich dokumentiert und Entwickler können mit geringem Aufwand eigene Erweiterungen publizieren.
+Für Spracherweiterung wirbt \ac{vsc} besonders mit dem \ac{lsp} (siehe~\ref{subsec:language-server-protocol}).
+In Abschnitt~\ref{sec:fulibFeedback} wird dies genutzt, um die fulibFeedback-Erweiterung zu veröffentichen.
+
+\todom{Vielleicht sollte das wo anders hin?}
+\ac{vsc} wurde als Grundlage für diese Arbeit aus zwei Gründen gewählt.
+Einerseits ist die Entwicklung von Erweiterungen im Vergleich zu der \ac{ide} IntelliJ IDEA deutlich einfacher, da die Logik mit dem \ac{lsp} wiederverwendbar implementiert werden kann.
+IntelliJ IDEA bietet dafür keine eigene Unterstützung, stattdessen müssen Plugins von Dritten
+\footnote{\url{https://github.com/gtache/intellij-lsp}}
+\footnote{\url{https://github.com/lsp4intellij/intellij-lsp-plugin}}
+\footnote{\url{https://github.com/ballerina-platform/lsp4intellij}}
+verwendet werden.
+Diese werden teilweise nicht weiterentwickelt, bieten nur eingeschränkte Funktionen des \ac{lsp}, oder sind nicht mit aktuellen Versionen von IntelliJ IDEA kompatibel.
+Andererseits war \ac{vsc} ein vorgegebenes Werkzeug in der Veranstaltung "Programmieren und Modellieren" im Wintersemester 2021/22.
+Es bot sich an, für die Bewertung die gleiche \ac{ide} zu benutzen wie die Studierenden zur Lösungserstellung.
+Dadurch konnten bestimmte umgebungsabhängige Fehler vermieden werden.
 
 \subsection{Language Server Protocol}\label{subsec:language-server-protocol}
 

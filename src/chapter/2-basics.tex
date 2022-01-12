@@ -31,9 +31,48 @@
 \subsection{fulib.org}\label{subsec:fulib.org}
 
 \todo{
-    Platform und Grundlage für die Implementierung.
-    Erweiterung der Assignments aus~\cite{bachelor-thesis}.
+    Screenshots?
 }
+
+fulib.org ist eine Webanwendung, die bereits 2019 im Rahmen von~\cite{explain} konzipiert und durch~\cite{bachelor-thesis} erweitert wurde.
+Sie besteht aus einigen Modulen, die nachfolgend kurz beschrieben werden.
+
+\paragraph{Scenarios}
+Das erste Modul der Anwendung ist ein interaktiver Editor für die Szenario-Sprache aus~\cite{explain}.
+Diese besteht aus textuellen Beispielszenarien, die einer festen Grammatik folgen.
+Ein Compiler übersetzt die Szenarien in Java-Code und generiert dabei Klassen für ein Datenmodell mit~\cite{fulib}.
+In~\cite{bachelor-thesis} wurde erstmals eine Erweiterung der Sprache umgesetzt, die gezielt die Bewertung von Aufgaben ermöglichen sollte.
+Dafür wurde spezielle Syntax zur Mustererkennung auf Objektstrukturen entwickelt, die besonders für Fälle geeignet war, in der die Benennung von Variablen, Attributen und Assoziationen nicht festgelegt war.
+Nachfolgend wird die Szenario-Sprache und der Editor auf fulib.org nicht weiter betrachtet.
+Es handelt sich jedoch um wichtige Hintergründe und Erkenntnisse, die in den Abschnitten~\ref{sec:expanding-fulib.org} und~\ref{par:renaming-and-refactoring} wieder aufgegriffen werden.
+
+\paragraph{Docs}
+Hier kann die Dokumentation für verwandte Werkzeuge aus dem fulib-Toolkit nachgelesen werden.
+Diese wird direkt von den jeweiligen GitHub-Repositories bezogen, ist also nicht Teil der Webanwendung selber.
+Insbesondere befindet sich hier das Benutzerhandbuch von fulibFeedback.
+
+\paragraph{Projects}
+Dieser Teil der Webanwendung ist eine Prototyp für eine Online-\ac{ide}.
+Dort können Projekte erstellt werden, die im Gegensatz zum Szenario-Editor mehrere Dateien umfassen können.
+Insbesondere können hier Gradle- und Java-Dateien betrachtet und bearbeitet werden.
+Ein Dateibaum zeigt Ordner und darin befindliche Dateien jeglicher Art.
+Mit einem Web-Terminal können beliebige Kommandozeilenbefehle ausgeführt werden, darunter auch die zum Bauen und Ausführen verwendeten Gradle-Befehle.
+Die Projekte ermöglichen folglich eine eingeschränkte Form der Anwendungsentwicklung in einer Desktop-\ac{ide}.
+Nachfolgend werden Projekte nicht weiter eingesetzt, sie bieten sich jedoch für zukünftige Erweiterungen in Abschnitt~\ref{par:future-projects} an.
+
+\paragraph{Assignments}
+Das ursprünglich in~\cite{bachelor-thesis} entwickelte Assignments-Modul von fulib.org ist nun erneut Zentrum der Implementierung.
+In Abschnitt~\ref{sec:expanding-fulib.org} wird vermehrt beleuchtet, welche Änderungen vorgenommen wurden.
+Nun soll zunächst beschrieben werden, wie der Stand des Moduls gegen Ende von~\cite{bachelor-thesis} war.
+Vor dieser Arbeit waren die Assignments, eine eigene Bezeichnung für Hausaufgabenblätter, nur auf Aufgaben in der Szenario-Sprache fokussiert.
+Mit einfachen Formularen konnten Titel, Beschreibung, Abgabefrist und einige Teilaufgaben definiert werden.
+Jede Teilaufgabe bestand mindestens aus Kurzbeschriebung und Punktzahl
+Optional konnte eine Teilaufgabe mit Verifizierungscode in der Szenario-Sprache, meist mit der Pattern Matching-Syntax aus~\cite{bachelor-thesis}, ausgestattet werden.
+Studierende erhielten nach erfolgreicher Erstellung des Assignments einen Einladungslink, unter dem sie eine Lösung hochladen konnten.
+Diese bestand aus einem zusammenhängenden Szenario-Text.
+Nach dem Absenden wurde für jede Teilaufgabe der Verifizierungscodes zusammen mit der Lösung ausgeführt.
+Bei erfolgreicher Ausführung wurden für die Teilaufgabe volle Punktzahl, im Fehlerfall null Punkte vergeben.
+Somit konnte eine Gesamtpunktzahl errechnet werden.
 
 \subsection{Visual Studio Code}\label{subsec:visual-studio-code}
 

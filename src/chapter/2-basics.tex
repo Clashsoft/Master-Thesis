@@ -100,8 +100,43 @@ Dadurch konnten bestimmte umgebungsabhängige Fehler vermieden werden.
 
 \subsection{Language Server Protocol}\label{subsec:language-server-protocol}
 
+Das \ac{lsp} bezeichnet eine von Microsoft entwickelte Spezifikation\footnote{\url{https://microsoft.github.io/language-server-protocol/}}, die ein Client/Server-Modell für Sprachunterstützung von Code-Editoren und ein zugehöriges Protokoll vorschlägt.
+Das standardisierte Protokoll sollte einige Probleme lösen, die sowohl Entwicklern von Editoren als auch von Programmiersprachen bekannt waren.
+Diese werden nachfolgend kurz erläutert.
+
+\paragraph{Quadratischer Entwicklungsaufwand}
+Im Vordergrund stand das Problem des quadratischen Entwicklungsaufwands ohne ein standardisiertes Protokoll.
+Soll eine neue Programmiersprache Verwendung finden, ist es notwendig, Unterstützung in möglichst vielen Editoren zu implementieren.
+Dies ist teilweise durch Plugins möglich, die von den Sprachautoren bereitgestellt werden können, aber mitunter signifikanten Entwicklungsaufwand benötigen.
+Aus Sicht der Autoren hat jeder Editor andere Schnittstellen und Funktionen, die studiert und angebunden werden müssen.
+Dies kann die Adaption von Sprachen bei begrenztem Entwicklungsbudget einschränken.
+Aus Sicht der Editorautoren ergibt sich ein ähnliches Problem.
+Um einen neuen Editor marktfähig zu machen, sollte dieser eine große Anzahl populärer Programmiersprachen unterstützen.
+Diese können jedoch weitgehend unterschiedliche Schnittstellen und Werkzeuge bereitstellen, abhängig davon, ob die Editorunterstützung von den Sprachautoren bei der Konzeption von Compiler und anderen Tools eingearbeitet wurde.
+Unter Umständen ist es notwendig, große Teile der Syntax und Semantik dieser Sprachen neu zu implementieren, um Editorunterstützung zu ermöglichen.
+Mit dem \ac{lsp} wird dieses Problem aus Sicht beider Seiten gelöst.
+Sprachautoren können einen Server bereitstellen, der gegen die Schnittstellen des \ac{lsp} entwickelt wird.
+Der Editor kann beliebige Sprachserver über die gleichen Schnittstellen ansprechen.
+\footnote{\url{https://code.visualstudio.com/api/language-extensions/language-server-extension-guide\#why-language-server}.\label{fn:why-lsp}}
+
+\paragraph{Trennung von Technologien}
+Ein weiterer Vorteil des \acp{lsp} ist die Möglichkeit, Server und Client in unterschiedlichen Programmiersprachen und Frameworks zu entwickeln.
+Dies kann sprachseitig die Serverentwicklung vereinfachen, da beispielsweise Teile der Implementierung des Compilers wiederverwendet werden können.\footref{fn:why-lsp}
+
+\paragraph{Trennung von Prozessen}
+Zuletzt nennt Microsoft die Prozesstrennung als vorteilhaft, welche die parallele Ausführung von rechenintensiven Aufgaben erlaubt.\footref{fn:why-lsp}
+Abhängig von der Architektur des Editors ist dies jedoch auch ohne ein solches Protokoll möglich.
+\footnote{Beispielsweise in IntelliJ, das Vorgaben für Multithreading macht um schreibende Aktionen (Texteingabe, \ldots) von lesenden Aufgaben (Syntaxanalyse, Diagnostics, Highlighting, \ldots) zu trennen. \url{https://plugins.jetbrains.com/docs/intellij/general-threading-rules.html}}
+
+Nachfolgend werden einige Editor-Funktionen beschrieben, die das \ac{lsp} anbietet.
+Grundsätzlich sind weder Client noch Server von der Spezifikation verpflichtet, diese anzubieten.
+Wird eine Editorfunktion von dem Server nicht unterstützt, so wird standardmäßig keine Aktion durchgeführt.
+\footnote{\todo{Source? Steht nicht so richtig in der Spezifikation}}
+Gleichermaßen kann der Server verschiedene Editoraktionen aufrufen, die nicht zwangsweise unterstützt werden müssen.
+Beim Start des Servers wird aus diesem Grund kommuniziert, welche Funktionen beide Parteien bereitstellen.
+\footnote{\url{https://microsoft.github.io/language-server-protocol/specifications/specification-3-17/\#initialize}}
+
 \todo{
-    Wiederverwendbares Framework, theoretisch einfach Anbindung in andere IDEs.
     Einfache Implementierung von Diagnostics und Code Actions (später Selection).
 }
 

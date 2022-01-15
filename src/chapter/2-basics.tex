@@ -135,9 +135,36 @@ Gleichermaßen kann der Server verschiedene Editoraktionen aufrufen, die nicht z
 Beim Start des Servers wird aus diesem Grund kommuniziert, welche Funktionen beide Parteien bereitstellen.
 \footnote{\url{https://microsoft.github.io/language-server-protocol/specifications/specification-3-17/\#initialize}}
 
-\todo{
-    Einfache Implementierung von Diagnostics und Code Actions (später Selection).
-}
+\begin{itemize}
+    \item \textbf{Autovervollständigung}.
+    Dieses Feature kommt beim Schreiben von Quellcode zum Einsatz und soll die Produktivität von Entwicklern steigern.
+    Eine einfache Form der Autovervollständigung kann trivial in einem Editor implementiert werden, indem die bereits im der aktuellen Datei verwendeten Wörter vorgeschlagen werden.
+    In vielen Fällen ist dies jedoch nicht hilfreich, beispielsweise wenn die Syntax des Programms an der Stelle des Cursors bestimmte Arten von Bezeichnern verlangt, oder die Vorschläge abhängig von Typen sein sollen.
+    Language Server können daher mit der Cursorposition nach Vorschlägen gefragt werden.
+    \item \textbf{Zur Definition springen} und \textbf{Hover-Dokumentation}.
+    Beim Lesen von Code ist es unter Umständen hilfreich, sich die Definition einer Klasse, Methode oder Variable ansehen zu können.
+    Damit deren Position und Ursprungsdatei gefunden werden können, ist sprachabhängige Analyse notwendig, die ein Language Server bereitstellen kann.
+    Ist lediglich die Dokumentation der Definition gefragt, kann diese beim Hovern über den Bezeichner angezeigt werden, falls dies implementiert wurde.
+    \item \textbf{Diagnostics}.
+    Meist handelt es sich hierbei um ein passives Feature, das nicht direkt vom Benutzer ausgelöst wird.
+    Es ist hilfreich, während des Schreibens von Code mögliche Syntaxfehler oder andere Probleme direkt rot oder gelb unterstrichen sichtbar zu machen.
+    Ein Language Server kann dies mittels Diagnostics implementieren.
+    Im Gegensatz zu anderen Funktionen werden diese asynchron vom Client/Editor angefragt.
+    Der Server kann dann Diagnostics ermitteln und das Ergebnis nach einiger Zeit per Push an den Client senden, um die Meldungen anzuzeigen.
+    \item \textbf{Code Actions} und Refactorings.
+    Ein Language Server kann anhand der aktuellen Cursorposition oder Auswahl eine oder mehrere Aktionen bereitstellen.
+    Diese werden im Editor in einem Kontektmenü oder ähnlichem angezeigt.
+    Eine Aktion kann, wenn sie vom Benutzer ausgewählt wird, Änderungen am Text oder anderen Dateien durchführen.
+    Beispielsweise können dadurch einfache Refactorings wie das Schachteln in einer neuen Schleife implementiert werden.
+    Nicht möglich ist das Erfragen von weiterem Input des Benutzers.
+    Dadurch können mit Code Actions keine komplexeren Refactorings wie Umbenennen oder Methode Extrahieren umgesetzt werden.
+    Ersteres hat aus diesem Grund eine eigene Schnittstelle.
+\end{itemize}
+
+Trotz der Bezeichnung \textbf{Language} Server Protocol ist dieses nicht nur für den Einsatz für Programmiersprachen geeignet.
+Mit den bereitgestellten Schnittstellen können auch andere Entwicklerwerkzeuge implementiert werden.
+Durch Diagnostics können beispielsweise auch Rechtschreibprüfung oder Linter\footnote{Programme, die Quellcode anhand von verschiedener Analyseverfahren auf häufige Fehlerquellen untersuchen} umgesetzt werden.
+In Abschnitt~\ref{sec:fulibFeedback} wird erläutert, wie die fulibFeedback-Erweiterung die Diagnostics und Code Actions des \ac{lsp} anwendet.
 
 \subsection{Elasticsearch}\label{subsec:elasticsearch}
 

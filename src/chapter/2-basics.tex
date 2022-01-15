@@ -114,9 +114,11 @@ Aus Sicht der Editorautoren ergibt sich ein ähnliches Problem.
 Um einen neuen Editor marktfähig zu machen, sollte dieser eine große Anzahl populärer Programmiersprachen unterstützen.
 Diese können jedoch weitgehend unterschiedliche Schnittstellen und Werkzeuge bereitstellen, abhängig davon, ob die Editorunterstützung von den Sprachautoren bei der Konzeption von Compiler und anderen Tools eingearbeitet wurde.
 Unter Umständen ist es notwendig, große Teile der Syntax und Semantik dieser Sprachen neu zu implementieren, um Editorunterstützung zu ermöglichen.
+Insgesamt ergibt dies bei $n$ Editoren und $m$ Sprachen einen Aufwand von $n \cdot m$ notwendigen Integrationen.
 Mit dem \ac{lsp} wird dieses Problem aus Sicht beider Seiten gelöst.
 Sprachautoren können einen Server bereitstellen, der gegen die Schnittstellen des \ac{lsp} entwickelt wird.
-Der Editor kann beliebige Sprachserver über die gleichen Schnittstellen ansprechen.\cite{why-lsp}
+Der Editor kann beliebige Sprachserver über die gleichen Schnittstellen ansprechen.
+Folglich müssen nur $n + m$ Werkzeuge entwickelt werden.\cite{why-lsp}
 
 \paragraph{Trennung von Technologien}
 Ein weiterer Vorteil des \acp{lsp} ist die Möglichkeit, Server und Client in unterschiedlichen Programmiersprachen und Frameworks zu entwickeln.

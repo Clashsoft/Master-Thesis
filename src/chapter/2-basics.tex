@@ -89,11 +89,11 @@ In Abschnitt~\ref{sec:fulibFeedback} wird dies genutzt, um die fulibFeedback-Erw
 \ac{vsc} wurde als Grundlage für diese Arbeit aus zwei Gründen gewählt.
 Einerseits ist die Entwicklung von Erweiterungen im Vergleich zu der \ac{ide} IntelliJ IDEA deutlich einfacher, da die Logik mit dem \ac{lsp} wiederverwendbar implementiert werden kann.
 IntelliJ IDEA bietet dafür keine eigene Unterstützung, stattdessen müssen Plugins von Dritten
-\footnote{\url{https://github.com/gtache/intellij-lsp}}
-\footnote{\url{https://github.com/lsp4intellij/intellij-lsp-plugin}}
-\footnote{\url{https://github.com/ballerina-platform/lsp4intellij}}
+\footnote{\url{https://github.com/gtache/intellij-lsp}\label{fn:intellij-lsp}}
+\footnote{\url{https://github.com/lsp4intellij/intellij-lsp-plugin}\label{fn:intellij-lsp-plugin}}
+\footnote{\url{https://github.com/ballerina-platform/lsp4intellij}\label{fn:lsp4intellij}}
 verwendet werden.
-Diese werden teilweise nicht weiterentwickelt, bieten nur eingeschränkte Funktionen des \ac{lsp}, oder sind nicht mit aktuellen Versionen von IntelliJ IDEA kompatibel.
+Diese werden teilweise nicht weiterentwickelt\footref{fn:intellij-lsp} \footref{fn:intellij-lsp-plugin}, bieten nur eingeschränkte Funktionen des \ac{lsp}\footnote{\todo{Welche?}}, oder sind nicht mit aktuellen Versionen von IntelliJ IDEA kompatibel\footnote{\todo{Welche?}}.
 Andererseits war \ac{vsc} ein vorgegebenes Werkzeug in der Veranstaltung "Programmieren und Modellieren" im Wintersemester 2021/22.
 Es bot sich an, für die Bewertung die gleiche \ac{ide} zu benutzen wie die Studierenden zur Lösungserstellung.
 Dadurch konnten bestimmte umgebungsabhängige Fehler vermieden werden.
@@ -116,22 +116,21 @@ Diese können jedoch weitgehend unterschiedliche Schnittstellen und Werkzeuge be
 Unter Umständen ist es notwendig, große Teile der Syntax und Semantik dieser Sprachen neu zu implementieren, um Editorunterstützung zu ermöglichen.
 Mit dem \ac{lsp} wird dieses Problem aus Sicht beider Seiten gelöst.
 Sprachautoren können einen Server bereitstellen, der gegen die Schnittstellen des \ac{lsp} entwickelt wird.
-Der Editor kann beliebige Sprachserver über die gleichen Schnittstellen ansprechen.
-\footnote{\url{https://code.visualstudio.com/api/language-extensions/language-server-extension-guide\#why-language-server}.\label{fn:why-lsp}}
+Der Editor kann beliebige Sprachserver über die gleichen Schnittstellen ansprechen.\cite{why-lsp}
 
 \paragraph{Trennung von Technologien}
 Ein weiterer Vorteil des \acp{lsp} ist die Möglichkeit, Server und Client in unterschiedlichen Programmiersprachen und Frameworks zu entwickeln.
-Dies kann sprachseitig die Serverentwicklung vereinfachen, da beispielsweise Teile der Implementierung des Compilers wiederverwendet werden können.\footref{fn:why-lsp}
+Dies kann sprachseitig die Serverentwicklung vereinfachen, da beispielsweise Teile der Implementierung des Compilers wiederverwendet werden können.\cite{why-lsp}
 
 \paragraph{Trennung von Prozessen}
-Zuletzt nennt Microsoft die Prozesstrennung als vorteilhaft, welche die parallele Ausführung von rechenintensiven Aufgaben erlaubt.\footref{fn:why-lsp}
+Zuletzt nennt Microsoft die Prozesstrennung als vorteilhaft, welche die parallele Ausführung von rechenintensiven Aufgaben erlaubt.\cite{why-lsp}
 Abhängig von der Architektur des Editors ist dies jedoch auch ohne ein solches Protokoll möglich.
-\footnote{Beispielsweise in IntelliJ, das Vorgaben für Multithreading macht um schreibende Aktionen (Texteingabe, \ldots) von lesenden Aufgaben (Syntaxanalyse, Diagnostics, Highlighting, \ldots) zu trennen. \url{https://plugins.jetbrains.com/docs/intellij/general-threading-rules.html}}
+\footnote{Beispielsweise in IntelliJ, das Vorgaben für Multithreading macht um schreibende Aktionen (Texteingabe, \ldots) von lesenden Aufgaben (Syntaxanalyse, Diagnostics, Highlighting, \ldots) zu trennen.\footnote{\url{https://plugins.jetbrains.com/docs/intellij/general-threading-rules.html}}}
 
 Nachfolgend werden einige Editor-Funktionen beschrieben, die das \ac{lsp} anbietet.
 Grundsätzlich sind weder Client noch Server von der Spezifikation verpflichtet, diese anzubieten.
 Wird eine Editorfunktion von dem Server nicht unterstützt, so wird standardmäßig keine Aktion durchgeführt.
-\footnote{\todo{Source? Steht nicht so richtig in der Spezifikation}}
+\footnote{\url{https://microsoft.github.io/language-server-protocol/overviews/lsp/overview/}}
 Gleichermaßen kann der Server verschiedene Editoraktionen aufrufen, die nicht zwangsweise unterstützt werden müssen.
 Beim Start des Servers wird aus diesem Grund kommuniziert, welche Funktionen beide Parteien bereitstellen.
 \footnote{\url{https://microsoft.github.io/language-server-protocol/specifications/specification-3-17/\#initialize}}

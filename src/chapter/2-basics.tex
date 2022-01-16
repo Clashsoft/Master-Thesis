@@ -170,12 +170,52 @@ In Abschnitt~\ref{sec:fulibFeedback} wird erläutert, wie die fulibFeedback-Erwe
 
 \subsection{Elasticsearch}\label{subsec:elasticsearch}
 
-\todo{
-    Datenbank für Textsuche optimiert.
-    Basiert auf Apache Lucene.
-    Eigentlich für natürliche Sprache ausgelegt (N-Gramme, Stemming).
-    Erweiterbar mit Custom Lexer.
-}
+Elasticsearch\footnote{\url{https://www.elastic.co/elasticsearch/}} bezeichnet eine Suchmaschine und dokumentorientierte Datenbank\footnote{Im Gegensatz zu tabellenbasierten Datenbanken erlauben Dokumente meist schemalose und geschachtelte Daten.}, die für verschiedene textuelle und strukturelle Anfragen optimiert ist.
+Neben der Textsuche bietet Elasticsearch auch Lösungen für verwandte Probleme wie Log-Analyse, Metriken, Datentrends, Geo-Anfragen und Anwendungen der Genetik (Bioinformatik).
+Diese sind jedoch im Folgenden nicht relevant und werden daher nicht weiter erläutert.
+
+Die Textsuche basiert in großen Teilen auf der quelloffenenen Java-Bibliothek Lucene\footnote{\url{https://lucene.apache.org/}} der Apache Foundation.
+Elasticsearch implementiert Teile der Textanalyse, Indexierung, Suche, und Highlighting mit Lucene.
+Diese werden nachfolgend datailliert beschrieben.
+
+\paragraph{Analyse}
+Die Analyse von Textdaten umfasst im Fall von natürlicher Sprache zwei Schritte, die Tokenisierung und Normalisierung.
+Bei der Tokenisierung wird ein zusammenhängender Text in sogenannte Tokens aufgeteilt, welche meist einzelne Wörter abbilden.
+Dabei werden standardmäßig Leerzeichen und Zeichen wie Punkte, Kommata oder Anführungsstriche verworfen.
+Die Normalisierung ändert die entstandenen Tokens, sodass bei der Suche ähnliche Wörter gleich behandelt werden können.
+Dafür werden beispielsweise Groß- und Kleinschreibung verworfen, Plural zu Singular geändert, der Wortstamm gebildet (Stemming), oder Synonyme verwendet.
+Weiterhin können sogenannte Stepwords, Wörter die keine semantische Relevanz im Text haben, in der Normalisierung gefiltert werden.
+Um dies sinnvoll umsetzen zu können, muss für gewöhnlich die zugrundeliegende Sprache des Textes definiert werden.
+Tokenisierung und Normalisierung können dann sprachspezifische Syntaxregeln und Wörterbücher verwenden.
+\footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-overview.html}}
+Es ist möglich, eigene Analyseverfahren zu definieren, die aus Zeichenfiltern, Tokenisierer und Stepwordfiltern bestehen.
+\footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-custom-analyzer.html}}
+So kann beispielsweise die Textanalyse für Programmiersprachen definiert werden, wie in Abschnitt~\ref{subsec:solution-detail-and-evaluation} demonstriert wird.
+
+\paragraph{Indexierung}
+Ein Index dient der Suchoptimierung, um häufige Anfragen schneller duchführen zu können.
+Die genaue Form und verwendete Datenstruktur hängt davon ab, welcher Datentyp verwendet wird und für welche Art von Suchanfragen der Index konfiguriert wurde.
+Ein einfacher Index kann beispielsweise eine Menge von Tokens speichern, die im Text vorkommen.
+Dabei werden die Häufigkeit, Position und Form der Wörter im Originaltext nicht beachtet.
+Wird eine Suchanfrage mit gleicher Tokenisierung und Normalisierung analysiert, entsteht eine vergleichbare Menge.
+Ist die aus der Suchanfrage entstehende Menge eine Teilmenge der Tokens des Originaltexts, ist das Originaldokument ein gültiges Suchergebnis.
+Dafür ist für jedes Dokument lediglich eine Mengenoperation notwendig und kein Auslesen und Vergleichen jedes einzelnen Zeichens des Originaltexts.
+\footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-index-search-time.html}}
+
+\paragraph{Suche}
+Für die Textsuche bietet Elasticsearch verschiedenen Arten von Anfragen und Optionen.
+Einfache Beispiele für Anfragetypen sind die exakte Übereinstimmung, Textsuche, Wildcards und die Suche mit regulären Ausdrücken.
+\footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html}}
+Diese können mit bool'schen Operatoren kombiniert werden, wobei zwischen Bedingungen, die das Ranking von Ergebnissen beeinflussen, und Filtern, welche die Inklusion von Ergebnissen ohne Einfluss auf das Ranking kontrollieren, unterschieden wird.
+\footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html}}
+Ferner können Optionen für Sortierung, Aggregationen und generelle Datenkontrolle (Anzahl der Ergebnisse, Pagination\footnote{Aufteilung von einer großen Anzahl von Suchergebnissen (>1000) auf mehrere Seiten.}, Timeout, Asynchronität, etc.) angegeben werden.
+\footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/search-your-data.html}}
+
+\paragraph{Highlighting}
+Gewöhnliche Suchanfragen geben lediglich die Ergebnisse zurück, die mit der Anfrage übereinstimmen, jedoch nicht, an welcher Stelle im Text die gesuchten Wörter vorkommen.
+Mit einem Highlighter, der als Suchoption aus Performancegründen aktiviert werden muss, können diese Stellen gefunden werden, um beispielsweise auf einer Seite mit Suchergebnissen die Wörter farblich hervorzuheben.
+\footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/highlighting.html}}
+In Abschnitt~\ref{subsec:solution-detail-and-evaluation} wird dies eingesetzt, um den Originalquellcode nach einer Suchanfrage zu rekonstruieren.
 
 \subsection{Sonstige}\label{subsec:other-libraries}
 

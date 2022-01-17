@@ -126,7 +126,7 @@ Diese werden nachfolgend kurz erläutert.
     \item[Quadratischer Entwicklungsaufwand]
     Zuletzt nennt Microsoft die Prozesstrennung als vorteilhaft, welche die parallele Ausführung von rechenintensiven Aufgaben erlaubt.\cite{why-lsp}
     Abhängig von der Architektur des Editors ist dies jedoch auch ohne ein solches Protokoll möglich.
-    \footnote{Beispielsweise in IntelliJ, das Vorgaben für Multithreading macht um schreibende Aktionen (Texteingabe, \ldots) von lesenden Aufgaben (Syntaxanalyse, Diagnostics, Highlighting, \ldots) zu trennen.\footnote{\url{https://plugins.jetbrains.com/docs/intellij/general-threading-rules.html}}}
+    \footnote{Beispielsweise in IntelliJ, das Vorgaben für Multithreading macht um schreibende Aktionen (Texteingabe, \ldots) von lesenden Aufgaben (Syntaxanalyse, Diagnostics, Highlighting, \ldots) zu trennen. Siehe \url{https://plugins.jetbrains.com/docs/intellij/general-threading-rules.html}.}
 \end{description}
 
 Nachfolgend werden einige Editor-Funktionen beschrieben, die das \ac{lsp} anbietet.
@@ -174,7 +174,7 @@ Elasticsearch\footnote{\url{https://www.elastic.co/elasticsearch/}} bezeichnet e
 Neben der Textsuche bietet Elasticsearch auch Lösungen für verwandte Probleme wie Log-Analyse, Metriken, Datentrends, Geo-Anfragen und Anwendungen der Genetik (Bioinformatik).
 Diese sind jedoch im Folgenden nicht relevant und werden daher nicht weiter erläutert.
 
-Die Textsuche basiert in großen Teilen auf der quelloffenenen Java-Bibliothek Lucene\footnote{\url{https://lucene.apache.org/}} der Apache Foundation.
+Die Textsuche basiert in großen Teilen auf der quelloffenenen Java-Bibliothek Lucene\footnote{\url{https://lucene.apache.org/}} der Apache Foundation.\footnote{\todo{Source? Steht nicht so richtig explizit in der Doku aber überall wird immer darauf Bezug genommen.}}
 Elasticsearch implementiert Teile der Textanalyse, Indexierung, Suche, und Highlighting mit Lucene.
 Diese werden nachfolgend datailliert beschrieben.
 

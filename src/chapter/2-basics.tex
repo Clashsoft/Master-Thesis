@@ -228,7 +228,7 @@ Die Programmiersprache\footnote{\url{https://www.typescriptlang.org/}} wird für
 Sie bietet gegenüber JavaScript eine höhere Sicherheit gegen Programmierfehler durch die Typisierung.
 Im Vergleich zu Java ist weniger Boilerplate-Code notwendig, um vergleichbare Features beispielsweise in einem Backend zu implementieren.
 Für die Entwicklung der \ac{vsc}-Erweiterung ist JavaScript oder TypeScript erforderlich, letzteres wird von Microsoft jedoch empfohlen.\footnote{\url{https://code.visualstudio.com/api/get-started/your-first-extension}}
-Der Language Server kann in einer beliebigen Sprache implementiert werden, die Dokumentation von Microsoft bietet jedoch Beispiele hauptsächlich in TypeScript an.\footnote{\url{https://code.visualstudio.com/api/language-extensions/language-server-extension-guide}}.
+Der Language Server kann in einer beliebigen Sprache implementiert werden, die Dokumentation von Microsoft bietet jedoch Beispiele hauptsächlich in TypeScript an.\footnote{\url{https://code.visualstudio.com/api/language-extensions/language-server-extension-guide}\label{fn:language-server-extension-guide}}.
 
 \subsubsection{Angular}
 Das Angular\footnote{\url{https://angular.io/}}-Framework von Google wird für die Implementierung der gesamten Weboberfläche von fulib.org verwendet.
@@ -252,3 +252,6 @@ Dazu gehören die von Angular bekannte Aufteilung in Module und Services sowie d
 Viele Aspekte eines Backend-Services können deklarativ mit sogenannten Decorators implementiert werden.
 Beispiele dafür sind Validierung, Generierung von \ac{api}-Dokumentation, Authentifizierung und Datenbank-Schemata.
 NestJS-Server werden ebenfalls in JavaScript oder bevorzugt TypeScript implementiert.
+Neben dem Einsatz für \ac{http}-Server kann NestJS auch als generelles Dependency Injection-Framework verwendet werden.
+Dadurch ist es möglich, einen Language Server damit zu implementieren.
+Im Gegensatz zur der dokumentierten\footref{fn:language-server-extension-guide} Implementierung kann dadurch bessere Trennung von Zuständigkeiten und eine generelle erweiterbare Grundarchitektur geschaffen werden.

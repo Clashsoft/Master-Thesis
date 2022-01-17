@@ -219,6 +219,36 @@ In Abschnitt~\ref{subsec:solution-detail-and-evaluation} wird dies eingesetzt, u
 
 \subsection{Sonstige}\label{subsec:other-libraries}
 
-\todo{
-    Angular, NestJS, Bootstrap, Bootstrap-Darkmode, Bibliotheken.
-}
+Neben den zuvor genannten Technologien wurden für die Entwicklung dieser Arbeit einige weitere Werkzeuge, Frameworks und Bibliotheken verwendet, die nun kurz beschrieben werden.
+Diese wurden mit Ausnahme von NestJS ursprünglich für die Implementierung von fulib eingesetzt und fortan weiterverwendet.
+Aufgrund der umfänglichen Auswirkungen der Frameworks auf den Entwicklungsprozess lohnt es sich an dieser Stelle erneut darauf einzugehen.
+
+\subsubsection{TypeScript}
+Die Programmiersprache\footnote{\url{https://www.typescriptlang.org/}} wird für sämtliche Software im Rahmen dieser Arbeit eingesetzt.
+Sie bietet gegenüber JavaScript eine höhere Sicherheit gegen Programmierfehler durch die Typisierung.
+Im Vergleich zu Java ist weniger Boilerplate-Code notwendig, um vergleichbare Features beispielsweise in einem Backend zu implementieren.
+Für die Entwicklung der \ac{vsc}-Erweiterung ist JavaScript oder TypeScript erforderlich, letzteres wird von Microsoft jedoch empfohlen.\footnote{\url{https://code.visualstudio.com/api/get-started/your-first-extension}}
+Der Language Server kann in einer beliebigen Sprache implementiert werden, die Dokumentation von Microsoft bietet jedoch Beispiele hauptsächlich in TypeScript an.\footnote{\url{https://code.visualstudio.com/api/language-extensions/language-server-extension-guide}}.
+
+\subsubsection{Angular}
+Das Angular\footnote{\url{https://angular.io/}}-Framework von Google wird für die Implementierung der gesamten Weboberfläche von fulib.org verwendet.
+Seine Zuständigkeiten umfassen die Entwurfsmuster der komponentenbasierten View, Dependency Injection mittels Services, und Aufteilung von logischen Programmteilen in Module.
+Angular abstrahiert das Rendering von Komponenten zu \ac{html} für die Darstellung im Browser.
+Services erlauben die Trennung von Anzeigelogik, Business Logic, und Datenzugriff und können mit Dependency Injection verwendet werden.
+Die Verwendung von Angular erfordert die Programmierung mit JavaScript oder TypeScript, da dies geeignete Sprachen für die Ausführung im Browserkontext sind.
+
+\subsubsection{Bootstrap}
+Das \ac{css}-Framework Bootstrap\footnote{\url{https://getbootstrap.com/}} in der Version 4 bestimmt das Aussehen sämtlicher Schaltflächen und Oberflächenelemente auf fulib.org.
+Es definiert semantische Farben, die Anordnung und Abstände in und zwischen Buttons, Formelementen und sonstigen Komponenten.
+Weiterhin kann damit die dynamische Anordnung abhängig von der Bildschirmgröße realisiert werden, um Seiten beispielsweise auf Mobilgeräten übersichtlich darzustellen.
+Für den Nachtmodus von fulib.org wird die Erweiterungsbibliothek bootstrap-darkmode\footnote{\url{https://github.com/Clashsoft/bootstrap-darkmode}} eingesetzt.
+Sie sorgt für die automatische Umfärbung von Hintergründen, Texten, Links, Buttons und anderen Elementen, wenn der Nachtmodus aktiviert ist.
+Icons in der Oberfläche stammen aus der \ac{css}-Bibliothek bootstrap-icons\footnote{\url{https://icons.getbootstrap.com/}}.
+
+\subsubsection{NestJS}
+Dieses Framework\footnote{\url{https://nestjs.com}} bietet die grundlegende Architektur des Backends, das für die Verwaltung von Assignments und zugehörigen Daten zuständig ist.
+Nach Abschluss von~\cite{bachelor-thesis} wurde von das zuvor verwendete Java-Backend mit NestJS neu geschrieben, da es größere Flexibilität und höhere Produktivität beim Hinzufügen neuer Features bot.
+Dazu gehören die von Angular bekannte Aufteilung in Module und Services sowie die zugehörige Dependency Injection.
+Viele Aspekte eines Backend-Services können deklarativ mit sogenannten Decorators implementiert werden.
+Beispiele dafür sind Validierung, Generierung von \ac{api}-Dokumentation, Authentifizierung und Datenbank-Schemata.
+NestJS-Server werden ebenfalls in JavaScript oder bevorzugt TypeScript implementiert.

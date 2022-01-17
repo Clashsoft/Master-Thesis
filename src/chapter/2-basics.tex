@@ -34,11 +34,7 @@ In den folgenden Abschnitten wird erläutert, welche Probleme diese Technologien
 
 \subsection{fulib.org}\label{subsec:fulib.org}
 
-\todo{
-    Screenshots?
-}
-
-fulib.org ist eine Webanwendung, die bereits 2019 im Rahmen von~\cite{explain} konzipiert und durch~\cite{bachelor-thesis} erweitert wurde.
+fulib.org ist eine Webanwendung, die bereits 2019 im Rahmen des fulibScenarios-Projekts~\cite{explain} konzipiert und durch~\cite{bachelor-thesis} erweitert wurde.
 Sie besteht aus einigen Modulen, die nachfolgend kurz beschrieben werden.
 
 \subsubsection{Scenarios}
@@ -47,7 +43,7 @@ Diese besteht aus textuellen Beispielszenarien, die einer festen Grammatik folge
 Ein Compiler übersetzt die Szenarien in Java-Code und generiert dabei Klassen für ein Datenmodell mit~\cite{fulib}.
 In~\cite{bachelor-thesis} wurde erstmals eine Erweiterung der Sprache umgesetzt, die gezielt die Bewertung von Aufgaben ermöglichen sollte.
 Dafür wurde spezielle Syntax zur Mustererkennung auf Objektstrukturen entwickelt, die besonders für Fälle geeignet war, in der die Benennung von Variablen, Attributen und Assoziationen nicht festgelegt war.
-Nachfolgend wird die Szenario-Sprache und der Editor auf fulib.org nicht weiter betrachtet.
+Nachfolgend werden die Szenario-Sprache und der Editor nicht weiter betrachtet.
 Es handelt sich jedoch um wichtige Hintergründe und Erkenntnisse, die in den Abschnitten~\ref{sec:expanding-fulib.org} und~\ref{sec:renaming-and-refactoring} wieder aufgegriffen werden.
 
 \subsubsection{Docs}
@@ -89,7 +85,6 @@ Die Schnittstellen für Erweiterungen sind ausführlich dokumentiert und Entwick
 Für Spracherweiterung wirbt \ac{vsc} besonders mit dem \ac{lsp} (siehe~\ref{subsec:language-server-protocol}).
 In Abschnitt~\ref{sec:fulibFeedback} wird dies genutzt, um die fulibFeedback-Erweiterung zu veröffentichen.
 
-\todom{Vielleicht sollte das wo anders hin?}
 \ac{vsc} wurde als Grundlage für diese Arbeit aus zwei Gründen gewählt.
 Einerseits ist die Entwicklung von Erweiterungen im Vergleich zu der \ac{ide} IntelliJ IDEA deutlich einfacher, da die Logik mit dem \ac{lsp} wiederverwendbar implementiert werden kann.
 IntelliJ IDEA bietet dafür keine eigene Unterstützung, stattdessen müssen Plugins von Dritten
@@ -127,7 +122,7 @@ Diese werden nachfolgend kurz erläutert.
     \item[Trennung von Technologien]
     Ein weiterer Vorteil des \acp{lsp} ist die Möglichkeit, Server und Client in unterschiedlichen Programmiersprachen und Frameworks zu entwickeln.
     Dies kann sprachseitig die Serverentwicklung vereinfachen, da beispielsweise Teile der Implementierung des Compilers wiederverwendet werden können.\cite{why-lsp}
-    \item[Quadratischer Entwicklungsaufwand]
+    \item[Trennung von Prozessen]
     Zuletzt nennt Microsoft die Prozesstrennung als vorteilhaft, welche die parallele Ausführung von rechenintensiven Aufgaben erlaubt.\cite{why-lsp}
     Abhängig von der Architektur des Editors ist dies jedoch auch ohne ein solches Protokoll möglich.
     \footnote{Beispielsweise in IntelliJ, das Vorgaben für Multithreading macht um schreibende Aktionen (Texteingabe, \ldots) von lesenden Aufgaben (Syntaxanalyse, Diagnostics, Highlighting, \ldots) zu trennen. Siehe \url{https://plugins.jetbrains.com/docs/intellij/general-threading-rules.html}.}
@@ -167,7 +162,7 @@ Beim Start des Servers wird aus diesem Grund kommuniziert, welche Funktionen bei
     Ersteres hat aus diesem Grund eine eigene Schnittstelle.
 \end{itemize}
 
-Trotz der Bezeichnung \textbf{Language} Server Protocol ist dieses nicht nur für den Einsatz für Programmiersprachen geeignet.
+Trotz der Bezeichnung Language Server Protocol ist dieses nicht nur für den Einsatz für Programmiersprachen geeignet.
 Mit den bereitgestellten Schnittstellen können auch andere Entwicklerwerkzeuge implementiert werden.
 Durch Diagnostics können beispielsweise auch Rechtschreibprüfung oder Linter\footnote{Programme, die Quellcode anhand von verschiedener Analyseverfahren auf häufige Fehlerquellen untersuchen} umgesetzt werden.
 In Abschnitt~\ref{sec:fulibFeedback} wird erläutert, wie die fulibFeedback-Erweiterung die Diagnostics und Code Actions des \ac{lsp} anwendet.

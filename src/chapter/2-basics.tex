@@ -37,30 +37,30 @@
 fulib.org ist eine Webanwendung, die bereits 2019 im Rahmen von~\cite{explain} konzipiert und durch~\cite{bachelor-thesis} erweitert wurde.
 Sie besteht aus einigen Modulen, die nachfolgend kurz beschrieben werden.
 
-\paragraph{Scenarios}
+\subsubsection{Scenarios}
 Das erste Modul der Anwendung ist ein interaktiver Editor für die Szenario-Sprache aus~\cite{explain}.
 Diese besteht aus textuellen Beispielszenarien, die einer festen Grammatik folgen.
 Ein Compiler übersetzt die Szenarien in Java-Code und generiert dabei Klassen für ein Datenmodell mit~\cite{fulib}.
 In~\cite{bachelor-thesis} wurde erstmals eine Erweiterung der Sprache umgesetzt, die gezielt die Bewertung von Aufgaben ermöglichen sollte.
 Dafür wurde spezielle Syntax zur Mustererkennung auf Objektstrukturen entwickelt, die besonders für Fälle geeignet war, in der die Benennung von Variablen, Attributen und Assoziationen nicht festgelegt war.
 Nachfolgend wird die Szenario-Sprache und der Editor auf fulib.org nicht weiter betrachtet.
-Es handelt sich jedoch um wichtige Hintergründe und Erkenntnisse, die in den Abschnitten~\ref{sec:expanding-fulib.org} und~\ref{par:renaming-and-refactoring} wieder aufgegriffen werden.
+Es handelt sich jedoch um wichtige Hintergründe und Erkenntnisse, die in den Abschnitten~\ref{sec:expanding-fulib.org} und~\ref{sec:renaming-and-refactoring} wieder aufgegriffen werden.
 
-\paragraph{Docs}
+\subsubsection{Docs}
 Hier kann die Dokumentation für verwandte Werkzeuge aus dem fulib-Toolkit nachgelesen werden.
 Diese wird direkt von den jeweiligen GitHub-Repositories bezogen, ist also nicht Teil der Webanwendung selber.
 Insbesondere befindet sich hier das Benutzerhandbuch von fulibFeedback.
 
-\paragraph{Projects}
+\subsubsection{Projects}
 Dieser Teil der Webanwendung ist eine Prototyp für eine Online-\ac{ide}.
 Dort können Projekte erstellt werden, die im Gegensatz zum Szenario-Editor mehrere Dateien umfassen können.
 Insbesondere können hier Gradle- und Java-Dateien betrachtet und bearbeitet werden.
 Ein Dateibaum zeigt Ordner und darin befindliche Dateien jeglicher Art.
 Mit einem Web-Terminal können beliebige Kommandozeilenbefehle ausgeführt werden, darunter auch die zum Bauen und Ausführen verwendeten Gradle-Befehle.
 Die Projekte ermöglichen folglich eine eingeschränkte Form der Anwendungsentwicklung in einer Desktop-\ac{ide}.
-Nachfolgend werden Projekte nicht weiter eingesetzt, sie bieten sich jedoch für zukünftige Erweiterungen in Abschnitt~\ref{par:future-projects} an.
+Nachfolgend werden Projekte nicht weiter eingesetzt, sie bieten sich jedoch für zukünftige Erweiterungen in Abschnitt~\ref{sec:future-projects} an.
 
-\paragraph{Assignments}
+\subsubsection{Assignments}
 Das ursprünglich in~\cite{bachelor-thesis} entwickelte Assignments-Modul von fulib.org ist nun erneut Zentrum der Implementierung.
 In Abschnitt~\ref{sec:expanding-fulib.org} wird vermehrt beleuchtet, welche Änderungen vorgenommen wurden.
 Nun soll zunächst beschrieben werden, wie der Stand des Moduls gegen Ende von~\cite{bachelor-thesis} war.
@@ -104,30 +104,30 @@ Das \ac{lsp} bezeichnet eine von Microsoft entwickelte Spezifikation\footnote{\u
 Das standardisierte Protokoll sollte einige Probleme lösen, die sowohl Entwicklern von Editoren als auch von Programmiersprachen bekannt waren.
 Diese werden nachfolgend kurz erläutert.
 
-\paragraph{Quadratischer Entwicklungsaufwand}
-Im Vordergrund stand das Problem des quadratischen Entwicklungsaufwands ohne ein standardisiertes Protokoll.
-Soll eine neue Programmiersprache Verwendung finden, ist es notwendig, Unterstützung in möglichst vielen Editoren zu implementieren.
-Dies ist teilweise durch Plugins möglich, die von den Sprachautoren bereitgestellt werden können, aber mitunter signifikanten Entwicklungsaufwand benötigen.
-Aus Sicht der Autoren hat jeder Editor andere Schnittstellen und Funktionen, die studiert und angebunden werden müssen.
-Dies kann die Adaption von Sprachen bei begrenztem Entwicklungsbudget einschränken.
-Aus Sicht der Editorautoren ergibt sich ein ähnliches Problem.
-Um einen neuen Editor marktfähig zu machen, sollte dieser eine große Anzahl populärer Programmiersprachen unterstützen.
-Diese können jedoch weitgehend unterschiedliche Schnittstellen und Werkzeuge bereitstellen, abhängig davon, ob die Editorunterstützung von den Sprachautoren bei der Konzeption von Compiler und anderen Tools eingearbeitet wurde.
-Unter Umständen ist es notwendig, große Teile der Syntax und Semantik dieser Sprachen neu zu implementieren, um Editorunterstützung zu ermöglichen.
-Insgesamt ergibt dies bei $n$ Editoren und $m$ Sprachen einen Aufwand von $n \cdot m$ notwendigen Integrationen.
-Mit dem \ac{lsp} wird dieses Problem aus Sicht beider Seiten gelöst.
-Sprachautoren können einen Server bereitstellen, der gegen die Schnittstellen des \ac{lsp} entwickelt wird.
-Der Editor kann beliebige Sprachserver über die gleichen Schnittstellen ansprechen.
-Folglich müssen nur $n + m$ Werkzeuge entwickelt werden.\cite{why-lsp}
-
-\paragraph{Trennung von Technologien}
-Ein weiterer Vorteil des \acp{lsp} ist die Möglichkeit, Server und Client in unterschiedlichen Programmiersprachen und Frameworks zu entwickeln.
-Dies kann sprachseitig die Serverentwicklung vereinfachen, da beispielsweise Teile der Implementierung des Compilers wiederverwendet werden können.\cite{why-lsp}
-
-\paragraph{Trennung von Prozessen}
-Zuletzt nennt Microsoft die Prozesstrennung als vorteilhaft, welche die parallele Ausführung von rechenintensiven Aufgaben erlaubt.\cite{why-lsp}
-Abhängig von der Architektur des Editors ist dies jedoch auch ohne ein solches Protokoll möglich.
-\footnote{Beispielsweise in IntelliJ, das Vorgaben für Multithreading macht um schreibende Aktionen (Texteingabe, \ldots) von lesenden Aufgaben (Syntaxanalyse, Diagnostics, Highlighting, \ldots) zu trennen.\footnote{\url{https://plugins.jetbrains.com/docs/intellij/general-threading-rules.html}}}
+\begin{description}
+    \item[Quadratischer Entwicklungsaufwand]
+    Im Vordergrund stand das Problem des quadratischen Entwicklungsaufwands ohne ein standardisiertes Protokoll.
+    Soll eine neue Programmiersprache Verwendung finden, ist es notwendig, Unterstützung in möglichst vielen Editoren zu implementieren.
+    Dies ist teilweise durch Plugins möglich, die von den Sprachautoren bereitgestellt werden können, aber mitunter signifikanten Entwicklungsaufwand benötigen.
+    Aus Sicht der Autoren hat jeder Editor andere Schnittstellen und Funktionen, die studiert und angebunden werden müssen.
+    Dies kann die Adaption von Sprachen bei begrenztem Entwicklungsbudget einschränken.
+    Aus Sicht der Editorautoren ergibt sich ein ähnliches Problem.
+    Um einen neuen Editor marktfähig zu machen, sollte dieser eine große Anzahl populärer Programmiersprachen unterstützen.
+    Diese können jedoch weitgehend unterschiedliche Schnittstellen und Werkzeuge bereitstellen, abhängig davon, ob die Editorunterstützung von den Sprachautoren bei der Konzeption von Compiler und anderen Tools eingearbeitet wurde.
+    Unter Umständen ist es notwendig, große Teile der Syntax und Semantik dieser Sprachen neu zu implementieren, um Editorunterstützung zu ermöglichen.
+    Insgesamt ergibt dies bei $n$ Editoren und $m$ Sprachen einen Aufwand von $n \cdot m$ notwendigen Integrationen.
+    Mit dem \ac{lsp} wird dieses Problem aus Sicht beider Seiten gelöst.
+    Sprachautoren können einen Server bereitstellen, der gegen die Schnittstellen des \ac{lsp} entwickelt wird.
+    Der Editor kann beliebige Sprachserver über die gleichen Schnittstellen ansprechen.
+    Folglich müssen nur $n + m$ Werkzeuge entwickelt werden.\cite{why-lsp}
+    \item[Trennung von Technologien]
+    Ein weiterer Vorteil des \acp{lsp} ist die Möglichkeit, Server und Client in unterschiedlichen Programmiersprachen und Frameworks zu entwickeln.
+    Dies kann sprachseitig die Serverentwicklung vereinfachen, da beispielsweise Teile der Implementierung des Compilers wiederverwendet werden können.\cite{why-lsp}
+    \item[Quadratischer Entwicklungsaufwand]
+    Zuletzt nennt Microsoft die Prozesstrennung als vorteilhaft, welche die parallele Ausführung von rechenintensiven Aufgaben erlaubt.\cite{why-lsp}
+    Abhängig von der Architektur des Editors ist dies jedoch auch ohne ein solches Protokoll möglich.
+    \footnote{Beispielsweise in IntelliJ, das Vorgaben für Multithreading macht um schreibende Aktionen (Texteingabe, \ldots) von lesenden Aufgaben (Syntaxanalyse, Diagnostics, Highlighting, \ldots) zu trennen.\footnote{\url{https://plugins.jetbrains.com/docs/intellij/general-threading-rules.html}}}
+\end{description}
 
 Nachfolgend werden einige Editor-Funktionen beschrieben, die das \ac{lsp} anbietet.
 Grundsätzlich sind weder Client noch Server von der Spezifikation verpflichtet, diese anzubieten.
@@ -178,7 +178,7 @@ Die Textsuche basiert in großen Teilen auf der quelloffenenen Java-Bibliothek L
 Elasticsearch implementiert Teile der Textanalyse, Indexierung, Suche, und Highlighting mit Lucene.
 Diese werden nachfolgend datailliert beschrieben.
 
-\paragraph{Analyse}
+\subsubsection{Analyse}
 Die Analyse von Textdaten umfasst im Fall von natürlicher Sprache zwei Schritte, die Tokenisierung und Normalisierung.
 Bei der Tokenisierung wird ein zusammenhängender Text in sogenannte Tokens aufgeteilt, welche meist einzelne Wörter abbilden.
 Dabei werden standardmäßig Leerzeichen und Zeichen wie Punkte, Kommata oder Anführungsstriche verworfen.
@@ -192,7 +192,7 @@ Es ist möglich, eigene Analyseverfahren zu definieren, die aus Zeichenfiltern, 
 \footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-custom-analyzer.html}}
 So kann beispielsweise die Textanalyse für Programmiersprachen definiert werden, wie in Abschnitt~\ref{subsec:solution-detail-and-evaluation} demonstriert wird.
 
-\paragraph{Indexierung}
+\subsubsection{Indexierung}
 Ein Index dient der Suchoptimierung, um häufige Anfragen schneller duchführen zu können.
 Die genaue Form und verwendete Datenstruktur hängt davon ab, welcher Datentyp verwendet wird und für welche Art von Suchanfragen der Index konfiguriert wurde.
 Ein einfacher Index kann beispielsweise eine Menge von Tokens speichern, die im Text vorkommen.
@@ -202,7 +202,7 @@ Ist die aus der Suchanfrage entstehende Menge eine Teilmenge der Tokens des Orig
 Dafür ist für jedes Dokument lediglich eine Mengenoperation notwendig und kein Auslesen und Vergleichen jedes einzelnen Zeichens des Originaltexts.
 \footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-index-search-time.html}}
 
-\paragraph{Suche}
+\subsubsection{Suche}
 Für die Textsuche bietet Elasticsearch verschiedenen Arten von Anfragen und Optionen.
 Einfache Beispiele für Anfragetypen sind die exakte Übereinstimmung, Textsuche, Wildcards und die Suche mit regulären Ausdrücken.
 \footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html}}
@@ -211,7 +211,7 @@ Diese können mit bool'schen Operatoren kombiniert werden, wobei zwischen Beding
 Ferner können Optionen für Sortierung, Aggregationen und generelle Datenkontrolle (Anzahl der Ergebnisse, Pagination\footnote{Aufteilung von einer großen Anzahl von Suchergebnissen (>1000) auf mehrere Seiten.}, Timeout, Asynchronität, etc.) angegeben werden.
 \footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/search-your-data.html}}
 
-\paragraph{Highlighting}
+\subsubsection{Highlighting}
 Gewöhnliche Suchanfragen geben lediglich die Ergebnisse zurück, die mit der Anfrage übereinstimmen, jedoch nicht, an welcher Stelle im Text die gesuchten Wörter vorkommen.
 Mit einem Highlighter, der als Suchoption aus Performancegründen aktiviert werden muss, können diese Stellen gefunden werden, um beispielsweise auf einer Seite mit Suchergebnissen die Wörter farblich hervorzuheben.
 \footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/highlighting.html}}

@@ -217,11 +217,9 @@ Diese werden nachfolgend kurz erläutert.
 
 Nachfolgend werden einige Editor-Funktionen beschrieben, die das \ac{lsp} anbietet.
 Grundsätzlich sind weder Client noch Server von der Spezifikation verpflichtet, diese anzubieten.
-Wird eine Editorfunktion von dem Server nicht unterstützt, so wird standardmäßig keine Aktion durchgeführt.
-\footnote{\url{https://microsoft.github.io/language-server-protocol/overviews/lsp/overview/}}
+Wird eine Editorfunktion von dem Server nicht unterstützt, so wird standardmäßig keine Aktion durchgeführt.\cite{lsp-overview}
 Gleichermaßen kann der Server verschiedene Editoraktionen aufrufen, die nicht zwangsweise unterstützt werden müssen.
-Beim Start des Servers wird aus diesem Grund kommuniziert, welche Funktionen beide Parteien bereitstellen.
-\footnote{\url{https://microsoft.github.io/language-server-protocol/specifications/specification-3-17/\#initialize}}
+Beim Start des Servers wird aus diesem Grund kommuniziert, welche Funktionen beide Parteien bereitstellen.\cite[Initialize Request]{lsp-spec}
 
 \begin{itemize}
     \item \textbf{Autovervollständigung}.
@@ -272,10 +270,8 @@ Die Normalisierung ändert die entstandenen Tokens, sodass bei der Suche ähnlic
 Dafür werden beispielsweise Groß- und Kleinschreibung verworfen, Plural zu Singular geändert, der Wortstamm gebildet (Stemming), oder Synonyme verwendet.
 Weiterhin können sogenannte Stepwords, Wörter die keine semantische Relevanz im Text haben, in der Normalisierung gefiltert werden.
 Um dies sinnvoll umsetzen zu können, muss für gewöhnlich die zugrundeliegende Sprache des Textes definiert werden.
-Tokenisierung und Normalisierung können dann sprachspezifische Syntaxregeln und Wörterbücher verwenden.
-\footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-overview.html}}
-Es ist möglich, eigene Analyseverfahren zu definieren, die aus Zeichenfiltern, Tokenisierer und Stepwordfiltern bestehen.
-\footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-custom-analyzer.html}}
+Tokenisierung und Normalisierung können dann sprachspezifische Syntaxregeln und Wörterbücher verwenden.\cite{elastic-analysis-overview}
+Es ist möglich, eigene Analyseverfahren zu definieren, die aus Zeichenfiltern, Tokenisierer und Stepwordfiltern bestehen.\cite{elastic-custom-analyser}
 So kann beispielsweise die Textanalyse für Programmiersprachen definiert werden, wie in Abschnitt~\ref{subsec:solution-detail-and-evaluation} demonstriert wird.
 
 \subsubsection{Indexierung}
@@ -285,22 +281,17 @@ Ein einfacher Index kann beispielsweise eine Menge von Tokens speichern, die im 
 Dabei werden die Häufigkeit, Position und Form der Wörter im Originaltext nicht beachtet.
 Wird eine Suchanfrage mit gleicher Tokenisierung und Normalisierung analysiert, entsteht eine vergleichbare Menge.
 Ist die aus der Suchanfrage entstehende Menge eine Teilmenge der Tokens des Originaltexts, ist das Originaldokument ein gültiges Suchergebnis.
-Dafür ist für jedes Dokument lediglich eine Mengenoperation notwendig und kein Auslesen und Vergleichen jedes einzelnen Zeichens des Originaltexts.
-\footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-index-search-time.html}}
+Dafür ist für jedes Dokument lediglich eine Mengenoperation notwendig und kein Auslesen und Vergleichen jedes einzelnen Zeichens des Originaltexts.\cite{elastic-index-search-time}
 
 \subsubsection{Suche}
 Für die Textsuche bietet Elasticsearch verschiedenen Arten von Anfragen und Optionen.
-Einfache Beispiele für Anfragetypen sind die exakte Übereinstimmung, Textsuche, Wildcards und die Suche mit regulären Ausdrücken.
-\footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html}}
-Diese können mit bool'schen Operatoren kombiniert werden, wobei zwischen Bedingungen, die das Ranking von Ergebnissen beeinflussen, und Filtern, welche die Inklusion von Ergebnissen ohne Einfluss auf das Ranking kontrollieren, unterschieden wird.
-\footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html}}
-Ferner können Optionen für Sortierung, Aggregationen und generelle Datenkontrolle (Anzahl der Ergebnisse, Pagination\footnote{Aufteilung von einer großen Anzahl von Suchergebnissen (>1000) auf mehrere Seiten.}, Timeout, Asynchronität, etc.) angegeben werden.
-\footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/search-your-data.html}}
+Einfache Beispiele für Anfragetypen sind die exakte Übereinstimmung, Textsuche, Wildcards und die Suche mit regulären Ausdrücken.\cite{elastic-query-dsl}
+Diese können mit bool'schen Operatoren kombiniert werden, wobei zwischen Bedingungen, die das Ranking von Ergebnissen beeinflussen, und Filtern, welche die Inklusion von Ergebnissen ohne Einfluss auf das Ranking kontrollieren, unterschieden wird.\cite{elastic-bool-query}
+Ferner können Optionen für Sortierung, Aggregationen und generelle Datenkontrolle (Anzahl der Ergebnisse, Pagination\footnote{Aufteilung von einer großen Anzahl von Suchergebnissen (>1000) auf mehrere Seiten.}, Timeout, Asynchronität, etc.) angegeben werden.\cite{elastic-search-data}
 
 \subsubsection{Highlighting}
 Gewöhnliche Suchanfragen geben lediglich die Ergebnisse zurück, die mit der Anfrage übereinstimmen, jedoch nicht, an welcher Stelle im Text die gesuchten Wörter vorkommen.
-Mit einem Highlighter, der als Suchoption aus Performancegründen aktiviert werden muss, können diese Stellen gefunden werden, um beispielsweise auf einer Seite mit Suchergebnissen die Wörter farblich hervorzuheben.
-\footnote{\url{https://www.elastic.co/guide/en/elasticsearch/reference/current/highlighting.html}}
+Mit einem Highlighter, der als Suchoption aus Performancegründen aktiviert werden muss, können diese Stellen gefunden werden, um beispielsweise auf einer Seite mit Suchergebnissen die Wörter farblich hervorzuheben.\cite{elastic-highlighting}
 In Abschnitt~\ref{subsec:solution-detail-and-evaluation} wird dies eingesetzt, um den Originalquellcode nach einer Suchanfrage zu rekonstruieren.
 
 \subsection{Sonstige}\label{subsec:other-libraries}
@@ -313,8 +304,8 @@ Aufgrund der umfänglichen Auswirkungen der Frameworks auf den Entwicklungsproze
 Die Programmiersprache\footnote{\url{https://www.typescriptlang.org/}} wird für sämtliche Software im Rahmen dieser Arbeit eingesetzt.
 Sie bietet gegenüber JavaScript eine höhere Sicherheit gegen Programmierfehler durch die Typisierung.
 Im Vergleich zu Java ist weniger Boilerplate-Code notwendig, um vergleichbare Features beispielsweise in einem Backend zu implementieren.
-Für die Entwicklung der \ac{vsc}-Erweiterung ist JavaScript oder TypeScript erforderlich, letzteres wird von Microsoft jedoch empfohlen.\footnote{\url{https://code.visualstudio.com/api/get-started/your-first-extension}}
-Der Language Server kann in einer beliebigen Sprache implementiert werden, die Dokumentation von Microsoft bietet jedoch Beispiele hauptsächlich in TypeScript an.\footnote{\url{https://code.visualstudio.com/api/language-extensions/language-server-extension-guide}\label{fn:language-server-extension-guide}}.
+Für die Entwicklung der \ac{vsc}-Erweiterung ist JavaScript oder TypeScript erforderlich, letzteres wird von Microsoft jedoch empfohlen.\cite{vsc-first-extension}
+Der Language Server kann in einer beliebigen Sprache implementiert werden, die Dokumentation von Microsoft bietet jedoch Beispiele hauptsächlich in TypeScript an.\cite{vsc-language-server-guide}
 
 \subsubsection{Angular}
 Das Angular\footnote{\url{https://angular.io/}}-Framework von Google wird für die Implementierung der gesamten Weboberfläche von fulib.org verwendet.
@@ -340,4 +331,4 @@ Beispiele dafür sind Validierung, Generierung von \ac{api}-Dokumentation, Authe
 NestJS-Server werden ebenfalls in JavaScript oder bevorzugt TypeScript implementiert.
 Neben dem Einsatz für \ac{http}-Server kann NestJS auch als generelles Dependency Injection-Framework verwendet werden.
 Dadurch ist es möglich, einen Language Server damit zu implementieren.
-Im Gegensatz zur der dokumentierten\footref{fn:language-server-extension-guide} Implementierung kann dadurch bessere Trennung von Zuständigkeiten und eine generelle erweiterbare Grundarchitektur geschaffen werden.
+Im Gegensatz zur der dokumentierten\cite{vsc-language-server-guide} Implementierung kann dadurch bessere Trennung von Zuständigkeiten und eine generelle erweiterbare Grundarchitektur geschaffen werden.

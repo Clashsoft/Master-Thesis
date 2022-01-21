@@ -86,6 +86,47 @@ Aus diesem Grund wird auch kein Anspruch auf Vollständigkeit der Daten gestellt
 Vergleichsweise große Dateien (> 64KB) werden nicht gespeichert, da gewöhnliche Quellcode-Dateien aus Hausaufgaben-Lösungen diese Größe nicht überschreiten.
 \footnote{\todo{Source?}}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/assignment-create-tasks-list}
+    \caption{Baum-Editor für Teilaufgaben}
+    \label{fig:assignment-create-tasks-list}
+\end{figure}
+
+Nun muss die Struktur des Aufgabenblatts anhand von Teilaufgaben, genannt Tasks, definiert werden.
+Diese können beliebig geschachtelt und angeordnet werden, weshalb ein spezieller Editor für die Bearbeitung notwendig ist.
+Abbildung~\ref{fig:assignment-create-tasks-list} zeigt, wie dieser in der Oberfläche aussieht.
+Jeder Task besteht mindestens aus einer kurzen Beschreibung, die auch als Titel dienen kann, und einer Punktzahl.
+In der Abbildung ist bereits erkennbar, dass eine Punktzahl nicht zwangsweise positiv sein muss.
+Ein Task mit negativer Punktzahl wird als Abzug bezeichnet und kann besonders dann eingesetzt werden, wenn eine Aufgabe aus vielen ungeordneten Teilen besteht.
+Dann ist es möglich, in einem Feedback nur die zutreffenden Abzüge darzustellen und damit die Übersichtlichkeit und Nachvollziehbarkeit zu verbessern.
+
+Neben jedem Task werden vier Buttons angezeigt.
+Der blaue Stift öffnet die Detailansicht des Tasks, die in den Abbildungen~\ref{fig:assignment-create-tasks-detail} dargestellt ist und im Folgenden beschrieben wird.
+Mit dem Pfeile-Button kann ein Task aus- oder eingeklappt werden, um die Untertasks anzuzeigen oder zu verbergen.
+Die nächste Schaltfläche kann verwendet werden, um die Reihenfolge der Tasks anzupassen oder Tasks unter andere zu verschieben.
+Zuletzt erlaubt der Mülleimer-Button das Löschen eines Tasks.
+Dabei handelt es sich nicht um eine sofortige Löschung, der Task wird lediglich als gelöscht markiert und kann wiederhergestellt werden, um eventuellen Datenverlust zu vermeiden.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/assignment-create-tasks-detail-1}
+        \caption{Detailansicht eines positiven Tasks mit Untertasks}
+        \label{fig:assignment-create-tasks-detail-1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/assignment-create-tasks-detail-2}
+        \caption{Detailansicht eines negativen Tasks}
+        \label{fig:assignment-create-tasks-detail-2}
+    \end{subfigure}
+    \caption{Detailansicht zweier Tasks}
+    \label{fig:assignment-create-tasks-detail}
+\end{figure}
+
 \todo{
     Teilaufgaben, Punkteberechnung.
     GitHub Classroom Import.

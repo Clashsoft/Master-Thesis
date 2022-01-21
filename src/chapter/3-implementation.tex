@@ -29,6 +29,63 @@ Dies ist Inhalt von Abschnitt~\ref{subsec:code-search}.
 
 \subsection{Erstellen von Assignments}\label{subsec:creating-assignments}
 
+Die Benutzung von fulib.org als Werkzeug zum Bewerten von Hausaufgaben erfordert zunächst einige Vorbereitungsmaßnahmen.
+Diese bestehen primär aus der Erstellung eines Assignments, das die Rahmendaten und Teilaufgaben der Hausaufgabe anders als das Hausaufgabenblatt in einem maschinenverarbeitbaren Format speichert.
+Die Erstellung des Assignments verläuft über ein mehrteiliges Formular, das nachfolgend betrachtet wird.
+In~\cite{bachelor-thesis} wurde bereits ein ähnlicher Ablauf beschrieben, es wurde jedoch für diese Arbeit eine Neugestaltung vorgenommen, um die wachsenden Anforderungen sinnvoll unterzubringen.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/assignment-create-head}
+    \caption{Kopf des Formulars zum Erstellen von Assignments}
+    \label{fig:assignment-create-head}
+\end{figure}
+
+Abbildung~\ref{fig:assignment-create-head} stellt den Kopf des Formulars da, der stets sichtbar ist.
+Verschiedene Registerkarten stellen die Aspekte dar, aus denen ein Assignment besteht.
+Gleichzeitig ergibt sich aus ihnen eine logische Bearbeitungsreihenfolge der Schritte, in die sich der Erstellungsprozess unterteilt.
+Nachfolgend werden einige dieser Aspekte und Schritte beschrieben.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/assignment-create-info}
+    \caption{Formular für Rahmeninformationen eines Assignments}
+    \label{fig:assignment-create-info}
+\end{figure}
+
+Zunächst werden einige Rahmeninformationen definiert.
+Abbildung~\ref{fig:assignment-create-info} zeigt das zugehörige Formular.
+Dazu gehören ein Titel (\textbf{Title}) für das Assignment, welcher der Zuordnung dient.
+Ein Ansprechpartner, beispielsweise die Übungsleitung, und dessen Email-Adresse werden in den Feldern \textbf{Contact Name} und \textbf{Contact Email} festgelegt.
+Die optionale Abgabefrist (\textbf{Deadline}) hat zwei wesentliche Verwendungszwecke.
+Einerseits wird diese für den automatischen Import verwendet, der in Kürze anhand der GitHub Classroom-Integration erläutert wird.
+Andererseits kann anhand der Deadline dargestellt werden, welche Lösungen zu spät eingereicht wurden.
+Ein Beispiel dafür wird in Abschnitt~\ref{subsec:grading} gezeigt.
+Die Beschreibung (\textbf{Description}) kann weitere Informationen über das Assignment enthalten, wird aber nachfolgend nicht verwendet.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/assignment-create-classroom}
+    \caption{Formular für GitHub Classroom-Einstellungen eines Assignments}
+    \label{fig:assignment-create-classroom}
+\end{figure}
+
+Auf der nächsten Seite des Formulars können Angaben für die GitHub Classroom-Integration gemacht werden.
+Abbildung~\ref{fig:assignment-create-classroom} zeigt ein Bild dieses Formulars.
+Dafür müssen der Name der GitHub-Organisation (\textbf{Organization}) und das Präfix (\textbf{Prefix}) konfiguriert werden.
+Dies ermöglicht die manuelle oder zum Zeitpunkt der Deadline automatische Importierung von Lösungen von der Platform.
+Anhand der Search-\ac{api} von GitHub\footnote{\url{https://docs.github.com/en/rest/reference/search\#search-repositories}} wird nach allen Repositories in der angegebenen Organisation gesucht, deren Name mit dem Präfix beginnt.
+Aus dem Repository-Name ohne Präfix kann der GitHub-Benutzername des Studierenden ermittelt werden, der für die Zuordnung der Lösung verwendet wird.
+In Abschnitt~\ref{subsec:grading} ist ein Beispiel für die entstehende Lösungstabelle sichtbar.
+Weiterhin wird das neueste Commit zum Zeitpunkt des Imports gespeichert, um die Reproduzierbarkeit einer Bewertung zu gewährleisten.
+Insbesondere wird dadurch sichergestellt, dass Studierende ihre Lösungen nicht verfälschen, indem sie Änderungen am Quellcode nach Ablauf der Abgabefrist durchführen oder hochladen.
+Anhand des Commits kann der exakte Stand zum Zeitpunkt der Abgabefrist wiederhergestellt werden.
+Ist der Haken \textbf{Code Search} gesetzt, werden neben dem Commit auch die Dateien des Repositories heruntergeladen und separat gespeichert.
+Diese dienen nicht der Reproduzierbarkeit, sondern der Textsuche, wie in Abschnitt~\ref{subsec:code-search} näher erläutert wird.
+Aus diesem Grund wird auch kein Anspruch auf Vollständigkeit der Daten gestellt.
+Vergleichsweise große Dateien (> 64KB) werden nicht gespeichert, da gewöhnliche Quellcode-Dateien aus Hausaufgaben-Lösungen diese Größe nicht überschreiten.
+\footnote{\todo{Source?}}
+
 \todo{
     Teilaufgaben, Punkteberechnung.
     GitHub Classroom Import.

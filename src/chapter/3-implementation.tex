@@ -131,10 +131,48 @@ Dabei handelt es sich nicht um eine sofortige Löschung, der Task wird lediglich
     \label{fig:assignment-create-tasks-detail}
 \end{figure}
 
-\todo{
-    Teilaufgaben, Punkteberechnung.
-    GitHub Classroom Import.
-}
+Die Detailansichten eines positiven Tasks mit Untertasks und eines negativen Tasks sind jeweils in den Abbildungen~\ref{fig:assignment-create-tasks-detail-1} und~\ref{fig:assignment-create-tasks-detail-2} sichtbar.
+In dem modalen Formular kann die Beschreibung und die Punktzahl eingestellt werden.
+In der ersten Abbildung ist zu sehen, dass die Existenz von Unteraufgaben die automatische Berechnung der Punktzahl ermöglicht, weshalb der Zauberstab-Button neben dem Eingabefeld sichtbar ist.
+Die Berechnung behandelt Unteraufgaben mit negativen Punktzahlen gesondert, indem jeweils deren absoluter Betrag verwendet wird.
+Das optionale Eingabefeld \textbf{Filename Glob} ist für die in Abschnitt~\ref{subsec:code-search} beschriebene Code Search relevant und wird dort separat beschrieben.
+Abbildung~\ref{fig:assignment-create-tasks-detail-2} zeigt eine Beispieleingabe.
+Der Editor \textbf{Verification} wird für die automatische Bewertung mit fulibScenarios und dessen Pattern Matching-Erweiterung aus~\cite{bachelor-thesis} verwendet und ist in dieser Arbeit nicht weiter relevant.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/assignment-create-tasks-markdown}
+    \caption{Markdown-Editor für Teilaufgaben}
+    \label{fig:assignment-create-tasks-markdown}
+\end{figure}
+
+Die Schaltfläche zum Wechseln zwischen \textbf{Markdown} und \textbf{List} erlaubt die Bearbeitung der Tasks in einer auf Markdown basierenden Textformat.
+Abbildung~\ref{fig:assignment-create-tasks-markdown} zeigt einen Ausschnitt der Teilaufgabenliste aus Abbildung~\ref{fig:assignment-create-tasks-list} in diesem Format sowie der zugehörige Hilfetext zur Erklärung.
+Das Format kann in wenigen Sätzen beschrieben werden.
+Jeder Task wird in eine neue Zeile geschrieben, die entweder der Listensyntax (\code{-} am Anfang) oder der Überschriftensyntax (Zwei oder mehrere \code{\#} am Anfang) von Markdown folgt.
+Nach dem einleitenden Zeichen folgt die Beschreibung und die Punktzahl, optional mit \code{x/} vorangestellt und/oder \code{P} nachgestellt, in Klammern.
+Am Ende der Zeile kann ein \ac{html}-Kommentare weitere Daten des Tasks wie dessen eindeutige \ac{id} und Dateinamen-Glob in \ac{json} kodiert enthalten.
+Folgt eine Zeile nicht diesem Format, wird sie rot markiert, um den Benutzer auf das Problem hinzuweisen.
+
+Das Format wurde gewählt, da die Bewertungsrichtlinien der Veranstaltung Programmieren und Modellieren bereits vor Beginn dieser Arbeit in ähnlichem Format vorlagen.
+Diese Richtlinien haben ihre Ursprünge aus der Verwendung von GitHub, wo Issues, Pull Requests und Kommentare in Markdown verfasst werden können und dann in Listenform mit Teilüberschriften dargestellt werden.
+Meist war es während der Evaluation möglich, die Bewertungsrichtlinien zu einzusetzen und mit wenigen Änderungen an das Format anzupassen.
+
+Die Registerkarten \textbf{Template} und \textbf{Sample} aus Abbildung~\ref{fig:assignment-create-head} werden an dieser Stelle nicht näher erläutert.
+Es handelt sich um spezifische Einstellungen für die Bewertung von Szenarien aus~\cite{bachelor-thesis}, die für die Zwecke dieser Arbeit nicht anwendbar sind.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/assignment-create-preview}
+    \caption{Abschließende Vorschau vor Erstellen eines Assignments}
+    \label{fig:assignment-create-preview}
+\end{figure}
+
+Der letzte Schritt der Assignment-Erstellung befindet sich auf der Registerkarte \textbf{Preview}, welche eine Übersicht über das Assignment anhand einer Vorschau anzeigt.
+In Abbildung~\ref{fig:assignment-create-preview} wird diese dargestellt.
+In der Vorschau werden Titel, Autor, Abgabefrist und, falls vorhanden, die Beschreibung angezeigt.
+Sämtliche Teilaufgaben werden in einer geschachtelten Liste mit Beschreibung und Punktzahl präsentiert.
+Schließlich kann das Assignment mit dem \textbf{Submit}-Button erstellt und veröffentlicht werden.
 
 \subsection{Bewertung}\label{subsec:grading}
 

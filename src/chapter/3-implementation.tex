@@ -193,9 +193,53 @@ Der Button \textbf{Configure} wird für fulibFeedback eingesetzt und wird in Abs
 
 \subsection{Bewertung}\label{subsec:grading}
 
+Sobald die Bewertenden den Einladungslink für ein Assignment erhalten haben, können sie mit der Bewertung beginnen.
+Nachfolgend werden einige Schritte beschrieben, die dafür notwendig sind.
+Es handelt sich um wiederholende Abläufe, die jedoch nach kurzer Eingwöhnungszeit eine effiziente Arbeitsweise erlauben.
+Dies wird in Kapitel~\ref{ch:evaluation} näher beleuchtet.
+
+\subsubsection{Abgabentabelle}
+
+Begonnen wird in der Tabelle mit allen Abgaben unter dem Tab \textbf{Solutions}.
+Diese ist in Abbildung~\ref{fig:assignment-solutions-table} ausgeschnitten dargestellt.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/assignment-solutions-table}
+    \caption{Tabelle mit allen Abgaben nach dem Import}
+    \label{fig:assignment-solutions-table}
+\end{figure}
+
+In diesem Fall wurden die Lösungen automatisch nach Ablauf der Abgabefrist aus dem GitHub Classroom importiert.
+Die Tabelle gibt Auskunft über den GitHub-Benutzernamen\footnote{Für diese Abbildung wurden die Benutzernamen durch \texttt{*}-Symbole ersetzt.} und das Abgabedatum (\textbf{Submitted}), welches dem letzten Push\footnote{Bezeichnet die Aktion der Versionskontroll-Software Git, bei der lokale Commits auf den Remote-Server hochgeladen werden.}-Zeitpunkt vor der Frist entspricht.
+Bei einem nachträglichen manuellem Import ist es möglich, dass die Push-Zeit nach der Abgabefrist liegt.
+In diesem Fall wird das Abgabedatum rot markiert.
+Name, Matrikelnummer (\textbf{Student ID}) und E-Mail-Adresse können nicht von GitHub Classroom ermittelt werden, weshalb sie in der Tabelle leer sind.
+
+Die Punktzahl ist zunächst mit \texttt{?} als unausgewertet markiert.
+In der Abbildung wurden bereits einige Bewertungen vorgenommen, weshalb die zweite Person eine abschließende Punktzahl von 21 erhalten hat.
+Die gelb hinterlegte Punktzahl deutet an, dass eine Bewertung dieser Abgabe begonnen wurde, aber noch kein Feedback versendet wurde und daher keine Punktzahl feststeht.
+Eine türkise Farbe markiert Abgaben, die zwar noch nicht händisch bewertet wurden, aber in denen eine automatisch angelegte Bewertung von Code Search vorhanden ist.
+In Abgaben mit grauer Punktzahl ist keinerlei Bewertung vorhanden.
+Das Fragezeichen-Symbol neben \textbf{Points} gibt Auskunft über diese Farbgebung.
+
+Über die Textfelder unter \textbf{Assignee} können sich die Bewertenden die Abgaben zuordnen, für die sie zuständig sind.
+Dadurch wird sichergestellt, dass nicht versehentlich eine Abgabe von mehreren Bewertenden betrachtet wird.
+Die Textfelder bieten eine einfache Form der Autovervollständigung, sodass bei Eingabe weniger Buchstaben bereits der volle Name eines  Bewertenden vorgeschlagen wird, sofern dieser bereits an einer anderen Stelle eingetragen war.
+
+Mit der Suchleiste kann die Tabelle nach verschiedenen Kriterien gefiltert werden.
+Beispielsweise können Bewertende durch Eingabe ihres Namens nur die ihnen zugewiesenen Abgaben anzeigen, um für Übersicht zu sorgen.
+Die Syntax der Suche ist komplexer als eine einfache Textsuche, weshalb das Fragezeichen-Symbol eine detaillierte Beschreibung der Syntax anzeigen kann.
+
+Unter den \textbf{Actions} befinden sich die wichtigsten Aktionen, die für die Bewertung einer Abgabe relevant sind.
+Mit dem Augen-Button kann die Detailansicht der Abgabe geöffnet werden, in der die Bewertung einzelner Teilaufgaben stattfindet.
+Dies ist Inhalt des folgenden Abschnitts.
+Der graue GitHub-Button öffnet das Repository, von dem die Lösung importiert wurde, auf GitHub und zeigt dabei den Stand des letzten Commits vor der Abgabefrist.
+Der Button mit eingerahmten spitzen Klammern öffnet die Lösung sofort in einer \ac{ide}, indem das GitHub-Repository gecloned\footnote{Git-Bezeichnung für das Kopieren eines Online-Repositories in einen lokalen Ordner.} wird.
+Mit dem Einstellungs-Button neben der Suchleiste kann zwischen verschiedenen \acp{ide} (\ac{vsc}, Code-OSS und VSCodium\footnote{Jeweils alternative quelloffene Builds von \ac{vsc} ohne Microsoft-Branding.}) und Clone-Protokollen (https und ssh) gewählt werden.
+Der blaue Button mit eingekreistem Haken wird in einem späteren Abschnitt für das Versenden des Feedbacks verwendet.
+
 \todo{
-    Sharing.
-    QoL in Tabelle.
     Oberfläche für Evaluation und Snippets.
     Feedback mit GitHub Classroom, Email, etc.
 }

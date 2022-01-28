@@ -155,7 +155,7 @@ Abbildung~\ref{fig:assignment-create-tasks-markdown} zeigt einen Ausschnitt der 
 Das Format kann in wenigen Sätzen beschrieben werden.
 Jeder Task wird in eine neue Zeile geschrieben, die entweder der Listensyntax (\code{-} am Anfang) oder der Überschriftensyntax (Zwei oder mehrere \code{\#} am Anfang) von Markdown folgt.
 Nach dem einleitenden Zeichen folgt die Beschreibung und die Punktzahl, optional mit \code{x/} vorangestellt und/oder \code{P} nachgestellt, in Klammern.
-Am Ende der Zeile kann ein \ac{html}-Kommentare weitere Daten des Tasks wie dessen eindeutige \ac{id} und Dateinamen-Glob in \ac{json} kodiert enthalten.
+Am Ende der Zeile kann ein \ac{html}-Kommentare weitere Daten des Tasks wie dessen \ac{id} und Dateinamen-Glob in \ac{json} kodiert enthalten.
 Folgt eine Zeile nicht diesem Format, wird sie rot markiert, um den Benutzer auf das Problem hinzuweisen.
 
 Das Format wurde gewählt, da die Bewertungsrichtlinien der Veranstaltung Programmieren und Modellieren bereits vor Beginn dieser Arbeit in ähnlichem Format vorlagen.
@@ -253,8 +253,7 @@ Der blaue Button mit eingekreistem Haken wird in einem späteren Abschnitt für 
 
 Die Detailansicht einer Abgabe öffnet sich nach Klicken des Augen-Buttons in der Abgabetabelle.
 In Abbildung~\ref{fig:solution-head} ist sichtbar, dass auch diese Ansicht wieder in mehrere Tabs aufgeteilt ist, um übersichtlich zu bleiben.
-In der Kopfzeile wird der Name des Studierenden und die Abgabezeit stets angezeigt.
-Hier wurde der GitHub-Benutzername erneut durch \texttt{*}-Symbole ersetzt.
+In der Kopfzeile wird der Name\footnote{Hier wurde der GitHub-Benutzername erneut durch \texttt{*}-Symbole ersetzt.} des Studierenden und die Abgabezeit stets angezeigt.
 Für die Bewertung ist hauptsächlich der Tab \textbf{Solution \& Tasks} wichtig.
 Die Teilaufgaben werden wieder in einer Baumansicht dargestellt, wie in Abbildung~\ref{fig:solution-tasks} erkennbar ist.
 
@@ -271,7 +270,7 @@ Werden die maximal mögliche Punkte erreicht, wird der Tasks grün (z.B.\ 0/-1, 
 Teilpunkte werden gelb dargestellt (z.B.\ 6/8).
 Dabei wird zwischen explizit vergebenen, berechneten und implizit vorhandenen Bewertungen unterschieden.
 An der Bezeichnung \textbf{Graded by Name} statt \textbf{Grade} können von Bewertenden vergebene Punktzahlen identifiziert werden.
-Teilaufgaben mit eigenen Unteraufgaben berechnen ihre Punktzahl durch Summieren der darunterliegenden Punkte.
+Teilaufgaben mit eigenen Unteraufgaben berechnen ihre Punktzahl durch Summieren der darunterliegenden Punkte\footnote{\todo{Stimmt nicht ganz, genau genommen Maximale Punktzahl - Summe der Maximalen Punktzahl positiver Unteraufgaben + Summe der Punktzahlen aller Unteraufgaben.}}.
 Alle anderen Teilaufgaben erhalten standardmäßig null Punkte.
 Durch Klicken auf \textbf{Grade} oder \textbf{Graded by Name} kann die Bewertung einer Teilaufgabe angelegt oder bearbeitet werden.
 Abbildung~\ref{fig:evaluation-modal} das sich öffnende Modalfenster.

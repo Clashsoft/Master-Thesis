@@ -272,7 +272,7 @@ Weiterhin können sogenannte Stepwords, Wörter die keine semantische Relevanz i
 Um dies sinnvoll umsetzen zu können, muss für gewöhnlich die zugrundeliegende Sprache des Textes definiert werden.
 Tokenisierung und Normalisierung können dann sprachspezifische Syntaxregeln und Wörterbücher verwenden.\cite{elastic-analysis-overview}
 Es ist möglich, eigene Analyseverfahren zu definieren, die aus Zeichenfiltern, Tokenisierer und Stepwordfiltern bestehen.\cite{elastic-custom-analyser}
-So kann beispielsweise die Textanalyse für Programmiersprachen definiert werden, wie in Abschnitt~\ref{subsec:solution-detail-and-evaluation} demonstriert wird.
+So kann beispielsweise die Textanalyse für Programmiersprachen definiert werden, wie in Abschnitt~\ref{subsec:code-search} demonstriert wird.
 
 \subsubsection{Indexierung}
 Ein Index dient der Suchoptimierung, um häufige Anfragen schneller duchführen zu können.
@@ -292,7 +292,7 @@ Ferner können Optionen für Sortierung, Aggregationen und generelle Datenkontro
 \subsubsection{Highlighting}
 Gewöhnliche Suchanfragen geben lediglich die Ergebnisse zurück, die mit der Anfrage übereinstimmen, jedoch nicht, an welcher Stelle im Text die gesuchten Wörter vorkommen.
 Mit einem Highlighter, der als Suchoption aus Performancegründen aktiviert werden muss, können diese Stellen gefunden werden, um beispielsweise auf einer Seite mit Suchergebnissen die Wörter farblich hervorzuheben.\cite{elastic-highlighting}
-In Abschnitt~\ref{subsec:solution-detail-and-evaluation} wird dies eingesetzt, um den Originalquellcode nach einer Suchanfrage zu rekonstruieren.
+In Abschnitt~\ref{subsec:code-search} wird dies eingesetzt, um den Originalquellcode nach einer Suchanfrage zu rekonstruieren.
 
 \subsection{Sonstige}\label{subsec:other-libraries}
 

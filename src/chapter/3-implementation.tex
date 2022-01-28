@@ -297,9 +297,39 @@ Daher wurde besonderer Wert darauf gelegt, den Ablauf möglichst effizient zu ge
 Während der Bewertung einer Teilaufgabe im Modalfenster wird die Zeit gemessen, die dabei verstrichen ist.
 Darauf basierend wird eine Statistik berechnet, welche in Abschnitt~\ref{subsec:statistics} gezeigt und in Kapitel~\ref{ch:evaluation} für einige Realbeispiele ausgewertet wird.
 
-\todo{
-    Feedback mit GitHub Classroom, Email, etc.
-}
+\subsubsection{Feedback}
+
+Der letzte Schritt der Bewertung eines Studierenden ist das Versenden des Feedbacks.
+In der Abgabentabelle kann über den zugehörigen Button das Feedback-Modalfenster geöffnet werden, das in Abbildung~\ref{fig:submit-feedback} zu sehen ist.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/submit-feedback}
+    \caption{Modalfenster zum Versenden von Feedback}
+    \label{fig:submit-feedback}
+\end{figure}
+
+Hier kann nochmal anhand der Vorschau abschließend geprüft werden, ob die Bewertung und Punkteberechnung korrekt durchgeführt wurde.
+Daran können nun einige Aspekte der Feedback-Generierung erklärt werden.
+Zunächst ist erkennbar, dass nicht jede Teilaufgabe des Assignments hier vertreten ist.
+Insbesondere werden Abzüge, \ac{dh} Teilaufgaben mit negativer Punktzahl, nicht angezeigt, sofern sie nicht bewertet wurden.
+In seltenen Fällen bietet es sich an, bei diesen Teilaufgaben keine Punkte abzuziehen, aber dennoch ein Kommentar oder eine Hilfestellung in Form des Remarks anzugeben.
+Beispiel dafür ist die Teilaufgabe "Game -- name" in Abbildung~\ref{fig:submit-feedback}.
+Die Punktzahl wird dann nicht angezeigt, da eine Darstellung wie "(0P)" zu Verwirrung führen könnte.
+Teilaufgaben mit positiver Punktzahl werden immer angezeigt.
+
+Am Ende der Bewertung befindet sich stets ein automatisch generierter Fußzeilenbereich.
+Dort befinden sich Metadaten wie das Bewertungsdatum und der zugrundeliegende Commit.
+Die fulibFeedback-Einstellungen für \ac{vsc} werden in Abschnitt~\ref{sec:fulibFeedback} erneut erwähnt.
+
+Zum Versenden des Feedbacks werden mehrere Transportwege angeboten.
+Mit den Buttons \textbf{Copy Markdown} und \textbf{Copy HTML} kann das Feedback im jeweiligen Textformat in die Zwischenablage kopiert werden.
+\textbf{Draft Mail} öffnet das Standard-Mailprogramm des Benutzers und füllt automatisch den Rumpf der Email mit dem Feedback.
+Soll die Bewertung über GitHub erfolgen, wie es in diesem Anwendungsbeispiel intendiert ist, gibt es zwei Möglichkeiten des Versands.
+Einerseits kann das Formular zum Anlegen eines Issues auf GitHub mit \textbf{Draft Issue} geöffnet werden, sodass ein weiteres Mal der Text überprüft werden kann.
+Andererseits kann mit \textbf{Submit Issue} direkt ein Issue über die GitHub \ac{api} und angelegt und somit ein Schritt gespart werden.
+In jedem Fall wird die Gesamtpunktzahl, in Abbildung~\ref{fig:submit-feedback} beispielhaft 18/22, für die Abgabe gespeichert, damit sie in der Tabelle mit allen Abgaben angezeigt und die Abgabe eindeutig als bearbeitet erkannt werden kann.
+Die Bewertung des Studierenden ist nun abgeschlossen und es kann mit der nächsten fortgefahren werden.
 
 \subsection{Statistiken}\label{subsec:statistics}
 

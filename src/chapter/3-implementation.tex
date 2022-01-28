@@ -241,6 +241,48 @@ Der Button mit eingerahmten spitzen Klammern öffnet die Lösung sofort in einer
 Mit dem Einstellungs-Button neben der Suchleiste kann zwischen verschiedenen \acp{ide} (\ac{vsc}, Code-OSS und VSCodium\footnote{Jeweils alternative quelloffene Builds von \ac{vsc} ohne Microsoft-Branding.}) und Clone-Protokollen (https und ssh) gewählt werden.
 Der blaue Button mit eingekreistem Haken wird in einem späteren Abschnitt für das Versenden des Feedbacks verwendet.
 
+\subsubsection{Abgabe-Detailansicht}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/solution-head}
+    \caption{Kopf der Abgabe-Detailansicht}
+    \label{fig:solution-head}
+\end{figure}
+
+
+Die Detailansicht einer Abgabe öffnet sich nach Klicken des Augen-Buttons in der Abgabetabelle.
+In Abbildung~\ref{fig:solution-head} ist sichtbar, dass auch diese Ansicht wieder in mehrere Tabs aufgeteilt ist, um übersichtlich zu bleiben.
+In der Kopfzeile wird der Name des Studierenden und die Abgabezeit stets angezeigt.
+Hier wurde der GitHub-Benutzername erneut durch \texttt{*}-Symbole ersetzt.
+Für die Bewertung ist hauptsächlich der Tab \textbf{Solution \& Tasks} wichtig.
+Die Teilaufgaben werden wieder in einer Baumansicht dargestellt, wie in Abbildung~\ref{fig:solution-tasks} erkennbar ist.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/solution-tasks}
+    \caption{Teilaufgaben in der Abgabe-Detailansicht}
+    \label{fig:solution-tasks}
+\end{figure}
+
+Jede Teilaufgabe wird abhängig von der Punktzahl farblich markiert.
+Entspricht die vergebene Punktzahl der Minimalpunktzahl eines Tasks, wird dieser rot (z.B.\ -2/-2).
+Werden die maximal mögliche Punkte erreicht, wird der Tasks grün (z.B.\ 0/-1, 3/3).
+Teilpunkte werden gelb dargestellt (z.B.\ 6/8).
+Dabei wird zwischen explizit vergebenen, berechneten und implizit vorhandenen Bewertungen unterschieden.
+An der Bezeichnung \textbf{Graded by Name} statt \textbf{Grade} können von Bewertenden vergebene Punktzahlen identifiziert werden.
+Teilaufgaben mit eigenen Unteraufgaben berechnen ihre Punktzahl durch Summieren der darunterliegenden Punkte.
+Alle anderen Teilaufgaben erhalten standardmäßig null Punkte.
+Durch Klicken auf \textbf{Grade} oder \textbf{Graded by Name} kann die Bewertung einer Teilaufgabe angelegt oder bearbeitet werden.
+Abbildung~\ref{fig:evaluation-modal} das sich öffnende Modalfenster.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/evaluation-modal}
+    \caption{Bewertung einer Teilaufgabe}
+    \label{fig:evaluation-modal}
+\end{figure}
+
 \todo{
     Oberfläche für Evaluation und Snippets.
     Feedback mit GitHub Classroom, Email, etc.

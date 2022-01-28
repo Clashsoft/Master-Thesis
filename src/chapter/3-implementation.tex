@@ -79,6 +79,8 @@ Abbildung~\ref{fig:assignment-create-classroom} zeigt ein Bild dieses Formulars.
 Dafür müssen der Name der GitHub-Organisation (\textbf{Organization}) und das Präfix (\textbf{Prefix}) konfiguriert werden.
 Dies ermöglicht die manuelle oder zum Zeitpunkt der Deadline automatische Importierung von Lösungen von der Platform.
 Anhand der Search-\ac{api} von GitHub\footnote{\url{https://docs.github.com/en/rest/reference/search\#search-repositories}} wird nach allen Repositories in der angegebenen Organisation gesucht, deren Name mit dem Präfix beginnt.
+Damit private Repositories in der Organisation gefunden werden können, muss das \textbf{GitHub Token} angegeben werden.
+Der Hilfetext des Eingabefelds gibt Auskunft darüber, wie dieses erstellt werden kann.
 Aus dem Repository-Name ohne Präfix kann der GitHub-Benutzername des Studierenden ermittelt werden, der für die Zuordnung der Lösung verwendet wird.
 In Abschnitt~\ref{subsec:grading} ist ein Beispiel für die entstehende Lösungstabelle sichtbar.
 Weiterhin wird das neueste Commit zum Zeitpunkt des Imports gespeichert, um die Reproduzierbarkeit einer Bewertung zu gewährleisten.

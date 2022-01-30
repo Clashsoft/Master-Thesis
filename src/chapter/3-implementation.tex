@@ -333,8 +333,54 @@ Die Bewertung des Studierenden ist nun abgeschlossen und es kann mit der nächst
 
 \subsection{Statistiken}\label{subsec:statistics}
 
+Während und nach der Bewertung aller Abgaben können Betreuende und Übungsleitende eine Statistik einsehen.
+Sie enthält Informationen über die Anzahl der Bewertungen, die dabei verstrichene Zeit und die Effektivität der automatischen Bewertung von Code Search.
+Diese werden sowohl übergreifend als auch pro Teilaufgabe dargestellt.
+Zusätzlich wird Einsicht darüber geboten, welche Teilaufgaben am häufigsten zu Punkteeinbußen oder -Abzügen geführt haben.
+Daraus lässt sich ableiten, ob Lernziele möglicherweise nicht erreicht werden konnten oder Schwierigkeiten bei der Umsetzung bestanden.
+
+Die Statistik kann in der Assignment-Übersicht unter dem gleichbenannten Tab gefunden werden.
+In Abbildung~\ref{fig:assignment-statistics-basics} sind zunächst die übergreifenden Informationen dargestellt.
+Die Seite gliedert sich in drei Abschnitte, \textbf{Solutions}, \textbf{Evaluations} und \textbf{Time Tracking}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/assignment-statistics-basics}
+    \caption{Übergreifende Statistiken}
+    \label{fig:assignment-statistics-basics}
+\end{figure}
+
+Unter Solutions ist jeweils die Anzahl der Abgaben insgesamt (\textbf{Total}), mit angefangener Bewertung (\textbf{Evaluated}) und mit versendeten Feedback abgeschlossenen (\textbf{Graded}) sichtbar.
+Zudem wird die durchschnittlich erreichte Punktzahl der abgeschlossenen Abgaben abgezeigt\footnote{Es handelt sich bei diesem und folgenden Screenshots der Statistik nicht um die realen Zahlen der Hausaufgabe 3.}.
+
+Die Evaluations\footnote{Bewertungen von Teilaufgaben.} werden für die Auswertung in drei Kategorien unterteilt.
+Händisch hinzugefügte Bewertungen sind genau diejenigen, die wie in Abschnitt~\ref{subsec:grading} beschrieben erstellt wurden.
+Von Code Search gefundene Bewertungen können anhand der vorherigen erstellt werden und geben Aufschluss darüber, wie effektiv das Werkzeug für die vorliegende Hausaufgabe war.
+In seltenen Fällen ist es notwendig, diese automatisch erstellten Bewertungen händisch anzupassen, wenn beispielsweise eine Suche zu ungeeigneten Ergebnisse geführt hat.
+Diese Fehlerfälle sowie die sich ergebenden relativen Anteile der Kategorien werden in Kapitel~\ref{ch:evaluation} näher erläutert und diskutiert.
+
+Der Abschnitt Time Tracking dient der Berechnung der Effizienz von Bewertenden und Code Search.
+Anhand der Zeitmessung, die während der Bewertung von Teilaufgaben stattfindet, können hier eine Gesamtdauer und der Durchschnitt pro Teilaufgabe berechnet werden.
+Weiterhin wird hier angezeigt, wie viel Zeit durch die Verwendung von Code Search eingespart werden konnte.
+Die Berechnung dieses Werts erfordert die Betrachtung der Teilaufgaben und wird in Kürze erläutert.
+Kapitel~\ref{ch:evaluation} wird diesen Messwert anhand einiger realer Beispiele verwenden, um die Effizienz von Code Search zu bestimmen.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/assignment-statistics-by-points}
+    \caption{Statistiken gewichtet nach Punkten}
+    \label{fig:assignment-statistics-by-points}
+\end{figure}
+
+Evaluations und Time Tracking können die Ansicht verändert, um Punktzahlen statt Bewertungen von Teilaufgaben als Bewertungsgrundlage zu verwenden.
+Dafür wird der Haken \textbf{Weighted by Points} gesetzt, wie Abbildung~\ref{fig:assignment-statistics-by-points} zeigt.
+\todom{
+    Wofür ist das eigentlich gut?
+    Um Einschäten zu können, ob die Punkte mit dem Arbeitsaufwand bei der Bewertung übereinstimmen?
+    Idealerweise gäbe es für jeden Punkt eine Teilaufgabe - siehe z.B. PM Blatt 8.
+}
+
 \todo{
-    Evaluations als Darstellung der Code Search-Effektivität.
     Task-Liste als Information über schwierigste Teilaufgaben / Problemquellen.
 }
 

@@ -380,9 +380,37 @@ Dafür wird der Haken \textbf{Weighted by Points} gesetzt, wie Abbildung~\ref{fi
     Idealerweise gäbe es für jeden Punkt eine Teilaufgabe - siehe z.B. PM Blatt 8.
 }
 
-\todo{
-    Task-Liste als Information über schwierigste Teilaufgaben / Problemquellen.
-}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/assignment-statistics-tasks.png}
+    \caption{Statistiken für einzelne Teilaufgaben}
+    \label{fig:assignment-statistics-tasks}
+\end{figure}
+
+Im unteren Teil der Statistik befindet sich eine Liste aller Teilaufgaben, wie Abbildung~\ref{fig:assignment-statistics-tasks} zeigt.
+Die Informationen in der Kopfzeile jedes Eintrags sind mit dem Options-Menü auswählbar.
+Dort kann zwischen den wichtigsten Metriken ausgewählt werden.
+Diese werden nachfolgend kurz beschrieben.
+Zudem kann die Liste anhand der Werte auf- oder absteigend sortiert werden.
+Jeder Eintrag kann individuell ausgeklappt werden, um weitere Details anzuzeigen.
+Dafür werden jeweils kurze Stichpunkte zu jedem Wert genannt, um Hinweise auf dessen Bedeutung zu geben.
+
+\begin{description}
+    \item[Code Search Effektiveness] ist der Anteil der Bewertungen für diese Teilaufgabe, die automatisch von Code Search angelegt wurden.
+    Im Beispiel der Teilaufgabe \textbf{Aufgabe 2 / Test nicht implementiert} wurde eine Bewertung händisch angelegt und darauf basierend 14 von Code Search erstellt.
+    Dies ergibt eine Effektivität von $\frac{14}{1 + 14} = \frac{14}{15} \approx 93\%$.
+    \footnote{Die Effektivität kann nie 100\% betragen, da Code Search nur ausgehend von einer händischen Bewertung aktiviert wird. Beim Löschen von dieser werden auch davon abstammende Code Search-Bewertungen gelöscht.}
+    \item[Average Evaluation Item] ist die durchschnittliche Bewertungsdauer der Teilaufgabe.
+    Diese wird gemessen, während das Bewertungs-Modalfenster geöffnet ist.
+    Um zu vermeiden, dass das verlängerte Öffnen dieses Fensters, beispielsweise beim Verlassen des Arbeitsplatzes oder beim einlegen einer Pause, die Statistik verfälscht, werden hier Ausreißer länger als 60 Sekunden nicht im Durchschnitt verrechnet.
+    \item[Code Search Time Savings] bezeichnet die geschätze Zeit, die durch Code Search bei der Bewertung dieser Teilaufgabe eingespart wurde.
+    Sie berechnet sich durch Multiplikation der Average Evaluation Time mit der Anzahl der von Code Search erstellten Bewertungen.
+    Die Summe dieser Werte über alle Teilaufgaben ergibt die zuvor genannte Zeit, die insgesamt mit Code Search gespart wurde.
+    \item[Average Points] ist die durchschnittlich vergebene Punktzahl über alle Bewertungen dieser Teilaufgabe.
+    \item[Rating] ergibt sich aus den Average Points geteilt durch die maximal erreichbare Punktzahl der Teilaufgabe.
+    Dadurch ergibt sich eine relative Prozentangabe, die mit anderen Teilaufgaben verglichen werden kann.
+    Mit diesem Wert können insbesondere die Teilaufgaben identifiziert werden, die am häufigsten zu Punktabzug geführt haben und mögliche Problemquellen für Studierende darstellen.
+\end{description}
 
 \subsection{Code Search}\label{subsec:code-search}
 

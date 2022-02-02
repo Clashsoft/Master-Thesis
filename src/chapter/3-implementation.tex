@@ -1,20 +1,16 @@
 \chapter{Implementierung}\label{ch:implementation}
 
-\todo{
-    Einleitungssatz.
-}
-
-In diesem Kapitel wird die Hausaufgabe 3\footnote{\url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2021/11/PM2022_Hausaufgabe03.pdf}} aus der Veranstaltung Programmieren und Modellieren im Wintersemester 2021/22 an der Universität Kassel als laufendes Beispiel verwendet.
-Die Lernziele der Hausaufgabe waren die Übersetzung eines Klassendiagramms in Java-Code, die damit verbundene Implementierung von Referenzieller Integrität\footnote{Dies bezeichnet ein Verhalten, bei dem durch Assoziationen verknüpfte Objekte stets in beide Richtungen konsistent verlinkt sind.}, sowie das korrekte Testen des dabei entstehenden Programmcodes.
-Diese Hausaufgabe wurde gewählt, da sie sowohl individuellen als auch schematischen Code von Studierenden erwartet.
-Zudem handelt es sich um eine Hausaufgabe aus der Anfangsphase der Veranstaltung, in der mit einer höheren Abgabenanzahl und -Vielfalt bei gleichzeitig geringerer Schwierigkeit und Komplexität im Vergleich zu späteren Aufgaben zu rechnen ist.
-
 Die Implementierung dieser Arbeit besteht aus zwei weitgehend getrennten Projekten, die jedoch miteinander kommunizieren und integriert sind.
 Abschnitt~\ref{sec:expanding-fulib.org} beschreibt zunächst die Änderung, die an der Webanwendung fulib.org durchgeführt wurden.
 Das dabei entstandene Werkzeug ist bis auf wenige Ausnahmen autonom für die Bewertung von Abgaben einsetzbar.
 Als Erweiterung oder zusätzliches Hilfsmittel dient die \ac{vsc}-Erweiterung fulibFeedback, die in Abschnitt~\ref{sec:fulibFeedback} erläutert wird.
 Insbesondere kann diese Bewertende bei der Bewertung und Studierende bei der Berichtigung von Quellcode unterstützen.
-Ohne fulibFeedback sind die Bewertungsmechanismen von fulib.org nur unabhängig von Quellcode nutzbar.
+Ohne fulibFeedback sind die Bewertungsmechanismen von fulib.org unabhängig vom Quellcode nutzbar.
+
+In diesem Kapitel wird die Hausaufgabe 3\footnote{\url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2021/11/PM2022_Hausaufgabe03.pdf}} aus der Veranstaltung Programmieren und Modellieren im Wintersemester 2021/22 an der Universität Kassel als laufendes Beispiel verwendet.
+Die Lernziele der Hausaufgabe waren die Übersetzung eines Klassendiagramms in Java-Code, die damit verbundene Implementierung von Referenzieller Integrität\footnote{Dies bezeichnet ein Verhalten, bei dem durch Assoziationen verknüpfte Objekte stets in beide Richtungen konsistent verlinkt sind.}, sowie das korrekte Testen des dabei entstehenden Programmcodes.
+Diese Hausaufgabe wurde gewählt, da sie sowohl individuellen als auch schematischen Code von Studierenden erwartet.
+Zudem handelt es sich um eine Hausaufgabe aus der Anfangsphase der Veranstaltung, in der mit einer höheren Abgabenanzahl und -Vielfalt bei gleichzeitig geringerer Schwierigkeit und Komplexität im Vergleich zu späteren Aufgaben zu rechnen ist.
 
 \section{Erweiterung von fulib.org}\label{sec:expanding-fulib.org}
 
@@ -270,7 +266,10 @@ Werden die maximal mögliche Punkte erreicht, wird der Tasks grün (\ac{zB} 0/-1
 Teilpunkte werden gelb dargestellt (\ac{zB} 6/8).
 Dabei wird zwischen explizit vergebenen, berechneten und implizit vorhandenen Bewertungen unterschieden.
 An der Bezeichnung \textbf{Graded by Name} statt \textbf{Grade} können von Bewertenden vergebene Punktzahlen identifiziert werden.
-Teilaufgaben mit eigenen Unteraufgaben berechnen ihre Punktzahl durch Summieren der darunterliegenden Punkte\footnote{\todo{Stimmt nicht ganz, genau genommen Maximale Punktzahl - Summe der Maximalen Punktzahl positiver Unteraufgaben + Summe der Punktzahlen aller Unteraufgaben.}}.
+Teilaufgaben mit eigenen Unteraufgaben berechnen ihre Punktzahl vereinfacht durch Summieren der untergeordneten Punkte\footnote{
+    Die genaue Berechnung bezieht Besonderheiten wie Unteraufgaben mit positiver und negativer Punktzahl mit ein.
+    Auf die Angabe einer Formel wird an dieser Stelle verzichtet.
+}.
 Alle anderen Teilaufgaben erhalten standardmäßig null Punkte.
 Durch Klicken auf \textbf{Grade} oder \textbf{Graded by Name} kann die Bewertung einer Teilaufgabe angelegt oder bearbeitet werden.
 Abbildung~\ref{fig:evaluation-modal} das sich öffnende Modalfenster.

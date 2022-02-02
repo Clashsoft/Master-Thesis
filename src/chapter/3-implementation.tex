@@ -7,10 +7,15 @@ Als Erweiterung oder zusätzliches Hilfsmittel dient die \ac{vsc}-Erweiterung fu
 Insbesondere kann diese Bewertende bei der Bewertung und Studierende bei der Berichtigung von Quellcode unterstützen.
 Ohne fulibFeedback sind die Bewertungsmechanismen von fulib.org unabhängig vom Quellcode nutzbar.
 
-In diesem Kapitel wird die Hausaufgabe 3\footnote{\url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2021/11/PM2022_Hausaufgabe03.pdf}} aus der Veranstaltung Programmieren und Modellieren im Wintersemester 2021/22 an der Universität Kassel als laufendes Beispiel verwendet.
-Die Lernziele der Hausaufgabe waren die Übersetzung eines Klassendiagramms in Java-Code, die damit verbundene Implementierung von Referenzieller Integrität\footnote{Dies bezeichnet ein Verhalten, bei dem durch Assoziationen verknüpfte Objekte stets in beide Richtungen konsistent verlinkt sind.}, sowie das korrekte Testen des dabei entstehenden Programmcodes.
+In diesem Kapitel wird die Hausaufgabe 3\footnote{
+    \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2021/11/PM2022_Hausaufgabe03.pdf}
+} aus der Veranstaltung Programmieren und Modellieren im Wintersemester 2021/22 an der Universität Kassel als laufendes Beispiel verwendet.
+Die Lernziele der Hausaufgabe waren die Übersetzung eines Klassendiagramms in Java-Code, die damit verbundene Implementierung von Referenzieller Integrität\footnote{
+    Dies bezeichnet ein Verhalten, bei dem durch Assoziationen verknüpfte Objekte stets in beide Richtungen konsistent verlinkt sind.
+}, sowie das korrekte Testen des dabei entstehenden Programmcodes.
 Diese Hausaufgabe wurde gewählt, da sie sowohl individuellen als auch schematischen Code von Studierenden erwartet.
-Zudem handelt es sich um eine Hausaufgabe aus der Anfangsphase der Veranstaltung, in der mit einer höheren Abgabenanzahl und -Vielfalt bei gleichzeitig geringerer Schwierigkeit und Komplexität im Vergleich zu späteren Aufgaben zu rechnen ist.
+Zudem handelt es sich um eine Hausaufgabe aus der Anfangsphase der Veranstaltung.
+In dieser ist mit einer höheren Abgabenanzahl und -Vielfalt bei gleichzeitig geringerer Schwierigkeit und Komplexität im Vergleich zu späteren Aufgaben zu rechnen.
 
 \section{Erweiterung von fulib.org}\label{sec:expanding-fulib.org}
 
@@ -74,7 +79,9 @@ Auf der nächsten Seite des Formulars können Angaben für die Integration von G
 Abbildung~\ref{fig:assignment-create-classroom} zeigt ein Bild dieses Formulars.
 Dafür müssen der Name der GitHub-Organisation (\textbf{Organization}) und das Präfix (\textbf{Prefix}) konfiguriert werden.
 Dies ermöglicht die manuelle oder zum Zeitpunkt der Deadline automatische Importierung von Lösungen von der Platform.
-Anhand der Search-\ac{api} von GitHub\footnote{\url{https://docs.github.com/en/rest/reference/search\#search-repositories}} wird nach allen Repositories in der angegebenen Organisation gesucht, deren Name mit dem Präfix beginnt.
+Anhand der Search-\ac{api} von GitHub\footnote{
+    \url{https://docs.github.com/en/rest/reference/search\#search-repositories}
+} wird nach allen Repositories in der angegebenen Organisation gesucht, deren Name mit dem Präfix beginnt.
 Damit private Repositories in der Organisation gefunden werden können, muss das \textbf{GitHub Token} angegeben werden.
 Der Hilfetext des Eingabefelds gibt Auskunft darüber, wie dieses erstellt werden kann.
 Aus dem Repository-Name ohne Präfix kann der GitHub-Benutzername des Studierenden ermittelt werden, der für die Zuordnung der Lösung verwendet wird.
@@ -209,7 +216,11 @@ Diese ist in Abbildung~\ref{fig:assignment-solutions-table} ausgeschnitten darge
 \end{figure}
 
 In diesem Fall wurden die Lösungen automatisch nach Ablauf der Abgabefrist aus GitHub Classroom importiert.
-Die Tabelle gibt Auskunft über den GitHub-Benutzernamen\footnote{Für diese Abbildung wurden die Benutzernamen durch \texttt{*}-Symbole ersetzt.} und das Abgabedatum (\textbf{Submitted}), welches dem letzten Push\footnote{Bezeichnet die Aktion der Versionskontroll-Software Git, bei der lokale Commits auf den Remote-Server hochgeladen werden.}-Zeitpunkt vor der Frist entspricht.
+Die Tabelle gibt Auskunft über den GitHub-Benutzernamen\footnote{
+    Für diese Abbildung wurden die Benutzernamen durch \texttt{*}-Symbole ersetzt.
+} und das Abgabedatum (\textbf{Submitted}), welches dem letzten Push\footnote{
+    Bezeichnet die Aktion der Versionskontroll-Software Git, bei der lokale Commits auf den Remote-Server hochgeladen werden.
+}-Zeitpunkt vor der Frist entspricht.
 Bei einem nachträglichen manuellem Import ist es möglich, dass die Push-Zeit nach der Abgabefrist liegt.
 In diesem Fall wird das Abgabedatum rot markiert.
 Name, Matrikelnummer (\textbf{Student ID}) und E-Mail-Adresse können nicht von GitHub Classroom ermittelt werden, weshalb sie in der Tabelle leer sind.
@@ -223,7 +234,7 @@ Das Fragezeichen-Symbol neben \textbf{Points} gibt Auskunft über diese Farbgebu
 
 Über die Textfelder unter \textbf{Assignee} können sich die Bewertenden die Abgaben zuordnen, für die sie zuständig sind.
 Dadurch wird sichergestellt, dass nicht versehentlich eine Abgabe von mehreren Bewertenden betrachtet wird.
-Die Textfelder bieten eine einfache Form der Autovervollständigung, sodass bei Eingabe weniger Buchstaben bereits der volle Name eines  Bewertenden vorgeschlagen wird, sofern dieser bereits an einer anderen Stelle eingetragen war.
+Die Textfelder bieten eine einfache Form der Autovervollständigung, sodass bei Eingabe weniger Buchstaben bereits der volle Name eines Bewertenden vorgeschlagen wird, sofern dieser bereits an einer anderen Stelle eingetragen war.
 
 Mit der Suchleiste kann die Tabelle nach verschiedenen Kriterien gefiltert werden.
 Beispielsweise können Bewertende durch Eingabe ihres Namens nur die ihnen zugewiesenen Abgaben anzeigen, um für Übersicht zu sorgen.
@@ -233,8 +244,12 @@ Unter den \textbf{Actions} befinden sich die wichtigsten Aktionen, die für die 
 Mit dem Augen-Button kann die Detailansicht der Abgabe geöffnet werden, in der die Bewertung einzelner Teilaufgaben stattfindet.
 Dies ist Inhalt des folgenden Abschnitts.
 Der graue GitHub-Button öffnet das Repository, von dem die Lösung importiert wurde, auf GitHub und zeigt dabei den Stand des letzten Commits vor der Abgabefrist.
-Der Button mit eingerahmten spitzen Klammern öffnet die Lösung sofort in einer \ac{ide}, indem das GitHub-Repository gecloned\footnote{Git-Bezeichnung für das Kopieren eines Online-Repositories in einen lokalen Ordner.} wird.
-Mit dem Einstellungs-Button neben der Suchleiste kann zwischen verschiedenen \acp{ide} (\ac{vsc}, Code-OSS und VSCodium\footnote{Jeweils alternative quelloffene Builds von \ac{vsc} ohne Microsoft-Branding.}) und Clone-Protokollen (https und ssh) gewählt werden.
+Der Button mit eingerahmten spitzen Klammern öffnet die Lösung sofort in einer \ac{ide}, indem das GitHub-Repository gecloned\footnote{
+    Git-Bezeichnung für das Kopieren eines Online-Repositories in einen lokalen Ordner.
+} wird.
+Mit dem Einstellungs-Button neben der Suchleiste kann zwischen verschiedenen \acp{ide} (\ac{vsc}, Code-OSS und VSCodium\footnote{
+    Jeweils alternative quelloffene Builds von \ac{vsc} ohne Microsoft-Branding.
+}) und Clone-Protokollen (https und ssh) gewählt werden.
 Der blaue Button mit eingekreistem Haken wird in einem späteren Abschnitt für das Versenden des Feedbacks verwendet.
 
 \subsubsection{Abgabe-Detailansicht}
@@ -249,7 +264,9 @@ Der blaue Button mit eingekreistem Haken wird in einem späteren Abschnitt für 
 
 Die Detailansicht einer Abgabe öffnet sich nach Klicken des Augen-Buttons in der Abgabetabelle.
 In Abbildung~\ref{fig:solution-head} ist sichtbar, dass auch diese Ansicht wieder in mehrere Tabs aufgeteilt ist, um übersichtlich zu bleiben.
-In der Kopfzeile wird der Name\footnote{Hier wurde der GitHub-Benutzername erneut durch \texttt{*}-Symbole ersetzt.} des Studierenden und die Abgabezeit stets angezeigt.
+In der Kopfzeile wird der Name\footnote{
+    Hier wurde der GitHub-Benutzername erneut durch \texttt{*}-Symbole ersetzt.
+} des Studierenden und die Abgabezeit stets angezeigt.
 Für die Bewertung ist hauptsächlich der Tab \textbf{Solution \& Tasks} wichtig.
 Die Teilaufgaben werden wieder in einer Baumansicht dargestellt, wie in Abbildung~\ref{fig:solution-tasks} erkennbar ist.
 
@@ -350,9 +367,13 @@ Die Seite gliedert sich in drei Abschnitte, \textbf{Solutions}, \textbf{Evaluati
 \end{figure}
 
 Unter Solutions ist jeweils die Anzahl der Abgaben insgesamt (\textbf{Total}), mit angefangener Bewertung (\textbf{Evaluated}) und mit versendeten Feedback abgeschlossenen (\textbf{Graded}) sichtbar.
-Zudem wird die durchschnittlich erreichte Punktzahl der abgeschlossenen Abgaben abgezeigt\footnote{Es handelt sich bei diesem und folgenden Screenshots der Statistik nicht um die realen Zahlen der Hausaufgabe 3.}.
+Zudem wird die durchschnittlich erreichte Punktzahl der abgeschlossenen Abgaben abgezeigt\footnote{
+    Es handelt sich bei diesem und folgenden Screenshots der Statistik nicht um die realen Zahlen der Hausaufgabe 3.
+}.
 
-Die Evaluations\footnote{Bewertungen von Teilaufgaben.} werden für die Auswertung in drei Kategorien unterteilt.
+Die Evaluations\footnote{
+    Bewertungen von Teilaufgaben.
+} werden für die Auswertung in drei Kategorien unterteilt.
 Händisch hinzugefügte Bewertungen sind genau diejenigen, die wie in Abschnitt~\ref{subsec:grading} beschrieben erstellt wurden.
 Von Code Search gefundene Bewertungen können anhand der vorherigen erstellt werden und geben Aufschluss darüber, wie effektiv das Werkzeug für die vorliegende Hausaufgabe war.
 In seltenen Fällen ist es notwendig, diese automatisch erstellten Bewertungen händisch anzupassen, wenn beispielsweise eine Suche zu ungeeigneten Ergebnisse geführt hat.
@@ -394,12 +415,15 @@ Dafür werden jeweils kurze Stichpunkte zu jedem Wert genannt, um Hinweise auf d
 
 \begin{description}
     \item[Code Search Effektiveness] ist der Anteil der Bewertungen für diese Teilaufgabe, die automatisch von Code Search angelegt wurden.
-    Im Beispiel der Teilaufgabe \textbf{Aufgabe 2 / Test nicht implementiert} wurde eine Bewertung händisch angelegt und darauf basierend 14 von Code Search erstellt.
-    Dies ergibt eine Effektivität von $\frac{14}{1 + 14} = \frac{14}{15} \approx 93\%$.
-    \footnote{Die Effektivität kann nie 100\% betragen, da Code Search nur ausgehend von einer händischen Bewertung aktiviert wird. Beim Löschen von dieser werden auch davon abstammende Code Search-Bewertungen gelöscht.}
+    Im Beispiel der Teilaufgabe \textbf{Aufgabe 2 / Test nicht implementiert} wurde eine Bewertung händisch angelegt und auf 14 weitere Abgaben von Code Search kopiert.
+    Dies ergibt eine Effektivität von $\frac{14}{1 + 14} = \frac{14}{15} \approx 93\%$.\footnote{
+        Die Effektivität kann nie 100\% betragen, da Code Search nur ausgehend von einer händischen Bewertung aktiviert wird.
+        Beim Löschen von dieser werden auch davon abstammende Code Search-Bewertungen gelöscht.
+    }
     \item[Average Evaluation Item] ist die durchschnittliche Bewertungsdauer der Teilaufgabe.
     Diese wird gemessen, während das Bewertungs-Modalfenster geöffnet ist.
-    Um zu vermeiden, dass das verlängerte Öffnen dieses Fensters, beispielsweise beim Verlassen des Arbeitsplatzes oder beim einlegen einer Pause, die Statistik verfälscht, werden hier Ausreißer länger als 60 Sekunden nicht im Durchschnitt verrechnet.
+    Das verlängertes Öffnen dieses Fensters, beispielsweise beim Verlassen des Arbeitsplatzes oder beim Einlegen einer Pause, kann die Statistik verfälschen.
+    Um dies zu vermeiden, werden Ausreißer länger als 60 Sekunden nicht im Durchschnitt verrechnet.
     \item[Code Search Time Savings] bezeichnet die geschätze Zeit, die durch Code Search bei der Bewertung dieser Teilaufgabe eingespart wurde.
     Sie berechnet sich durch Multiplikation der Average Evaluation Time mit der Anzahl der von Code Search erstellten Bewertungen.
     Die Summe dieser Werte über alle Teilaufgaben ergibt die zuvor genannte Zeit, die insgesamt mit Code Search gespart wurde.
@@ -427,7 +451,7 @@ Zunächst wird nur der Such-Tab erläutert, um einen Einblick in die Hintergrün
 
 Die wichtigste Eingabe auf diesem Tab ist das \textbf{Code Snippet}, welches die Suchanfrage bildet.
 Diese wird an die Elasticsearch-Datenbank, welche beim Import von Lösungen mit deren Dateien gefüllt wurde, gestellt.
-Die Datenbank gibt als Ergebnis der Suchanfrage alle Dateien zurück, die diesen Codeabschnitt beinhalten.
+Die Datenbank gibt als Ergebnis der Suchanfrage alle Dateien zurück, welche diesen Codeabschnitt beinhalten.
 Insbesondere ist dabei die Formatierung des Codes unerheblich:
 die Suche arbeitet anhand von Tokens, wie in Abschnitt~\ref{subsec:elasticsearch} beschrieben wurde.
 Da es sich nicht um natürlichsprachliche Texte handelt, für die Elasticsearch standardmäßig konfiguriert ist, muss zunächst eine angepasster Tokeniser definiert werden.
@@ -452,10 +476,14 @@ Listing~\ref{lst:code-search-regex-builder} zeigt den TypeScript-Code, der diese
 Die verschiedenen Arten von Tokens (Zahlen, String-Literale mit einfachen und doppelten Anführungsstrichen, Bezeichner und Symbole) werden als separate reguläre Ausdrücke definiert und dann mit Alternations-Symbolen (\texttt{|}) getrennt konkateniert.
 Es wird an dieser Stelle auf genauere Beschreibung der regulären Ausdrücke verzichtet.
 Entscheidend ist nur, dass diese gewählt wurden, um für möglichst viele Programmiersprachen sinnvolle Tokens zu erzeugen.
-Die Syntax für Zahlen, String-Literale, Bezeichner und Symbole orientiert sich an populären\footnote{\url{https://www.tiobe.com/tiobe-index/}} Programmiersprachen wie Java, JavaScript, C und Python.
+Die Syntax für Zahlen, String-Literale, Bezeichner und Symbole orientiert sich an populären\footnote{
+    \url{https://www.tiobe.com/tiobe-index/}
+} Programmiersprachen wie Java, JavaScript, C und Python.
 
 Der \textbf{Filename Glob} dient der Einschränkung der Suche auf bestimmte Dateien.
-Dafür wird die spezielle Glob-Syntax\footnote{\url{https://en.wikipedia.org/wiki/Glob_(programming)}} verwendet, welche die Verwendung von Platzhaltern erlaubt.
+Dafür wird die spezielle Glob-Syntax\footnote{
+    \url{https://en.wikipedia.org/wiki/Glob_(programming)}
+} verwendet, welche die Verwendung von Platzhaltern erlaubt.
 Das Beispiel \texttt{**/*Test.java} aus Abbildung~\ref{fig:assignment-code-search} wählt nur Dateien aus, die auf \texttt{Test.java} enden (\texttt{*Test.java}) und sich in einem beliebigen Unterordner des Projekts befinden (\texttt{**/}).
 Für die Suche mit Elasticsearch wird das Glob-Muster in einen regulären Ausdruck übersetzt und als Filterbedingung in der Suchanfrage an die Datenbank übergeben.
 

@@ -121,11 +121,12 @@ In den folgenden Abschnitten wird erläutert, welche Probleme diese Technologien
 
 \subsection{fulib.org}\label{subsec:fulib.org}
 
-fulib.org ist eine Webanwendung, die bereits 2019 im Rahmen des fulibScenarios-Projekts~\cite{explain} konzipiert und durch~\cite{bachelor-thesis} erweitert wurde.
-Sie besteht aus einigen Modulen, die nachfolgend kurz beschrieben werden.
+fulib.org ist eine Webanwendung, die bereits 2019 im Rahmen des Projekts fulibScenarios~\cite{explain} konzipiert wurde.
+Im Rahmen von~\cite{bachelor-thesis} und weiteren nachfolgenden Projekten wurde sie stetig erweitert.
+Die Seite besteht aus einigen unabhängigen Modulen, die nachfolgend kurz beschrieben werden.
 
 \subsubsection{Scenarios}
-Das erste Modul der Anwendung ist ein interaktiver Editor für die Szenario-Sprache aus~\cite{explain}.
+Das erste Modul der Anwendung ist ein interaktiver Editor für die fulibScenarios-Sprache aus~\cite{explain}.
 Diese besteht aus textuellen Beispielszenarien, die einer festen Grammatik folgen.
 Ein Compiler übersetzt die Szenarien in Java-Code und generiert dabei Klassen für ein Datenmodell mit der fulib-Bibliothek\footnote{\url{https://github.com/fujaba/fulib}}.
 In~\cite{bachelor-thesis} wurde erstmals eine Erweiterung der Sprache umgesetzt, die gezielt die Bewertung von Aufgaben ermöglichen sollte.
@@ -210,7 +211,7 @@ Diese werden nachfolgend kurz erläutert.
     Ein weiterer Vorteil des \acp{lsp} ist die Möglichkeit, Server und Client in unterschiedlichen Programmiersprachen und Frameworks zu entwickeln.
     Dies kann sprachseitig die Serverentwicklung vereinfachen, da beispielsweise Teile der Implementierung des Compilers wiederverwendet werden können.\cite{why-lsp}
     \item[Trennung von Prozessen]
-    Zuletzt nennt Microsoft die Prozesstrennung als vorteilhaft, welche die parallele Ausführung von rechenintensiven Aufgaben erlaubt.\cite{why-lsp}
+    Zuletzt nennt Microsoft die Prozesstrennung von Oberfläche und sprachspezifischer Logik als vorteilhaft, da sie die parallele Ausführung von rechenintensiven Aufgaben erlaubt.\cite{why-lsp}
     Abhängig von der Architektur des Editors ist dies jedoch auch ohne ein solches Protokoll möglich.
     \footnote{Beispielsweise in IntelliJ, das Vorgaben für Multithreading macht um schreibende Aktionen (Texteingabe, \ldots) von lesenden Aufgaben (Syntaxanalyse, Diagnostics, Highlighting, \ldots) zu trennen. Siehe \url{https://plugins.jetbrains.com/docs/intellij/general-threading-rules.html}.}
 \end{description}

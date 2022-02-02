@@ -414,9 +414,62 @@ Dafür werden jeweils kurze Stichpunkte zu jedem Wert genannt, um Hinweise auf d
 
 \subsection{Code Search}\label{subsec:code-search}
 
-\todo{
-    Code Search als Anwendung von Elasticsearch.
-}
+Wie zuvor erwähnt handelt es sich bei Code Search um eine Suchmaschine für Quellcode in Assignments.
+Es gibt zwei Wege diese zu aktivieren.
+Einerseits kann der dafür vorgesehene Tab in der Assignment-Übersicht verwendet werden, der in Abbildung~\ref{fig:assignment-code-search} dargestellt ist.
+Andererseits wird Code Search verwendet, um automatisch Bewertungen von Teilaufgaben anhand von ausgewählten Codeschnipseln zu erstellen.
+Dies wird in Abschnitt~\ref{sec:fulibFeedback} detailliert beschrieben.
+Zunächst wird nur der Such-Tab erläutert, um einen Einblick in die Hintergründe der Suchmaschine zu bieten.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/assignment-code-search.png}
+    \caption{Code Search Tab eines Assignments}
+    \label{fig:assignment-code-search}
+\end{figure}
+
+Die wichtigste Eingabe auf diesem Tab ist das \textbf{Code Snippet}, welches die Suchanfrage bildet.
+Diese wird an die Elasticsearch-Datenbank, welche beim Import von Lösungen mit deren Dateien gefüllt wurde, gestellt.
+Die Datenbank gibt als Ergebnis der Suchanfrage alle Dateien zurück, die diesen Codeabschnitt beinhalten.
+Insbesondere ist dabei die Formatierung des Codes unerheblich:
+die Suche arbeitet anhand von Tokens, wie in Abschnitt~\ref{subsec:elasticsearch} beschrieben wurde.
+Da es sich nicht um natürlichsprachliche Texte handelt, für die Elasticsearch standardmäßig konfiguriert ist, muss zunächst eine angepasster Tokeniser definiert werden.
+Dieser besteht hauptsächlich aus einem regulären Ausdruck, der Tokens erkennt.
+Listing~\ref{lst:code-search-regex-builder} zeigt den TypeScript-Code, der diesen regulären Ausdruck konstruiert.
+
+\begin{listing}
+    \centering
+    \begin{minted}{ts}
+        const pattern = Object.values({
+            number: /[+-]?[0-9]+(\.[0-9]+)?/,
+            string: /["](\\\\|\\["]|[^"])*["]/,
+            char: /'(\\\\|\\'|[^'])*'/,
+            identifier: /[a-zA-Z$_][a-zA-Z0-9$_]*/,
+            symbol: /[(){}<>\[\].,;+\-*/%|&=!?:@^]/,
+        }).map(r => r.source).join('|');
+    \end{minted}
+    \caption{Konstruktion des regulären Ausdrucks für Tokens}
+    \label{lst:code-search-regex-builder}
+\end{listing}
+
+Die verschiedenen Arten von Tokens (Zahlen, String-Literale mit einfachen und doppelten Anführungsstrichen, Bezeichner und Symbole) werden als separate reguläre Ausdrücke definiert und dann mit Alternations-Symbolen (\texttt{|}) getrennt konkateniert.
+Es wird an dieser Stelle auf genauere Beschreibung der regulären Ausdrücke verzichtet.
+Entscheidend ist nur, dass diese gewählt wurden, um für möglichst viele Programmiersprachen sinnvolle Tokens zu erzeugen.
+Die Syntax für Zahlen, String-Literale, Bezeichner und Symbole orientiert sich an populären Progammiersprachen wie Java, JavaScript, C und Python.
+
+Der \textbf{Filename Glob} dient der Einschränkung der Suche auf bestimmte Dateien.
+Dafür wird die spezielle Glob-Syntax\footnote{\url{https://en.wikipedia.org/wiki/Glob_(programming)}} verwendet, welche die Verwendung von Platzhaltern erlaubt.
+Das Beispiel \texttt{**/*Test.java} aus Abbildung~\ref{fig:assignment-code-search} wählt nur Dateien aus, die auf \texttt{Test.java} enden (\texttt{*Test.java}) und sich in einem beliebigen Unterordner des Projekts befinden (\texttt{**/}).
+Für die Suche mit Elasticsearch wird das Glob-Muster in einen regulären Ausdruck übersetzt und als Filterbedingung in der Suchanfrage an die Datenbank übergeben.
+
+Alle Suchergebnisse werden gruppiert nach Abgabe in einer Liste angezeigt.
+Neben dem Dateinamen werden jeweils die Zeilennummern angegeben, in denen der Code gefunden wurde.
+Eine Vorschau zeigt zentral die Zeile mit dem Codeabschnitt und davor und danach zwei Zeilen des umliegenden Codes als Kontext.
+Zeilennummern und Kontext werden nicht von Elasticsearch in den Suchergebnissen bereitgestellt.
+Anhand des in Abschnitt~\ref{subsec:elasticsearch} beschriebenen Highlighters wird stattdessen die Stelle im Quelltext markiert, wo der Codeabschnitt gefunden wurde.
+Daraus werden Zeilennummern und Kontext rekonstruiert.
+
+Die Auswahl \textbf{Sync with Selection} aktiviert die Synchronisation des Code Snippets mit fulibFeedback und wird im folgenden Abschnitt beschrieben.
 
 \section{fulibFeedback}\label{sec:fulibFeedback}
 

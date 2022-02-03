@@ -567,6 +567,42 @@ Bei erfolgreicher Bestimmung der Lösung wird eine Hinweismeldung angezeigt, die
     \label{fig:fulibFeedback-notification}
 \end{figure}
 
+\subsection{Auswahl von Codeabschnitten}
+
+Die wichtigste Funktion von fulibFeedback für Bewertende ist die Auswahl von Codeabschnitten.
+Auswahl bezeichnet hier die Aktion, die mit Maus oder Tastatur in gewöhnlichen Texteditoren durchgeführt wird, um beispielsweise Text zum Kopieren zu markieren.
+fulibFeedback erkennt dies und sendet den ausgewählten Code zusammen mit Kontextdaten wie Assignment, Solution, Datei und Zeilen- und Spaltennummern an den Backend-Dienst von fulib.org.
+Wurde auf fulib.org zuvor ein Bewertungs-Modalfenster für die gleiche Abgabe geöffnet, wird der ausgewählte Code dort angezeigt.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/fulibFeedback-snippet-good}
+    \caption{Bewertungs-Modalfenster nach Auswahl eines Codeabschnitts}
+    \label{fig:fulibFeedback-snippet-good}
+\end{figure}
+
+Abbildung~\ref{fig:fulibFeedback-snippet-good} zeigt ein Beispiel, wie sich die Ansicht des Fensters verändert.
+Das Formular für die Bewertung wird schmaler und auf der linken Seite erscheint ein neuer Bereich, in dem der Codeabschnitt sowie die Kontextdaten angezeigt werden.
+Der Code dient zunächst nur als Vorauswahl und wird erst durch Klick auf den Plus-Button hinzugefügt.
+Alternativ kann im Textfeld \textbf{Comment} ein Kommentar für den Codeabschnitt hinterlegt werden.
+Dieser unterscheided sich vom Remark insofern, dass er abschnittspezifische Hinweise erlaubt.
+Dies ist besonders hilfreich, wenn mehrere Abschnitte zur gleichen Bewertung hinzugefügt werden.
+
+Nach Hinzufügen eines Codeabschnitts kann erneut mit \textbf{Submit} die Bewertung angelegt werden.
+Nun kommt der Haken \textbf{Code Search} zum Einsatz.
+Ist dieser aktiviert, wird der Codeabschnitt in allen anderen Lösungen mittels Code Search gesucht.
+Die Bewertung, insbesondere die Kommentare, Punktzahl und Remark, wird dann auf alle Abgaben übertragen, in denen der Code gefunden wurde.
+Dadurch kann abhängig von der Einzigartigkeit des Codes eine Vielzahl von Abgaben in einem Schritt bewertet und Zeit gespart werden.
+
+Bei jeder Auswahl von Code wird Code Search für den diesen durchgeführt.
+Dies ergibt eine Liste von Suchergebnissen, aus der drei Metriken ermittelt werden können.
+Die Anzahl der \textbf{Solutions} gibt an, wie viele Abgaben den Codeabschnitt enthalten.
+In jeder Abgabe können \ac{uU} mehrere Dateien gefundenen werden, die Gesamtanzahl über alle Abgaben ist in \textbf{Files} summiert.
+Zuletzt gibt \textbf{Hits} die Anzahl der Suchergebnisse an, die auch mehrfach in einer Datei vorhanden sein können.
+Werden diese drei Werte verglichen, kann eine Einschätzung über die Spezifität des Codeabschnitts erfolgen.
+Sind alle drei Werte gleich, wie in Abbildung~\ref{fig:fulibFeedback-snippet-good} der Fall ist, kommt der Codeabschnitt in jeder Lösung exakt ein Mal vor.
+Das deutet darauf hin, dass er problemlos für die automatische Bewertung mit Code Search verwendet werden kann.
+
 \subsection{VSCode Extension}\label{subsec:vscode-extension}
 
 \todo{

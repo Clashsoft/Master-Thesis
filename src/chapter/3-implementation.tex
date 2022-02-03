@@ -545,16 +545,27 @@ Solution-Einstellungen werden lediglich im Workspace abgelegt, da sie nur für d
 
 Wird ein Projektordner geöffnet, versucht die Erweiterung, diesen einer Solution zuzuordnen.
 Wurde in den Einstellungen eine Solution \acs{id} angegeben, sind keine weiteren Schritte notwendig.
-Anderfalls wird der Pfad der zuerst geöffnet Datei betrachtet:
+Anderfalls wird der Pfad der zuerst geöffnet Datei betrachtet und wie in~\ref{eqn:absolute-path-deconstruction} dekonstruiert.
 
-\begin{equation*}
+\begin{equation}\label{eqn:absolute-path-deconstruction}
     \text{/Users/\dots/}
     \underbrace{\text{pmws2122-assignment-3}}_{\text{Präfix}}
     \text{-}
     \underbrace{\text{********}}_{\text{GitHub-Name}}
     \text{/}
     \underbrace{\text{src/\dots/Field.java}}_{\text{Relativer Pfad}}
-\end{equation*}
+\end{equation}
+
+Damit das Präfix gefunden werden kann, müssen anhand der eingestellten \acs{id} das Assignment und dessen Classroom Prefix ermittelt werden.
+Anderfalls kann auch der GitHub-Name und der relative Pfad nicht bestimmt werden.
+Bei erfolgreicher Bestimmung der Lösung wird eine Hinweismeldung angezeigt, die in Abbildung~\ref{fig:fulibFeedback-notification} dargestellt ist und Auskunft über den Titel des Assignments und den Namen des Studierenden gibt.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{images/fulibFeedback-notification}
+    \caption{Benachrichtigung nach erfolgreicher Ermittlung von Asssignment und Solution}
+    \label{fig:fulibFeedback-notification}
+\end{figure}
 
 \subsection{VSCode Extension}\label{subsec:vscode-extension}
 

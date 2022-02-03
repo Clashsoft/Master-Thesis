@@ -500,6 +500,62 @@ Ebenso kann dieser eingesetzt werden, um bei Verdacht Plagiate zwischen Lösunge
 
 \section{fulibFeedback}\label{sec:fulibFeedback}
 
+Die Bewertung von Quellcode auf fulib.org ist zwar möglich, kann aber toolgestützt noch verbessert werden.
+Dafür wurde die \ac{vsc}-Erweiterung fulibFeedback entwickelt, die in diesem Abschnitt vorgestellt wird.
+Die Erweiterung hat nur eine geringfügige Oberfläche und ist hauptsächlich im Hintergrund tätig.
+Nachfolgend wird die Benutzung in der Reihenfolge beschrieben, wie sie für Betreuende und Studierenden chronologisch abläuft.
+
+\subsection{Installation}
+
+Zunächst muss die Erweiterung installiert werden.
+Dies ist über den Visual Studio Marketplace\footnote{
+    \url{https://marketplace.visualstudio.com/items?itemName=fulib.fulibFeedback}
+} möglich.
+Ein einfacher Klick auf \textbf{Install} genügt, um zur \ac{vsc}-Anwendung zu wechseln und die Erweiterung hinzuzufügen.
+
+\subsection{Einrichtung}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.55\textwidth]{images/fulibFeedback-settings.png}
+    \caption{Einstellungen von fulibFeedback}
+    \label{fig:fulibFeedback-settings}
+\end{figure}
+
+Um die Erweiterung einzurichten, müssen zunächst einige Einstellungen getätigt werden.
+Abbildung~\ref{fig:fulibFeedback-settings} zeigt den Abschnitt von fulibFeedback in den Einstellungen von \ac{vsc}.
+Einmalig müssen Bewertende hier ihren Namen unter \textbf{User Name} eingeben.
+Dies dient der Zuordnung von ausgewählten Codeabschnitten im weiteren Verlauf.
+Für jede Hausaufgabe müssen gegeben ein Assignment dessen \textbf{\acs{id}} und \textbf{Token} angegeben werden.
+Studierende haben nicht das Token des Assignments, dafür jedoch eine Solution mit einer \textbf{\acs{id}} und zugehörigem \textbf{Token}.
+Der \textbf{\acs{api} Server} kann für Entwicklungszwecke geändert werden.
+
+Um die Einrichtung zu beschleunigen, müssen diese Einstellung \ac{idR} nicht von Hand getätigt werden.
+Es genügt, die \textbf{Configure}-Buttons unter den \textbf{Sharing}-Tabs von Assignment\footnote{
+    Siehe Abbildung~\ref{fig:assignment-share}.
+} oder Solution\footnote{
+    \todo{Keine Abbildung?}
+} zu drücken.
+Sämtliche relevante Einstellungen mit Ausnahme des Namens verwenden dann automatisch ausgefüllt.
+Dabei wird auch zwischen globalen Einstellungen und Workspace\footnote{
+    Bezeichnet den aktuell geöffneten Projektordner.
+}-spezifischen unterschieden.
+Assignment-Einstellungen werden automatisch global hinterlegt, um beim Öffnen weiterer Lösungen erhalten zu bleiben.
+Solution-Einstellungen werden lediglich im Workspace abgelegt, da sie nur für diese gültig sind.
+
+Wird ein Projektordner geöffnet, versucht die Erweiterung, diesen einer Solution zuzuordnen.
+Wurde in den Einstellungen eine Solution \acs{id} angegeben, sind keine weiteren Schritte notwendig.
+Anderfalls wird der Pfad der zuerst geöffnet Datei betrachtet:
+
+\begin{equation*}
+    \text{/Users/\dots/}
+    \underbrace{\text{pmws2122-assignment-3}}_{\text{Präfix}}
+    \text{-}
+    \underbrace{\text{********}}_{\text{GitHub-Name}}
+    \text{/}
+    \underbrace{\text{src/\dots/Field.java}}_{\text{Relativer Pfad}}
+\end{equation*}
+
 \subsection{VSCode Extension}\label{subsec:vscode-extension}
 
 \todo{

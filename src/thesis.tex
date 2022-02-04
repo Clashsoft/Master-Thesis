@@ -37,23 +37,23 @@
 
     \pagenumbering{roman}
 
-    \input{titlepage}
-    \input{abstract}
+    \include{titlepage}
+    \include{abstract}
 
     \tableofcontents
 
-    \input{acronyms}
+    \include{acronyms}
 
     \pagebreak
     \pagenumbering{arabic}
 
-    \input{chapter/1-introduction}
-    \input{chapter/2-basics}
-    \input{chapter/3-implementation}
-    \input{chapter/4-evaluation}
-    \input{chapter/5-results}
-    \input{chapter/6-conclusion}
-    \input{chapter/7-future}
+    \include{chapter/1-introduction}
+    \include{chapter/2-basics}
+    \include{chapter/3-implementation}
+    \include{chapter/4-evaluation}
+    \include{chapter/5-results}
+    \include{chapter/6-conclusion}
+    \include{chapter/7-future}
 
     \bibliographystyle{alphadin}
     \bibliography{thesis}
@@ -64,7 +64,7 @@
     \listoflistings
 
     \appendix
-    \input{appendix}
+    \include{appendix}
 
-    \input{declaration}
+    \include{declaration}
 \end{document}

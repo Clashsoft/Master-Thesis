@@ -603,6 +603,44 @@ Werden diese drei Werte verglichen, kann eine Einschätzung über die Spezifitä
 Sind alle drei Werte gleich, wie in Abbildung~\ref{fig:fulibFeedback-snippet-good} der Fall ist, kommt der Codeabschnitt in jeder Lösung exakt ein Mal vor.
 Das deutet darauf hin, dass er problemlos für die automatische Bewertung mit Code Search verwendet werden kann.
 
+Die Wahl des Codeabschnitts ist mitunter maßgeblich für die Effektivität und Korrektheit von Bewertungen mit Code Search.
+Kapitel~\ref{ch:evaluation} untersucht ausführlich anhand einiger realen Beispiele diesen Zusammenhang.
+Zunächst werden noch zwei Fälle betrachtet, in denen die Ergebniswerte ungleich sind und zu Problemen führen können.
+Die Abbildungen~\ref{fig:fulibFeedback-snippet-bad} und~\ref{fig:fulibFeedback-snippet-worst} zeigen diese Fälle.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/fulibFeedback-snippet-bad}
+    \caption{Codeabschnitt mit mehr Suchergebnissen als gefundenen Dateien}
+    \label{fig:fulibFeedback-snippet-bad}
+\end{figure}
+
+In Abbildung~\ref{fig:fulibFeedback-snippet-bad} wurde eine Codeabschnitt ausgewählt, dessen Suche mehr Ergebnisse als betroffene Dateien, aber in jeder Lösungen nur eine Datei ergeben hat.
+Das deutet darauf hin, dass der Code in manchen Lösungen mehrfach in der gleichen Datei vorhanden war.
+Bezieht sich die Teilaufgabe beispielsweise auf eine bestimmte Methode, wie in diesem Fall einen Test, kann dies zu unerwünschten Bewertungen führen.
+In diesem Beispiel war die Aufgabe, eine neue Testmethode in der vorgegebenen Testklasse \code{HA03Test} hinzuzufügen.
+In dieser musste unter anderem ein Datenmodell initialisiert werden.
+Der ausgewählte Code in Abbildung~\ref{fig:fulibFeedback-snippet-bad} wurde jedoch in dieser Klasse schon in einer anderen Methode vorgegeben.
+Dies ist auch daran ersichtlich, dass nahezu alle Abgaben diesen Code enthalten (124 von 125).
+Der ausgewählte Code ist folglich kein sinnvolle Indiz dafür, dass die Aufgabe "Test implementieren" korrekt umgesetzt wurde.
+Die gelbe Warnmeldung weist auf diesen Sachverhalt mit der Information hin, dass die Auswahl nicht ausreichend Kontext bietet.
+Eine mögliche Lösung ist hier, zusätzlich die voranstehenden Zeilen auszuwählen, die den Kopf der hinzuzufügenden Testmethode enthalten.
+Dann wären Suchergebnisse stets eindeutig pro Lösung.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/fulibFeedback-snippet-worst}
+    \caption{Codeabschnitt mit mehr gefundenen Dateien als Lösungen}
+    \label{fig:fulibFeedback-snippet-worst}
+\end{figure}
+
+In Abbildung~\ref{fig:fulibFeedback-snippet-worst} gibt es ein ähnliches Problem.
+Hier ist jedoch die Anzahl der Dateien mit Suchergebnissen größer als die Anzahl der Lösungen.
+Auch dies ist ein Indiz dafür, dass der ausgewählte Code nicht einzigartig ist oder genug Kontext bietet.
+In diesem Beispiel wurde ein Getter ausgewählt, der neben \code{Field} auch in anderen Klassen vorkommt.
+Hier ist es nicht möglich, mehr Kontext bereitzustellen, da bereits eine ganze Methode ausgewählt wurde.
+Stattdessen ist aufgabenspezifisch die Auswahl des Setters sinnvoller, da in diesem Beispiel die korrekte Implementierung von referentieller Integrität gefragt war.
+
 \subsection{VSCode Extension}\label{subsec:vscode-extension}
 
 \todo{

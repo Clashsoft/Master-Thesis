@@ -641,6 +641,26 @@ In diesem Beispiel wurde ein Getter ausgewählt, der neben \code{Field} auch in 
 Hier ist es nicht möglich, mehr Kontext bereitzustellen, da bereits eine ganze Methode ausgewählt wurde.
 Stattdessen ist aufgabenspezifisch die Auswahl des Setters sinnvoller, da in diesem Beispiel die korrekte Implementierung von referentieller Integrität gefragt war.
 
+\subsection{Darstellung von Bewertungen}
+
+Bewertungen, bei denen Codeabschnitte hinterlegt wurden, können von fulibFeedback im Editor angezeigt werden.
+Dies ist besonders für Studierende nützlich, die nach der Einrichtung der Erweiterungseinstellungen betrachten können, an welchen Stellen im Code zu Punktabzügen geführt haben und welche Teilaufgaben betroffen sind.
+Abbildung~\ref{fig:fulibFeedback-negative} zeigen die Markierung im Code sowie den Hilfetext, der beim Hovern über die betroffene Stelle dargestellt wird.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.83\textwidth]{images/fulibFeedback-positive}
+    \caption{Negative Bewertung als Markierung im Code}
+    \label{fig:fulibFeedback-negative}
+\end{figure}
+
+Abhängig von der vergebenen Punktzahl ändert sich die Farbe der gewellten Linie, welche die Markierung ausmacht.
+Wurde die maximale Punktzahl für die Teilaufgabe erreicht ist die Linie blau.
+Abzüge oder positive Teilaufgaben mit null Punkten färben die Linie rot wie in Abbildung~\ref{fig:fulibFeedback-negative}.
+Teilpunkte werden mit gelber Farbe signalisiert.
+Der Hilfetext enthält die Beschreibung der Teilaufgabe (\texttt{Aufgabe 1 / Assoziationen / Game -- Field (fields) \dots}), die vergebene Punktzahl (\texttt{(-1P)}), Remark (\texttt{Rückrichtung nicht gesetzt}) und Kommentar (\texttt{Hier fehlt oldGame.withoutFields(this)}) und den Autor der Bewertung (\texttt{Adrian Kunz}).
+Wurden mehrere Codeabschnitte hinterlegt, werden Links angezeigt, die auf andere betroffene Dateien und Zeilen verweisen und den zugehörigen Kommentar angeben (\texttt{Game.java(115, 1): Sehr gut!} und \texttt{Game.java(130, 1): Richtig}).
+
 \subsection{VSCode Extension}\label{subsec:vscode-extension}
 
 \todo{

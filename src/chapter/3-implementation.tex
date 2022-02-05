@@ -92,8 +92,8 @@ Anhand des Commits kann der exakte Stand zum Zeitpunkt der Abgabefrist wiederher
 Ist der Haken \textbf{Code Search} gesetzt, werden neben dem Commit auch die Dateien des Repositories heruntergeladen und separat gespeichert.
 Diese dienen nicht der Reproduzierbarkeit, sondern der Textsuche, wie in Abschnitt~\ref{subsec:code-search} näher erläutert wird.
 Aus diesem Grund wird auch kein Anspruch auf Vollständigkeit der Daten gestellt.
-Vergleichsweise große Dateien (> 64KB) werden nicht gespeichert, da gewöhnliche Quellcode-Dateien aus Hausaufgaben-Lösungen diese Größe nicht überschreiten.\footnote{
-    Die Suche nach Quelltext-Dateien größer als 64KB in der GitHub-Organisation "sekassel" ergab lediglich Ergebnisse aus Node.js-Projekten, darunter primär \code{package-lock.json}-Dateien und Dateien in versehentlich gepushten \code{node_modules}-Ordnern.
+Vergleichsweise große Dateien (> \SI{64}{\kibi\byte}) werden nicht gespeichert, da gewöhnliche Quellcode-Dateien aus Hausaufgaben-Lösungen diese Größe nicht überschreiten.\footnote{
+    Die Suche nach Quelltext-Dateien größer als \SI{64}{\kibi\byte} in der GitHub-Organisation "sekassel" ergab lediglich Ergebnisse aus Node.js-Projekten, darunter primär \code{package-lock.json}-Dateien und Dateien in versehentlich gepushten \code{node_modules}-Ordnern.
     Da dies generierter \ac{bzw} von Drittanbietern stammender Code ist, handelt es sich nicht um relevante Teile der Lösung, die durchsucht werden müssten.
 }
 
@@ -223,7 +223,7 @@ Die Tabelle gibt Auskunft über den GitHub-Benutzernamen\footnote{
 }-Zeitpunkt vor der Frist entspricht.
 Bei einem nachträglichen manuellem Import ist es möglich, dass die Push-Zeit nach der Abgabefrist liegt.
 In diesem Fall wird das Abgabedatum rot markiert.
-Name, Matrikelnummer (\textbf{Student ID}) und E-Mail-Adresse können nicht von GitHub Classroom ermittelt werden, weshalb sie in der Tabelle leer sind.
+Name, Matrikelnummer (\textbf{Student \acs{id}}) und E-Mail-Adresse können nicht von GitHub Classroom ermittelt werden, weshalb sie in der Tabelle leer sind.
 
 Die Punktzahl ist zunächst mit \texttt{?} als unausgewertet markiert.
 In der Abbildung wurden bereits einige Bewertungen vorgenommen, weshalb die zweite Person eine abschließende Punktzahl von 21 erhalten hat.
@@ -265,7 +265,7 @@ Der blaue Button mit eingekreistem Haken wird in einem späteren Abschnitt für 
 Die Detailansicht einer Abgabe öffnet sich nach Klicken des Augen-Buttons in der Abgabetabelle.
 In Abbildung~\ref{fig:solution-head} ist sichtbar, dass auch diese Ansicht wieder in mehrere Tabs aufgeteilt ist, um übersichtlich zu bleiben.
 In der Kopfzeile wird der Name\footnote{
-    Hier wurde der GitHub-Benutzername erneut durch \texttt{*}-Symbole ersetzt.
+    In Abbildung~\ref{fig:solution-head} wurde der GitHub-Benutzername erneut durch \texttt{*}-Symbole ersetzt.
 } des Studierenden und die Abgabezeit stets angezeigt.
 Für die Bewertung ist hauptsächlich der Tab \textbf{Solution \& Tasks} wichtig.
 Die Teilaufgaben werden wieder in einer Baumansicht dargestellt, wie in Abbildung~\ref{fig:solution-tasks} erkennbar ist.
@@ -339,7 +339,7 @@ Dort befinden sich Metadaten wie das Bewertungsdatum und der zugrundeliegende Co
 Die ebenfalls hier aufgeführten fulibFeedback-Einstellungen für \ac{vsc} werden in Abschnitt~\ref{sec:fulibFeedback} erneut erwähnt.
 
 Zum Versenden des Feedbacks werden mehrere Transportwege angeboten.
-Mit den Buttons \textbf{Copy Markdown} und \textbf{Copy HTML} kann das Feedback im jeweiligen Textformat in die Zwischenablage kopiert werden.
+Mit den Buttons \textbf{Copy Markdown} und \textbf{Copy \acs{html}} kann das Feedback im jeweiligen Textformat in die Zwischenablage kopiert werden.
 \textbf{Draft Mail} öffnet das Standard-Mailprogramm des Benutzers und füllt automatisch den Rumpf der Email mit dem Feedback.
 Soll die Bewertung über GitHub erfolgen, wie es in diesem Anwendungsbeispiel intendiert ist, gibt es zwei Möglichkeiten des Versands.
 Einerseits kann das Formular zum Anlegen eines Issues auf GitHub mit \textbf{Draft Issue} geöffnet werden, sodass ein weiteres Mal der Text überprüft werden kann.

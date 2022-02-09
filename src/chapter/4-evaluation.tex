@@ -79,11 +79,17 @@ Da es sich nur um eine Hiflestellung handelt, können erfahrene Benutzer dennoch
 
 \subsubsection{Sonstige \acl{qol}-Verbesserungen}
 
-\todo{
-    Kleine Oberflächenelemente als Resultat von Benutzerfeedback, zB im Evaluation-Modalfenster:
-    Punkte-Shortcut-Buttons, Remark ausklappen, Task-Description im Header, Code Search Preview.
-    VSCode Alternativen, Git Clone Protokoll, Firefox/andere Browser.
-}
+Dank dem ausführlichen Feedback der Betreuenden konnte neben den zuvor beschriebenen größeren Änderungen auch eine Reihe von kleinen \ac{qol}-Verbesserungen umgesetzt werden.
+Hauptsächlich sind diese in Teilen der fulib.org-Oberfläche angesiedelt, die am häufigsten verwendet werden, darunter insbesondere das Bewertungs-Modalfenster (Abbildung~\ref{fig:evaluation-modal}).
+Dort wurden beispielweise die Buttons zum schnellen Einstellen der Punktzahl hinzugefügt, da häufig die Angabe der Punktzahl vergessen wurde und das Zahlenfeld schwerer zu bedienen war.
+Die Möglichkeit zum Erweitern des Remark-Felds auf mehrere Zeilen ist entstanden, damit längere Hinweise und Fehlermeldung angegeben werden können.
+Die Teilaufgaben-Beschreibung im Kopf des Modalfensters wurde hinzugefügt, da in einigen Fällen vergessen wurde, welche Teilaufgabe zuvor ausgewählt wurde.
+Für Code Search wurde ein Banner hinzugefügt, das bei Original-Bewertungen die Anzahl der automatisch erstellten Bewertungen anzeigt, und bei letzteren einen Link zum Original.
+Zuletzt hat die relativ kleine Benutzeranzahl einige Erkenntnisse zu verschiedenen Präferenzen ergeben.
+Beispielsweise wurde von einem Bewertenden nicht \ac{vsc}, sondern die Open-Source-Alternative VSCodium bevorzugt.
+Dessen Anbindung führte zum Hinzufügen der Optionen in der Abgaben-Tabelle (Abbildung~\ref{fig:assignment-solutions-table}).
+Dies beeinhaltet auch die Auswahl zwischen den Git-Clone-Optionen \ac{ssh} und \ac{https}.
+Bei den Bewertenden gab es zudem Unterschiede in der Browser-Präferenz, wodurch Fehler entdeckt werden konnten, die browserabhängig aufgetreten sind.
 
 \subsection{Statistiken}\label{subsec:pm-statistics}
 

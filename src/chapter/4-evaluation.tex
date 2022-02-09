@@ -28,11 +28,57 @@ Des Weiteren wird erläutert, welche Erfahrung mit den Werkzeugen zu Anpassungen
 
 \subsection{Benutzer-Anmerkungen}\label{subsec:user-feedback}
 
+Während der Testphase der Werkzeuge in \ac{pm} wurden die Bewertenden gebeten, nach jeder Hausaufgabe eine kurze Rückmeldung zu geben.
+Diese konnte generelle Bemerkungen, Anfragen für neue Features, Verbesserungsvorschläge und kurze Fehlerberichte beeinhalten.
+Alle Rückmeldungen wurden in einem öffentlichen Issue\footnote{
+    \url{https://github.com/fujaba/fulib.org/issues/196}
+} auf GitHub gesammelt.
+Nachfolgend werden einige der wichtigsten Erkenntnisse daraus beschrieben, da sie maßgeblich zu der Entwicklung von fulib.org und fulibFeedback beigetragen haben.
+
+\subsubsection{Auswahl von Codeabschnitten}
+
+Die wichtigste Erkenntnis aus den Benutzeranmerkungen war die Art und Weise, wie Codeabschnitte ausgewählt werden.
+Der Ablauf, der in Abschnitt~\ref{subsec:choosing-code-snippets} beschrieben wurde und beide Werkzeuge symbiotisch kombiniert, wurde erst in einer späteren Version von fulibFeedback eingeführt.
+Zuvor wurde die gesamte Bewertung von Code allein mit fulibFeedback gemacht.
+Mittels Code Actions des \ac{lsp} wurde ein Menü angezeigt, das alle Teilaufgaben baumförmig anzeigte.
+Die Aktivierung eines Menüeintrags hat dazu geführt, das über dem ausgewählten Quellcode ein Kommentar eingefügt wurde, in dem Punktzahl und Remark eingegeben werden konnten.
+In diesem Kommentar konnten zwei Code Actions verwendet werden, um die Bewertung zu erstellen.
+Diese Vorgehensweise hatte einige erheblich Nachteile:
+
+\begin{itemize}
+    \item Das Menü, das die Teilaufgaben anzeigte, konnte bei einer großen Anzahl von Teilaufgaben unübersichtlich werden und teilweise die Bildschirmhöhe überschreiten.
+    Dies hat insbesondere die Effizienz eingeschränkt, da einige Zeit zum Suchen der nächsten unbewerteten Teilaufgabe notwendig war.
+    \item Der automatisch erstellte Kommentar enthielt nur die \ac{id} der zuvor ausgewählten Teilaufgaben, aber nicht deren Beschreibung.
+    Es kam vor, dass Bewertende versehentlich die falsche Teilaufgabe auswählten und dies nicht bermerkten, bevor die Bewertung erstellt wurde.
+    \item Generell erforderte der automatisch erstellte Kommentar einen erheblichen Programmieraufwand seitens des Language Servers.
+    Dies ist der Einschränkung des \ac{lsp} verschuldet, keine Möglichkeit zu bieten, als Teil einer Code Action den Benutzer des Editors nach einer Eingabe zu Frage.
+    Wäre dies möglich, hätten Remark und Punktzahl beispielweise über ein Prompt-Dialog erfragt werden können.
+    Die hinzugefügten Kommentarzeilen erwiesen sich besonders als Problem, indem sie die darunterliegenden Zeilennummern verschoben, obwohl diese für die Hinterlegung von Codeabschnitten und für die Anzeige des Feedbacks auf GitHub relevant sind.
+    \item Der Ablauf erlaubte nicht die Auswahl mehrere Codeabschnitte als Teil einer Bewertung in einem Schritt.
+    Es war notwendig, zuerst einen Abschnitt auszuwählen, eine Bewertung zu erstellen, einen weiteren Abschnitt auszuwählen, und zuletzt die Bewertung zu bearbeiten.
+    Dies erforderte erheblichen Aufwand bei der korrekten Implementierung von Code Search.
+    Bewertungen von anderen Lösungen, die anhand des ersten Codeabschnitts automatisch erstellt wurden, mussten wieder angepasst oder \ac{ggf} gelöscht werden, falls der zweite Codeabschnitt in der Lösung nicht gefunden wurde.
+    Damit verbundene Probleme haben sich besonders in Hausaufgabe 3 von \ac{pm} manifestiert.
+\end{itemize}
+
+Generell erwies sich diese Art der Bewertung als sehr umständlich für die Bewertenden.
+Die Einführung des neuen Ablaufs aus Abschnitt~\ref{subsec:choosing-code-snippets} konnte die Implementierung der fulibFeedback-Erweiterung deutlich vereinfachen, ermöglichte neue Verbesserungen und Hilfestellungen in der fulib.org-Oberfläche und wurde von den Benutzern positiv empfangen.
+
+\subsubsection{Benutzerfehler mit Code Search}
+
 \todo{
-    Highlights aus \url{https://github.com/fujaba/fulib.org/issues/196}
+    Gefahren von unüberlegter Auswahl mit Code Search~\ref{subsec:choosing-code-snippets}.
 }
 
-\subsection{Statistiken}\label{subsec:pm-statistics}
+\subsubsection{Sonstige \acl{qol}-Verbesserungen}
+
+\todo{
+    Kleine Oberflächenelemente als Resultat von Benutzerfeedback, zB im Evaluation-Modalfenster:
+    Punkte-Shortcut-Buttons, Remark ausklappen, Task-Description im Header, Code Search Preview.
+    VSCode Alternativen, Git Clone Protokoll, Firefox/andere Browser.
+}
+
+\subsubsection{Statistiken}\label{subsec:pm-statistics}
 
 \todo{
     Vergleich aller Hausaufgaben.

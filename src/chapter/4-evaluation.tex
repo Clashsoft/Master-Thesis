@@ -66,9 +66,16 @@ Die Einführung des neuen Ablaufs aus Abschnitt~\ref{subsec:choosing-code-snippe
 
 \subsubsection{Benutzerfehler mit Code Search}
 
-\todo{
-    Gefahren von unüberlegter Auswahl mit Code Search~\ref{subsec:choosing-code-snippets}.
-}
+Die Bewertung einer großen Anzahl von Studierenden kann dazu führen, dass Fehler von den Bewertenden gemacht werden.
+Dies hat sich während der Evaluationsphase in \ac{pm} zunehmend gezeigt und besonders bemerkbar gemacht, da fehlerhafte Bewertungen von einem Bewertenden auf Abgaben eines anderen von Code Search übertragen wurden.
+Bei groben Fehlern führte dies dazu, dass vermeintlich bewertete Teilaufgaben nochmal überprüft werden mussten, was zusätzlichen Zeitaufwand erforderte.
+Das Problem machte sich besonders in Hausaufgabe 7 von \ac{pm} bemerkbar\footnote{
+    \url{https://github.com/fujaba/fulib.org/issues/196\#issuecomment-1022086613}
+}.
+Hauptursache war die Auswahl von Codeabschnitten, welche nicht eindeutig waren und unzureichenden Kontexts enthielten.
+Aus diesem Grund wurden die in Abschnitt~\ref{subsec:choosing-code-snippets}, Abbildungen~\ref{fig:fulibFeedback-snippet-bad} und~\ref{fig:fulibFeedback-snippet-worst} dargestellten Informationstexte eingefügt, welche die Anzahl der von Code Search gefundenen Ergebnisse anzeigen und die Spezifität der Codeabschnitte einschätzen.
+Dies erwies sich als nützlich genug, um die Benutzerfehler zu reduzieren.
+Da es sich nur um eine Hiflestellung handelt, können erfahrene Benutzer dennoch Code auswählen, der nicht eindeutig ist, sofern dies als akzeptabel befunden wird.
 
 \subsubsection{Sonstige \acl{qol}-Verbesserungen}
 

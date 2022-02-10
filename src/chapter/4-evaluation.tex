@@ -101,13 +101,49 @@ Bei den Bewertenden gab es zudem Unterschiede in der Browser-Präferenz, wodurch
 
 \subsection{Anpassungen}\label{subsec:pm-adaptations}
 
-\todo{
-    Vorgaben für Namen, fx:ids.
-    Beobachtungen bei Aufgabenstellung allgemein (Beispiel Todos -> mehr identische Strukturen, bessere Code Search Ergebnisse).
-}
+Im Verlauf des Übungsbetriebs von \ac{pm} wurde deutlich, dass einige Anpassungen an der Aufgabenstellung zu besseren Ergebnissen mit Code Search führen können.
+Es liegt nahe, dass die exakte Suche von Code Search genau dann weniger Ergebnisse erzielt, wenn Studierende eine große Vielfalt von unterschiedlichem Code abgeben.
+Folglich kann die Effektivität gesteigert werden, wenn die Aufgabenstellung zur Abgabe von weniger unterschiedlichem Code verleitet.
+In diesem Abschnitt werden einige Möglichkeiten zur Optimierung, die in der Veranstaltung ausprobiert wurden und sich ergeben haben, beschrieben.
+Dafür ist es zunächst sinnvoll, einige Kategorien zu definieren, in denen Varianten von Quellcode fallen können, welche die Effektivität von Code Search verringern.
+
+\begin{description}
+    \item[Einrückung und sonstige Formatierung.]
+    Dies umfasst die Einrückung von Quellcode mit Tabs oder Leerzeichen sowie die sonstige Platzierung von Leerzeichen um Klammern, Symbole und Bezeichnern
+    Sie kann sich abhängig von den Einstellungen der \ac{ide} der Studierenden unterscheiden.
+    \item[Benennung.]
+    Eine naheliegende Ursache von Varianten ist die unterschiedliche Benennung von Bezeichnern.
+    Dies umfasst Klassen, Attribute, Methoden, Parameter und lokale Variablen.
+    Die Benennung folgt meist einem bestimmten Muster abhängig vom Typ:
+    \code{int}-Variablen werden häufig mit Buchstaben wie \code{i}, \code{j}, \code{x} oder \code{n} benannt.
+    \code{String}s werden häufig nach ihrer Rolle benannt, beispielsweise \code{name}, \code{phase}, seltener generisch wie \code{x} oder \code{value}.\footnote{
+        Bei einer Analyse der Methode \code{setPhase(String)} aus Aufgabenblatt 3 ergab sich folgende Verteilung des Parameternamens:
+        112 mal \code{phase}, zwei mal \code{value}, je ein mal \code{newPhase}, \code{phrase}\sic, \code{sus} und \code{x}.\label{fn:setPhase}
+    }
+    Objekte folgend häufig dem gleichen Muster der Benennung nach ihrer Rolle.\footnote{
+        Der Parameter der Methode \code{setWinner(Player)} aus Aufgabenblatt 3 wurde wie folgt benannt:
+        94 mal \code{winner}, elf mal \code{player}, vier mal \code{value}, drei mal \code{newWinner}, je ein mal \code{p}, \code{sus}, \code{winnePlayer}\sic und \code{x}.\label{fn:setWinner}
+    }
+    \item[Strukturierung.]
+    Diese Kategorie beeinhalt insbesondere die Anordung von imperativen Quellcode.
+    Dazu zählen beispielsweise die Reihenfolge von unabhängigen Anweisungen, die Verschachtelung von \code{if}-Abfragen und Schleifen, die Operanden von kommutativen Operatoren wie \code{+}, \code{*}, \code{&&} oder \code{||}, bool'sche Ausdrücke und Klammersetzung.
+    Wird von der Aufgabenstellung nur das Ergebnis einer Methode verlangt, die eigentliche Implementierung aber frei gelassen, sind die Variationen dieser Kategorie kaum voraussehbar.
+    \item[Beispielwerte.]
+    Die Kreativität bei Beispielwerten macht sich hauptsächlich in Tests bemerkbar.
+    Sofern kein konkretes Szenario vorgegeben ist, das vom Test durchgeführt werden soll, sind Studierende frei in der Wahl von Namen, Zahlen und sonstigen Zeichenketten.
+\end{description}
+
+Das Problem der unterschiedlichen Einrückung und Formatierung wird bereits von Code Search gelöst, indem die Tokenisierung sämtliche Leerzeichen ignoriert und nicht in die Suche einbezieht.
+
+Die Benennung kann durch Angaben in der Aufgabenstellung standardisiert werden.
+In den Programmieraufgaben der Veranstaltung waren das Datenmodell und Methodennamen vorgegeben, wodurch primär Parameter und lokale Variablen unterschiedlich benannt wurden.
+Es hat sich gezeigt, dass die meisten Studierenden ähnliche Namengebungs-Strategien verfolgen\footref{fn:setPhase}~\footref{fn:setWinner} und dadurch die Effektivität nur geringfügig beeinflusst wird.
+Sonstige Bezeichner, beispielsweise \acp{id} von Oberflächenelementen, wurden in den Hausaufgaben 4, 6 und 9 vorgegeben.
+Abbildung~\todo{XX (Metriken)} der Metriken zeigt, dass dies mit besserer Code Search-Effektivität verbunden ist.
 
 \todo{
-    Erfahrungsbericht, User Feedback.
+    Strukturierung: TODOs (HA7, 8).
+    Beispielwerte: generell schlechte Effektivität bei Test-Aufgaben.
 }
 
 \section{Algorithmen und Datenstrukturen}\label{sec:algods-2021}

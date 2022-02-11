@@ -149,10 +149,20 @@ Es hat sich gezeigt, dass die meisten Studierenden ähnliche Namengebungs-Strate
 Sonstige Bezeichner, beispielsweise \acp{id} von Oberflächenelementen, wurden in den Hausaufgaben 4, 6 und 9 vorgegeben.
 Abbildung~\todo{XX (Metriken)} der Metriken zeigt, dass dies mit besserer Code Search-Effektivität verbunden ist.
 
-\todo{
-    Strukturierung: TODOs (HA7, 8).
-    Beispielwerte: generell schlechte Effektivität bei Test-Aufgaben.
-}
+Für die Strukturierung hat sich im Verlauf der Veranstaltung eine unbeabsichtigte Lösung ergeben.
+Vorwiegend betraf dies die Hausaufgaben 7 und 8 \todo{weitere?}.
+Es wurden Vorlagen bereitgestellt, welche mit Kommentaren darauf hinweisen, an welchen Stellen im Code bestimmte Funktionalität implementiert werden muss.
+Dies verleitete Studierende dazu, ähnlich strukturierte Lösungen abzugeben.
+Insbesondere beeinflusste dies die Schachtelung von \code{if}-Anweisungen und Schleifen sowie die Reihenfolge von imperativen Code.
+Dennoch entstanden Variationen durch das optionale \code{this.}\footnote{
+    Dieses Sprachkonstrukt von Java kann für qualifizierte Attributzugriffe und Methodenaufrufe mit dem aktuellen Objekt verwendet werden, ist aber meist nicht notwendig.
+}, Klammersetzung, bool'sche Operationen und kommutative Operanden.
+Aus diesem Grund ist eine große Bandbreite an Effektivitäts-Werten für Teilaufgaben dieser Hausaufgaben entstanden, welche sich jedoch insgesamt zu einem mittelmäßigen Ergebnis ausgleichen.
+
+Das Problem der Beispielwerte in Tests hat sich besonders bemerkbar gemacht.
+Dort wurden teilweise keine Ergebnisse von Code Search gefunden und somit keine Zeit eingespart.
+Hausaufgabe 5 stellt dafür ein Extrembeispiel dar, weil sich diese inhaltlich mit dem Test-First-Prinzip befasste und dadurch die Tests einen Großteil der Punkte beisteuerten.
+Weiterhin wurde in diesem Aufgabenblatt verlangt, Mockups anzufertigen, welche keinen Code benötigen und damit nicht für Code Search geeignet sind.
 
 \section{Algorithmen und Datenstrukturen}\label{sec:algods-2021}
 

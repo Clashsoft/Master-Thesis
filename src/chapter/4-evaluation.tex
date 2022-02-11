@@ -111,6 +111,9 @@ Dafür ist es zunächst sinnvoll, einige Kategorien zu definieren, in denen Vari
     \item[Einrückung und sonstige Formatierung.]
     Dies umfasst die Einrückung von Quellcode mit Tabs oder Leerzeichen sowie die sonstige Platzierung von Leerzeichen um Klammern, Symbole und Bezeichnern
     Sie kann sich abhängig von den Einstellungen der \ac{ide} der Studierenden unterscheiden.
+    \item[Kommentare.]
+    Kommentare verhalten sich ähnlich wie Leerzeichen und Einrückung insofern, dass sie keinen Einfluss auf die Semantik von Quellcode haben.
+    Es liegt nahe, diese bei der Textsuche zu ignorieren.
     \item[Benennung.]
     Eine naheliegende Ursache von Varianten ist die unterschiedliche Benennung von Bezeichnern.
     Dies umfasst Klassen, Attribute, Methoden, Parameter und lokale Variablen.
@@ -134,6 +137,11 @@ Dafür ist es zunächst sinnvoll, einige Kategorien zu definieren, in denen Vari
 \end{description}
 
 Das Problem der unterschiedlichen Einrückung und Formatierung wird bereits von Code Search gelöst, indem die Tokenisierung sämtliche Leerzeichen ignoriert und nicht in die Suche einbezieht.
+Kommentare werden hingegen nicht ignoriert, da sie bei einigen Hausaufgaben hilfreich für die Einschränkung von Code Search durch Kontext waren.
+Darüber hinaus haben einige Aufgabenblätter\footnote{
+    Hausaufgaben 7, 8, 10 und 11. \todo{12?}.
+} verlangt, dass besondere \code{TODO}-Kommentare entfernt werden.
+Dies wäre mit Code Search nicht prüfbar gewesen, wenn die Kommentare wie Leerzeichen behandelt worden wären.
 
 Die Benennung kann durch Angaben in der Aufgabenstellung standardisiert werden.
 In den Programmieraufgaben der Veranstaltung waren das Datenmodell und Methodennamen vorgegeben, wodurch primär Parameter und lokale Variablen unterschiedlich benannt wurden.

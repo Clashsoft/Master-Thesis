@@ -168,12 +168,12 @@ Dafür ist es zunächst sinnvoll, einige Kategorien zu definieren, in denen Vari
         Bei einer Analyse der Methode \code{setPhase(String)} aus Aufgabenblatt 3 ergab sich folgende Verteilung des Parameternamens:
         112 mal \code{phase}, zwei mal \code{value}, je ein mal \code{newPhase}, \code{phrase}\sic, \code{sus} und \code{x}.\label{fn:setPhase}
     }
-    Objekte folgend häufig dem gleichen Muster der Benennung nach ihrer Rolle.\footnote{
+    Objekte folgen häufig dem gleichen Muster der Benennung nach ihrer Rolle.\footnote{
         Der Parameter der Methode \code{setWinner(Player)} aus Aufgabenblatt 3 wurde wie folgt benannt:
         94 mal \code{winner}, elf mal \code{player}, vier mal \code{value}, drei mal \code{newWinner}, je ein mal \code{p}, \code{sus}, \code{winnePlayer}\sic und \code{x}.\label{fn:setWinner}
     }
     \item[Strukturierung.]
-    Diese Kategorie beeinhalt insbesondere die Anordung von imperativen Quellcode.
+    Diese Kategorie beeinhaltet insbesondere die Anordung von imperativen Quellcode.
     Dazu zählen beispielsweise die Reihenfolge von unabhängigen Anweisungen, die Verschachtelung von \code{if}-Abfragen und Schleifen, die Operanden von kommutativen Operatoren wie \code{+}, \code{*}, \code{&&} oder \code{||}, bool'sche Ausdrücke und Klammersetzung.
     Wird von der Aufgabenstellung nur das Ergebnis einer Methode verlangt, die eigentliche Implementierung aber frei gelassen, sind die Variationen dieser Kategorie kaum voraussehbar.
     \item[Beispielwerte.]
@@ -195,11 +195,11 @@ Sonstige Bezeichner, beispielsweise \acp{id} von Oberflächenelementen, wurden i
 Abbildung~\todo{XX (Metriken)} der Metriken zeigt, dass dies mit besserer Code Search-Effektivität verbunden ist.
 
 Für die Strukturierung hat sich im Verlauf der Veranstaltung eine unbeabsichtigte Lösung ergeben.
-Vorwiegend betraf dies die Hausaufgaben 7 und 8 \todo{weitere?}.
+Vorwiegend betraf dies die Hausaufgaben 7 und 8.
 Es wurden Vorlagen bereitgestellt, welche mit Kommentaren darauf hinweisen, an welchen Stellen im Code bestimmte Funktionalität implementiert werden muss.
 Dies verleitete Studierende dazu, ähnlich strukturierte Lösungen abzugeben.
 Insbesondere beeinflusste dies die Schachtelung von \code{if}-Anweisungen und Schleifen sowie die Reihenfolge von imperativen Code.
-Dennoch entstanden Variationen durch das optionale \code{this.}\footnote{
+Dennoch entstanden Variationen durch das optionale \code{this}\footnote{
     Dieses Sprachkonstrukt von Java kann für qualifizierte Attributzugriffe und Methodenaufrufe mit dem aktuellen Objekt verwendet werden, ist aber meist nicht notwendig.
 }, Klammersetzung, bool'sche Operationen und kommutative Operanden.
 Aus diesem Grund ist eine große Bandbreite an Effektivitäts-Werten für Teilaufgaben dieser Hausaufgaben entstanden, welche sich jedoch insgesamt zu einem mittelmäßigen Ergebnis ausgleichen.

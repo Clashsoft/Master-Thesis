@@ -14,7 +14,6 @@ Die Abschnitte~\ref{sec:algods-2021} und~\ref{sec:einfinf-2021-2022} bieten dara
 \todo{
     Referenzen:
     Eingewöhnungszeit~\ref{subsec:grading}.
-    Statistiken~\ref{subsec:statistics}: Relative Anteile Code Search/Manuell, Code Search Savings, Punktzahl vs Bewertungsanzahl.
 }
 
 \section{\acl{pm}}\label{sec:pm-2021-2022}
@@ -24,6 +23,50 @@ Sie umfasste ingesamt elf Aufgabenblätter und ein Abschlussprojekt, welche von 
 Dabei sind individuelle Anmerkungen sowie eine große Anzahl von Metriken in Form der Statistik entstanden.
 In diesem Abschnitt werden einige Ansichten der Benutzer erläutert (Abschnitt~\ref{subsec:user-feedback}) und die Rohdaten der Statistik erfasst (Abschnitt~\ref{subsec:pm-metrics}).
 Des Weiteren wird erläutert, welche Erfahrung mit den Werkzeugen zu Anpassungen der Aufgabenstellungen und Bewertungskriterien geführt haben, um den Ablauf der Bewertung zu optimieren (Abschnitt~\ref{subsec:pm-adaptations}).
+Da sich die Beobachtungen und Metriken stets auf einzelne Übungsblätter beziehen, ist es an dieser Stelle lohnenswert, die elf \acp{ha} kurz zu beschreiben.
+
+\begin{description}
+    \item[\ac{ha}1] führt die Versionskontrolle mit Git ein, festigt den Unterschied zwischen den Konzepten "Abstrakt" und "Konkret" und führt Szenarien ein.\footnote{
+        \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2021/10/PMWS2122_HA1.pdf}
+    }
+    \item[\ac{ha}2] beschäftigt sich mit Objekt- und Klassendiagrammen, die aus gegebenen Szenarien abgeleitet werden sollen.\footnote{
+        \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2021/11/PMWS2122_HA2.pdf}
+    }
+    \item[\ac{ha}3] erwartet die händische Implementierung eines Datenmodells mit besonderem Augenmerk auf die korrekte Sicherstellung von referentieller Integrität.
+    Einige prüfende Tests sind vorgegeben, ein weiterer muss selbst implementiert werden.\footnote{
+        \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2021/11/PM2022_Hausaufgabe03.pdf}
+    }
+    \item[\ac{ha}4] führt fulib als Werkzeug zur Datenmodell-Generierung ein und ersetzt damit die händische Implementierung von \ac{ha}3.
+    Darauf aufbauend soll erste Logik zur Initialisierung eines Spiels implementiert und getestet werden.\footnote{
+        \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2021/11/PM_2122_Hausaufgabe04.pdf}
+    }
+    \item[\ac{ha}5] übt Design und Planung von Benutzeroberflächen in Form von Wireframes.
+    Davon unabhängig wird das Test-First-Prinzip anhand von weiterer Spiellogik erprobt.\footnote{
+        \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2021/12/PM_2022_Hausaufgabe05.pdf}
+    }
+    \item[\ac{ha}6] erwartet, dass die zuvor erstellten Oberflächendesigns mit \acp{fxml}\footnote{
+        \ac{xml}-ähnliche Beschreibung von Oberflächen für das JavaFX-Framework.
+    } umgesetzt und mit JavaFX zu einer ausführbaren Anwendung gemacht werden.
+    Deren Oberfläche soll mit der TestFX-Bibliothek getestet werden.\footnote{
+        \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2021/12/PM_2021_Hausaufgabe06.pdf}
+    }
+    \item[\ac{ha}7] beeinhaltet die weitere Implementierung von Spiellogik, die dynamische Umsetzung der Oberfläche mit Controllern und zugehörige Tests.\footnote{
+        \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2022/01/PM_2022_Hausaufgabe07.pdf}
+    }
+    \item[\ac{ha}8] verknüpft Modell und Oberfläche und hält diese bei jeder Änderung synchron, implementiert die verbleibende Spiellogik und testet den kritischen Pfad des fertigen Spiels.\footnote{
+        \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2022/01/PM_2022_Hausaufgabe08.pdf}
+    }
+    \item[\ac{ha}9] beginnt ein neues Projekt, das initialisiert und mit einer einfachen Oberfläche versehen werden soll.\footnote{
+        \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2022/01/PM_2022_Hausaufgabe09.pdf}
+    }
+    \item[\ac{ha}10] erweitert das neue Projekt um Serveranbindung mit \ac{rest} und dynamische Änderung der Oberfläche, um einen einfachen Chat zu ermöglichen.\footnote{
+        \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2022/02/PM_WS2122_Hausaufgabe10.pdf}
+    }
+    \item[\ac{ha}11] ersetzt die \ac{rest}-Anbindung der vorherigen Hausaufgabe mit einer WebSocket-Schnittstelle.
+    Darüber hinaus wird einfache Speicherung von Einstellungen mit \ac{json}-Dateien eingeführt.\footnote{
+        \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2022/02/PM_2122_Hausaufgabe11.pdf}
+    }
+\end{description}
 
 \subsection{Benutzer-Anmerkungen}\label{subsec:user-feedback}
 
@@ -92,9 +135,12 @@ Bei den Bewertenden gab es zudem Unterschiede in der Browser-Präferenz, wodurch
 
 \subsection{Metriken}\label{subsec:pm-metrics}
 
+In der Veranstaltung \ac{pm} konnten dank der integrierten Statistiken von fulib.org eine Vielzahl von Messdaten ermittelt werden.
+Dieser Abschnitt beschreibt einige Metriken, die darauf basieren.
+
 \todo{
     Vergleich aller Hausaufgaben.
-    Wichtigste Metriken: Anteil Code Search, Zeit bewertet, Zeit gespart.
+    Wichtigste Metriken: Anteil Code Search, Zeit bewertet, Zeit gespart, Punktzahl vs Bewertungsanzahl.
     Besonderheiten bei Tasks.
 }
 

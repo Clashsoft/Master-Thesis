@@ -31,5 +31,11 @@
             ],
             "env": {}
         }
+    ],
+    "cSpell.enabled": true,
+    "cSpell.language": "en,de-DE",
+    "cSpell.words": [
+        "fulib",
+        "Modalfenster"
     ]
 }

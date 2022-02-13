@@ -78,7 +78,7 @@ Die Beschreibung (\textbf{Description}) kann weitere Informationen über das Ass
 Auf der nächsten Seite des Formulars können Angaben für die Integration von GitHub Classroom gemacht werden.
 Abbildung~\ref{fig:assignment-create-classroom} zeigt ein Bild dieses Formulars.
 Dafür müssen der Name der GitHub-Organisation (\textbf{Organization}) und das Präfix (\textbf{Prefix}) konfiguriert werden.
-Dies ermöglicht die manuelle oder zum Zeitpunkt der Deadline automatische Importierung von Lösungen von der Platform.
+Dies ermöglicht den manuelle oder zum Zeitpunkt der Deadline automatischen Import von Lösungen von der Platform.
 Anhand der Search-\ac{api} von GitHub\footnote{
     \url{https://docs.github.com/en/rest/reference/search\#search-repositories}
 } wird nach allen Repositories in der angegebenen Organisation gesucht, deren Name mit dem Präfix beginnt.
@@ -200,7 +200,7 @@ Der Button \textbf{Configure} wird für fulibFeedback eingesetzt und wird in Abs
 
 Sobald die Bewertenden den Einladungslink für ein Assignment erhalten haben, können sie mit der Bewertung beginnen.
 Nachfolgend werden einige Schritte beschrieben, die dafür notwendig sind.
-Es handelt sich um wiederholende Abläufe, die jedoch nach kurzer Eingwöhnungszeit eine effiziente Arbeitsweise erlauben.
+Es handelt sich um wiederholende Abläufe, die jedoch nach kurzer Eingewöhnungszeit eine effiziente Arbeitsweise erlauben.
 Dies wird in Kapitel~\ref{ch:evaluation} näher beleuchtet.
 
 \subsubsection{Abgabentabelle}
@@ -244,7 +244,7 @@ Unter den \textbf{Actions} befinden sich die wichtigsten Aktionen, die für die 
 Mit dem Augen-Button kann die Detailansicht der Abgabe geöffnet werden, in der die Bewertung einzelner Teilaufgaben stattfindet.
 Dies ist Inhalt des folgenden Abschnitts.
 Der graue GitHub-Button öffnet das Repository, von dem die Lösung importiert wurde, auf GitHub und zeigt dabei den Stand des letzten Commits vor der Abgabefrist.
-Der Button mit eingerahmten spitzen Klammern öffnet die Lösung sofort in einer \ac{ide}, indem das GitHub-Repository gecloned\footnote{
+Der Button mit eingerahmten spitzen Klammern öffnet die Lösung sofort in einer \ac{ide}, indem das GitHub-Repository geklont\footnote{
     Git-Bezeichnung für das Kopieren eines Online-Repositories in einen lokalen Ordner.
 } wird.
 Mit dem Einstellungs-Button neben der Suchleiste kann zwischen verschiedenen \acp{ide} (\ac{vsc}, Code-OSS und VSCodium\footnote{
@@ -306,7 +306,7 @@ Der \textbf{Name} dient der Identifikation des Bewerters, wird aber bei eingelog
 Der Informationstext zu fulibFeedback informiert über dessen Verfügbarkeit zum Hinterlegen von Codebeispielen.
 Dies wird in Abschnitt~\ref{sec:fulibFeedback} erneut aufgefasst.
 Mit dem \textbf{Submit}-Button wird schließlich die Bewertung gespeichert und das Modalfenster geschlossen.
-In Abbildung~\ref{fig:evaluation-modal} wurde eine bereits vorhande Bewertung zum Bearbeiten geöffnet, weshalb der \textbf{Delete}-Button sichtbar ist, um diese zu löschen.
+In Abbildung~\ref{fig:evaluation-modal} wurde eine bereits vorhandene Bewertung zum Bearbeiten geöffnet, weshalb der \textbf{Delete}-Button sichtbar ist, um diese zu löschen.
 
 Die Bewertung von Teilaufgaben mit diesem Vorgehen ein wiederkehrender Ablauf, der von Bewertenden hunderte Male pro Hausaufgabe durchgeführt wird.
 Daher wurde besonderer Wert darauf gelegt, den Ablauf möglichst effizient zu gestalten.
@@ -355,7 +355,7 @@ Diese werden sowohl übergreifend als auch pro Teilaufgabe dargestellt.
 Zusätzlich wird Einsicht darüber geboten, welche Teilaufgaben am häufigsten zu Punkteeinbußen oder -Abzügen geführt haben.
 Daraus lässt sich ableiten, ob Lernziele möglicherweise nicht erreicht werden konnten oder Schwierigkeiten bei der Umsetzung bestanden.
 
-Die Statistik kann in der Assignment-Übersicht unter dem gleichbenannten Tab gefunden werden.
+Die Statistik kann in der Assignment-Übersicht unter dem gleichnamigen Tab gefunden werden.
 In Abbildung~\ref{fig:assignment-statistics-basics} sind zunächst die übergreifenden Informationen dargestellt.
 Die Seite gliedert sich in drei Abschnitte, \textbf{Solutions}, \textbf{Evaluations} und \textbf{Time Tracking}.
 
@@ -367,7 +367,7 @@ Die Seite gliedert sich in drei Abschnitte, \textbf{Solutions}, \textbf{Evaluati
 \end{figure}
 
 Unter Solutions ist jeweils die Anzahl der Abgaben insgesamt (\textbf{Total}), mit angefangener Bewertung (\textbf{Evaluated}) und mit versendeten Feedback abgeschlossenen (\textbf{Graded}) sichtbar.
-Zudem wird die durchschnittlich erreichte Punktzahl der abgeschlossenen Abgaben abgezeigt\footnote{
+Zudem wird die durchschnittlich erreichte Punktzahl der abgeschlossenen Abgaben angezeigt\footnote{
     Es handelt sich bei diesem und folgenden Screenshots der Statistik nicht um die realen Zahlen der Hausaufgabe 3.
 }.
 
@@ -394,7 +394,7 @@ Kapitel~\ref{ch:evaluation} wird diesen Messwert anhand einiger realer Beispiele
 
 Evaluations und Time Tracking können die Ansicht verändern, um Punktzahlen statt Bewertungen von Teilaufgaben als Bewertungsgrundlage zu verwenden.
 Dafür wird der Haken \textbf{Weighted by Points} gesetzt, wie Abbildung~\ref{fig:assignment-statistics-by-points} zeigt.
-Dadurch kann ein Vergleich zwischen Bewertungs-Einheiten und Punkteeinheiten erfolgen und ermittelt werden, in welcher Relation der Arbeitsaufwand und die vergebeben Punkte stehen.
+Dadurch kann ein Vergleich zwischen Bewertungs-Einheiten und Punkteeinheiten erfolgen und ermittelt werden, in welcher Relation der Arbeitsaufwand und die vergebenen Punkte stehen.
 Dies ist besonders dann interessant, wenn die Punkte direkten Einfluss auf die Benotung der Veranstaltung haben, wie es bei Laborveranstaltungen der Fall sein kann.
 In Kapitel~\ref{ch:evaluation} werden einige Beispiele betrachtet, wo die Punktzahl und Bewertungsanzahl teilweise stark unterschiedlich sind, wenn Teilaufgaben mit mehr als einem Punkt bewertet werden.
 
@@ -424,7 +424,7 @@ Dafür werden jeweils kurze Stichpunkte zu jedem Wert genannt, um Hinweise auf d
     Diese wird gemessen, während das Bewertungs-Modalfenster geöffnet ist.
     Das verlängertes Öffnen dieses Fensters, beispielsweise beim Verlassen des Arbeitsplatzes oder beim Einlegen einer Pause, kann die Statistik verfälschen.
     Um dies zu vermeiden, werden Ausreißer länger als 60 Sekunden nicht im Durchschnitt verrechnet.
-    \item[Code Search Time Savings] bezeichnet die geschätze Zeit, die durch Code Search bei der Bewertung dieser Teilaufgabe eingespart wurde.
+    \item[Code Search Time Savings] bezeichnet die geschätzte Zeit, die durch Code Search bei der Bewertung dieser Teilaufgabe eingespart wurde.
     Sie berechnet sich durch Multiplikation der Average Evaluation Time mit der Anzahl der von Code Search erstellten Bewertungen.
     Die Summe dieser Werte über alle Teilaufgaben ergibt die zuvor genannte Zeit, die insgesamt mit Code Search gespart wurde.
     \item[Average Points] ist die durchschnittlich vergebene Punktzahl über alle Bewertungen dieser Teilaufgabe.
@@ -545,7 +545,7 @@ Solution-Einstellungen werden lediglich im Workspace abgelegt, da sie nur für d
 
 Wird ein Projektordner geöffnet, versucht die Erweiterung, diesen einer Solution zuzuordnen.
 Wurde in den Einstellungen eine Solution \acs{id} angegeben, sind keine weiteren Schritte notwendig.
-Anderfalls wird der Pfad der zuerst geöffnet Datei betrachtet und wie in~\ref{eqn:absolute-path-deconstruction} dekonstruiert.
+Andernfalls wird der Pfad der zuerst geöffnet Datei betrachtet und wie in~\ref{eqn:absolute-path-deconstruction} dekonstruiert.
 
 \begin{equation}\label{eqn:absolute-path-deconstruction}
     \text{/Users/\dots/}
@@ -557,13 +557,13 @@ Anderfalls wird der Pfad der zuerst geöffnet Datei betrachtet und wie in~\ref{e
 \end{equation}
 
 Damit das Präfix gefunden werden kann, müssen anhand der eingestellten \acs{id} das Assignment und dessen Classroom Prefix ermittelt werden.
-Anderfalls kann auch der GitHub-Name und der relative Pfad nicht bestimmt werden.
+Andernfalls kann auch der GitHub-Name und der relative Pfad nicht bestimmt werden.
 Bei erfolgreicher Bestimmung der Lösung wird eine Hinweismeldung angezeigt, die in Abbildung~\ref{fig:fulibFeedback-notification} dargestellt ist und Auskunft über den Titel des Assignments und den Namen des Studierenden gibt.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.45\textwidth]{images/fulibFeedback-notification}
-    \caption{Benachrichtigung nach erfolgreicher Ermittlung von Asssignment und Solution}
+    \caption{Benachrichtigung nach erfolgreicher Ermittlung von Assignment und Solution}
     \label{fig:fulibFeedback-notification}
 \end{figure}
 
@@ -585,7 +585,7 @@ Abbildung~\ref{fig:fulibFeedback-snippet-good} zeigt ein Beispiel, wie sich die 
 Das Formular für die Bewertung wird schmaler und auf der linken Seite erscheint ein neuer Bereich, in dem der Codeabschnitt sowie die Kontextdaten angezeigt werden.
 Der Code dient zunächst nur als Vorauswahl und wird erst durch Klick auf den Plus-Button hinzugefügt.
 Alternativ kann im Textfeld \textbf{Comment} ein Kommentar für den Codeabschnitt hinterlegt werden.
-Dieser unterscheided sich vom Remark insofern, dass er abschnittspezifische Hinweise erlaubt.
+Dieser unterscheidet sich vom Remark insofern, dass er Abschnitt-spezifische Hinweise erlaubt.
 Dies ist besonders hilfreich, wenn mehrere Abschnitte zur gleichen Bewertung hinzugefügt werden.
 
 Nach Hinzufügen eines Codeabschnitts kann erneut mit \textbf{Submit} die Bewertung angelegt werden.

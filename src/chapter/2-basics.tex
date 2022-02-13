@@ -11,7 +11,7 @@ Der Anwendungsfall dieser Arbeit umfasst den gesamten Lebenszyklus einer Hausauf
 Dieser besteht aus mehreren zeitlichen getrennten Phasen, die nachfolgend beschrieben werden.
 Abschnitt~\ref{subsec:workflow} betrachtet den Ablauf, um die Hintergründe und zu lösende Probleme des zu entwickelnden Werkzeugs zu verdeutlichen.
 Verschiedene Parteien nehmen an dem Übungsablauf teil.
-Ein Professor oder Mitarbeiter oder eine Professorin oder Mitarbeiterin, nachfolgend zusammegefasst als Übungsleitung bezeichnet, steuert den Übungsbetrieb.
+Ein Professor oder Mitarbeiter oder eine Professorin oder Mitarbeiterin, nachfolgend zusammengefasst als Übungsleitung bezeichnet, steuert den Übungsbetrieb.
 Ihre Tätigkeit ist hauptsächlich didaktischer und organisatorischer Natur und wird durch das Werkzeug dieser Arbeit nur begrenzt unterstützt, weshalb sie im Folgenden nicht weiter diskutiert werden.
 Studierende bearbeiten Aufgaben und erzeugen Abgaben, um einen Lernerfolg mit praktischer Anwendung zu erzielen.
 Sie werden in Abschnitt~\ref{subsec:students} näher beschrieben.
@@ -61,8 +61,8 @@ Mit deren Einsicht beginnt für Gewöhnlich die Bearbeitungszeit, da Vorüberleg
 Die Vergabe ist folglich gleichzusetzen mit dem Beginn der Bearbeitungszeit.
 Es bietet sich an, die Vergabe während der Übungsveranstaltung durchzuführen.
 Dabei können die Aufgaben gezeigt und erklärende Bemerkungen gemacht werden.
-Dies ist jedoch nicht zwingend erfordlich, sofern der Text selbst ausreichend detailliert die Aufgabe beschreibt.
-Weiterhin kann hier eine Demonstration der in der Aufgabe gefordeten Lernziele gemacht werden.
+Dies ist jedoch nicht zwingend erforderlich, sofern der Text selbst ausreichend detailliert die Aufgabe beschreibt.
+Weiterhin kann hier eine Demonstration der in der Aufgabe geforderten Lernziele gemacht werden.
 Dabei kann das gewünschte Endergebnis oder Quellcode gezeigt werden, sofern letzterer ausreichend angepasst wurde, um nicht die Lösung vorwegzunehmen.
 Ein angepasstes Beispiel kann in diesem Fall die Transferleistung erlauben.
 
@@ -74,7 +74,7 @@ Dabei ist tatsächliche Bearbeitungsdauer für jeden Studierenden unterschiedlic
 Die Form der Abgabe kann abhängig von der Aufgabenstellung und Veranstaltung stark variieren.
 Denkbar sind handschriftliche Abgaben in Papierform, digitale Textdateien, Scans oder sonstige Dokumente, oder Quellcode in Form einzelner Dateien oder Projekte.
 Bei digitalen Abgaben kann sich weiterhin der Transfer der Abgabe unterscheiden.
-Beispiele dafür sind Versand per Email, Hochladen in einen Cloud-Ordner, Lernplatformen wie Moodle\footnote{\url{https://moodle.org/}}, eigene Abgabesysteme oder GitHub Classroom\footnote{\url{https://classroom.github.com/}}.
+Beispiele dafür sind Versand per Email, Hochladen in einen Cloud-Ordner, Lernplattformen wie Moodle\footnote{\url{https://moodle.org/}}, eigene Abgabesysteme oder GitHub Classroom\footnote{\url{https://classroom.github.com/}}.
 In dieser Arbeit wird davon ausgegangen, dass nur Quellcode und Textdateien erstellt und über dateibasierte Abgabesysteme oder GitHub Classroom eingereicht werden.
 
 \subsubsection{Bewertung}
@@ -121,7 +121,7 @@ Das Zusammentragen von Feedback und Punktzahl und deren Versand verursachen eine
 
 Die Implementierung dieser Arbeit basiert in großen Teilen auf der Weiterentwicklung von bestehenden Projekten sowie der Neuentwicklung eines Werkzeugs.
 Diese verwenden verschiedene Technologien von Dritten, die nachfolgend beschrieben werden.
-In den folgenden Abschnitten wird erläutert, welche Probleme diese Technologien im Kontext des Vorhabens lösen, welche nützlichen Funktionen sie bereitsstellen, und welche Gründe für die Auswahl dieser Technologien bestanden.
+In den folgenden Abschnitten wird erläutert, welche Probleme diese Technologien im Kontext des Vorhabens lösen, welche nützlichen Funktionen sie bereitstellen, und welche Gründe für die Auswahl dieser Technologien bestanden.
 
 \subsection{fulib.org}\label{subsec:fulib.org}
 
@@ -158,7 +158,7 @@ In Abschnitt~\ref{sec:expanding-fulib.org} wird vermehrt beleuchtet, welche Änd
 Nun soll zunächst beschrieben werden, wie der Stand des Moduls gegen Ende von~\cite{bachelor-thesis} war.
 Vor dieser Arbeit waren die Assignments, eine eigene Bezeichnung für Hausaufgabenblätter, nur auf Aufgaben in der Szenario-Sprache fokussiert.
 Mit einfachen Formularen konnten Titel, Beschreibung, Abgabefrist und einige Teilaufgaben definiert werden.
-Jede Teilaufgabe bestand mindestens aus Kurzbeschriebung und Punktzahl
+Jede Teilaufgabe bestand mindestens aus Kurzbeschreibung und Punktzahl
 Optional konnte eine Teilaufgabe mit Verifizierungscode in der Szenario-Sprache, meist mit der Pattern Matching-Syntax aus~\cite{bachelor-thesis}, ausgestattet werden.
 Studierende erhielten nach erfolgreicher Erstellung des Assignments einen Einladungslink, unter dem sie eine Lösung hochladen konnten.
 Diese bestand aus einem zusammenhängenden Szenario-Text.
@@ -169,13 +169,13 @@ Somit konnte eine Gesamtpunktzahl errechnet werden.
 \subsection{Visual Studio Code}\label{subsec:visual-studio-code}
 
 \ac{vsc}\footnote{\url{https://code.visualstudio.com/}} ist ein erweiterbarer Code-Editor von Microsoft.
-Neben den Grundfunktionen eines Texteditors hat \ac{vsc} Funktionen zur Entwicklerproduktivitäts wie Syntax-Highlighting und Autovervollständigung.
+Neben den Grundfunktionen eines Texteditors hat \ac{vsc} Funktionen zur Entwicklerproduktivität wie Syntax-Highlighting und Autovervollständigung.
 Durch vorinstallierte Erweiterungen kann Versionsverwaltung mit Git verwendet werden.
 Verschiedene Spracherweiterungen ermöglichen bessere Autovervollständigung und Semantisches Highlighting abhängig von Typinformationen sowie die Darstellung von Syntax-Fehlern und Warnmeldung im Quellcode.
 Darüber hinaus ist die Anwendung beliebig mit Erweiterungen anpassbar, die aus einem von Microsoft bereitgestellten Marketplace bezogen werden können\footnote{\url{https://marketplace.visualstudio.com/VSCode}}.
 Die Schnittstellen für Erweiterungen sind ausführlich dokumentiert und Entwickler können mit geringem Aufwand eigene Erweiterungen publizieren.
 Für Spracherweiterung wirbt \ac{vsc} besonders mit dem \ac{lsp} (siehe~\ref{subsec:language-server-protocol}).
-In Abschnitt~\ref{sec:fulibFeedback} wird dies genutzt, um die fulibFeedback-Erweiterung zu veröffentichen.
+In Abschnitt~\ref{sec:fulibFeedback} wird dies genutzt, um die fulibFeedback-Erweiterung zu veröffentlichen.
 
 \ac{vsc} wurde als Grundlage für diese Arbeit aus zwei Gründen gewählt.
 Einerseits ist die Entwicklung von Erweiterungen im Vergleich zu der \ac{ide} IntelliJ IDEA deutlich einfacher, da die Logik mit dem \ac{lsp} wiederverwendbar implementiert werden kann.
@@ -202,7 +202,7 @@ Diese werden nachfolgend kurz erläutert.
     Dies ist teilweise durch Plugins möglich, die von den Sprachautoren bereitgestellt werden können, aber mitunter signifikanten Entwicklungsaufwand benötigen.
     Aus Sicht der Autoren hat jeder Editor andere Schnittstellen und Funktionen, die studiert und angebunden werden müssen.
     Dies kann die Adaption von Sprachen bei begrenztem Entwicklungsbudget einschränken.
-    Aus Sicht der Editorautoren ergibt sich ein ähnliches Problem.
+    Aus Sicht der Editor-Autoren ergibt sich ein ähnliches Problem.
     Um einen neuen Editor marktfähig zu machen, sollte dieser eine große Anzahl populärer Programmiersprachen unterstützen.
     Diese können jedoch weitgehend unterschiedliche Schnittstellen und Werkzeuge bereitstellen, abhängig davon, ob die Editorunterstützung von den Sprachautoren bei der Konzeption von Compiler und anderen Tools eingearbeitet wurde.
     Unter Umständen ist es notwendig, große Teile der Syntax und Semantik dieser Sprachen neu zu implementieren, um Editorunterstützung zu ermöglichen.
@@ -244,7 +244,7 @@ Beim Start des Servers wird aus diesem Grund kommuniziert, welche Funktionen bei
     Der Server kann dann Diagnostics ermitteln und das Ergebnis nach einiger Zeit per Push an den Client senden, um die Meldungen anzuzeigen.
     \item[Code Actions und Refactorings.]
     Ein Language Server kann anhand der aktuellen Cursorposition oder Auswahl eine oder mehrere Aktionen bereitstellen.
-    Diese werden im Editor in einem Kontektmenü oder ähnlichem angezeigt.
+    Diese werden im Editor in einem Kontextmenü oder ähnlichem angezeigt.
     Eine Aktion kann, wenn sie vom Benutzer ausgewählt wird, Änderungen am Text oder anderen Dateien durchführen.
     Beispielsweise können dadurch einfache Refactorings wie das Schachteln in einer neuen Schleife implementiert werden.
     Nicht möglich ist das Erfragen von weiterem Input des Benutzers.
@@ -265,7 +265,7 @@ Diese sind jedoch im Folgenden nicht relevant und werden daher nicht weiter erl�
 
 Die Textsuche basiert in großen Teilen auf der quelloffenenen Java-Bibliothek Lucene\footnote{\url{https://lucene.apache.org/}} der Apache Foundation.\cite{elastic-and-lucene}
 Elasticsearch implementiert Teile der Textanalyse, Indexierung, Suche, und Highlighting mit Lucene.
-Diese werden nachfolgend datailliert beschrieben.
+Diese werden nachfolgend detailliert beschrieben.
 
 \subsubsection{Analyse}
 Die Analyse von Textdaten umfasst im Fall von natürlicher Sprache zwei Schritte, die Tokenisierung und Normalisierung.
@@ -280,7 +280,7 @@ Es ist möglich, eigene Analyseverfahren zu definieren, die aus Zeichenfiltern, 
 So kann beispielsweise die Textanalyse für Programmiersprachen definiert werden, wie in Abschnitt~\ref{subsec:code-search} demonstriert wird.
 
 \subsubsection{Indexierung}
-Ein Index dient der Suchoptimierung, um häufige Anfragen schneller duchführen zu können.
+Ein Index dient der Suchoptimierung, um häufige Anfragen schneller durchführen zu können.
 Die genaue Form und verwendete Datenstruktur hängt davon ab, welcher Datentyp verwendet wird und für welche Art von Suchanfragen der Index konfiguriert wurde.
 Ein einfacher Index kann beispielsweise eine Menge von Tokens speichern, die im Text vorkommen.
 Dabei werden die Häufigkeit, Position und Form der Wörter im Originaltext nicht beachtet.
@@ -324,7 +324,7 @@ Das \ac{css}-Framework Bootstrap\footnote{\url{https://getbootstrap.com/}} in de
 Es definiert semantische Farben, die Anordnung und Abstände in und zwischen Buttons, Formelementen und sonstigen Komponenten.
 Weiterhin kann damit die dynamische Anordnung abhängig von der Bildschirmgröße realisiert werden, um Seiten beispielsweise auf Mobilgeräten übersichtlich darzustellen.
 Für den Nachtmodus von fulib.org wird die Erweiterungsbibliothek bootstrap-darkmode\footnote{\url{https://github.com/Clashsoft/bootstrap-darkmode}} eingesetzt.
-Sie sorgt für die automatische Umfärbung von Hintergründen, Texten, Links, Buttons und anderen Elementen, wenn der Nachtmodus aktiviert ist.
+Sie sorgt für die automatische Färbung von Hintergründen, Texten, Links, Buttons und anderen Elementen, wenn der Nachtmodus aktiviert ist.
 Icons in der Oberfläche stammen aus der \ac{css}-Bibliothek bootstrap-icons\footnote{\url{https://icons.getbootstrap.com/}}.
 
 \subsubsection{NestJS}

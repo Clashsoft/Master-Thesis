@@ -19,7 +19,7 @@ Die Abschnitte~\ref{sec:algods-2021} und~\ref{sec:einfinf-2021-2022} bieten dara
 \section{\acl{pm}}\label{sec:pm-2021-2022}
 
 Die Veranstaltung \ac{pm} stellt die größten Teil der Evaluation dar.
-Sie umfasste ingesamt elf Aufgabenblätter und ein Abschlussprojekt, welche von bis zu 125 Studierenden bearbeitet und bis zu sechs Personen mit fulib.org und fulibFeedback bewertet wurden.
+Sie umfasste insgesamt elf Aufgabenblätter und ein Abschlussprojekt, welche von bis zu 125 Studierenden bearbeitet und bis zu sechs Personen mit fulib.org und fulibFeedback bewertet wurden.
 Dabei sind individuelle Anmerkungen sowie eine große Anzahl von Metriken in Form der Statistik entstanden.
 In diesem Abschnitt werden einige Ansichten der Benutzer erläutert (Abschnitt~\ref{subsec:user-feedback}) und die Rohdaten der Statistik erfasst (Abschnitt~\ref{subsec:pm-metrics}).
 Des Weiteren wird erläutert, welche Erfahrung mit den Werkzeugen zu Anpassungen der Aufgabenstellungen und Bewertungskriterien geführt haben, um den Ablauf der Bewertung zu optimieren (Abschnitt~\ref{subsec:pm-adaptations}).
@@ -50,7 +50,7 @@ Da sich die Beobachtungen und Metriken stets auf einzelne Übungsblätter bezieh
     Deren Oberfläche soll mit der TestFX-Bibliothek getestet werden.\footnote{
         \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2021/12/PM_2021_Hausaufgabe06.pdf}
     }
-    \item[\ac{ha}7] beeinhaltet die weitere Implementierung von Spiellogik, die dynamische Umsetzung der Oberfläche mit Controllern und zugehörige Tests.\footnote{
+    \item[\ac{ha}7] beinhaltet die weitere Implementierung von Spiellogik, die dynamische Umsetzung der Oberfläche mit Controllern und zugehörige Tests.\footnote{
         \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2022/01/PM_2022_Hausaufgabe07.pdf}
     }
     \item[\ac{ha}8] verknüpft Modell und Oberfläche und hält diese bei jeder Änderung synchron, implementiert die verbleibende Spiellogik und testet den kritischen Pfad des fertigen Spiels.\footnote{
@@ -71,7 +71,7 @@ Da sich die Beobachtungen und Metriken stets auf einzelne Übungsblätter bezieh
 \subsection{Benutzer-Anmerkungen}\label{subsec:user-feedback}
 
 Während der Testphase der Werkzeuge in \ac{pm} wurden die Bewertenden gebeten, nach jeder Hausaufgabe eine kurze Rückmeldung zu geben.
-Diese konnte generelle Bemerkungen, Anfragen für neue Features, Verbesserungsvorschläge und kurze Fehlerberichte beeinhalten.
+Diese konnte generelle Bemerkungen, Anfragen für neue Features, Verbesserungsvorschläge und kurze Fehlerberichte beinhalten.
 Alle Rückmeldungen wurden in einem öffentlichen Issue\footnote{
     \url{https://github.com/fujaba/fulib.org/issues/196}
 } auf GitHub gesammelt.
@@ -94,7 +94,7 @@ Diese Vorgehensweise hatte einige erheblich Nachteile:
     Es kam vor, dass Bewertende versehentlich die falsche Teilaufgabe auswählten und dies nicht bemerkten, bevor die Bewertung erstellt wurde.
     \item Generell erforderte der automatisch erstellte Kommentar einen erheblichen Programmieraufwand seitens des Language Servers.
     Dies ist der Einschränkung des \ac{lsp} verschuldet, keine Möglichkeit zu bieten, als Teil einer Code Action den Benutzer des Editors nach einer Eingabe zu Frage.
-    Wäre dies möglich, hätten Remark und Punktzahl beispielweise über ein Prompt-Dialog erfragt werden können.
+    Wäre dies möglich, hätten Remark und Punktzahl beispielsweise über ein Prompt-Dialog erfragt werden können.
     Die hinzugefügten Kommentarzeilen erwiesen sich besonders als Problem, indem sie die darunterliegenden Zeilennummern verschoben, obwohl diese für die Hinterlegung von Codeabschnitten und für die Anzeige des Feedbacks auf GitHub relevant sind.
     \item Der Ablauf erlaubte nicht die Auswahl mehrere Codeabschnitte als Teil einer Bewertung in einem Schritt.
     Es war notwendig, zuerst einen Abschnitt auszuwählen, eine Bewertung zu erstellen, einen weiteren Abschnitt auszuwählen, und zuletzt die Bewertung zu bearbeiten.
@@ -117,21 +117,21 @@ Das Problem machte sich besonders in \ac{ha}7 von \ac{pm} bemerkbar\footnote{
 Hauptursache war die Auswahl von Codeabschnitten, welche nicht eindeutig waren und unzureichenden Kontexts enthielten.
 Aus diesem Grund wurden die in Abschnitt~\ref{subsec:choosing-code-snippets}, Abbildungen~\ref{fig:fulibFeedback-snippet-bad} und~\ref{fig:fulibFeedback-snippet-worst} dargestellten Informationstexte eingefügt, welche die Anzahl der von Code Search gefundenen Ergebnisse anzeigen und die Spezifität der Codeabschnitte einschätzen.
 Dies erwies sich als nützlich genug, um die Benutzerfehler zu reduzieren.
-Da es sich nur um eine Hiflestellung handelt, können erfahrene Benutzer dennoch Code auswählen, der nicht eindeutig ist, sofern dies als akzeptabel befunden wird.
+Da es sich nur um eine Hilfestellung handelt, können erfahrene Benutzer dennoch Code auswählen, der nicht eindeutig ist, sofern dies als akzeptabel befunden wird.
 
 \subsubsection{Sonstige \acl{qol}-Verbesserungen}
 
 Dank dem ausführlichen Feedback der Betreuenden konnte neben den zuvor beschriebenen größeren Änderungen auch eine Reihe von kleinen \ac{qol}-Verbesserungen umgesetzt werden.
 Hauptsächlich sind diese in Teilen der fulib.org-Oberfläche angesiedelt, die am häufigsten verwendet werden, darunter insbesondere das Bewertungs-Modalfenster (Abbildung~\ref{fig:evaluation-modal}).
-Dort wurden beispielweise die Buttons zum schnellen Einstellen der Punktzahl hinzugefügt, da häufig die Angabe der Punktzahl vergessen wurde und das Zahlenfeld schwerer zu bedienen war.
+Dort wurden beispielsweise die Buttons zum schnellen Einstellen der Punktzahl hinzugefügt, da häufig die Angabe der Punktzahl vergessen wurde und das Zahlenfeld schwerer zu bedienen war.
 Die Möglichkeit zum Erweitern des Remark-Felds auf mehrere Zeilen ist entstanden, damit längere Hinweise und Fehlermeldung angegeben werden können.
 Die Teilaufgaben-Beschreibung im Kopf des Modalfensters wurde hinzugefügt, da in einigen Fällen vergessen wurde, welche Teilaufgabe zuvor ausgewählt wurde.
 Für Code Search wurde ein Banner hinzugefügt, das bei Original-Bewertungen die Anzahl der automatisch erstellten Bewertungen anzeigt, und bei letzteren einen Link zum Original.
 Zuletzt hat die relativ kleine Benutzeranzahl einige Erkenntnisse zu verschiedenen Präferenzen ergeben.
 Beispielsweise wurde von einem Bewertenden nicht \ac{vsc}, sondern die Open-Source-Alternative VSCodium bevorzugt.
 Dessen Anbindung führte zum Hinzufügen der Optionen in der Abgaben-Tabelle (Abbildung~\ref{fig:assignment-solutions-table}).
-Dies beeinhaltet auch die Auswahl zwischen den Git-Clone-Optionen \ac{ssh} und \ac{https}.
-Bei den Bewertenden gab es zudem Unterschiede in der Browser-Präferenz, wodurch Fehler entdeckt werden konnten, die browserabhängig aufgetreten sind.
+Dies beinhaltet auch die Auswahl zwischen den Git-Clone-Optionen \ac{ssh} und \ac{https}.
+Bei den Bewertenden gab es zudem Unterschiede in der Browser-Präferenz, wodurch Fehler entdeckt werden konnten, die Browser-abhängig aufgetreten sind.
 
 \subsection{Metriken}\label{subsec:pm-metrics}
 
@@ -173,7 +173,7 @@ Dafür ist es zunächst sinnvoll, einige Kategorien zu definieren, in denen Vari
         94 mal \code{winner}, elf mal \code{player}, vier mal \code{value}, drei mal \code{newWinner}, je ein mal \code{p}, \code{sus}, \code{winnePlayer}\sic und \code{x}.\label{fn:setWinner}
     }
     \item[Strukturierung.]
-    Diese Kategorie beeinhaltet insbesondere die Anordung von imperativen Quellcode.
+    Diese Kategorie beinhaltet insbesondere die Anordnung von imperativen Quellcode.
     Dazu zählen beispielsweise die Reihenfolge von unabhängigen Anweisungen, die Verschachtelung von \code{if}-Abfragen und Schleifen, die Operanden von kommutativen Operatoren wie \code{+}, \code{*}, \code{&&} oder \code{||}, bool'sche Ausdrücke und Klammersetzung.
     Wird von der Aufgabenstellung nur das Ergebnis einer Methode verlangt, die eigentliche Implementierung aber frei gelassen, sind die Variationen dieser Kategorie kaum voraussehbar.
     \item[Beispielwerte.]
@@ -204,7 +204,7 @@ Dennoch entstanden Variationen durch das optionale \code{this}\footnote{
 }, Klammersetzung, bool'sche Operationen und kommutative Operanden.
 Aus diesem Grund ist eine große Bandbreite an Effektivitäts-Werten für Teilaufgaben dieser Hausaufgaben entstanden, welche sich jedoch insgesamt zu einem mittelmäßigen Ergebnis ausgleichen.
 
-Das Problem der Beispielwerte in Tests hat sich besonders bemerkbar gemacht.
+Das Problem der Beispielwerte in Tests hat sich über alle Übungsblätter mit solchen bemerkbar gemacht.
 Dort wurden teilweise keine Ergebnisse von Code Search gefunden und somit keine Zeit eingespart.
 \ac{ha}5 stellt dafür ein Extrembeispiel dar, weil sich diese inhaltlich mit dem Test-First-Prinzip befasste und dadurch die Tests einen Großteil der Punkte beisteuerten.
 Weiterhin wurde in diesem Aufgabenblatt verlangt, Mockups anzufertigen, welche keinen Code benötigen und damit nicht für Code Search geeignet sind.

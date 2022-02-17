@@ -141,34 +141,55 @@ Dieser Abschnitt beschreibt einige Metriken, die darauf basieren.
 \subsubsection{Effektivität}
 
 Die Effektivität von Code Search beschreibt den prozentualen Anteil der Bewertungen, die automatisch erstellt wurden.
-Tabelle~\ref{tbl:pm-effectiveness} zeigt für jede Hausaufgabe die Anzahl der Bewertungen von \textbf{Code Search} und \textbf{händisch} Bewertenden.
+Tabelle~\ref{tbl:pm-effectiveness} zeigt für jede Hausaufgabe (\textbf{\acs{ha}}) die Anzahl der Bewertungen von \textbf{händisch} Bewertenden und von \textbf{Code Search}.
 Die spezielle Kategorie der automatisch erstellten Bewertungen, die später \textbf{bearbeitet} wurden, ist der Vollständigkeit auch aufgeführt.
 Meist sind dort nur sehr wenige Bewertungen verzeichnet, da dies selten notwendig war.
 In wenigen Fällen sind durch Benutzerfehler oder Code Search jedoch Bewertungen entstanden, die nicht zutreffend waren und deshalb angepasst wurden.
-Die drei Werte werden in der Spalte \textbf{Gesamt} summiert, sodass die Effektivität durch Anteil von Code Search zu Gesamt berechnet werden kann.
+Die drei Werte werden in der Spalte \textbf{Gesamt} summiert, sodass die \textbf{Effektivität} als Anteil von Code Search zu Gesamtanzahl berechnet werden kann.
 
 \begin{table}
     \centering
     \caption{Bewertungen und Effektivität der \ac{pm}-Hausaufgaben}
     \begin{tabular}{|l|l|l|l|l|l|}
     \hline
-        HA  & Code Search & Bearbeitet & Händisch & Gesamt & Effektivität  \\ \hline
-        1  & 0 & 0 & 120 & 120 & 0\%  \\ \hline
-        2  & 0 & 0 & 368 & 368 & 0\%  \\ \hline
-        3  & 707 & 20 & 506 & 1233 & 57\%  \\ \hline
-        4  & 3287 & 6 & 445 & 3738 & 88\%  \\ \hline
-        5  & 0 & 0 & 591 & 591 & 0\%  \\ \hline
-        6  & 4269 & 5 & 981 & 5255 & 81\%  \\ \hline
-        7  & 2719 & 13 & 2154 & 4886 & 56\%  \\ \hline
-        8  & 2081 & 1 & 1419 & 3501 & 59\%  \\ \hline
-        9  & 2045 & 0 & 567 & 2612 & 78\%  \\ \hline
-        10  & \multicolumn{5}{c}{\todo{}}  \\ \hline
+        HA  & Händisch & Code Search & Bearbeitet & Gesamt & Effektivität  \\ \hline
+        1   & 120  & 0    & 0  & 120  &  0\%  \\ \hline
+        2   & 368  & 0    & 0  & 368  &  0\%  \\ \hline
+        3   & 506  & 707  & 20 & 1233 & 57\%  \\ \hline
+        4   & 445  & 3287 & 6  & 3738 & 88\%  \\ \hline
+        5   & 591  & 0    & 0  & 591  &  0\%  \\ \hline
+        6   & 981  & 4269 & 5  & 5255 & 81\%  \\ \hline
+        7   & 2154 & 2719 & 13 & 4886 & 56\%  \\ \hline
+        8   & 1419 & 2081 & 1  & 3501 & 59\%  \\ \hline
+        9   & 567  & 2045 & 0  & 2612 & 78\%  \\ \hline
+        10  & 976  & 937  & 0  & 1913 & 49\%  \\ \hline
         11  & \multicolumn{5}{c}{\todo{}}  \\ \hline
     \end{tabular}
     \label{tbl:pm-effectiveness}
 \end{table}
 
-In Abbildung~\ref{fig:pm-effectiveness} sind die relativen Verhältnisse der drei Kategorien graphisch dargestellt, um mögliche Tendenzen oder Muster ersichtlich zu machen.
+In Tabelle~\ref{tbl:pm-effectiveness} ist bereits erkennbar, dass sich die Hausaufgaben deutlich in der Anzahl der Bewertungen unterscheiden.
+Dies liegt hauptsächlich an der Anzahl der Teilaufgaben, welche mitunter abhängig vom Umfang des Aufgabenblatts und der Punkteverteilung ist.
+Darüber hinaus änderte sich die Anzahl der bewerteten Abgaben in jeder Woche.
+Dies lag anfangs daran, dass mit der Zeit mehr Bewertende die Werkzeuge eingesetzt haben.
+Gegen Ende der Veranstaltung reduzierte sich die Teilnehmeranzahl durch Abbrüche und die Aufteilung in Informatiker und Mechatroniker, da letztere die \acp{ha} 9 bis 11 nicht mehr bearbeiten mussten.
+
+Besonderheiten sind zunächst bei den \acp{ha} 1, 2 und 5 erkennbar, da Code Search bei diesen keine Bewertungen vorgenommen hat.
+Die ersten beiden Hausaufgaben enthielten keine Programmieraufgaben, wodurch Code Search keine Verwendung hatte.
+In \ac{ha}5 wurden Mockups angefertigt, die ebenfalls keinen Code umfassen.
+Weiterhin wurden dort Tests und Implementierung nach dem Test-First-Prinzip entwickelt, was zu hohen Varianzen des entstandenen Codes geführt hat.
+Somit hätte die Verwendung von Code Search zu Mehraufwand geführt und wurde unterlassen.
+
+Die beste Effektivität wurde mit 88\% in \ac{ha}4 erreicht.
+Der Grund dafür ist die Vielzahl von Teilaufgaben, bei denen mit fulib das Datenmodell generiert wurde.
+Dabei kam eine deklarative und kompakte Beschreibung der Attribute und Assoziationen zum Einsatz, die aufgrund der vorgegebenen Namen kaum individuelle Variationen erlaubte.
+Der zweite Teil der Aufgabe bestand aus Implementierung von Spielinitialisierung und zugehörigem Testen.
+Ein Teil der Punkte dafür war in zwei Teilaufgaben angesiedelt, die hauptsächlich händisch bewertet wurden.
+Die verbleibenden Punkten konnten aufgrund von strikten Vorgaben ebenfalls automatisch bewertet werden.
+
+\todo{
+    Abbildung~\ref{fig:pm-effectiveness}.
+}
 
 \begin{figure}
     \centering
@@ -231,7 +252,7 @@ Die Benennung kann durch Angaben in der Aufgabenstellung standardisiert werden.
 In den Programmieraufgaben der Veranstaltung waren das Datenmodell und Methodennamen vorgegeben, wodurch primär Parameter und lokale Variablen unterschiedlich benannt wurden.
 Es hat sich gezeigt, dass die meisten Studierenden ähnliche Namengebungs-Strategien verfolgen\footref{fn:setPhase}~\footref{fn:setWinner} und dadurch die Effektivität nur geringfügig beeinflusst wird.
 Sonstige Bezeichner, beispielsweise \acp{id} von Oberflächenelementen, wurden in den Hausaufgaben 4, 6 und 9 vorgegeben.
-Abbildung~\todo{XX (Metriken)} der Metriken zeigt, dass dies mit besserer Code Search-Effektivität verbunden ist.
+Abbildung~\ref{fig:pm-effectiveness} der Metriken zeigt, dass dies mit besserer Code Search-Effektivität verbunden ist.
 
 Für die Strukturierung hat sich im Verlauf der Veranstaltung eine unbeabsichtigte Lösung ergeben.
 Vorwiegend betraf dies die Hausaufgaben 7 und 8.

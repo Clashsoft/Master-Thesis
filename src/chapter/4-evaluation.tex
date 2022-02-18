@@ -198,11 +198,33 @@ Die verbleibenden Punkten konnten aufgrund von strikten Vorgaben ebenfalls autom
     \label{fig:pm-effectiveness}
 \end{figure}
 
-\todo{
-    Vergleich aller Hausaufgaben.
-    Wichtigste Metriken: Anteil Code Search, Zeit bewertet, Zeit gespart, Punktzahl vs Bewertungsanzahl.
-    Besonderheiten bei Tasks.
-}
+\subsubsection{Effizienz}
+
+Die Effizienz bezeichnet die Zeit, die durch die Verwendung von Code Search gespart werden kann.
+Ab \ac{ha}7 wurde durch Telemetrie die Zeit, die im Bewertungs-Modalfenster verbracht wird, gemessen.
+Daraus kann für jede Teilaufgabe berechnet werden, wie viel Zeit für diese von Code Search gespart wird.
+Dafür muss die Anzahl der Bewertungen von Code Search mit der durchschnittlichen händischen Bewertungsdauer multipliziert werden.
+Die Summe über alle Teilaufgaben ergibt dann die Gesamtzeit, die mit Code Search eingespart wurde.
+Dabei werden Unterschiede zwischen Teilaufgaben einbezogen, beispielsweise die aufwendigere Betrachtung von Quellcode durch größeren Umfang.
+
+Tabelle~\ref{tbl:pm-efficiency} zeigt die Effizienz der \acp{ha} 7 bis 11 im Vergleich.
+Es ist jeweils die gesamt verstrichene Zeit der \textbf{händischen} Bewertung sowie die daraus ermittelte, mit \textbf{Code Search} eingesparte Zeit, angegeben.
+Die \textbf{Effizienz} berechnet sich dann als prozentualer Anteil von Code Search-Zeit zu Gesamtzeit (Code Search + händische Bewertung).
+
+\begin{table}
+    \centering
+    \caption{Effizienz der \ac{pm}-Hausaufgaben}
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+        HA  & Händisch & Code Search & Effizienz \\ \hline
+        7   & 04:44:32 & 05:37:37    & 54\%  \\ \hline
+        8   & 02:43:32 & 05:00:15    & 65\%  \\ \hline
+        9   & 01:12:21 & 04:50:37    & 80\%  \\ \hline
+        10  & 02:34:54 & 03:04:29    & 54\%  \\ \hline
+        11  & \multicolumn{3}{c}{\todo{}}
+    \end{tabular}
+    \label{tbl:pm-efficiency}
+\end{table}
 
 \subsection{Anpassungen}\label{subsec:pm-adaptations}
 

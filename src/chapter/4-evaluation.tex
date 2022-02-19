@@ -11,17 +11,16 @@ Die Abschnitte~\ref{sec:algods-2021} und~\ref{sec:einfinf-2021-2022} bieten dara
     Fachgebiet Programmiersprachen/-Methodik, Prof.\ Dr.\ Claudia Fohry.\label{fn:fg-plm}
 } im Sommersemester 2021 und "Einführung in die Informatik"\footref{fn:fg-plm} im Wintersemester 2021/22.
 
-\todo{
-    Referenzen:
-    Eingewöhnungszeit~\ref{subsec:grading}.
-}
-
 \section{\acl{pm}}\label{sec:pm-2021-2022}
 
 Die Veranstaltung \ac{pm} stellt die größten Teil der Evaluation dar.
 Sie umfasste insgesamt elf Aufgabenblätter und ein Abschlussprojekt, welche von bis zu 125 Studierenden bearbeitet und bis zu sechs Personen mit fulib.org und fulibFeedback bewertet wurden.
-Dabei sind individuelle Anmerkungen sowie eine große Anzahl von Metriken in Form der Statistik entstanden.
-In diesem Abschnitt werden einige Ansichten der Benutzer erläutert (Abschnitt~\ref{subsec:user-feedback}) und die Rohdaten der Statistik erfasst (Abschnitt~\ref{subsec:pm-metrics}).
+
+Im Verlauf der Veranstaltung wurde die Anzahl der Benutzer stets erhöht, um anfangs mögliche Probleme zu ermitteln und dabei zu vermeiden, dass viele Personen davon betroffen und verlangsamt werden.
+Jeder neue Benutzer erhielt eine kurze Einweisung in die Bedienung der Werkzeuge und Hinweise zur optimalen Verwendung.
+
+Während der Bewertung sind individuelle Anmerkungen sowie eine große Anzahl von Metriken durch die Statistiken auf fulib.org entstanden.
+In diesem Abschnitt werden einige Ansichten der Benutzer erläutert (Abschnitt~\ref{subsec:user-feedback}) und die Rohdaten der Statistiken erfasst (Abschnitt~\ref{subsec:pm-metrics}).
 Des Weiteren wird erläutert, welche Erfahrung mit den Werkzeugen zu Anpassungen der Aufgabenstellungen und Bewertungskriterien geführt haben, um den Ablauf der Bewertung zu optimieren (Abschnitt~\ref{subsec:pm-adaptations}).
 Da sich die Beobachtungen und Metriken stets auf einzelne Übungsblätter beziehen, ist es an dieser Stelle lohnenswert, die elf \acp{ha} kurz zu beschreiben.
 
@@ -144,7 +143,8 @@ Diese bestehen meist aus Teilaufgaben auf unterster Ebene mit Ausnahme von solch
 Außerdem sind Teilaufgaben mit Unteraufgaben ausgenommen, da diese nur der Struktur dienen und meist\footnote{
     Ausnahme beispielsweise wenn die Aufgabe nicht bearbeitet wurde.
 } nicht bewertet werden.
-Die Anzahl der Teilaufgaben zur Bewertung orientiert sich grob an der Punktzahl und ist stets kleiner oder gleich dieser.
+Folglich beschreibt diese Zahl die notwendigen Schritte zur Bewertung einer durchschnittlichen Abgabe, bei der alle Aufgaben bearbeitet wurden und keine groben Fehler vorhanden sind.
+Die Anzahl der Teilaufgaben zur Bewertung orientiert sich grob an der Punktzahl und ist stets kleiner oder gleich.
 Differenzen entstehen, wenn manche Teilaufgaben mehr als einen Punkt vergeben.
 
 \begin{table}
@@ -248,11 +248,8 @@ Die verbleibenden Punkten konnten aufgrund von strikten Vorgaben ebenfalls autom
 \subsubsection{Effizienz}
 
 Die Effizienz bezeichnet die Zeit, die durch die Verwendung von Code Search gespart werden kann.
-Ab \ac{ha}7 wurde durch Telemetrie die Zeit, die im Bewertungs-Modalfenster verbracht wird, gemessen.
-Daraus kann für jede Teilaufgabe berechnet werden, wie viel Zeit für diese von Code Search gespart wird.
-Dafür muss die Anzahl der Bewertungen von Code Search mit der durchschnittlichen händischen Bewertungsdauer multipliziert werden.
-Die Summe über alle Teilaufgaben ergibt dann die Gesamtzeit, die mit Code Search eingespart wurde.
-Dabei werden Unterschiede zwischen Teilaufgaben einbezogen, beispielsweise die aufwendigere Betrachtung von Quellcode durch größeren Umfang.
+Die Berechnung erfolgt wie in Abschnitt~\ref{subsec:statistics} beschriebenen und wurde den Statistiken entnommen.
+Die notwendige Telemetrie wurde erst ab \ac{ha}7 implementiert, wodurch keine Angaben zu vorherigen Hausaufgaben gemacht werden können.
 
 Tabelle~\ref{tbl:pm-efficiency} zeigt die Effizienz der \acp{ha} 7 bis 11 im Vergleich.
 Es ist jeweils die gesamt verstrichene Zeit der \textbf{händischen} Bewertung sowie die daraus ermittelte, mit \textbf{Code Search} eingesparte Zeit, angegeben.

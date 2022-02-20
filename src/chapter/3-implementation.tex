@@ -503,7 +503,9 @@ Ebenso kann dieser eingesetzt werden, um bei Verdacht Plagiate zwischen Lösunge
 Die Bewertung von Quellcode auf fulib.org ist zwar möglich, kann aber toolgestützt noch verbessert werden.
 Dafür wurde die \ac{vsc}-Erweiterung fulibFeedback entwickelt, die in diesem Abschnitt vorgestellt wird.
 Die Erweiterung hat nur eine geringfügige Oberfläche und ist hauptsächlich im Hintergrund tätig.
-Nachfolgend wird die Benutzung in der Reihenfolge beschrieben, wie sie für Betreuende und Studierenden chronologisch abläuft.
+Nachfolgend wird die Benutzung in der Reihenfolge beschrieben, wie sie für Betreuende und Studierenden chronologisch abläuft:
+Installation, Einrichtung, Auswahl von Codeabschnitten zur Bewertung, und Darstellung von Bewertungen für Studierende.
+Daraufhin wird ein kurzer Einblick in die technische Umsetzung der Erweiterung geboten.
 
 \subsection{Installation}
 
@@ -661,15 +663,37 @@ Teilpunkte werden mit gelber Farbe signalisiert.
 Der Hilfetext enthält die Beschreibung der Teilaufgabe (\texttt{Aufgabe 1 / Assoziationen / Game -- Field (fields) \dots}), die vergebene Punktzahl (\texttt{(-1P)}), Remark (\texttt{Rückrichtung nicht gesetzt}) und Kommentar (\texttt{Hier fehlt oldGame.withoutFields(this)}) und den Autor der Bewertung (\texttt{Adrian Kunz}).
 Wurden mehrere Codeabschnitte hinterlegt, werden Links angezeigt, die auf andere betroffene Dateien und Zeilen verweisen und den zugehörigen Kommentar angeben (\texttt{Game.java(115, 1): Sehr gut!} und \texttt{Game.java(130, 1): Richtig}).
 
-\subsection{Umsetzung}
+\subsection{Technische Umsetzung}\label{subsec:fulibFeedback-tech}
 
-\todo{
-    \ac{vsc} Extension Client:
-    Einfacher Client für Language Server.
-    Configuration Points für Einstellungen.
-    Protocol Handler für Auto-Configure.
-    Language Server:
-    Selection mit Code Actions.
-    Diagnostics.
-    Wiederverwendbar für andere \acp{ide}.
-}
+Wie eingangs erwähnt ist fulibFeedback eine \ac{vsc}-Erweiterung, die mithilfe des \ac{lsp} umgesetzt wurde.
+Genauer bedeutet dies, dass dieses Werkzeug aus einem generischen Server und einer Erweiterung speziell für \ac{vsc}, die den Client verkörpert, besteht.
+Beide sind in einem gemeinsamen Paket gebündelt und über den Extension Marketplace abrufbar.
+Aufgrund der generischen Natur des Language Servers könnten weitere Clients für andere \acp{ide} entwickelt werden, die diesen ebenfalls unverändert bündeln.
+
+Der Client basiert auf der Bibliothek \code{vscode-languageclient}\footnote{
+    \url{https://www.npmjs.com/package/vscode-languageclient}
+} von Microsoft.
+Diese erlaubt die Angabe des ausführbaren Servers und startet diesen, wenn die Erweiterung aktiviert wird.
+Es genügt die Angabe des Dateipfades des Servers, eines Selektors für Dateien, für welche die Sprachfeatures verwendet werden sollen, sowie die zu synchronisierenden Einstellungen.
+
+Weiterhin implementiert der Client einen Protokoll-Handler, der spezielle \acp{url}\footnote{
+    Beispiel: \url{vscode://fulib.fulibfeedback/configure?api_server=https\%3A\%2F\%2Fdev.fulib.org&assignment=61dd5ac35c1dfa2b0b7c7898&token=1b3a-0558-29d1-6dd3}
+} erkennt und dadurch automatisch die Einstellungen anpassen kann, wenn in der fulib.org-Oberfläche ein Configure-Button betätigt wird.
+Die Einstellungen werden in einer Paketdatei anhand von Typ, Auswahlmöglichkeiten, Beschreibung, reguläre Ausdrücke für die Validierung und zugehörige Fehlermeldungen angegeben.
+Darauf basierend werden automatisch die Eingabefelder in den Einstellungen von \ac{vsc} gezeigt, wie es in Abbildung~\ref{fig:fulibFeedback-settings} zu sehen war.
+
+Der Server wurde, anders als von Microsoft in Tutorials vorgeschlagen~\cite{vsc-language-server-guide}, mit NestJS implementiert.
+Das Framework erlaubte eine bessere Strukturierung durch verschiedene Dienste (Services) für Sprachfeatures.
+Nachfolgend wird kurz beschrieben, welche für die verschiedenen Features von fulibFeedback eingesetzt wurden.
+
+Die Auswahl von Codeabschnitten wurde mit Code Actions realisiert.
+Es handelt sich dabei nicht direkt um die intendierte Verwendung dieses Sprachfeatures, da es für gewöhnlich nicht für die generelle Erkennung von Auswahl, sondern zur Bereitstellung von Aktionen gedacht ist.
+Da es von \ac{vsc} jedoch mindestens immer dann ausgelöst wird, wenn eine Auswahl gemacht wurde, kann es für diesen Einsatzzweck dienen, auch wenn keine Aktionen bereitgestellt werden.
+In einer früheren Version von fulibFeedback wurde dies auch verwendet, um die gesamte Bewertung in der \ac{ide} durchzuführen.
+Dies wird in Abschnitt~\ref{subsec:user-feedback} näher beschrieben.
+
+Die Darstellung von Bewertung anhand von Hervorhebungen im Code ist mit den Diagnostics des \ac{lsp} implementiert.
+Sie werden \ac{idR} vom Client beim Language Server angefragt, was eine Anfrage an den fulib.org-Server sendet und Bewertungen in Diagnostics umwandelt.
+Damit für Bewertende neue Bewertungen in Echtzeit angezeigt werden, wird stets eine asynchrone EventSource\footnote{
+    Web-Technologie für asynchrone Events ausgehend von einem \ac{http}-Server.
+} angemeldet, die Änderungen erkennt und per Push neue Diagnostics an den Client weitergibt.

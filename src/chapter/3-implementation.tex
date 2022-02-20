@@ -366,24 +366,26 @@ Die Seite gliedert sich in drei Abschnitte, \textbf{Solutions}, \textbf{Evaluati
     \label{fig:assignment-statistics-basics}
 \end{figure}
 
-Unter Solutions ist jeweils die Anzahl der Abgaben insgesamt (\textbf{Total}), mit angefangener Bewertung (\textbf{Evaluated}) und mit versendeten Feedback abgeschlossenen (\textbf{Graded}) sichtbar.
-Zudem wird die durchschnittlich erreichte Punktzahl der abgeschlossenen Abgaben angezeigt\footnote{
+Unter Solutions ist jeweils die Anzahl der Abgaben insgesamt (\textbf{Total}), mit angefangener Bewertung (\textbf{Evaluated}) und abgeschlossenen mit versendetem Feedback (\textbf{Graded}) sichtbar.
+Zudem wird die durchschnittlich erreichte Punktzahl der abgeschlossenen Abgaben sowie die Anzahl der bestehenden Studierenden angezeigt\footnote{
     Es handelt sich bei diesem und folgenden Screenshots der Statistik nicht um die realen Zahlen der Hausaufgabe 3.
 }.
 
 Die Evaluations\footnote{
     Bewertungen von Teilaufgaben.
 } werden für die Auswertung in drei Kategorien unterteilt.
-Händisch hinzugefügte Bewertungen sind genau diejenigen, die wie in Abschnitt~\ref{subsec:grading} beschrieben erstellt wurden.
-Von Code Search gefundene Bewertungen können anhand der vorherigen erstellt werden und geben Aufschluss darüber, wie effektiv das Werkzeug für die vorliegende Hausaufgabe war.
-In seltenen Fällen ist es notwendig, diese automatisch erstellten Bewertungen händisch anzupassen, wenn beispielsweise eine Suche zu ungeeigneten Ergebnisse geführt hat.
+Händisch hinzugefügte Bewertungen (\textbf{Manually Added}) sind genau diejenigen, die wie in Abschnitt~\ref{subsec:grading} beschrieben erstellt wurden.
+Von \textbf{Code Search} gefundene Bewertungen können anhand der vorherigen erstellt werden und geben Aufschluss darüber, wie effektiv das Werkzeug für die vorliegende Hausaufgabe war.
+In seltenen Fällen ist es notwendig, diese automatisch erstellten Bewertungen händisch anzupassen (\textbf{Edited}), wenn beispielsweise eine Suche zu ungeeigneten Ergebnisse geführt hat.
 Diese Fehlerfälle sowie die sich ergebenden relativen Anteile der Kategorien werden in Kapitel~\ref{ch:evaluation} näher erläutert und diskutiert.
+Die Gesamtanzahl der Bewertungen (\textbf{Total}) als Summe der drei Kategorien erlaubt die Berechnung prozentualer Anteile.
 
 Der Abschnitt Time Tracking dient der Berechnung der Effizienz von Bewertenden und Code Search.
-Anhand der Zeitmessung, die während der Bewertung von Teilaufgaben stattfindet, können hier eine Gesamtdauer und der Durchschnitt pro Teilaufgabe berechnet werden.
-Weiterhin wird hier angezeigt, wie viel Zeit durch die Verwendung von Code Search eingespart werden konnte.
-Die Berechnung dieses Werts erfordert die Betrachtung der Teilaufgaben und wird in Kürze erläutert.
+Anhand der Zeitmessung, die während der Bewertung von Teilaufgaben stattfindet, können hier eine Gesamtdauer (\textbf{Time Spent}) und der Durchschnitt (\textbf{\O}) pro Teilaufgabe berechnet werden.
+Weiterhin wird hier angezeigt, wie viel Zeit durch die Verwendung von Code Search eingespart (\textbf{Time Saved}) werden konnte.
+Die Berechnung dieses Werts erfordert die Betrachtung der Teilaufgaben und wird in Kürze anhand der Teilaufgaben-Statistiken erläutert.
 Kapitel~\ref{ch:evaluation} wird diesen Messwert anhand einiger realer Beispiele verwenden, um die Effizienz von Code Search zu bestimmen.
+Die Summe von händischer Bewertungsdauer und mit Code Search gesparter Zeit wird für die Anzeige von Prozentangaben zwar berechnet, aber nicht dargestellt, da diese Dauer zweifelhaften Nutzen bietet.
 
 \begin{figure}
     \centering
@@ -420,8 +422,8 @@ Dafür werden jeweils kurze Stichpunkte zu jedem Wert genannt, um Hinweise auf d
         Die Effektivität kann nie 100\% betragen, da Code Search nur ausgehend von einer händischen Bewertung aktiviert wird.
         Beim Löschen von dieser werden auch davon abstammende Code Search-Bewertungen gelöscht.
     }
-    \item[Average Evaluation Item] ist die durchschnittliche Bewertungsdauer der Teilaufgabe.
-    Diese wird gemessen, während das Bewertungs-Modalfenster geöffnet ist.
+    \item[Average Evaluation Time] ist die durchschnittliche Bewertungsdauer der Teilaufgabe.
+    Sie wird gemessen, während das Bewertungs-Modalfenster geöffnet ist.
     Das verlängertes Öffnen dieses Fensters, beispielsweise beim Verlassen des Arbeitsplatzes oder beim Einlegen einer Pause, kann die Statistik verfälschen.
     Um dies zu vermeiden, werden Ausreißer länger als 60 Sekunden nicht im Durchschnitt verrechnet.
     \item[Code Search Time Savings] bezeichnet die geschätzte Zeit, die durch Code Search bei der Bewertung dieser Teilaufgabe eingespart wurde.

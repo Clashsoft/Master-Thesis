@@ -1,26 +1,27 @@
 \chapter{Einleitung}\label{ch:introduction}
 
-\todo{
-    Worum gehts, was ist das Problem, was beabsichtigt diese Arbeit, wie ist sie aufgebaut.
-}
-
-\section{Motivation}\label{sec:motivation}
-
-\todo{
-    Vereinfachen der \ac{pm}-Bewertung durch Automatisierung.
-    Repetitive Arbeit, oft ähnlicher Code.
-}
+Die Bewertung von Programmieraufgaben in einer Lehrveranstaltung mit vielen Teilnehmenden kann sehr aufwendig sein.
+Abhängig von der Aufgabenstellung müssen viele Zeilen Quellcode gelesen und verstanden werden, um eine akkurate Einschätzung der Richtigkeit zu machen.
+Die Arbeit der Bewertenden ist meist repetitiv und kann zu Flüchtigkeitsfehlern führen, wodurch Studierende möglicherweise nicht auf Fehler hingewiesen werden und einer Lerngelegenheit entgehen.
+Dennoch bearbeitet jeder Studierende die gleichen Aufgaben.
+Es sollte folglich naheliegen, dass auch ähnliche oder sogar gleiche Lösungen entstehen.
+Diese Arbeit beabsichtigt, dieses Phänomen zu untersuchen und durch Automatisierung die Bewertenden zu entlasten.
+Sie beschreibt Werkzeuge, die für diesen Anwendungszweck entwickelt wurden und bei der Bewertung gemäß der Ziele des nachfolgenden Abschnitts~\ref{sec:goals} unterstützen sollen.
+Um einen breiteren Kontext zu schaffen, werden in Abschnitt~\ref{sec:related-work} verwandte Arbeiten betrachtet.
+Die wissenschaftlichen Ziele werden in Abschnitt~\ref{sec:research-questions} anhand von \acp{rq} gesteckt.
+Zuletzt gibt Abschnitt~\ref{sec:structure} eine kurze Übersicht über die Struktur dieser Arbeit.
 
 \section{Zielsetzung}\label{sec:goals}
 
-\todo{
-    Tool zur Unterstützung der Bewertung:
-    Genaues Aufzeichnen von Teilbewertungen/Teilpunkten.
-    Gleichzeitige Bewertung mehrerer Lösungen durch Suchemechanismus.
-    Lediglich interne Anpassung, kein Tool für Studentenverwendung, keine Änderung des bisherigen Workflows:
-    GitHub Classroom Abgabe, Bewertungstabelle, GitHub Issues, Bewertungsrichtlinien in Markdown.
-    Opt-in Verwendung.
-}
+In dieser Arbeit soll Software entwickelt werden, die bei der Bewertung von Programmieraufgaben unterstützt.
+Diese soll die Konzepte Hausaufgabe, Teilaufgaben, Abgaben \ac{bzw} Lösungen, Bewertungen von Teilaufgaben trennen, sodass eine Gesamtbewertung ermöglicht wird.
+Insbesondere sollen Teilpunkte aufgezeichnet werden.
+Die gleichzeitige Bewertung mehrerer Lösungen soll erfolgend, indem Bewertungen von Teilaufgaben anhand von Codeabschnitten automatisch auf andere Lösungen mit ähnlichem Code übertragen werden.
+
+Die Werkzeuge sollen möglichst unaufdringlich sein, bestehende Ablaufe ergänzen und optional benutzbar sein.
+Insbesondere umfasst dies, dass Studierende diese Werkzeuge nicht für die Abgabe verwenden müssen und Bewertungen in einem Format eingereicht werden, dass auch ohne die Werkzeuge verfügbar ist.
+Beispielsweise soll die Verwendung von GitHub Classroom als Abgabemechanismus und GitHub Issues als Feedbackformat unterstützt werden.
+Anders ausgedrückt sollen die Werkzeuge für diese bestehenden Technologien eine Integration bieten.
 
 \section{Verwandte Arbeiten}\label{sec:related-work}
 
@@ -31,26 +32,37 @@
 
 \section{Forschungsfragen}\label{sec:research-questions}
 
-\subsection[RQ1]{RQ1: Kann die Bewertung von Programmieraufgaben sinnvoll automatisiert werden?}\label{subsec:rq1-useful-automation}
+\subsection[\acs{rq}1]{\ac{rq}1: Kann die Bewertung von Programmieraufgaben sinnvoll automatisiert werden?}\label{subsec:rq1-useful-automation}
 
 \todo{
     Relativ große Anzahl von Studierenden, ähnliche Lösungen - Automatisierung bietet sich an.
 }
 
-\subsection[RQ2]{RQ2: Welcher Mehraufwand wird für die automatisierte Bewertung benötigt?}\label{subsec:rq2-additional-effort}
+\subsection[\acs{rq}2]{\ac{rq}2: Welcher Mehraufwand wird für die automatisierte Bewertung benötigt?}\label{subsec:rq2-additional-effort}
 
 \todo{
     Tests schreiben, Musterlösung, keiner?
 }
 
-\subsection[RQ3]{RQ3: Welche Effektivität und Effizienz kann von der Automatisierung erwartet werden?}\label{subsec:rq3-effectivity-efficiency}
+\subsection[\acs{rq}3]{\ac{rq}3: Welche Effektivität und Effizienz kann von der Automatisierung erwartet werden?}\label{subsec:rq3-effectivity-efficiency}
 
 \todo{
     Abhängig von Semester, Modul und Kursfortschritt.
 }
 
-\subsection[RQ4]{RQ4: Wie können Aufgaben formuliert oder angepasst werden, um die Effektivität und Effizienz zu steigern?}\label{subsec:rq4-improve-effectivity-efficiency}
+\subsection[\acs{rq}4]{\ac{rq}4: Wie können Aufgaben formuliert oder angepasst werden, um die Effektivität und Effizienz zu steigern?}\label{subsec:rq4-improve-effectivity-efficiency}
 
 \todo{
     Unter Beibehaltung der ursprünglichen Lehrziele, möglichst durch triviale Änderungen der Anforderungen.
+}
+
+\section{Aufbau der Arbeit}\label{sec:structure}
+
+\todo{
+    Ablauf des Anwendungsfalls und verwendetete Drittanbieter-Technologien in Grundlagen.
+    Verwendung und Umsetzung der neuen Werkzeuge in Implementierung.
+    Ausprobieren und erfassen von Daten in Evaluation.
+    Auswerten der Daten und Beantwortung der Forschungsfragen in Auswertung.
+    Fazit.
+    Zukunftspläne.
 }

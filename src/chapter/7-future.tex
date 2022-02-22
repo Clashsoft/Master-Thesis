@@ -7,16 +7,28 @@ Integration weiterer Lernsysteme, Portierung von fulibFeedback auf andere \acp{i
 
 \section{Integration weiterer Lernsysteme}
 
-\todo{
-    zB Moodle.
-    Automatischer Import und Feedback
-}
+Bisher unterstützt fulib.org den automatischen Import von Lösungen mit GitHub Classroom und das Hochladen von Archiven.
+Dies deckt die Anwendungsfälle von den Veranstaltungen aus Kapitel~\ref{ch:evaluation} ab, doch verwenden nicht alle Lehrenden diese Plattform oder Formate.
+Bei Abweichungen kann es zu Mehraufwand kommen, wenn beispielsweise erst Dateien in Archive verpackt werden müssen.
+Folglich kann es sinnvoll sein, auch andere Lernsysteme zu integrieren.
+
+Ein Beispiel für ein solches Lernsystem ist Moodle\footnote{\url{https://moodle.org/}}.
+Dort können Lehrende ebenfalls Assignments erstellen\footnote{\url{https://docs.moodle.org/311/en/Assignment_activity}}, für die Studierenden Lösungen hochladen können.
+Bewertende können die Abgaben einsehen und Punkte mit Feedback vergeben.
+Die Moodle-\ac{api}\footnote{\url{https://docs.moodle.org/dev/Core_APIs}} bietet Schnittstellen um maschinell die Lösungen auszulesen und Bewertungen zu hinterlegen.
 
 \section{fulibFeedback für andere \acsp{ide}}\label{sec:other-ides}
 
+In Abschnitt~\ref{subsec:language-server-protocol} wurde bereits dargelegt, dass das \ac{lsp} für Wiederverwendbarkeit ausgelegt ist.
+Es liegt daher nahe, dass die \ac{vsc}-Erweiterung fulibFeedback auch für andere \acp{ide} mit \ac{lsp}-Unterstützung portiert werden kann.
+Konkret wurde in Betracht gezogen, dies für IntelliJ zu tun, da die Entwicklungsumgebung ebenfalls in den evaluierten Veranstaltungen eingesetzt wurde.
+Das Vorhaben wurde jedoch verworfen, da in \ac{pm} die Vorgabe von \ac{vsc} bestand und diese \ac{ide} auch für die Bewertung verwendet wurde.
+Darüber hinaus ist die Unterstützung des \ac{lsp} seitens IntelliJ nicht optimal, wie in Abschnitt~\ref{subsec:visual-studio-code} erwähnt wurde.
+
+Eine weitere Möglichkeit ist das Projects-Modul von fulib.org, das in Abschnitt~\ref{subsec:fulib.org} beschrieben wurde.
+Die vereinfachte Online-\ac{ide} könnte ebenfalls die Funktionen von fulibFeedback anbieten und dabei besser mit fulib.org integriert sein, als es mit einer Erweiterung möglich wäre.
+
 \todo{
-    LSP erlaubt es.
-    zB IntelliJ.
     fulib.org Projects für einfache Anwendungen ohne GUI.
 }
 

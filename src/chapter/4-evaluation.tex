@@ -315,6 +315,30 @@ Tabelle~\ref{tbl:pm-overhead} zeigt die dabei entstanden Messwerte für \acp{ha}
 \end{table}
 \endgroup
 
+Bestimmt man nun die Zeit, wie lange dieser Bewerter in dem Bewertungsfenster verbracht hat, kann bestimmt werden, um welchen Faktor sich tatsächlich benötigte und bei der Bewertung verbrachte Zeit unterscheiden.
+Tabelle~\ref{tbl:pm-adapted-efficiency} spiegelt die errechneten Werte für \acp{ha} 7 bis 11 wieder.
+Mithilfe des Faktors, den Werten aus Tabelle~\ref{tbl:pm-efficiency} und der Formel~\ref{eqn:adapted-efficiency} kann schließlich die \textbf{angepasste Effizienz} berechnet werden.
+Sie repräsentiert die Effizienz von Code Search unter Beachtung des zusätzlichen Zeitaufwands.
+
+\begin{equation}\label{eqn:adapted-efficiency}
+    Effizienz_{angepasst} = \frac{t_{Code Search}}{t_{Code Search} + Faktor \cdot T_{H\ddot{a}ndisch}}
+\end{equation}
+
+\begin{table}
+    \centering
+    \caption{Angepasste Effizienz für \ac{pm}}
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+        HA & Gesamtzeit  & Bewertet  & Faktor  & Angepasste Effizienz  \\ \hline
+        7 & 03:32  & 00:53:07  & 4.0  & 23\%  \\ \hline
+        8 & 02:31  & 00:23:54  & 6.3  & 23\%  \\ \hline
+        9 & 00:31  & 00:14:16  & 2.2  & 65\%  \\ \hline
+        10 & 01:17  & 00:19:27  & 4.0  & 23\%  \\ \hline
+        11 & 01:12 & 00:25:40 & 2.8 & 39\% \\ \hline
+    \end{tabular}
+    \label{tbl:pm-adapted-efficiency}
+\end{table}
+
 \subsection{Anpassungen}\label{subsec:pm-adaptations}
 
 Im Verlauf des Übungsbetriebs von \ac{pm} wurde deutlich, dass einige Anpassungen an der Aufgabenstellung zu besseren Ergebnissen mit Code Search führen können.

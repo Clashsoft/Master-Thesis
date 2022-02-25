@@ -146,27 +146,44 @@ Außerdem sind Teilaufgaben mit Unteraufgaben ausgenommen, da diese nur der Stru
 Folglich beschreibt diese Zahl die notwendigen Schritte zur Bewertung einer durchschnittlichen Abgabe, bei der alle Aufgaben bearbeitet wurden und keine groben Fehler vorhanden sind.
 Die Anzahl der Teilaufgaben zur Bewertung orientiert sich grob an der Punktzahl und ist stets kleiner oder gleich.
 Differenzen entstehen, wenn manche Teilaufgaben mehr als einen Punkt vergeben.
+In der Spalte \textbf{Link} sind jeweils die Assignments auf fulib.org referenziert, aus deren Statistiken alle Werte dieser und folgender Tabelle übernommen wurden.
+
+\renewcommand{\thefootnote}{\roman{footnote}}
 
 \begin{table}
     \centering
     \caption{Punkte-Metriken von \ac{pm}}
-    \begin{tabular}{|l|l|l|l|}
+    \begin{tabular}{|l|l|l|l|l|}
     \hline
-        HA & Punkte Gesamt & Teilaufgaben & Zu Bewerten \\ \hline
-        1  & 30 & 40 & 26 \\ \hline
-        2  & 44 & 75 & 43 \\ \hline
-        3  & 22 & 23 & 14 \\ \hline
-        4  & 47 & 46 & 32 \\ \hline
-        5  & 45 & 63 & 42 \\ \hline
-        6  & 58 & 71 & 54 \\ \hline
-        7  & 54 & 80 & 54 \\ \hline
-        8  & 51 & 60 & 44 \\ \hline
-        9  & 35 & 48 & 35 \\ \hline
-        10 & 25 & 38 & 25 \\ \hline
-        11 & 37 & 48 & 37 \\ \hline
+        HA & Punkte Gesamt & Teilaufgaben & Zu Bewerten & Link \\ \hline
+        1  & 30 & 40 & 26 & \footnotemark[1] \\ \hline
+        2  & 44 & 75 & 43 & \footnotemark[2] \\ \hline
+        3  & 22 & 23 & 14 & \footnotemark[3] \\ \hline
+        4  & 47 & 46 & 32 & \footnotemark[4] \\ \hline
+        5  & 45 & 63 & 42 & \footnotemark[5] \\ \hline
+        6  & 58 & 71 & 54 & \footnotemark[6] \\ \hline
+        7  & 54 & 80 & 54 & \footnotemark[7] \\ \hline
+        8  & 51 & 60 & 44 & \footnotemark[8] \\ \hline
+        9  & 35 & 48 & 35 & \footnotemark[9] \\ \hline
+        10 & 25 & 38 & 25 & \footnotemark[10] \\ \hline
+        11 & 37 & 48 & 37 & \footnotemark[11] \\ \hline
     \end{tabular}
     \label{tbl:pm-points}
 \end{table}
+
+\footnotetext[1]{\url{https://dev.fulib.org/assignments/617d4fb863af7d2af168cce2/statistics}}
+\footnotetext[2]{\url{https://dev.fulib.org/assignments/618bb3468bdfd2a3e837af84/statistics}}
+\footnotetext[3]{\url{https://dev.fulib.org/assignments/6195011a4eac33e013d0741c/statistics}}
+\footnotetext[4]{\url{https://dev.fulib.org/assignments/619ce2e652df228d1e1fdd80/statistics}}
+\footnotetext[5]{\url{https://dev.fulib.org/assignments/61aa29b2a1f266973fecdaa2/statistics}}
+\footnotetext[6]{\url{https://dev.fulib.org/assignments/61b08f7effe12dd88713bfa9/statistics}}
+\footnotetext[7]{\url{https://dev.fulib.org/assignments/61dea31bc649b200f39c96b7/statistics}}
+\footnotetext[8]{\url{https://dev.fulib.org/assignments/61ea84db33f9a599cf131dd2/statistics}}
+\footnotetext[9]{\url{https://dev.fulib.org/assignments/61fd7bcc50f8a4ad1264c1b1/statistics}}
+\footnotetext[10]{\url{https://dev.fulib.org/assignments/6203bef650f8a4ad1266951c/statistics}}
+\footnotetext[11]{\url{https://dev.fulib.org/assignments/6206733f50f8a4ad126747eb/statistics}}
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
 
 Tabelle~\ref{tbl:pm-solutions} gibt weitere Einsichten in den notwendigen Aufwand.
 Die Anzahl der \textbf{Abgaben} jeder Hausaufgabe (\textbf{\acs{ha}}) ist gleichzeitig die Anzahl der importierten Repositories von GitHub Classroom.

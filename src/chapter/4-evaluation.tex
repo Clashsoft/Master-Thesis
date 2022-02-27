@@ -15,6 +15,7 @@ Die Abschnitte~\ref{sec:algods-2021} und~\ref{sec:einfinf-2021-2022} bieten dara
 
 Die Veranstaltung \ac{pm} stellt die größten Teil der Evaluation dar.
 Sie umfasste insgesamt elf Aufgabenblätter und ein Abschlussprojekt, welche von bis zu 125 Studierenden bearbeitet und bis zu sechs Personen mit fulib.org und fulibFeedback bewertet wurden.
+Inhaltlich behandelt sie Konzepte der Softwaretechnik, insbesondere Planung, Entwurf und Implementierung komplexer Anwendungen.
 
 Im Verlauf der Veranstaltung wurde die Anzahl der Benutzer stets erhöht, um anfangs mögliche Probleme zu ermitteln und dabei zu vermeiden, dass viele Personen davon betroffen und verlangsamt werden.
 Jeder neue Benutzer erhielt eine kurze Einweisung in die Bedienung der Werkzeuge und Hinweise zur optimalen Verwendung.
@@ -404,12 +405,67 @@ Dort wurden teilweise keine Ergebnisse von Code Search gefunden und somit keine 
 \ac{ha}5 stellt dafür ein Extrembeispiel dar, weil sich diese inhaltlich mit dem Test-First-Prinzip befasste und dadurch die Tests einen Großteil der Punkte beisteuerten.
 Weiterhin wurde in diesem Aufgabenblatt verlangt, Mockups anzufertigen, welche keinen Code benötigen und damit nicht für Code Search geeignet sind.
 
-\section{Algorithmen und Datenstrukturen}\label{sec:algods-2021}
+\section{\acl{algods}}\label{sec:algods-2021}
 
-\todo{
-    Keine Bewerter, nur Betrachten der Daten.
-    Statistiken.
-}
+Die Veranstaltung \ac{algods} beschäftigt sich mit den gleichnamigen Konzepten der Informatik, welche von den Teilnehmenden eigenständig entworfen, implementiert und analysiert werden.
+Sie fand zuletzt im Sommersemester 2021 und damit außerhalb des Zeitrahmens dieser Arbeit statt.
+Deshalb wurden Archivdaten von den Betreuern angefragt und nachträglich auf die Verwendbarkeit der zuvor vorgestellten Werkzeuge geprüft.
+Für die Evaluation wurden insgesamt \todo{drei} der elf Aufgabenblätter von Anfang, Mitte und Ende des Semesters ausgewählt und jeweils etwa 20\% der Abgaben eingeschränkt bewertet.
+Diese werden nachfolgend kurz beschrieben.
+
+\begin{description}
+    \item[\ac{ha}1] behandelt grundlegende Datentypen, Kontrollstrukturen und weitere Sprachkonzepte von Java.\footnote{
+        \url{https://moodle-18-21.uni-kassel.de/moodle/pluginfile.php/729863/mod_resource/content/1/algoDS21aufg01.pdf}
+    }
+    \item[\ac{ha}6] festigt die Vererbung anhand von Klassen und überschriebenen Methoden.
+    Weiterhin werden einige Grundeigenschaften von Algorithmen überprüft.\footnote{
+        \url{https://moodle-18-21.uni-kassel.de/moodle/pluginfile.php/777172/mod_resource/content/2/algoDS21aufg06.pdf}
+    }
+    \item[\ac{ha}11] beschäftigt sich mit Eigenschaften von Suchbäumen, verlangt das Hinzufügen einer Methode, welche die Höhe von binären Bäumen anhand von vorgegebenem Code bestimmt und implementiert einfache Operationen eines (2,3)-Baums.\footnote{
+        \url{https://moodle-18-21.uni-kassel.de/moodle/pluginfile.php/800263/mod_resource/content/1/algoDS21aufg11.pdf}
+    }
+\end{description}
+
+% Anpassungen
+
+Die Mechanismen für Abgabe und Feedback in \ac{algods} unterscheiden sich stark von denen, die in \ac{pm} verwendet werden.
+Statt GitHub Classroom wird ein eigenes Abgabesystem verwendet, in dem Studierende ihre Lösungen als Archive verpackt einmalig hochladen.
+Bewertende können sich dann eine zufällige Auswahl von Lösungen vom System zuweisen lassen und dieser für die Bewertung herunterladen.
+Ist diese abgeschlossen, wird Feedback über Email an die Studierenden vermittelt.
+Um diesen Ablauf zu unterstützen, wurden einige Erweiterungen an fulib.org vorgenommen.
+Es ist nun möglich, Archive über ein Import-Fenster hochzuladen, wie Abbildung~\todo{} zeigt.
+Anhand der Dateinamen werden automatisch Abgaben angelegt und in der zugehörigen Tabelle angezeigt.
+Davon ausgehend können Bewertende den gewohnten Ablauf der Bewertung befolgen.
+Das Versenden von Feedback erfolgt schließlich über den Button \textbf{Draft Mail}, der in Abbildung~\ref{fig:submit-feedback} zu sehen ist.
+
+% Metriken
+
+Während der nachträglichen Bewertung dieser Hausaufgaben war noch nicht die Telemetrie vorhanden, die für die Bestimmung der Effizienz notwendig ist.
+Aus diesem Grund wird nachfolgend nur die Effektivität von Code Search bestimmt.
+Weiterhin wurde darauf verzichtet, Teilaufgaben zu bewerten, deren Lösung nicht aus Quellcode bestand.
+Die dafür notwendigen Bewertungen wurden dennoch in der Gesamtsumme verrechnet, um einen genäherten Wert der tatsächlich erreichbaren Effektivität zu berechnen.
+Tabelle~\ref{tbl:algods-basics} zeigt zunächst einige grundlegenden Metriken.
+Die Anzahl der Teilaufgaben teilt sich \textbf{einbezogene} und \textbf{übersprungene}, wovon letztere diejenigen sind, die nicht mit Quellcode gelöst wurden.
+Von den \textbf{eingereichten Lösungen} wurden 20\% händisch \textbf{betrachtet}.
+Durch Code Search wurden einige weitere Lösungen in Teilen \textbf{bewertet}.
+
+\begin{table}
+    \centering
+    \caption{Teilaufgaben und Lösungen von \ac{algods}}
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+    \hline
+        ~ & \multicolumn{3}{c|}{Teilaufgaben} & \multicolumn{3}{c|}{Lösungen} \\
+        \acs{ha} & Einbezogen & Übersprungen & Gesamt & Eingereicht & Bewertet & Betrachtet \\ \hline
+        1  & 12 & 17 & 29 & 122 & 108 & 24 \\ \hline
+        6  & 14 &  6 & 20 & 100 &  94 & 20 \\ \hline
+        11 &  4 &  7 & 11 &  85 &  23 & 18 \\ \hline
+    \end{tabular}
+    \label{tbl:algods-basics}
+\end{table}
+
+Bei Vergleich der einbezogenen und übersprungenen Teilaufgaben ist bereits ersichtlich, dass in dieser Veranstaltung weniger Programmieraufgaben gestellt wurden, als es bei \ac{pm} der Fall war.
+Die anderen acht Aufgabenblätter geben einen ähnlichen Eindruck.
+Von insgesamt 440 erreichbaren Punkten in der Veranstaltung werden 285 (65\%) in Programmieraufgaben vergeben.
 
 \section{Einführung in die Informatik}\label{sec:einfinf-2021-2022}
 

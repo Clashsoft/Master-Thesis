@@ -297,8 +297,6 @@ Aus diesem Grund wurde von einem Bewerter mithilfe des Werkzeugs Wakatime\footno
 } für jede Lösung gemessen, wie lange diese im Editor geöffnet war.
 Tabelle~\ref{tbl:pm-overhead} zeigt die dabei entstanden Messwerte für \acp{ha} 7 bis 11, für die jeweils zehn bis 18 Lösungen von diesem Bewerter betrachtet wurden.
 
-\begingroup
-\setlength{\tabcolsep}{4pt}
 \begin{table}
     \centering
     \caption{Bewertungszeit in Minuten einzelner Lösungen aus \ac{pm}}
@@ -314,7 +312,6 @@ Tabelle~\ref{tbl:pm-overhead} zeigt die dabei entstanden Messwerte für \acp{ha}
     \end{tabular}
     \label{tbl:pm-overhead}
 \end{table}
-\endgroup
 
 Bestimmt man nun die Zeit, wie lange dieser Bewerter in dem Bewertungsfenster verbracht hat, kann bestimmt werden, um welchen Faktor sich tatsächlich benötigte und bei der Bewertung verbrachte Zeit unterscheiden.
 Tabelle~\ref{tbl:pm-adapted-efficiency} spiegelt die errechneten Werte für \acp{ha} 7 bis 11 wieder.
@@ -479,7 +476,7 @@ In der Spalte \textbf{Link} werden erneut die Assignments auf fulib.org angegebe
     \caption{Bewertung und Effektivität in \ac{algods}}
     \begin{tabular}{|l|l|l|l|l|l|l|l|}
     \hline
-        ~ & \multicolumn{5}{c|}{Bewertungen} & ~ \\
+        ~ & \multicolumn{5}{c|}{Bewertungen} & ~ & ~ \\
         \acs{ha} & Händisch & Code Search & Bearbeitet & Übersprungen & Gesamt & Effektivität & Link \\ \hline
         1  & 199 & 438 & 1 & 408 & 1046 & 42\% & \footnotemark[1] \\ \hline
         6  & 165 & 482 & 0 & 120 &  767 & 63\% & \footnotemark[2] \\ \hline

@@ -432,10 +432,17 @@ Statt GitHub Classroom wird ein eigenes Abgabesystem verwendet, in dem Studieren
 Bewertende können sich dann eine zufällige Auswahl von Lösungen vom System zuweisen lassen und dieser für die Bewertung herunterladen.
 Ist diese abgeschlossen, wird Feedback über Email an die Studierenden vermittelt.
 Um diesen Ablauf zu unterstützen, wurden einige Erweiterungen an fulib.org vorgenommen.
-Es ist nun möglich, Archive über ein Import-Fenster hochzuladen, wie Abbildung~\todo{} zeigt.
+Es ist nun möglich, Archive über ein Import-Fenster hochzuladen, wie Abbildung~\ref{fig:assignment-import-files} zeigt.
 Anhand der Dateinamen werden automatisch Abgaben angelegt und in der zugehörigen Tabelle angezeigt.
 Davon ausgehend können Bewertende den gewohnten Ablauf der Bewertung befolgen.
 Das Versenden von Feedback erfolgt schließlich über den Button \textbf{Draft Mail}, der in Abbildung~\ref{fig:submit-feedback} zu sehen ist.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/assignment-import-files}
+    \caption{Import-Modalfenster zum Hochladen von Dateien}
+    \label{fig:assignment-import-files}
+\end{figure}
 
 \subsection{Metriken}\label{subsec:algods-metrics}
 
@@ -443,6 +450,7 @@ Während der nachträglichen Bewertung dieser Hausaufgaben war noch nicht die Te
 Aus diesem Grund wird nachfolgend nur die Effektivität von Code Search bestimmt.
 Weiterhin wurde darauf verzichtet, Teilaufgaben zu bewerten, deren Lösung nicht aus Quellcode bestand.
 Die dafür notwendigen Bewertungen wurden dennoch in der Gesamtsumme verrechnet, um einen genäherten Wert der tatsächlich erreichbaren Effektivität zu berechnen.
+
 Tabelle~\ref{tbl:algods-basics} zeigt zunächst einige grundlegenden Metriken.
 Die Anzahl der Teilaufgaben teilt sich \textbf{einbezogene} und \textbf{übersprungene}, wovon letztere diejenigen sind, die nicht mit Quellcode gelöst wurden.
 Von den \textbf{eingereichten Lösungen} wurden 20\% händisch \textbf{betrachtet}.
@@ -475,7 +483,7 @@ Die \textbf{Effektivität} kann dann als Anteil von Code Search zu Gesamtanzahl 
 In der Spalte \textbf{Link} werden erneut die Assignments auf fulib.org angegeben, von denen die Werte stammen.
 
 \renewcommand{\thefootnote}{\alph{footnote}}
-\begin{table}[!ht]
+\begin{table}
     \centering
     \caption{Bewertung und Effektivität in \ac{algods}}
     \begin{tabular}{|l|l|l|l|l|l|l|l|}

@@ -466,6 +466,37 @@ Durch Code Search wurden einige weitere Lösungen in Teilen \textbf{bewertet}.
 Bei Vergleich der einbezogenen und übersprungenen Teilaufgaben ist bereits ersichtlich, dass in dieser Veranstaltung weniger Programmieraufgaben gestellt wurden, als es bei \ac{pm} der Fall war.
 Die anderen acht Aufgabenblätter geben einen ähnlichen Eindruck.
 Von insgesamt 440 erreichbaren Punkten in der Veranstaltung werden 285 (65\%) in Programmieraufgaben vergeben.
+Dies schränkt insgesamt die Effektivität von Code Search ein.
+
+Tabelle~\ref{tbl:algods-effectiveness} zeigt nun die Anzahl der Bewertungen für jede Hausaufgabe und die daraus ermittelte Effektivität.
+Bewertungen sind aufgeteilt in die Kategorien \textbf{Händisch}, \textbf{Code Search}, \textbf{Bearbeitet} (von Code Search erstellt und händisch angepasst) und \textbf{Übersprungen} (berechnet aus übersprungenen Teilaufgaben mal betrachtete Abgaben).
+Die \textbf{Effektivität} kann dann als Anteil von Code Search zu Gesamtanzahl berechnet werden.
+In der Spalte \textbf{Link} werden erneut die Assignments auf fulib.org angegeben, von denen die Werte stammen.
+
+\renewcommand{\thefootnote}{\alph{footnote}}
+\begin{table}[!ht]
+    \centering
+    \caption{Bewertung und Effektivität in \ac{algods}}
+    \begin{tabular}{|l|l|l|l|l|l|l|l|}
+    \hline
+        ~ & \multicolumn{5}{c|}{Bewertungen} & ~ \\
+        \acs{ha} & Händisch & Code Search & Bearbeitet & Übersprungen & Gesamt & Effektivität & Link \\ \hline
+        1  & 199 & 438 & 1 & 408 & 1046 & 42\% & \footnotemark[1] \\ \hline
+        6  & 165 & 482 & 0 & 120 &  767 & 63\% & \footnotemark[2] \\ \hline
+        11 &  62 &  10 & 0 & 126 &  198 & 5\% & \footnotemark[3] \\ \hline
+    \end{tabular}
+    \label{tbl:algods-effectiveness}
+\end{table}
+
+\footnotetext[1]{\url{https://dev.fulib.org/assignments/61e0505bc649b200f39cbe26/statistics}}
+\footnotetext[2]{\url{https://dev.fulib.org/assignments/61e4378af7ed1c59a000d830/statistics}}
+\footnotetext[3]{\url{https://dev.fulib.org/assignments/61e43a36f7ed1c59a000d954/statistics}}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+Bei \acp{ha} 1 und 6 sind mit 40\% bis 60\% ähnliche gute Ergebnisse zu verzeichnen wie bereits in verschiedenen \ac{pm}-Hausaufgaben.
+\ac{ha}11 stellt mit der sehr niedrigen Effektivität eine Besonderheit dar.
+Die beiden betrachteten Aufgaben erlaubten große Unterschiede bei der Implementierung, wodurch nur wenige Lösungen ähnlich waren.
+Darüber hinaus verursachen die sieben von elf Teilaufgaben, die keine Programmieraufgaben waren und daher übersprungen wurden, mit 63\% der Bewertungen eine zusätzliche Reduzierung der Effektivität.
 
 \section{Einführung in die Informatik}\label{sec:einfinf-2021-2022}
 

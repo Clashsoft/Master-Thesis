@@ -407,8 +407,10 @@ Weiterhin wurde in diesem Aufgabenblatt verlangt, Mockups anzufertigen, welche k
 Die Veranstaltung \ac{algods} beschäftigt sich mit den gleichnamigen Konzepten der Informatik, welche von den Teilnehmenden eigenständig entworfen, implementiert und analysiert werden.
 Sie fand zuletzt im Sommersemester 2021 und damit außerhalb des Zeitrahmens dieser Arbeit statt.
 Deshalb wurden Archivdaten von den Betreuern angefragt und nachträglich auf die Verwendbarkeit der zuvor vorgestellten Werkzeuge geprüft.
-Für die Evaluation wurden insgesamt \todo{drei} der elf Aufgabenblätter von Anfang, Mitte und Ende des Semesters ausgewählt und jeweils etwa 20\% der Abgaben eingeschränkt bewertet.
+Die dafür notwendigen Anpassungen werden in Abschnitt~\ref{subsec:algods-adaptations} dargelegt.
+Für die Evaluation wurden insgesamt drei der elf Aufgabenblätter von Anfang, Mitte und Ende des Semesters ausgewählt und jeweils etwa 20\% der Abgaben eingeschränkt bewertet.
 Diese werden nachfolgend kurz beschrieben.
+Abschnitt~\ref{subsec:algods-metrics} stellt zuletzt die Ergebnisse in Form von Metriken dar.
 
 \begin{description}
     \item[\ac{ha}1] behandelt grundlegende Datentypen, Kontrollstrukturen und weitere Sprachkonzepte von Java.\footnote{
@@ -423,7 +425,7 @@ Diese werden nachfolgend kurz beschrieben.
     }
 \end{description}
 
-% Anpassungen
+\subsection{Anpassungen}\label{subsec:algods-adaptations}
 
 Die Mechanismen für Abgabe und Feedback in \ac{algods} unterscheiden sich stark von denen, die in \ac{pm} verwendet werden.
 Statt GitHub Classroom wird ein eigenes Abgabesystem verwendet, in dem Studierende ihre Lösungen als Archive verpackt einmalig hochladen.
@@ -435,7 +437,7 @@ Anhand der Dateinamen werden automatisch Abgaben angelegt und in der zugehörige
 Davon ausgehend können Bewertende den gewohnten Ablauf der Bewertung befolgen.
 Das Versenden von Feedback erfolgt schließlich über den Button \textbf{Draft Mail}, der in Abbildung~\ref{fig:submit-feedback} zu sehen ist.
 
-% Metriken
+\subsection{Metriken}\label{subsec:algods-metrics}
 
 Während der nachträglichen Bewertung dieser Hausaufgaben war noch nicht die Telemetrie vorhanden, die für die Bestimmung der Effizienz notwendig ist.
 Aus diesem Grund wird nachfolgend nur die Effektivität von Code Search bestimmt.
@@ -444,7 +446,9 @@ Die dafür notwendigen Bewertungen wurden dennoch in der Gesamtsumme verrechnet,
 Tabelle~\ref{tbl:algods-basics} zeigt zunächst einige grundlegenden Metriken.
 Die Anzahl der Teilaufgaben teilt sich \textbf{einbezogene} und \textbf{übersprungene}, wovon letztere diejenigen sind, die nicht mit Quellcode gelöst wurden.
 Von den \textbf{eingereichten Lösungen} wurden 20\% händisch \textbf{betrachtet}.
-Durch Code Search wurden einige weitere Lösungen in Teilen \textbf{bewertet}.
+Die Auswahl erfolgte nach den jeweils ersten und letzten 10\% der nach Matrikelnummern sortierten Abgabenliste.
+\textbf{Bewertet} verzeichnet schließlich alle Lösungen, für die mindestens eine Bewertung einer Teilaufgabe vorhanden ist.
+Diese Anzahl ist höher als die der betrachteten Abgaben, da einige zusätzliche Bewertungen von Code Search angelegt wurden.
 
 \begin{table}
     \centering

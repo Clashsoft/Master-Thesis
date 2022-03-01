@@ -14,17 +14,25 @@ Zuletzt gibt Abschnitt~\ref{sec:structure} eine kurze Übersicht über die Struk
 \section{Zielsetzung}\label{sec:goals}
 
 In dieser Arbeit soll Software entwickelt werden, die bei der Bewertung von Programmieraufgaben unterstützt.
-Diese soll die Konzepte Hausaufgabe, Teilaufgaben, Abgaben \ac{bzw} Lösungen, Bewertungen von Teilaufgaben trennen, sodass eine Gesamtbewertung ermöglicht wird.
-Insbesondere sollen Teilpunkte aufgezeichnet werden.
-Die gleichzeitige Bewertung mehrerer Lösungen soll erfolgen, indem Bewertungen von Teilaufgaben anhand von Codeabschnitten automatisch auf andere Lösungen mit ähnlichem Code übertragen werden.
-Dies soll in Echtzeit geschehen, damit andere Bewertende umgehend informiert werden und unnötige Arbeit vermieden wird.
-Um Schäden durch böswilligen oder fahrlässigen Code zu vermeiden, soll das System keine Programme von Dritten ausführen.
-Stattdessen soll sämtliche automatische Bewertung anhand des Quelltexts durchgeführt werden.
+Nachfolgend werden einige Aspekte beschrieben, die darüber hinaus angestrebt werden.
 
-Die Werkzeuge sollen möglichst unaufdringlich sein, bestehende Ablaufe ergänzen und optional benutzbar sein.
-Insbesondere umfasst dies, dass Studierende diese Werkzeuge nicht für die Abgabe verwenden müssen und Bewertungen in einem Format eingereicht werden, dass auch ohne die Werkzeuge verfügbar ist.
-Beispielsweise soll die Verwendung von GitHub Classroom als Abgabemechanismus und GitHub Issues als Feedbackformat unterstützt werden.
-Anders ausgedrückt sollen die Werkzeuge für diese bestehenden Technologien eine Integration bieten.
+\begin{description}
+    \item[Optionale Benutzung und Integration bestehender Vorgänge.]
+    Die Werkzeuge sollen möglichst unaufdringlich sein, bestehende Ablaufe ergänzen und optional benutzbar sein.
+    Insbesondere umfasst dies, dass Studierende sie nicht für die Abgabe verwenden müssen.
+    Bewertungen sollen in einem Format eingereicht werden können, das auch ohne die Werkzeuge verfügbar ist.
+    Beispielsweise soll die Verwendung von GitHub Classroom als Abgabemechanismus und GitHub Issues als Format für Feedback unterstützt werden.
+    Anders ausgedrückt sollen die Werkzeuge für diese bestehenden Technologien eine Integration bieten.
+    \item[Nachvollziehbarkeit.]
+    Die Software soll die Konzepte Hausaufgabe, Teilaufgaben, Abgaben \ac{bzw} Lösungen, Bewertungen von Teilaufgaben trennen, sodass eine Gesamtbewertung ermöglicht wird.
+    Insbesondere sollen Teilpunkte aufgezeichnet werden.
+    \item[Übergreifende Bewertung.]
+    Die gleichzeitige Bewertung mehrerer Lösungen soll erfolgen, indem Bewertungen von Teilaufgaben anhand von Codeabschnitten automatisch auf andere Lösungen mit ähnlichem Code übertragen werden.
+    Dies soll in Echtzeit geschehen, damit andere Bewertende umgehend informiert werden und unnötige Arbeit vermieden wird.
+    \item[Sicherheit.]
+    Um Schäden durch böswilligen oder fahrlässigen Code zu vermeiden, soll das System keine Programme von Dritten ausführen.
+    Stattdessen soll sämtliche automatische Bewertung anhand des Quelltexts durchgeführt werden.
+\end{description}
 
 \section{Verwandte Arbeiten}\label{sec:related-work}
 

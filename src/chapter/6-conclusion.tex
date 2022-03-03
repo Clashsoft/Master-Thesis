@@ -1,1 +1,23 @@
 \chapter{Fazit}\label{ch:conclusion}
+
+Die Evaluation und Auswertung haben gezeigt, dass die in dieser Arbeit vorgestellten Werkzeuge durchaus fähig sind, bei der Bewertung von Programmieraufgaben zu unterstützen.
+
+% Code Search
+Nach einer kurzen Einrichtung kann die vorgestellte Software, fulib.org und fulibFeedback, die Produktivität steigern.
+Indem Bewertungen von Teilaufgaben automatisch auf textuell ähnliche Lösungen übertragen, wird wertvolle Zeit gespart.
+Dabei hat sich gezeigt, dass die reine Textsuche ohne Beachtung von Leerzeichen ausreicht, um eine große Anzahl von Ergebnissen mit nahezu identischem Code zu finden.
+Die Wahl von Elasticsearch als Datenbank und Suchmaschine für Quellcode erwies sich als erfolgreich, da mit wenig Konfigurationsaufwand zufriedenstellende Suchverhalten und Performance erzielt wurden.
+
+% fulibFeedback
+Nach anfänglichen Benutzungsproblemen konnte die \ac{vsc}-Erweiterung fulibFeedback die Abläufe auf der Weboberfläche fulib.org intuitiv ergänzen.
+Die Entscheidung, beide Werkzeuge symbiotisch einzusetzen, anstatt die gesamte Bewertung mit fulibFeedback durchzuführen, nahm positiven Einfluss auf die allgemeine Benutzbarkeit der Software.
+Das \acl{lsp} glänzte dabei als modernes Rahmenwerk für die Implementierung von Editor-Funktionalität.
+
+% Evaluation
+Die umfangreiche Evaluation deckte mit \acp{pm} einen vollständigen Vorlesungszeitraum ab und konnte anhand von \acl{algods} auf andere Veranstaltungen ausgeweitet werden.
+Dabei wurden wertvolle Daten gesammelt, welche die Leistungsfähigkeit und Zeitersparnis der Werkzeuge numerisch belegen.
+
+% Vergleich mit anderen Vorgehen
+Anders als bei gängigen Verfahren, welche die abgegebenen Programme ausführen und anhand von Verhaltensmustern bewerten, müssen für die Textsuche keine Musterlösungen, Testsuiten oder Rahmenvorgaben gemacht werden.
+Studierende und Bewertende sind damit nicht in ihren Vorgehen und Abläufen eingeschränkt.
+Obwohl keine vollständige Automatisierung erzielt werden kann, bietet diese Arbeit dennoch einen Ansatz, der bei mittleren bis großen Teilnehmerzahlen erhebliche Zeitersparnisse mit sich führen kann.

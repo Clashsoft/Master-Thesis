@@ -1,11 +1,11 @@
 \chapter{Implementierung}\label{ch:implementation}
 
 Die Implementierung dieser Arbeit besteht aus zwei weitgehend getrennten Projekten, die jedoch miteinander kommunizieren und integriert sind.
-Abschnitt~\ref{sec:expanding-fulib.org} beschreibt zunächst die Änderung, die an der Webanwendung fulib.org durchgeführt wurden.
+Abschnitt~\ref{sec:expanding-fulib.org} beschreibt zunächst die Änderungen, die an der Webanwendung fulib.org durchgeführt wurden.
 Das dabei entstandene Werkzeug ist bis auf wenige Ausnahmen autonom für die Bewertung von Abgaben einsetzbar.
-Als Erweiterung oder zusätzliches Hilfsmittel dient die \ac{vsc}-Erweiterung fulibFeedback, die in Abschnitt~\ref{sec:fulibFeedback} erläutert wird.
+Als Erweiterung \ac{bzw} zusätzliches Hilfsmittel dient die \ac{vsc}-Erweiterung fulibFeedback, die in Abschnitt~\ref{sec:fulibFeedback} erläutert wird.
 Insbesondere kann diese Bewertende bei der Bewertung und Studierende bei der Berichtigung von Quellcode unterstützen.
-Ohne fulibFeedback sind die Bewertungsmechanismen von fulib.org unabhängig vom Quellcode nutzbar.
+Ohne fulibFeedback sind die Bewertungsmechanismen von fulib.org nicht mit Bezug zum Quellcode nutzbar.
 
 In diesem Kapitel wird die Hausaufgabe 3\footnote{
     \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2021/11/PM2022_Hausaufgabe03.pdf}
@@ -16,6 +16,7 @@ Die Lernziele der Hausaufgabe waren die Übersetzung eines Klassendiagramms in J
 Diese Hausaufgabe wurde gewählt, da sie sowohl individuellen als auch schematischen Code von Studierenden erwartet.
 Zudem handelt es sich um eine Hausaufgabe aus der Anfangsphase der Veranstaltung.
 In dieser ist mit einer höheren Abgabenanzahl und -Vielfalt bei gleichzeitig geringerer Schwierigkeit und Komplexität im Vergleich zu späteren Aufgaben zu rechnen.
+In Kapitel~\ref{ch:evaluation} werden diese und anderen Hausaufgaben der Veranstaltung nochmals genauer betrachtet.
 
 \section{Erweiterung von fulib.org}\label{sec:expanding-fulib.org}
 
@@ -24,7 +25,7 @@ In Abschnitt~\ref{subsec:fulib.org} wurde bereits die Modulaufteilung und der St
 Nachfolgend wird ein detaillierter Ablauf erläutert, der für die Bewertung von Hausaufgaben notwendig ist.
 Dieser beginnt mit dem Erstellen von Assignments in Abschnitt~\ref{subsec:creating-assignments}.
 Daraufhin werden in Abschnitt~\ref{subsec:grading} die Schritte beschrieben, die bei der Bewertung getätigt werden.
-Abschnitt~\ref{subsec:statistics} zeigt, wie mithilfe der Statistiken eine Einsicht in die numerischen Hintergründe eines Assignments geboten wird.
+Abschnitt~\ref{subsec:statistics} zeigt, wie durch die Statistiken eine Einsicht in die numerischen Hintergründe eines Assignments geboten wird.
 Zuletzt wird die sogenannte Code Search-Technologie vorgestellt, die eine Suchmaschine für Quellcode in Abgaben bereitstellt.
 Dies ist Inhalt von Abschnitt~\ref{subsec:code-search}.
 
@@ -32,7 +33,7 @@ Dies ist Inhalt von Abschnitt~\ref{subsec:code-search}.
 
 Die Benutzung von fulib.org als Werkzeug zum Bewerten von Hausaufgaben erfordert zunächst einige Vorbereitungsmaßnahmen.
 Diese bestehen primär aus der Erstellung eines Assignments, das die Rahmendaten und Teilaufgaben der Hausaufgabe anders als das Hausaufgabenblatt in einem maschinenverarbeitbaren Format speichert.
-Die Erstellung des Assignments verläuft über ein mehrteiliges Formular, das nachfolgend betrachtet wird.
+Das Erstellen des Assignments verläuft über ein mehrteiliges Formular, das nachfolgend betrachtet wird.
 In~\cite{bachelor-thesis} wurde bereits ein ähnlicher Ablauf beschrieben, es wurde jedoch für diese Arbeit eine Neugestaltung vorgenommen, um die wachsenden Anforderungen sinnvoll unterzubringen.
 
 \begin{figure}
@@ -43,7 +44,7 @@ In~\cite{bachelor-thesis} wurde bereits ein ähnlicher Ablauf beschrieben, es wu
 \end{figure}
 
 Abbildung~\ref{fig:assignment-create-head} stellt den Kopf des Formulars da, der stets sichtbar ist.
-Hier ist es zunächst möglich, ein Assignment während der Bearbeitung zu in Form einer \ac{json}-Datei zu Exportieren oder eine solche zu Importieren.
+Hier ist es zunächst möglich, ein Assignment während der Bearbeitung als \ac{json}-Datei zu Exportieren oder eine solche zu Importieren.
 Dies kann zur Datensicherung oder -übermittlung eingesetzt werden.
 Das manuelle Speichern eines sich in Bearbeitung befindenden Assignments ist generell nicht notwendig, da nach jedem Bearbeitungsschritt sämtliche Eingaben im Browserspeicher abgelegt werden.
 Dies verhindert den Datenverlust beim Unterbrechen der Bearbeitung durch Schließen des Browsertabs oder Verbindungsabbruch.
@@ -78,7 +79,7 @@ Die Beschreibung (\textbf{Description}) kann weitere Informationen über das Ass
 Auf der nächsten Seite des Formulars können Angaben für die Integration von GitHub Classroom gemacht werden.
 Abbildung~\ref{fig:assignment-create-classroom} zeigt ein Bild dieses Formulars.
 Dafür müssen der Name der GitHub-Organisation (\textbf{Organization}) und das Präfix (\textbf{Prefix}) konfiguriert werden.
-Dies ermöglicht den manuelle oder zum Zeitpunkt der Deadline automatischen Import von Lösungen von der Platform.
+Dies ermöglicht den manuellen oder zum Zeitpunkt der Deadline automatischen Import von Lösungen von der Plattform.
 Anhand der Search-\ac{api} von GitHub\footnote{
     \url{https://docs.github.com/en/rest/reference/search\#search-repositories}
 } wird nach allen Repositories in der angegebenen Organisation gesucht, deren Name mit dem Präfix beginnt.
@@ -139,11 +140,11 @@ Dabei handelt es sich nicht um eine sofortige Löschung, der Task wird lediglich
 \end{figure}
 
 Die Detailansichten eines positiven Tasks mit Untertasks und eines negativen Tasks sind jeweils in den Abbildungen~\ref{fig:assignment-create-tasks-detail-1} und~\ref{fig:assignment-create-tasks-detail-2} sichtbar.
-In dem modalen Formular kann die Beschreibung und die Punktzahl eingestellt werden.
+In dem modalen Formular kann die Beschreibung (\textbf{Description}) und die Punktzahl (\textbf{Points}) eingestellt werden.
 In der ersten Abbildung ist zu sehen, dass die Existenz von Unteraufgaben die automatische Berechnung der Punktzahl ermöglicht, weshalb der Zauberstab-Button neben dem Eingabefeld sichtbar ist.
 Die Berechnung behandelt Unteraufgaben mit negativen Punktzahlen gesondert, indem jeweils deren absoluter Betrag verwendet wird.
 Das optionale Eingabefeld \textbf{Filename Glob} ist für die in Abschnitt~\ref{subsec:code-search} beschriebene Code Search relevant und wird dort separat beschrieben.
-Abbildung~\ref{fig:assignment-create-tasks-detail-2} zeigt eine Beispieleingabe.
+Abbildung~\ref{fig:assignment-create-tasks-detail-2} zeigt eine Beispieleingabe dafür.
 Der Editor \textbf{Verification} wird für die automatische Bewertung mit fulibScenarios und dessen Pattern Matching-Erweiterung aus~\cite{bachelor-thesis} verwendet und ist in dieser Arbeit nicht weiter relevant.
 
 \begin{figure}
@@ -153,17 +154,17 @@ Der Editor \textbf{Verification} wird für die automatische Bewertung mit fulibS
     \label{fig:assignment-create-tasks-markdown}
 \end{figure}
 
-Die Schaltfläche zum Wechseln zwischen \textbf{Markdown} und \textbf{List} erlaubt die Bearbeitung der Tasks in einer auf Markdown basierenden Textformat.
-Abbildung~\ref{fig:assignment-create-tasks-markdown} zeigt einen Ausschnitt der Teilaufgabenliste aus Abbildung~\ref{fig:assignment-create-tasks-list} in diesem Format sowie der zugehörige Hilfetext zur Erklärung.
+Die Schaltfläche zum Wechseln zwischen \textbf{Markdown} und \textbf{List} erlaubt die Bearbeitung der Tasks in einem auf Markdown basierenden Textformat.
+Abbildung~\ref{fig:assignment-create-tasks-markdown} zeigt einen Ausschnitt der Aufgabenliste aus Abbildung~\ref{fig:assignment-create-tasks-list} in diesem Format sowie den zugehörigen Hilfetext zur Erklärung.
 Das Format kann in wenigen Sätzen beschrieben werden.
-Jeder Task wird in eine neue Zeile geschrieben, die entweder der Listensyntax (\code{-} am Anfang) oder der Überschriftensyntax (Zwei oder mehrere \code{\#} am Anfang) von Markdown folgt.
+Jeder Task wird in eine neue Zeile geschrieben, die entweder der Listensyntax (\code{-} am Anfang) oder der Überschriftensyntax (Zwei oder mehrere \texttt{\#} am Anfang) von Markdown folgt.
 Nach dem einleitenden Zeichen folgt die Beschreibung und die Punktzahl, optional mit \code{x/} vorangestellt und/oder \code{P} nachgestellt, in Klammern.
-Am Ende der Zeile kann ein \ac{html}-Kommentare weitere Daten des Tasks wie dessen \ac{id} und Dateinamen-Glob in \ac{json} kodiert enthalten.
+Am Ende der Zeile kann ein \ac{html}-Kommentar weitere Daten des Tasks wie dessen \ac{id} und Dateinamen-Glob in \ac{json} kodiert enthalten.
 Folgt eine Zeile nicht diesem Format, wird sie rot markiert, um den Benutzer auf das Problem hinzuweisen.
 
-Das Format wurde gewählt, da die Bewertungsrichtlinien der Veranstaltung \ac{pm} bereits vor Beginn dieser Arbeit in ähnlichem Format vorlagen.
-Diese Richtlinien haben ihre Ursprünge aus der Verwendung von GitHub, wo Issues, Pull Requests und Kommentare in Markdown verfasst werden können und dann in Listenform mit Teilüberschriften dargestellt werden.
-Meist war es während der Evaluation möglich, die Bewertungsrichtlinien einzusetzen und mit wenigen Änderungen dem Format anzupassen.
+Das Format wurde gewählt, da die Bewertungsrichtlinien der Veranstaltung \ac{pm} bereits vor Beginn dieser Arbeit in ähnlicher Form vorlagen.
+Diese Richtlinien haben ihre Ursprünge aus der Verwendung von GitHub, wo Issues, Pull Requests und Kommentare in Markdown verfasst werden können und dann in Listenform mit Überschriften dargestellt werden.
+Meist war es während der Evaluation möglich, die Bewertungsrichtlinien einzusetzen und mit wenigen bis keinen Änderungen dem Format anzupassen.
 
 Die Registerkarten \textbf{Template} und \textbf{Sample} aus Abbildung~\ref{fig:assignment-create-head} werden an dieser Stelle nicht näher erläutert.
 Es handelt sich um spezifische Einstellungen für die Bewertung von Szenarien aus~\cite{bachelor-thesis}, die für die Zwecke dieser Arbeit nicht anwendbar sind.
@@ -175,7 +176,7 @@ Es handelt sich um spezifische Einstellungen für die Bewertung von Szenarien au
     \label{fig:assignment-create-preview}
 \end{figure}
 
-Der letzte Schritt der Assignment-Erstellung befindet sich auf der Registerkarte \textbf{Preview}, welche eine Übersicht über das Assignment anhand einer Vorschau anzeigt.
+Der letzte Schritt der Assignment-Erstellung befindet sich auf der Registerkarte \textbf{Preview}, welche eine Vorschau für das Assignment anzeigt.
 In Abbildung~\ref{fig:assignment-create-preview} wird diese dargestellt.
 In der Vorschau werden Titel, Autor, Abgabefrist und, falls vorhanden, die Beschreibung angezeigt.
 Sämtliche Teilaufgaben werden in einer geschachtelten Liste mit Beschreibung und Punktzahl präsentiert.
@@ -190,10 +191,10 @@ Schließlich kann das Assignment mit dem \textbf{Submit}-Button erstellt und ver
 
 Die Veröffentlichung findet über den \textbf{Sharing}-Tab statt, der sich direkt nach Erstellen des Assignments öffnet und in Abbildung~\ref{fig:assignment-share} dargestellt ist.
 Der \textbf{Student Link} wurde hauptsächlich in~\cite{bachelor-thesis} eingesetzt, da dieser zur Vergabe an die Studierenden vorgesehen war.
-In dieser Arbeit interagieren diese jedoch nicht mit der Oberfläche, weshalb der Link nicht benötigt wird.
-Das \textbf{Access Token} dient der Zugriffskontrolle, da mit diesem sämtliche Aktionen von Bewertenden durchgeführt werden.
+In dieser Arbeit interagieren sie jedoch nicht mit der Oberfläche, weshalb der Link nicht benötigt wird.
+Das \textbf{Access Token} dient der Zugriffskontrolle, da nur mit diesem die Aktionen von Bewertenden durchgeführt werden können.
 Daher muss sichergestellt werden, dass es nicht an Studierende gelangt, wie die Warnmeldung beschreibt.
-Bewertende benötigen folglich das Token und können es über den teilbaren \textbf{Teaching Assistant Invitation}-Link erhalten.
+Bewertende können das Token über den teilbaren \textbf{Teaching Assistant Invitation}-Link erhalten.
 Der Button \textbf{Configure} wird für fulibFeedback eingesetzt und wird in Abschnitt~\ref{sec:fulibFeedback} erneut erwähnt.
 
 \subsection{Bewertung}\label{subsec:grading}
@@ -223,12 +224,14 @@ Die Tabelle gibt Auskunft über den GitHub-Benutzernamen\footnote{
 }-Zeitpunkt vor der Frist entspricht.
 Bei einem nachträglichen manuellem Import ist es möglich, dass die Push-Zeit nach der Abgabefrist liegt.
 In diesem Fall wird das Abgabedatum rot markiert.
-Name, Matrikelnummer (\textbf{Student \acs{id}}) und E-Mail-Adresse können nicht von GitHub Classroom ermittelt werden, weshalb sie in der Tabelle leer sind.
+Der manuelle Import kann mit dem Button \textbf{Import Solutions}, welcher in Abbildung~\ref{fig:assignment-share} sichtbar ist, ausgelöst werden.
+\textbf{Name}, Matrikelnummer (\textbf{Student \acs{id}}) und \textbf{E-Mail}-Adresse können nicht von GitHub Classroom ermittelt werden, weshalb sie in der Tabelle leer sind.
 
 Die Punktzahl ist zunächst mit \texttt{?} als unausgewertet markiert.
 In der Abbildung wurden bereits einige Bewertungen vorgenommen, weshalb die zweite Person eine abschließende Punktzahl von 21 erhalten hat.
-Die gelb hinterlegte Punktzahl deutet an, dass eine Bewertung dieser Abgabe begonnen wurde, aber noch kein Feedback versendet wurde und daher keine Punktzahl feststeht.
-Eine türkise Farbe markiert Abgaben, die zwar noch nicht händisch bewertet wurden, aber in denen eine automatisch angelegte Bewertung von Code Search vorhanden ist.
+Die gelb hinterlegte Punktzahl deutet an, dass eine Bewertung dieser Abgabe begonnen wurde, aber noch kein Feedback versendet wurde und daher keine finale Punktzahl feststeht.
+Eine türkise Farbe markiert Abgaben, die zwar noch nicht händisch bewertet wurden, aber in denen eine automatisch angelegte Bewertung vorhanden ist.
+Dies ist ein Resultat von Code Search, welches in Abschnitt~\ref{subsec:code-search} beschrieben wird.
 In Abgaben mit grauer Punktzahl ist keinerlei Bewertung vorhanden.
 Das Fragezeichen-Symbol neben \textbf{Points} gibt Auskunft über diese Farbgebung.
 
@@ -238,7 +241,7 @@ Die Textfelder bieten eine einfache Form der Autovervollständigung, sodass bei 
 
 Mit der Suchleiste kann die Tabelle nach verschiedenen Kriterien gefiltert werden.
 Beispielsweise können Bewertende durch Eingabe ihres Namens nur die ihnen zugewiesenen Abgaben anzeigen, um für Übersicht zu sorgen.
-Die Syntax der Suche ist komplexer als eine einfache Textsuche, weshalb das Fragezeichen-Symbol eine detaillierte Beschreibung der Syntax anzeigen kann.
+Die Syntax der Suche ist komplexer als eine einfache Textsuche, weshalb das Fragezeichen-Symbol eine detaillierte Beschreibung anzeigen kann.
 
 Unter den \textbf{Actions} befinden sich die wichtigsten Aktionen, die für die Bewertung einer Abgabe relevant sind.
 Mit dem Augen-Button kann die Detailansicht der Abgabe geöffnet werden, in der die Bewertung einzelner Teilaufgaben stattfindet.
@@ -249,7 +252,7 @@ Der Button mit eingerahmten spitzen Klammern öffnet die Lösung sofort in einer
 } wird.
 Mit dem Einstellungs-Button neben der Suchleiste kann zwischen verschiedenen \acp{ide} (\ac{vsc}, Code-OSS und VSCodium\footnote{
     Jeweils alternative quelloffene Builds von \ac{vsc} ohne Microsoft-Branding.
-}) und Clone-Protokollen (https und ssh) gewählt werden.
+}) und Clone-Protokollen (\acs{https} und \acs{ssh}) gewählt werden.
 Der blaue Button mit eingekreistem Haken wird in einem späteren Abschnitt für das Versenden des Feedbacks verwendet.
 
 \subsubsection{Abgabe-Detailansicht}
@@ -282,11 +285,11 @@ Entspricht die vergebene Punktzahl der Minimalpunktzahl eines Tasks, wird dieser
 Werden die maximal mögliche Punkte erreicht, wird der Tasks grün (\ac{zB} 0/-1, 3/3).
 Teilpunkte werden gelb dargestellt (\ac{zB} 6/8).
 Dabei wird zwischen explizit vergebenen, berechneten und implizit vorhandenen Bewertungen unterschieden.
-An der Bezeichnung \textbf{Graded by Name} statt \textbf{Grade} können von Bewertenden vergebene Punktzahlen identifiziert werden.
-Teilaufgaben mit eigenen Unteraufgaben berechnen ihre Punktzahl vereinfacht durch Summieren der untergeordneten Punkte\footnote{
+An der Bezeichnung \textbf{Graded by (Name)} statt \textbf{Grade} kann identifiziert werden, ob und von welchem Bewertenden die Punktzahl vergeben wurde.
+Teilaufgaben mit eigenen Unteraufgaben berechnen ihre Punktzahl vereinfacht\footnote{
     Die genaue Berechnung bezieht Besonderheiten wie Unteraufgaben mit positiver und negativer Punktzahl mit ein.
     Auf die Angabe einer Formel wird an dieser Stelle verzichtet.
-}.
+} durch Summieren der untergeordneten Punkte.
 Alle anderen Teilaufgaben erhalten standardmäßig null Punkte.
 Durch Klicken auf \textbf{Grade} oder \textbf{Graded by Name} kann die Bewertung einer Teilaufgabe angelegt oder bearbeitet werden.
 Abbildung~\ref{fig:evaluation-modal} das sich öffnende Modalfenster.
@@ -298,7 +301,7 @@ Abbildung~\ref{fig:evaluation-modal} das sich öffnende Modalfenster.
     \label{fig:evaluation-modal}
 \end{figure}
 
-Die Bewertung in dieser Fenster ist zunächst sehr einfach gehalten und für schnelle Bedienbarkeit optimiert.
+Die Bewertung in diesem Fenster ist zunächst sehr einfach gehalten und für schnelle Bedienbarkeit optimiert.
 Im ersten Eingabefeld kann die Punktzahl eingegeben werden oder durch die Kürzelbuttons direkt auf den Minimal- oder Maximalwert gesetzt werden.
 Das Feld \textbf{Remark} kann für zusätzliche Hinweise für das Feedback verwendet werden.
 Hier kann beispielsweise ein kurzer erklärender Satz oder nach dem Aufklappen zu einem mehrzeiligen Textbereich eine Fehlermeldung eingegeben werden.
@@ -308,7 +311,7 @@ Dies wird in Abschnitt~\ref{sec:fulibFeedback} erneut aufgefasst.
 Mit dem \textbf{Submit}-Button wird schließlich die Bewertung gespeichert und das Modalfenster geschlossen.
 In Abbildung~\ref{fig:evaluation-modal} wurde eine bereits vorhandene Bewertung zum Bearbeiten geöffnet, weshalb der \textbf{Delete}-Button sichtbar ist, um diese zu löschen.
 
-Die Bewertung von Teilaufgaben mit diesem Vorgehen ein wiederkehrender Ablauf, der von Bewertenden hunderte Male pro Hausaufgabe durchgeführt wird.
+Die Bewertung von Teilaufgaben mit diesem Vorgehen ist ein wiederkehrender Ablauf, der von Bewertenden viele Male pro Hausaufgabe durchgeführt wird.
 Daher wurde besonderer Wert darauf gelegt, den Ablauf möglichst effizient zu gestalten.
 Während der Bewertung einer Teilaufgabe im Modalfenster wird die Zeit gemessen, die dabei verstrichen ist.
 Darauf basierend wird eine Statistik berechnet, welche in Abschnitt~\ref{subsec:statistics} gezeigt und in Kapitel~\ref{ch:evaluation} für einige Realbeispiele ausgewertet wird.
@@ -325,13 +328,13 @@ In der Abgabentabelle kann über den zugehörigen Button das Feedback-Modalfenst
     \label{fig:submit-feedback}
 \end{figure}
 
-Hier kann nochmal anhand der Vorschau abschließend geprüft werden, ob die Bewertung und Punkteberechnung korrekt durchgeführt wurde.
+Hier kann anhand der Vorschau abschließend geprüft werden, ob die Bewertung und Punkteberechnung korrekt durchgeführt wurde.
 Daran können nun einige Aspekte der Feedback-Generierung erklärt werden.
 Zunächst ist erkennbar, dass nicht jede Teilaufgabe des Assignments hier vertreten ist.
 Insbesondere werden Abzüge, \ac{dh} Teilaufgaben mit negativer Punktzahl, nicht angezeigt, sofern sie nicht bewertet wurden.
 In seltenen Fällen bietet es sich an, bei diesen Teilaufgaben keine Punkte abzuziehen, aber dennoch ein Kommentar oder eine Hilfestellung in Form des Remarks anzugeben.
 Beispiel dafür ist die Teilaufgabe "Game -- name" in Abbildung~\ref{fig:submit-feedback}.
-Die Punktzahl wird dann nicht angezeigt, da eine Darstellung wie "(0P)" zu Verwirrung führen könnte.
+Die Punktzahl wird dann nicht angezeigt, da eine Darstellung wie "(0P)" zu Verwirrung führen kann.
 Teilaufgaben mit positiver Punktzahl werden immer angezeigt.
 
 Am Ende der Bewertung befindet sich stets eine automatisch generierte Fußzeile.
@@ -345,19 +348,19 @@ Soll die Bewertung über GitHub erfolgen, wie es in diesem Anwendungsbeispiel in
 Einerseits kann das Formular zum Anlegen eines Issues auf GitHub mit \textbf{Draft Issue} geöffnet werden, sodass ein weiteres Mal der Text überprüft werden kann.
 Andererseits kann mit \textbf{Submit Issue} direkt ein Issue über die GitHub \ac{api} und angelegt und somit ein Schritt gespart werden.
 In jedem Fall wird die Gesamtpunktzahl, in Abbildung~\ref{fig:submit-feedback} beispielhaft 18/22, für die Abgabe gespeichert, damit sie in der Tabelle mit allen Abgaben angezeigt und die Abgabe eindeutig als bearbeitet erkannt werden kann.
-Die Bewertung des Studierenden ist nun abgeschlossen und es kann mit der nächsten fortgefahren werden.
+Die Bewertung des Studierenden ist nun abgeschlossen und es kann mit der nächsten Abgabe fortgefahren werden.
 
 \subsection{Statistiken}\label{subsec:statistics}
 
-Während und nach der Bewertung aller Abgaben können Betreuende und Übungsleitende eine Statistik einsehen.
-Sie enthält Informationen über die Anzahl der Bewertungen, die dabei verstrichene Zeit und die Effektivität der automatischen Bewertung von Code Search.
+Während und nach der Bewertung aller Abgaben können Betreuende und Übungsleitung eine Statistik einsehen.
+Sie enthält Informationen über die Anzahl der Bewertungen, die dabei verstrichene Zeit und den Anteil der automatischen Bewertungen von Code Search.
 Diese werden sowohl übergreifend als auch pro Teilaufgabe dargestellt.
-Zusätzlich wird Einsicht darüber geboten, welche Teilaufgaben am häufigsten zu Punkteeinbußen oder -Abzügen geführt haben.
+Zusätzlich wird Einsicht darüber geboten, welche Teilaufgaben am häufigsten zu Punktabzügen geführt haben.
 Daraus lässt sich ableiten, ob Lernziele möglicherweise nicht erreicht werden konnten oder Schwierigkeiten bei der Umsetzung bestanden.
 
 Die Statistik kann in der Assignment-Übersicht unter dem gleichnamigen Tab gefunden werden.
 In Abbildung~\ref{fig:assignment-statistics-basics} sind zunächst die übergreifenden Informationen dargestellt.
-Die Seite gliedert sich in drei Abschnitte, \textbf{Solutions}, \textbf{Evaluations} und \textbf{Time Tracking}.
+Die Seite gliedert sich in vier Abschnitte, \textbf{Solutions}, \textbf{Students}, \textbf{Evaluations} und \textbf{Time Tracking}.
 
 \begin{figure}
     \centering
@@ -367,13 +370,11 @@ Die Seite gliedert sich in drei Abschnitte, \textbf{Solutions}, \textbf{Evaluati
 \end{figure}
 
 Unter Solutions ist jeweils die Anzahl der Abgaben insgesamt (\textbf{Total}), mit angefangener Bewertung (\textbf{Evaluated}) und abgeschlossenen mit versendetem Feedback (\textbf{Graded}) sichtbar.
-Zudem wird die durchschnittlich erreichte Punktzahl der abgeschlossenen Abgaben sowie die Anzahl der bestehenden Studierenden angezeigt\footnote{
+Zudem wird unter \textbf{Students} die durchschnittlich erreichte Punktzahl (\textbf{Average Grade}) der abgeschlossenen Abgaben sowie die Anzahl der bestehenden (\textbf{Passing}) Studierenden angezeigt\footnote{
     Es handelt sich bei diesem und folgenden Screenshots der Statistik nicht um die realen Zahlen der Hausaufgabe 3.
 }.
 
-Die Evaluations\footnote{
-    Bewertungen von Teilaufgaben.
-} werden für die Auswertung in drei Kategorien unterteilt.
+Die Bewertungen von Teilaufgaben (\textbf{Evaluations}) werden für die Auswertung in drei Kategorien unterteilt.
 Händisch hinzugefügte Bewertungen (\textbf{Manually Added}) sind genau diejenigen, die wie in Abschnitt~\ref{subsec:grading} beschrieben erstellt wurden.
 Von \textbf{Code Search} gefundene Bewertungen können anhand der vorherigen erstellt werden und geben Aufschluss darüber, wie effektiv das Werkzeug für die vorliegende Hausaufgabe war.
 In seltenen Fällen ist es notwendig, diese automatisch erstellten Bewertungen händisch anzupassen (\textbf{Edited}), wenn beispielsweise eine Suche zu ungeeigneten Ergebnisse geführt hat.
@@ -382,7 +383,7 @@ Die Gesamtanzahl der Bewertungen (\textbf{Total}) als Summe der drei Kategorien 
 
 Der Abschnitt Time Tracking dient der Berechnung der Effizienz von Bewertenden und Code Search.
 Anhand der Zeitmessung, die während der Bewertung von Teilaufgaben stattfindet, können hier eine Gesamtdauer (\textbf{Time Spent}) und der Durchschnitt (\textbf{\O}) pro Teilaufgabe berechnet werden.
-Weiterhin wird hier angezeigt, wie viel Zeit durch die Verwendung von Code Search eingespart (\textbf{Time Saved}) werden konnte.
+Weiterhin wird hier angezeigt, wie viel Zeit durch die Verwendung von Code Search eingespart werden konnte (\textbf{Time Saved}).
 Die Berechnung dieses Werts erfordert die Betrachtung der Teilaufgaben und wird in Kürze anhand der Teilaufgaben-Statistiken erläutert.
 Kapitel~\ref{ch:evaluation} wird diesen Messwert anhand einiger realer Beispiele verwenden, um die Effizienz von Code Search zu bestimmen.
 Die Summe von händischer Bewertungsdauer und mit Code Search gesparter Zeit wird für die Anzeige von Prozentangaben zwar berechnet, aber nicht dargestellt, da diese Dauer zweifelhaften Nutzen bietet.
@@ -398,7 +399,7 @@ Evaluations und Time Tracking können die Ansicht verändern, um Punktzahlen sta
 Dafür wird der Haken \textbf{Weighted by Points} gesetzt, wie Abbildung~\ref{fig:assignment-statistics-by-points} zeigt.
 Dadurch kann ein Vergleich zwischen Bewertungs-Einheiten und Punkteeinheiten erfolgen und ermittelt werden, in welcher Relation der Arbeitsaufwand und die vergebenen Punkte stehen.
 Dies ist besonders dann interessant, wenn die Punkte direkten Einfluss auf die Benotung der Veranstaltung haben, wie es bei Laborveranstaltungen der Fall sein kann.
-In Kapitel~\ref{ch:evaluation} werden einige Beispiele betrachtet, wo die Punktzahl und Bewertungsanzahl teilweise stark unterschiedlich sind, wenn Teilaufgaben mit mehr als einem Punkt bewertet werden.
+% TODO In Kapitel~\ref{ch:evaluation} werden einige Beispiele betrachtet, wo die Punktzahl und Bewertungsanzahl teilweise stark unterschiedlich sind, wenn Teilaufgaben mit mehr als einem Punkt bewertet werden.
 
 \begin{figure}
     \centering
@@ -420,7 +421,7 @@ Dafür werden jeweils kurze Stichpunkte zu jedem Wert genannt, um Hinweise auf d
     Im Beispiel der Teilaufgabe \textbf{Aufgabe 2 / Test nicht implementiert} wurde eine Bewertung händisch angelegt und auf 14 weitere Abgaben von Code Search kopiert.
     Dies ergibt eine Effektivität von $\frac{14}{1 + 14} = \frac{14}{15} \approx 93\%$.\footnote{
         Die Effektivität kann nie 100\% betragen, da Code Search nur ausgehend von einer händischen Bewertung aktiviert wird.
-        Beim Löschen von dieser werden auch davon abstammende Code Search-Bewertungen gelöscht.
+        Beim Löschen des Originals werden auch davon abstammende Code Search-Bewertungen gelöscht.
     }
     \item[Average Evaluation Time] ist die durchschnittliche Bewertungsdauer der Teilaufgabe.
     Sie wird gemessen, während das Bewertungs-Modalfenster geöffnet ist.
@@ -440,9 +441,9 @@ Dafür werden jeweils kurze Stichpunkte zu jedem Wert genannt, um Hinweise auf d
 Wie zuvor erwähnt handelt es sich bei Code Search um eine Suchmaschine für Quellcode in Assignments.
 Es gibt zwei Wege diese zu aktivieren.
 Einerseits kann der dafür vorgesehene Tab in der Assignment-Übersicht verwendet werden, der in Abbildung~\ref{fig:assignment-code-search} dargestellt ist.
-Andererseits wird Code Search verwendet, um automatisch Bewertungen von Teilaufgaben anhand von ausgewählten Codeschnipseln zu erstellen.
+Andererseits wird Code Search verwendet, um automatisch Bewertungen von Teilaufgaben anhand von ausgewählten Codeabschnitten zu erstellen.
 Dies wird in Abschnitt~\ref{sec:fulibFeedback} detailliert beschrieben.
-Zunächst wird nur der Such-Tab erläutert, um einen Einblick in die Hintergründe der Suchmaschine zu bieten.
+Zunächst wird nur der Code Search-Tab erläutert, um einen Einblick in die Hintergründe der Suchmaschine zu bieten.
 
 \begin{figure}
     \centering
@@ -485,11 +486,11 @@ Dafür wird die spezielle Glob-Syntax\footnote{
     \url{https://en.wikipedia.org/wiki/Glob_(programming)}
 } verwendet, welche die Verwendung von Platzhaltern erlaubt.
 Das Beispiel \texttt{**/*Test.java} aus Abbildung~\ref{fig:assignment-code-search} wählt nur Dateien aus, die auf \texttt{Test.java} enden (\texttt{*Test.java}) und sich in einem beliebigen Unterordner des Projekts befinden (\texttt{**/}).
-Für die Suche mit Elasticsearch wird das Glob-Muster in einen regulären Ausdruck übersetzt und als Filterbedingung in der Suchanfrage an die Datenbank übergeben.
+Für die Suche mit Elasticsearch wird das Glob-Muster in einen regulären Ausdruck übersetzt und als Filterbedingung in der Suchanfrage übergeben.
 
 Alle Suchergebnisse werden gruppiert nach Abgabe in einer Liste angezeigt.
 Neben dem Dateinamen werden jeweils die Zeilennummern angegeben, in denen der Code gefunden wurde.
-Eine Vorschau zeigt zentral die Zeile mit dem Codeabschnitt und davor und danach zwei Zeilen des umliegenden Codes als Kontext.
+Eine Vorschau zeigt zentral die Zeile mit dem Codeabschnitt und davor und dahinter zwei Zeilen des umliegenden Codes als Kontext.
 Zeilennummern und Kontext werden nicht von Elasticsearch in den Suchergebnissen bereitgestellt.
 Anhand des in Abschnitt~\ref{subsec:elasticsearch} beschriebenen Highlighters wird stattdessen die Stelle im Quelltext markiert, wo der Codeabschnitt gefunden wurde.
 Daraus werden Zeilennummern und Kontext rekonstruiert.
@@ -539,16 +540,16 @@ Es genügt, die \textbf{Configure}-Buttons unter den \textbf{Sharing}-Tabs von A
     Die Detailansicht einer Abgabe stellt eine ähnliche Seite mit Zugriffstokens und Links bereit, wie es für Assignments gezeigt wurde.
     Aus Platzgründen wird hier auf eine Abbildung verzichtet.
 } zu drücken.
-Sämtliche relevante Einstellungen mit Ausnahme des Namens verwenden dann automatisch ausgefüllt.
-Dabei wird auch zwischen globalen Einstellungen und Workspace\footnote{
+Sämtliche relevante Einstellungen mit Ausnahme des Namens werden dann automatisch ausgefüllt.
+Dabei wird auch zwischen globalen und Workspace\footnote{
     Bezeichnet den aktuell geöffneten Projektordner.
-}-spezifischen unterschieden.
+}-spezifischen Einstellungen unterschieden.
 Assignment-Einstellungen werden automatisch global hinterlegt, um beim Öffnen weiterer Lösungen erhalten zu bleiben.
-Solution-Einstellungen werden lediglich im Workspace abgelegt, da sie nur für diese gültig sind.
+Solution-Einstellungen werden lediglich im Workspace abgelegt, da sie nur für dieses gültig sind.
 
 Wird ein Projektordner geöffnet, versucht die Erweiterung, diesen einer Solution zuzuordnen.
 Wurde in den Einstellungen eine Solution \acs{id} angegeben, sind keine weiteren Schritte notwendig.
-Andernfalls wird der Pfad der zuerst geöffnet Datei betrachtet und wie in~\ref{eqn:absolute-path-deconstruction} dekonstruiert.
+Andernfalls wird der Pfad der zuerst geöffnet Datei betrachtet und wie in Beispiel~\ref{eqn:absolute-path-deconstruction} dekonstruiert.
 
 \begin{equation}\label{eqn:absolute-path-deconstruction}
     \text{/Users/\dots/}
@@ -593,15 +594,15 @@ Dies ist besonders hilfreich, wenn mehrere Abschnitte zur gleichen Bewertung hin
 
 Nach Hinzufügen eines Codeabschnitts kann erneut mit \textbf{Submit} die Bewertung angelegt werden.
 Nun kommt der Haken \textbf{Code Search} zum Einsatz.
-Ist dieser aktiviert, wird der Codeabschnitt in allen anderen Lösungen mittels Code Search gesucht.
+Ist dieser aktiviert, wird der Codeabschnitt in allen anderen Lösungen mit Code Search gesucht.
 Die Bewertung, insbesondere die Kommentare, Punktzahl und Remark, wird dann auf alle Abgaben übertragen, in denen der Code gefunden wurde.
-Dadurch kann abhängig von der Einzigartigkeit des Codes eine Vielzahl von Abgaben in einem Schritt bewertet und Zeit gespart werden.
-Die Übertragung der Bewertung erfolgt ohne erkennbare Verzögerung nach Betätigen des Buttons Submit.
+Dadurch kann abhängig von der Einzigartigkeit des Codes eine Vielzahl von Abgaben in einem Schritt bewertet werden.
+Die Übertragung der Bewertung erfolgt ohne erkennbare Verzögerung nach Betätigen des Buttons.
 Eine Toast-Nachricht weist abschließend darauf hin, wie viele weitere Abgaben tatsächlich betroffen sind.
 
-Bei jeder Auswahl von Code wird Code Search für den diesen durchgeführt.
+Bei jeder Auswahl eines Codeabschnitts wird Code Search für diesen durchgeführt.
 Dies ergibt eine Liste von Suchergebnissen, aus der drei Metriken ermittelt werden können.
-Die Anzahl der \textbf{Solutions} gibt an, wie viele Abgaben den Codeabschnitt enthalten.
+Die Anzahl der \textbf{Solutions} gibt an, wie viele Abgaben den Code enthalten.
 In jeder Abgabe können \ac{uU} mehrere Dateien gefundenen werden, die Gesamtanzahl über alle Abgaben ist in \textbf{Files} summiert.
 Zuletzt gibt \textbf{Hits} die Anzahl der Suchergebnisse an, die auch mehrfach in einer Datei vorhanden sein können.
 Werden diese drei Werte verglichen, kann eine Einschätzung über die Spezifität des Codeabschnitts erfolgen.
@@ -620,17 +621,17 @@ Die Abbildungen~\ref{fig:fulibFeedback-snippet-bad} und~\ref{fig:fulibFeedback-s
     \label{fig:fulibFeedback-snippet-bad}
 \end{figure}
 
-In Abbildung~\ref{fig:fulibFeedback-snippet-bad} wurde eine Codeabschnitt ausgewählt, dessen Suche mehr Ergebnisse als betroffene Dateien, aber in jeder Lösungen nur eine Datei ergeben hat.
+In Abbildung~\ref{fig:fulibFeedback-snippet-bad} wurde ein Codeabschnitt ausgewählt, dessen Suche mehr Ergebnisse als betroffene Dateien, aber in jeder Lösungen nur eine Datei ergeben hat.
 Das deutet darauf hin, dass der Code in manchen Lösungen mehrfach in der gleichen Datei vorhanden war.
 Bezieht sich die Teilaufgabe beispielsweise auf eine bestimmte Methode, wie in diesem Fall einen Test, kann dies zu unerwünschten Bewertungen führen.
 In diesem Beispiel war die Aufgabe, eine neue Testmethode in der vorgegebenen Testklasse \code{HA03Test} hinzuzufügen.
 In dieser musste unter anderem ein Datenmodell initialisiert werden.
 Der ausgewählte Code in Abbildung~\ref{fig:fulibFeedback-snippet-bad} wurde jedoch in dieser Klasse schon in einer anderen Methode vorgegeben.
 Dies ist auch daran ersichtlich, dass nahezu alle Abgaben diesen Code enthalten (124 von 125).
-Der ausgewählte Code ist folglich kein sinnvolle Indiz dafür, dass die Aufgabe "Test implementieren" korrekt umgesetzt wurde.
+Der ausgewählte Code ist folglich kein sinnvolles Indiz dafür, dass die Aufgabe "Test implementieren" korrekt umgesetzt wurde.
 Die gelbe Warnmeldung weist auf diesen Sachverhalt mit der Information hin, dass die Auswahl nicht ausreichend Kontext bietet.
 Eine mögliche Lösung ist hier, zusätzlich die voranstehenden Zeilen auszuwählen, die den Kopf der hinzuzufügenden Testmethode enthalten.
-Dann wären Suchergebnisse stets eindeutig pro Lösung.
+Dann wären Suchergebnisse stets eindeutig in jeder Lösung.
 
 \begin{figure}
     \centering
@@ -650,17 +651,17 @@ Stattdessen ist aufgabenspezifisch die Auswahl des Setters sinnvoller, da in die
 
 Bewertungen, bei denen Codeabschnitte hinterlegt wurden, können von fulibFeedback im Editor angezeigt werden.
 Dies ist besonders für Studierende nützlich, die nach der Einrichtung der Erweiterungseinstellungen betrachten können, an welchen Stellen im Code zu Punktabzügen geführt haben und welche Teilaufgaben betroffen sind.
-Abbildung~\ref{fig:fulibFeedback-negative} zeigen die Markierung im Code sowie den Hilfetext, der beim Hovern über die betroffene Stelle dargestellt wird.
+Abbildung~\ref{fig:fulibFeedback-negative} zeigt die Markierung im Code sowie den Hilfetext, der beim Hovern über die betroffene Stelle dargestellt wird.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.83\textwidth]{images/fulibFeedback-positive}
+    \includegraphics[width=0.84\textwidth]{images/fulibFeedback-negative}
     \caption{Negative Bewertung als Markierung im Code}
     \label{fig:fulibFeedback-negative}
 \end{figure}
 
 Abhängig von der vergebenen Punktzahl ändert sich die Farbe der gewellten Linie, welche die Markierung ausmacht.
-Wurde die maximale Punktzahl für die Teilaufgabe erreicht ist die Linie blau.
+Wurde die maximale Punktzahl für die Teilaufgabe erreicht, ist die Linie blau.
 Abzüge oder positive Teilaufgaben mit null Punkten färben die Linie rot wie in Abbildung~\ref{fig:fulibFeedback-negative}.
 Teilpunkte werden mit gelber Farbe signalisiert.
 Der Hilfetext enthält die Beschreibung der Teilaufgabe (\texttt{Aufgabe 1 / Assoziationen / Game -- Field (fields) \dots}), die vergebene Punktzahl (\texttt{(-1P)}), Remark (\texttt{Rückrichtung nicht gesetzt}) und Kommentar (\texttt{Hier fehlt oldGame.withoutFields(this)}) und den Autor der Bewertung (\texttt{Adrian Kunz}).
@@ -671,18 +672,18 @@ Wurden mehrere Codeabschnitte hinterlegt, werden Links angezeigt, die auf andere
 Wie eingangs erwähnt ist fulibFeedback eine \ac{vsc}-Erweiterung, die mithilfe des \ac{lsp} umgesetzt wurde.
 Genauer bedeutet dies, dass dieses Werkzeug aus einem generischen Server und einer Erweiterung speziell für \ac{vsc}, die den Client verkörpert, besteht.
 Beide sind in einem gemeinsamen Paket gebündelt und über den Extension Marketplace abrufbar.
-Aufgrund der generischen Natur des Language Servers könnten weitere Clients für andere \acp{ide} entwickelt werden, die diesen ebenfalls unverändert bündeln.
+Aufgrund der generischen Natur des Language Servers könnten weitere Clients für andere \acp{ide} entwickelt werden, die diesen ebenfalls unverändert bündeln können.
 
 Der Client basiert auf der Bibliothek \code{vscode-languageclient}\footnote{
     \url{https://www.npmjs.com/package/vscode-languageclient}
 } von Microsoft.
-Diese erlaubt die Angabe des ausführbaren Servers und startet diesen, wenn die Erweiterung aktiviert wird.
-Es genügt die Angabe des Dateipfades des Servers, eines Selektors für Dateien, für welche die Sprachfeatures verwendet werden sollen, sowie die zu synchronisierenden Einstellungen.
+Diese erlaubt die Angabe des ausführbaren Servers und startet diesen, sobald die Erweiterung aktiviert wird.
+Es genügt die Angabe des Dateipfades des Servers, eines Selektors für Dateien, für welche die Sprachfeatures verwendet werden sollen, und die zu synchronisierenden Einstellungen.
 
 Weiterhin implementiert der Client einen Protokoll-Handler, der spezielle \acp{url}\footnote{
     Beispiel: \url{vscode://fulib.fulibfeedback/configure?api_server=https\%3A\%2F\%2Fdev.fulib.org&assignment=61dd5ac35c1dfa2b0b7c7898&token=1b3a-0558-29d1-6dd3}
 } erkennt und dadurch automatisch die Einstellungen anpassen kann, wenn in der fulib.org-Oberfläche ein Configure-Button betätigt wird.
-Die Einstellungen werden in einer Paketdatei anhand von Typ, Auswahlmöglichkeiten, Beschreibung, reguläre Ausdrücke für die Validierung und zugehörige Fehlermeldungen angegeben.
+Die Einstellungen werden in einer Paketdatei anhand von Typ, Auswahlmöglichkeiten, Beschreibung, regulären Ausdrücke für die Validierung und zugehörigen Fehlermeldungen angegeben.
 Darauf basierend werden automatisch die Eingabefelder in den Einstellungen von \ac{vsc} gezeigt, wie es in Abbildung~\ref{fig:fulibFeedback-settings} zu sehen war.
 
 Der Server wurde, anders als von Microsoft in Tutorials vorgeschlagen~\cite{vsc-language-server-guide}, mit NestJS implementiert.
@@ -690,13 +691,13 @@ Das Framework erlaubte eine bessere Strukturierung durch verschiedene Dienste (S
 Nachfolgend wird kurz beschrieben, welche für die verschiedenen Features von fulibFeedback eingesetzt wurden.
 
 Die Auswahl von Codeabschnitten wurde mit Code Actions realisiert.
-Es handelt sich dabei nicht direkt um die intendierte Verwendung dieses Sprachfeatures, da es für gewöhnlich nicht für die generelle Erkennung von Auswahl, sondern zur Bereitstellung von Aktionen gedacht ist.
-Da es von \ac{vsc} jedoch mindestens immer dann ausgelöst wird, wenn eine Auswahl gemacht wurde, kann es für diesen Einsatzzweck dienen, auch wenn keine Aktionen bereitgestellt werden.
+Es handelt sich dabei nicht direkt um die intendierte Verwendung dieses Sprachfeatures, da es für gewöhnlich nicht für die generelle Erkennung der Auswahl, sondern zur Bereitstellung von Aktionen gedacht ist.
+Da es von \ac{vsc} jedoch immer dann ausgelöst wird, wenn eine Auswahl gemacht wurde, kann es für diesen Einsatzzweck dienen, auch wenn keine Aktionen bereitgestellt werden.
 In einer früheren Version von fulibFeedback wurde dies auch verwendet, um die gesamte Bewertung in der \ac{ide} durchzuführen.
 Dies wird in Abschnitt~\ref{subsec:user-feedback} näher beschrieben.
 
 Die Darstellung von Bewertung anhand von Hervorhebungen im Code ist mit den Diagnostics des \ac{lsp} implementiert.
-Sie werden \ac{idR} vom Client beim Language Server angefragt, was eine Anfrage an den fulib.org-Server sendet und Bewertungen in Diagnostics umwandelt.
+Sie werden \ac{idR} vom Client beim Language Server angefragt, der eine Anfrage an den fulib.org-Server sendet und Bewertungen in Diagnostics umwandelt.
 Damit für Bewertende neue Bewertungen in Echtzeit angezeigt werden, wird stets eine asynchrone EventSource\footnote{
     Web-Technologie für asynchrone Events ausgehend von einem \ac{http}-Server.
 } angemeldet, die Änderungen erkennt und per Push neue Diagnostics an den Client weitergibt.

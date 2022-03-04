@@ -24,7 +24,7 @@ Nachfolgend werden einige Aspekte beschrieben, die darüber hinaus angestrebt we
     Beispielsweise soll die Verwendung von GitHub Classroom als Abgabemechanismus und GitHub Issues als Format für Feedback unterstützt werden.
     Anders ausgedrückt sollen die Werkzeuge für diese bestehenden Technologien eine Integration bieten.
     \item[Nachvollziehbarkeit.]
-    Die Software soll die Konzepte Hausaufgabe, Teilaufgaben, Abgaben \ac{bzw} Lösungen, Bewertungen von Teilaufgaben trennen, sodass eine Gesamtbewertung ermöglicht wird.
+    Die Software soll die Konzepte Hausaufgabe, Teilaufgaben, Abgaben \ac{bzw} Lösungen und Bewertungen von Teilaufgaben trennen, sodass eine Gesamtbewertung ermöglicht wird.
     Insbesondere sollen Teilpunkte aufgezeichnet werden.
     \item[Übergreifende Bewertung.]
     Die gleichzeitige Bewertung mehrerer Lösungen soll erfolgen, indem Bewertungen von Teilaufgaben anhand von Codeabschnitten automatisch auf andere Lösungen mit ähnlichem Code übertragen werden.
@@ -36,18 +36,18 @@ Nachfolgend werden einige Aspekte beschrieben, die darüber hinaus angestrebt we
 
 \section{Verwandte Arbeiten}\label{sec:related-work}
 
-Die automatische Bewertung von Programmieraufgaben ist ein Thema, das bereits in den Anfängen der Informatiklehre betrachtet wurde.\cite{hollingsworth-1960}.
-Besonders für große Online-Kurs mit bis zu vierstelligen Teilnehmerzahlen handelt es sich um ein Aufwandsproblem.~\cite{pieterse-2013}
-Seitdem wurde eine Vielzahl von Werkzeuge entwickelt, um das Problem zu lösen.~\cite{jackson-1997-assyst,edwards-2008-web-cat,enstroem-et-al-2011,vander-zanden-2012}
-Teilweise wurde dabei unvollständiger Quellcode vorgegeben, in dem Lücken ausgefüllt werden mussten.~\cite{vander-zanden-2012}
+Die automatische Bewertung von Programmieraufgaben ist ein Thema, das bereits in den Anfängen der Informatiklehre betrachtet wurde~\cite{hollingsworth-1960}.
+Besonders für große Online-Kurse mit bis zu vierstelligen Teilnehmerzahlen handelt es sich um ein Aufwandsproblem~\cite{pieterse-2013}.
+Seitdem wurde eine Vielzahl von Werkzeuge entwickelt, um das Problem zu lösen~\cite{jackson-1997-assyst,edwards-2008-web-cat,enstroem-et-al-2011,vander-zanden-2012}.
+Teilweise wurde dabei unvollständiger Quellcode vorgegeben, in dem Lücken ausgefüllt werden mussten~\cite{vander-zanden-2012}.
 Mit der automatischen Bewertung wurden Vorteile wie "Geschwindigkeit, Verfügbarkeit, Konsistenz und Objektivität"~\cite{ala-mutka-2005}\footnote{
     Übersetzt aus dem Englischen: "speed, availability, consistency and objectivity".
-}, ferner sogar die "Unmöglichkeit, ausführliche, gültige, verlässliche Bewertung ohne [Software-Hilfsmittel]"~\cite{kay-1994}\footnote{
+}, ferner sogar die "Unmöglichkeit, ausführliche, gültige, verlässliche Bewertung ohne [Software-Hilfsmittel bereitzustellen]"~\cite{kay-1994}\footnote{
     Übersetzt aus dem Englischen: "impossibility of thorough, valid, reliable assessment without [software tools]".
 }, festgestellt.
-Häufig ist dabei die Vorgehensweise, die abgegebenen Programme mit bestimmten Eingaben auszuführen und die Ausgaben zu überprüfen.
-In dieser Arbeit wird ein Ansatz der textorientierten Suche vorgeschlagen.
-Dieser wurde bisher hauptsächlich für das Finden von Plagiaten eingesetzt.~\cite{aiken-2002,prechelt-2003}
+Eine gängige Vorgehensweise ist es, die abgegebenen Programme mit bestimmten Eingaben auszuführen und die Ausgaben zu überprüfen.
+In dieser Arbeit wird stattdessen ein Ansatz der textorientierten Suche vorgeschlagen.
+Dieser wurde bisher hauptsächlich für das Finden von Plagiaten eingesetzt~\cite{aiken-2002,prechelt-2003}.
 
 \section{Forschungsfragen}\label{sec:research-questions}
 
@@ -71,23 +71,23 @@ Diese Frage soll untersuchen, ob diese weiteren Aufwände erheblich sind und wie
 
 In dieser Arbeit beschreibt der Begriff Effektivität den Anteil der Bewertungen von Teilaufgaben, die automatisch gemacht wurden, \ac{dh} in Relation zur Anzahl der händischen Bewertungen.
 Je höher dieser prozentuale Wert, desto weniger Arbeit ist seitens der Bewertenden notwendig gewesen.
-Die Effizienz hingegen bezeichnet die Zeit, die dabei eingespart wurde, genauer das Verhältnis von händischer Bewertungszeit und durch Automatisierung gesparter Arbeitszeit.
+Die Effizienz hingegen bezeichnet die Zeit, die dabei eingespart wurde, genauer das Verhältnis von durch Automatisierung gesparter Arbeitszeit zu händischer Bewertungszeit.
 Es ist voraussehbar, dass diese Werte abhängig von der Aufgabenstellung und anderen Faktoren unterschiedlich ausfallen können.
 Daher soll ergründet werden, welche Aufgaben positiven oder negativen Einfluss nehmen.
-Zudem soll beobachtet werden, ob Unterschiede entstehen, wenn Lehrveranstaltungen aus niedrigen oder höheren Semestern oder Hausaufgaben vom Anfang statt Ende eines Vorlesungszeitraums betrachtet werden.
+Zudem soll beobachtet werden, ob Unterschiede entstehen, wenn Lehrveranstaltungen aus niedrigen oder höheren Semestern oder Hausaufgaben von Anfang, Mitte oder Ende eines Vorlesungszeitraums betrachtet werden.
 
 \subsection[\acs{rq}4]{\ac{rq}4: Wie können Aufgaben formuliert oder angepasst werden, um die Effektivität und Effizienz zu steigern?}\label{subsec:rq4-improve-effectivity-efficiency}
 
 Aufbauend auf \acs{rq}3 ist naheliegend wünschenswert, die Effektivität oder Effizienz zu steigern, um Bewertungsarbeit zu reduzieren.
 Diese Frage soll erforschen, wie dies durch Anpassung der Aufgabenstellung bezweckt werden kann.
-Dabei sollen Anpassungen bestenfalls nicht oder nur geringfügig den Lehrinhalt verfälschen oder Mehraufwand erzeugen.
+Dabei sollen Anpassungen möglichst nicht den Lehrinhalt verfälschen oder Mehraufwand erzeugen.
 
 \section{Aufbau der Arbeit}\label{sec:structure}
 
-Nachfolgend wird zunächst beschrieben, welche Konzepte dieser Arbeit zugrundeliegend.
-Kapitel~\ref{ch:basics} enthält dafür eine genaue Beschreibung des Anwendungsfalls und der verwendeten Technologien, auf welche die Software aufbaut.
-Daraufhin beschreibt~\ref{ch:implementation} im Detail die neuen Werkzeuge und deren Funktionsweise aus technischer Sicht.
-Kapitel~\ref{ch:evaluation} wird dargelegt, wie die Software anhand von Benutzertests über einen längeren erprobt und iterativ verbessert wurde.
+Nachfolgend wird zunächst beschrieben, welche Konzepte dieser Arbeit zugrundeliegen.
+Kapitel~\ref{ch:basics} enthält dafür eine genaue Beschreibung des Anwendungsfalls und der verwendeten Technologien, auf denen die Software aufbaut.
+Daraufhin beschreibt Kapitel~\ref{ch:implementation} im Detail die neuen Werkzeuge und deren Funktionsweise aus technischer Sicht.
+Kapitel~\ref{ch:evaluation} wird dargelegt, wie die Software anhand von Benutzertests über einen längeren Zeitraum erprobt und iterativ verbessert wurde.
 Ebenfalls werden dort erste Daten gesammelt, die für die Beantwortung der \acp{rq} notwendig sind.
 In Kapitel~\ref{ch:results} werden diese schließlich ausgewertet und beantwortet.
 Das Fazit in Kapitel~\ref{ch:conclusion} gibt einen abschließenden Rückblick auf die Erkenntnisse der Arbeit.

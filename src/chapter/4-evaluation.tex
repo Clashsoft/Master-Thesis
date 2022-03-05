@@ -1,7 +1,7 @@
 \chapter{Evaluation}\label{ch:evaluation}
 
 Die in Kapitel~\ref{ch:implementation} entstandene Software wurde im Verlauf dieser Arbeit einer umfangreichen Evaluierungsphase unterzogen.
-Dadurch konnten individuelle Abläufe ermöglicht, unvorhergesehene Benutzerinteraktionen erfasst und ergonomische Bedienbarkeit sichergestellt werden.
+Dadurch konnten individuelle Abläufe erkannt, unvorhergesehene Benutzerinteraktionen erfasst und ergonomische Bedienbarkeit sichergestellt werden.
 In diesem Kapitel werden zwei Anwendungsfälle betrachtet, in denen die Werkzeuge fulib.org und fulibFeedback verwendet wurden.
 Dabei handelt es sich um Veranstaltungen der Universität Kassel aus dem Sommer- bis Wintersemester 2021 bis 2022.
 In Abschnitt~\ref{sec:pm-2021-2022} wird zunächst die Veranstaltung \ac{pm}\footnote{
@@ -14,14 +14,14 @@ Der Abschnitt~\ref{sec:algods-2021} bietet daraufhin Einblicke in die Veranstalt
 \section{\acl{pm}}\label{sec:pm-2021-2022}
 
 Die Veranstaltung \ac{pm} stellt die größten Teil der Evaluation dar.
-Sie umfasste insgesamt elf Aufgabenblätter und ein Abschlussprojekt, welche von bis zu 125 Studierenden bearbeitet und bis zu sechs Personen mit fulib.org und fulibFeedback bewertet wurden.
-Inhaltlich behandelt sie Konzepte der Softwaretechnik, insbesondere Planung, Entwurf und Implementierung komplexer Anwendungen.
+Sie umfasste insgesamt elf Aufgabenblätter und ein Abschlussprojekt, welche von bis zu 125 Studierenden bearbeitet und von bis zu sechs Personen mit fulib.org und fulibFeedback bewertet wurden.
+Inhaltlich behandelt sie Konzepte der Softwaretechnik, insbesondere Planung, Entwurf und Implementierung einfacher Desktopanwendungen.
 
 Im Verlauf der Veranstaltung wurde die Anzahl der Benutzer stets erhöht, um anfangs mögliche Probleme zu ermitteln und dabei zu vermeiden, dass viele Personen davon betroffen und verlangsamt werden.
 Jeder neue Benutzer erhielt eine kurze Einweisung in die Bedienung der Werkzeuge und Hinweise zur optimalen Verwendung.
 
-Während der Bewertung sind individuelle Anmerkungen sowie eine große Anzahl von Metriken durch die Statistiken auf fulib.org entstanden.
-In diesem Abschnitt werden einige Ansichten der Benutzer erläutert (Abschnitt~\ref{subsec:user-feedback}) und die Rohdaten der Statistiken erfasst (Abschnitt~\ref{subsec:pm-metrics}).
+Während der Bewertung sind individuelle Anmerkungen sowie eine große Anzahl von Messwerten durch die Statistiken auf fulib.org entstanden.
+Nachfolgend werden einige Ansichten der Benutzer erläutert (Abschnitt~\ref{subsec:user-feedback}) und die Rohdaten der Statistiken erfasst (Abschnitt~\ref{subsec:pm-metrics}).
 Des Weiteren wird erläutert, welche Erfahrung mit den Werkzeugen zu Anpassungen der Aufgabenstellungen und Bewertungskriterien geführt haben, um den Ablauf der Bewertung zu optimieren (Abschnitt~\ref{subsec:pm-adaptations}).
 Da sich die Beobachtungen und Metriken stets auf einzelne Übungsblätter beziehen, ist es an dieser Stelle lohnenswert, die elf \acp{ha} kurz zu beschreiben.
 
@@ -33,7 +33,7 @@ Da sich die Beobachtungen und Metriken stets auf einzelne Übungsblätter bezieh
         \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2021/11/PMWS2122_HA2.pdf}
     }
     \item[\ac{ha}3] erwartet die händische Implementierung eines Datenmodells mit besonderem Augenmerk auf die korrekte Sicherstellung von referentieller Integrität.
-    Einige prüfende Tests sind vorgegeben, ein weiterer muss selbst implementiert werden.\footnote{
+    Einige prüfende Tests sind vorgegeben, ein weiterer muss implementiert werden.\footnote{
         \url{https://seblog.cs.uni-kassel.de/wp-content/uploads/2021/11/PM2022_Hausaufgabe03.pdf}
     }
     \item[\ac{ha}4] führt fulib als Werkzeug zur Datenmodell-Generierung ein und ersetzt damit die händische Implementierung von \ac{ha}3.
@@ -71,7 +71,7 @@ Da sich die Beobachtungen und Metriken stets auf einzelne Übungsblätter bezieh
 \subsection{Benutzer-Anmerkungen}\label{subsec:user-feedback}
 
 Während der Testphase der Werkzeuge in \ac{pm} wurden die Bewertenden gebeten, nach jeder Hausaufgabe eine kurze Rückmeldung zu geben.
-Diese konnte generelle Bemerkungen, Anfragen für neue Features, Verbesserungsvorschläge und kurze Fehlerberichte beinhalten.
+Diese konnte generelle Bemerkungen, Anfragen für neue Features, Verbesserungsvorschläge und Fehlerberichte beinhalten.
 Alle Rückmeldungen wurden in einem öffentlichen Issue\footnote{
     \url{https://github.com/fujaba/fulib.org/issues/196}
 } auf GitHub gesammelt.
@@ -82,36 +82,40 @@ Nachfolgend werden einige der wichtigsten Erkenntnisse daraus beschrieben, da si
 Die wichtigste Erkenntnis aus den Benutzeranmerkungen war die Art und Weise, wie Codeabschnitte ausgewählt werden.
 Der Ablauf, der in Abschnitt~\ref{subsec:choosing-code-snippets} beschrieben wurde und beide Werkzeuge symbiotisch kombiniert, wurde erst in einer späteren Version von fulibFeedback eingeführt.
 Zuvor wurde die gesamte Bewertung von Code allein mit fulibFeedback gemacht.
-Mittels Code Actions des \ac{lsp} wurde ein Menü angezeigt, das alle Teilaufgaben baumförmig anzeigte.
-Die Aktivierung eines Menüeintrags hat dazu geführt, das über dem ausgewählten Quellcode ein Kommentar eingefügt wurde, in dem Punktzahl und Remark eingegeben werden konnten.
-In diesem Kommentar konnten zwei Code Actions verwendet werden, um die Bewertung zu erstellen.
+Mittels Code Actions des \ac{lsp} wurde ein Menü angezeigt, das alle Teilaufgaben anzeigte.
+Die Aktivierung eines Menüeintrags hat dazu geführt, dass über dem ausgewählten Quellcode ein Kommentar eingefügt wurde, in dem der Remark eingegeben werden konnte.
+In diesem Kommentar konnten zwei Code Actions verwendet werden, um die Bewertung mit minimaler oder maximaler Punktzahl zu erstellen.
 Diese Vorgehensweise hatte einige erheblich Nachteile:
+% TODO Screenshot?
 
 \begin{itemize}
-    \item Das Menü, das die Teilaufgaben anzeigte, konnte bei einer großen Anzahl von Teilaufgaben unübersichtlich werden und teilweise die Bildschirmhöhe überschreiten.
+    \item Das Menü, das die Teilaufgaben anzeigte, konnte bei einer großen Anzahl unübersichtlich werden und teilweise die Bildschirmhöhe überschreiten.
     Dies hat insbesondere die Effizienz eingeschränkt, da einige Zeit zum Suchen der nächsten unbewerteten Teilaufgabe notwendig war.
     \item Der automatisch erstellte Kommentar enthielt nur die \ac{id} der zuvor ausgewählten Teilaufgaben, aber nicht deren Beschreibung.
     Es kam vor, dass Bewertende versehentlich die falsche Teilaufgabe auswählten und dies nicht bemerkten, bevor die Bewertung erstellt wurde.
     \item Generell erforderte der automatisch erstellte Kommentar einen erheblichen Programmieraufwand seitens des Language Servers.
-    Dies ist der Einschränkung des \ac{lsp} verschuldet, keine Möglichkeit zu bieten, als Teil einer Code Action den Benutzer des Editors nach einer Eingabe zu Frage.
-    Wäre dies möglich, hätten Remark und Punktzahl beispielsweise über ein Prompt-Dialog erfragt werden können.
+    Dies ist der Einschränkung des \ac{lsp} verschuldet, keine Möglichkeit zu bieten, als Teil einer Code Action den Benutzer des Editors nach einer Eingabe zu fragen.
+    Wäre dies möglich, hätten Remark und Punktzahl beispielsweise über ein Prompt-Dialog erfasst werden können.
     Die hinzugefügten Kommentarzeilen erwiesen sich besonders als Problem, indem sie die darunterliegenden Zeilennummern verschoben, obwohl diese für die Hinterlegung von Codeabschnitten und für die Anzeige des Feedbacks auf GitHub relevant sind.
     \item Der Ablauf erlaubte nicht die Auswahl mehrere Codeabschnitte als Teil einer Bewertung in einem Schritt.
     Es war notwendig, zuerst einen Abschnitt auszuwählen, eine Bewertung zu erstellen, einen weiteren Abschnitt auszuwählen, und zuletzt die Bewertung zu bearbeiten.
     Dies erforderte erheblichen Aufwand bei der korrekten Implementierung von Code Search.
-    Bewertungen von anderen Lösungen, die anhand des ersten Codeabschnitts automatisch erstellt wurden, mussten wieder angepasst oder \ac{ggf} gelöscht werden, falls der zweite Codeabschnitt in der Lösung nicht gefunden wurde.
+    Bewertungen von anderen Lösungen, die anhand des ersten Codeabschnitts automatisch erstellt wurden, mussten wieder angepasst oder \ac{ggf} gelöscht werden, falls der zweite Codeabschnitt in der anderen Lösung nicht mehr gefunden wurde.
     Damit verbundene Probleme haben sich besonders in \ac{ha}3 von \ac{pm} manifestiert.
 \end{itemize}
 
 Generell erwies sich diese Art der Bewertung als sehr umständlich für die Bewertenden.
-Die Einführung des neuen Ablaufs aus Abschnitt~\ref{subsec:choosing-code-snippets} konnte die Implementierung der fulibFeedback-Erweiterung deutlich vereinfachen, ermöglichte neue Verbesserungen und Hilfestellungen in der fulib.org-Oberfläche und wurde von den Benutzern positiv empfangen.
+Die Einführung des neuen Ablaufs aus Abschnitt~\ref{subsec:choosing-code-snippets} konnte die Implementierung der fulibFeedback-Erweiterung deutlich vereinfachen, ermöglichte neue Verbesserungen und Hilfestellungen in der fulib.org-Oberfläche und wurde von den Benutzern positiv empfangen\footnote{
+    \url{https://github.com/fujaba/fulib.org/issues/196\#issuecomment-986009580}
+    \url{https://github.com/fujaba/fulib.org/issues/196\#issuecomment-986725467}
+}.
 
 \subsubsection{Benutzerfehler mit Code Search}
 
-Die Bewertung einer großen Anzahl von Studierenden kann dazu führen, dass Fehler von den Bewertenden gemacht werden.
+Die Bewertung einer großen Anzahl von Studierenden kann dazu führen, dass auch Fehler von den Bewertenden gemacht werden.
 Dies hat sich während der Evaluationsphase in \ac{pm} zunehmend gezeigt und besonders bemerkbar gemacht, da fehlerhafte Bewertungen von einem Bewertenden auf Abgaben eines anderen von Code Search übertragen wurden.
 Bei groben Fehlern führte dies dazu, dass vermeintlich bewertete Teilaufgaben nochmal überprüft werden mussten, was zusätzlichen Zeitaufwand erforderte.
-Das Problem machte sich besonders in \ac{ha}7 von \ac{pm} bemerkbar\footnote{
+Das Problem betraf besonders \ac{ha}7 von \ac{pm}\footnote{
     \url{https://github.com/fujaba/fulib.org/issues/196\#issuecomment-1022086613}
 }.
 Hauptursache war die Auswahl von Codeabschnitten, welche nicht eindeutig waren und unzureichenden Kontexts enthielten.
@@ -124,11 +128,13 @@ Da es sich nur um eine Hilfestellung handelt, können erfahrene Benutzer dennoch
 Dank dem ausführlichen Feedback der Betreuenden konnte neben den zuvor beschriebenen größeren Änderungen auch eine Reihe von kleinen Bedienbarkeits-Verbesserungen umgesetzt werden.
 Hauptsächlich sind diese in Teilen der fulib.org-Oberfläche angesiedelt, die am häufigsten verwendet werden, darunter insbesondere das Bewertungs-Modalfenster (Abbildung~\ref{fig:evaluation-modal}).
 Dort wurden beispielsweise die Buttons zum schnellen Einstellen der Punktzahl hinzugefügt, da häufig die Angabe der Punktzahl vergessen wurde und das Zahlenfeld schwerer zu bedienen war.
-Die Möglichkeit zum Erweitern des Remark-Felds auf mehrere Zeilen ist entstanden, damit längere Hinweise und Fehlermeldung angegeben werden können.
+Die Möglichkeit zum Erweitern des Remark-Felds auf mehrere Zeilen ist entstanden, damit längere Hinweise und Fehlermeldung angegeben werden können\footnote{\label{fn:nataschu-ha4}
+    \url{https://github.com/fujaba/fulib.org/issues/196\#issuecomment-986684825}
+}.
 Die Teilaufgaben-Beschreibung im Kopf des Modalfensters wurde hinzugefügt, da in einigen Fällen vergessen wurde, welche Teilaufgabe zuvor ausgewählt wurde.
 Für Code Search wurde ein Banner hinzugefügt, das bei Original-Bewertungen die Anzahl der automatisch erstellten Bewertungen anzeigt, und bei letzteren einen Link zum Original.
 Zuletzt hat die relativ kleine Benutzeranzahl einige Erkenntnisse zu verschiedenen Präferenzen ergeben.
-Beispielsweise wurde von einem Bewertenden nicht \ac{vsc}, sondern die Open-Source-Alternative VSCodium bevorzugt.
+Beispielsweise wurde von einem Bewertenden nicht \ac{vsc}, sondern die Open-Source-Alternative VSCodium bevorzugt\footref{fn:nataschu-ha4}.
 Dessen Anbindung führte zum Hinzufügen der Optionen in der Abgaben-Tabelle (Abbildung~\ref{fig:assignment-solutions-table}).
 Dies beinhaltet auch die Auswahl zwischen den Git-Clone-Optionen \ac{ssh} und \ac{https}.
 Bei den Bewertenden gab es zudem Unterschiede in der Browser-Präferenz, wodurch Fehler entdeckt werden konnten, die Browser-abhängig aufgetreten sind.
@@ -147,7 +153,7 @@ Außerdem sind Teilaufgaben mit Unteraufgaben ausgenommen, da diese nur der Stru
 Folglich beschreibt diese Zahl die notwendigen Schritte zur Bewertung einer durchschnittlichen Abgabe, bei der alle Aufgaben bearbeitet wurden und keine groben Fehler vorhanden sind.
 Die Anzahl der Teilaufgaben zur Bewertung orientiert sich grob an der Punktzahl und ist stets kleiner oder gleich.
 Differenzen entstehen, wenn manche Teilaufgaben mehr als einen Punkt vergeben.
-In der Spalte \textbf{Link} sind jeweils die Assignments auf fulib.org referenziert, aus deren Statistiken alle Werte dieser und folgender Tabelle übernommen wurden.
+In der Spalte \textbf{Link} sind jeweils die Assignments auf fulib.org referenziert, aus deren Statistiken alle Werte dieser und folgender Tabellen übernommen wurden.
 
 \renewcommand{\thefootnote}{\roman{footnote}}
 
@@ -219,9 +225,9 @@ Die Anzahl der \textbf{Benutzer} gibt an, wie viele Bewertende in jeder Woche di
 Die Effektivität von Code Search beschreibt den prozentualen Anteil der Bewertungen, die automatisch erstellt wurden.
 Tabelle~\ref{tbl:pm-effectiveness} zeigt für jede Hausaufgabe (\textbf{\acs{ha}}) die Anzahl der Bewertungen von \textbf{händisch} Bewertenden und von \textbf{Code Search}.
 Die spezielle Kategorie der automatisch erstellten Bewertungen, die später \textbf{bearbeitet} wurden, ist der Vollständigkeit auch aufgeführt.
-Meist sind dort nur sehr wenige Bewertungen verzeichnet, da dies selten notwendig war.
+Meist sind dort nur sehr wenige Bewertungen verzeichnet, da die Bearbeitung selten notwendig war.
 In wenigen Fällen sind durch Benutzerfehler oder Code Search jedoch Bewertungen entstanden, die nicht zutreffend waren und deshalb angepasst wurden.
-Die drei Werte werden in der Spalte \textbf{Gesamt} summiert, sodass die \textbf{Effektivität} als Anteil von Code Search zu Gesamtanzahl berechnet werden kann.
+Die drei Kategorien werden in der Spalte \textbf{Gesamt} summiert, sodass die \textbf{Effektivität} als Anteil von Code Search zu Gesamtanzahl berechnet werden kann.
 
 \begin{table}
     \centering
@@ -259,21 +265,21 @@ Somit hätte die Verwendung von Code Search zu Mehraufwand geführt und wurde un
 Die beste Effektivität wurde mit 88\% in \ac{ha}4 erreicht.
 Der Grund dafür ist die Vielzahl von Teilaufgaben, bei denen mit fulib das Datenmodell generiert wurde.
 Dabei kam eine deklarative und kompakte Beschreibung der Attribute und Assoziationen zum Einsatz, die aufgrund der vorgegebenen Namen kaum individuelle Variationen erlaubte.
-Der zweite Teil der Aufgabe bestand aus Implementierung von Spielinitialisierung und zugehörigem Testen.
+Der zweite Teil der Aufgabe bestand aus der Implementierung der initialen Spielsituation und zugehörigen Tests.
 Ein Teil der Punkte dafür war in zwei Teilaufgaben angesiedelt, die hauptsächlich händisch bewertet wurden.
-Die verbleibenden Punkten konnten aufgrund von strikten Vorgaben ebenfalls automatisch bewertet werden.
+Die verbleibenden Punkte konnten aufgrund von strikten Vorgaben ebenfalls automatisch bewertet werden.
 
 \subsubsection{Effizienz}
 
 Die Effizienz bezeichnet die Zeit, die durch die Verwendung von Code Search gespart werden kann.
-Die Berechnung erfolgt wie in Abschnitt~\ref{subsec:statistics} beschriebenen und wurde den Statistiken entnommen.
+Die Berechnung erfolgt wie in Abschnitt~\ref{subsec:statistics} beschrieben und wurde den Statistiken entnommen.
 Die notwendige Telemetrie wurde erst ab \ac{ha}7 implementiert, wodurch keine Angaben zu vorherigen Hausaufgaben gemacht werden können.
 
 Tabelle~\ref{tbl:pm-efficiency} zeigt die Effizienz der \acp{ha} 7 bis 11 im Vergleich.
-Zunächst ist die durchschnittliche Zeit pro Bewertung einer Teilaufgabe angegeben.
+Zunächst ist die durchschnittliche \textbf{Zeit pro Bewertung} einer Teilaufgabe angegeben.
 Diese liegt hier zwischen 7 und 10 Sekunden, was darauf hindeutet, dass es sich bei der Bewertung einzelner Teilaufgaben generell nur um einen kurzen Arbeitsschritt handelt, der häufig wiederholt wird.
 Weiterhin ist jeweils die gesamt verstrichene Zeit der \textbf{händischen} Bewertung sowie die daraus ermittelte, mit \textbf{Code Search} eingesparte Zeit, angegeben.
-Die \textbf{Effizienz} berechnet sich dann als prozentualer Anteil von Code Search-Zeit zu Gesamtzeit (Code Search + händische Bewertung).
+Die \textbf{Effizienz} berechnet sich dann als prozentualer Anteil von Code Search-Zeitersparnis zu Gesamtdauer (Code Search + händische Bewertung).
 
 \begin{table}
     \centering
@@ -313,7 +319,7 @@ Tabelle~\ref{tbl:pm-overhead} zeigt die dabei entstanden Messwerte für \acp{ha}
     \label{tbl:pm-overhead}
 \end{table}
 
-Bestimmt man nun die Zeit, wie lange dieser Bewerter in dem Bewertungsfenster verbracht hat, kann bestimmt werden, um welchen Faktor sich tatsächlich benötigte und bei der Bewertung verbrachte Zeit unterscheiden.
+Bestimmt man nun die Zeit, wie lange der Bewerter in dem Bewertungsfenster verbracht hat, kann bestimmt werden, um welchen Faktor sich tatsächlich benötigte und bei der Bewertung verbrachte Zeit unterscheiden.
 Tabelle~\ref{tbl:pm-adapted-efficiency} spiegelt die errechneten Werte für \acp{ha} 7 bis 11 wieder.
 Mithilfe des Faktors, den Werten aus Tabelle~\ref{tbl:pm-efficiency} und der Formel~\ref{eqn:adapted-efficiency} kann schließlich die \textbf{angepasste Effizienz} berechnet werden.
 Sie repräsentiert die Effizienz von Code Search unter Beachtung des zusätzlichen Zeitaufwands.

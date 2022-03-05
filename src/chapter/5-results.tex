@@ -11,10 +11,10 @@ Diese werden nun abschließend überprüft.
 
 \begin{description}
     \item[Optionale Benutzung und Integration bestehender Vorgänge.]
-    Die unterstützende Rolle wird erfüllt, indem Lösungen automatisch importiert werden, die auf Knopfdruck im Editor geöffnet werden, und die sofortige Bewertung erlauben.
+    Die unterstützende Rolle wird erfüllt, indem Lösungen automatisch importiert werden, die auf Knopfdruck im Editor geöffnet werden und die sofortige Bewertung erlauben.
     Vorherige Abläufe wie das manuelle Clonen von GitHub, Zusammenstellen von Feedback und Berechnung von Punkten wurden dadurch ersetzt.
     Die Verwendung der Werkzeuge ist gänzlich optional, sowohl für Studierende als auch Bewertende.
-    Bestehende Abgabemechanismen wie GitHub Classroom bleiben erhalten und auch Feedback kann weiterhin mit Issues oder anderen Mitteln eingereicht werden.
+    Bestehende Abgabemechanismen wie GitHub Classroom bleiben erhalten und auch das Feedback kann weiterhin mit Issues oder anderen Mitteln eingereicht werden.
     Die Software unterstützt ferner den Import von Lösungen beliebiger Abgabesysteme in Form von Dateien sowie das Versenden von Feedback via Email oder Text.
     Damit wird die Integration beliebiger Plattformen ermöglicht.
     Bewertende, welche die Werkzeuge nicht verwenden möchten, können weiterhin auf bewährte Methoden zurückgreifen.
@@ -41,7 +41,7 @@ An dieser Stelle sollte auch beachtet werden, dass die Arbeit sich nur auf Aufga
 Die Quellcode-Suche wäre bei geeignetem Dateiformat, beispielsweise Textdateien, für andere Aufgaben einsetzbar.
 Natürliche Sprache bietet jedoch wesentlich mehr Variationen in der Ausdrucksweise, als es bei Programmiersprachen der Fall ist.
 Dies würde die Anwendbarkeit von Code Search erheblich einschränken.
-Es ist sogar naheliegend, dass das Finden von ähnlichem Text eher auf ein Plagiat hindeutet.
+Es ist sogar naheliegend, dass das Finden von ähnlichem Text auf ein Plagiat hindeutet.
 Bei Veranstaltungen, deren Aufgaben hauptsächlich Quellcode erwarten, lohnt sich dennoch die Einrichtung der Werkzeuge, auch wenn einige Aufgaben in anderer Form gelöst werden.
 Die Hausaufgaben 1, 2 und 5 der Veranstaltung "Programmieren und Modellieren" haben dies gezeigt.
 
@@ -51,10 +51,10 @@ Für die Bewertung mit fulib.org ist zunächst nur die Einrichtung eines Assignm
 Dies ist in wenigen Minuten möglich, sofern die Liste von Teilaufgaben bereits vorliegt.
 Um den Prozess zu beschleunigen, wurde das Markdown-Format als Eingabemöglichkeit hinzugefügt, wodurch mit wenigen Anpassungen der gesamte Baum von Teilaufgaben hinterlegt werden kann.
 Nach Anlegen des Assignments sind keine größeren Schritte mehr notwendig.
-Bewertende können mit wenigen Klicks die notwendigen Einstellungen tätigen und der Ablauf der Bewertung kann in kurze Zeit erklärt werden.
+Bewertende können mit wenigen Klicks die notwendigen Einstellungen tätigen und der Ablauf der Bewertung kann in kurzer Zeit erklärt werden.
 Es ist nicht erforderlich, eine Musterlösung bereitzustellen, da diese Rolle von der ersten richtigen Lösung eines Studierenden erfüllt wird.
 Die Suche von Quellcode benötigt keine Einrichtung eines Compilers, da sie rein textueller Natur ist.
-Auch die Bereitstellung von Tests ist nicht notwendig, sofern diese Teil der Aufgabenstellung sind oder am Code erkannt werden kann, ob dieser richtig ist.
+Auch die Bereitstellung von Tests ist nicht notwendig, sofern diese Teil der Aufgabenstellung sind oder die Einschätzung der Richtigkeit von Quellcode ohne Tests möglich ist.
 
 \subsection[\acs{rq}3]{\ac{rq}3: Welche Effektivität und Effizienz kann von der Automatisierung erwartet werden?}\label{subsec:ra3-effectivity-efficiency}
 
@@ -69,8 +69,8 @@ Während die anhand der Telemetrie berechnete Effizienz mit Werten zwischen 54\%
 Bezieht man die Zeit, die nicht direkt bei der Bewertung von Teilaufgaben, sondern in Oberflächen, beim Clonen, Testen und Ausprobieren von Anwendungen verbracht wird, in die Berechnung ein, sinkt der Bereich auf 23\% bis 65\%.
 Auch diese Werte sind abhängig von der Aufgabenstellung und dem generellen Arbeitsverhalten der Bewertenden.
 
-Über die Veränderung der Metriken im Verlauf einer Veranstaltung oder über Veranstaltungen hinweg kann keine allgemeingültige Aussage gemacht werden.
-Die Veranstaltungen \ac{pm} und \ac{algods} weisen ähnliche Werte in den zuvor genannten Bereichen auf.
+Über die Veränderung der Metriken im Verlauf einer Veranstaltung oder über Semestergrenzen hinweg kann keine allgemeingültige Aussage gemacht werden.
+Die Veranstaltungen \ac{pm} und \ac{algods} weisen ähnliche Werte in den zuvor genannten Metriken auf.
 Im Verlauf der Hausaufgaben von \ac{pm} wurden zwei Anwendung begonnen und weiterentwickelt.
 Während das Projekt von \ac{ha}4 bis 8 sinkende Effektivität aufweist, ist diese im zweiten Projekt von \ac{ha}9 bis \ac{ha}11 wieder angestiegen.
 
@@ -81,5 +81,5 @@ Die Vorgabe von Namen im Datenmodell und Methoden konnte sicherstellen, dass vie
 Die hohe Effektivität von 88\% in \ac{ha}4 ist beispielsweise durch das vorgegebene Datenmodell und die damit verbundenen Teilaufgaben zur Verwendung von fulib entstanden.
 Auch die Projekteinrichtung in \ac{ha}9 hat mit 78\% davon profitiert.
 In \ac{ha}6 wurde ebenfalls ein hoher Wert von 81\% erreicht, da die \acp{id} vorgegeben waren, die zum Erstellen der \ac{fxml}-Dateien notwendig waren und somit Elemente der Oberfläche mit Code Search gesucht werden konnten.
-Mit Vorlagen, welche die Struktur von Klassen und Methodenrümpfe, konnten in \ac{ha}7 und 8 trotz der komplexen Implementierungsaufgaben akzeptable Effektivitäts-Werte von 56\% \ac{bzw} 59\% erzielt werden.
+Mit Vorlagen, welche die Struktur von Klassen und Methodenrümpfe festlegten, konnten in \ac{ha}7 und 8 trotz der komplexen Implementierungsaufgaben akzeptable Effektivitäts-Werte von 56\% \ac{bzw} 59\% erzielt werden.
 Es ist jedoch zu beachten, dass diese Vorlagen das eigenständigen Entwerfen von Code unterdrücken und damit die Kreativität von Studierenden einschränken können.

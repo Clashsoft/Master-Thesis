@@ -353,11 +353,11 @@ Dafür ist es zunächst sinnvoll, einige Kategorien zu definieren, in denen Vari
 
 \begin{description}
     \item[Einrückung und sonstige Formatierung.]
-    Dies umfasst die Einrückung von Quellcode mit Tabs oder Leerzeichen sowie die sonstige Platzierung von Leerzeichen um Klammern, Symbole und Bezeichnern
-    Sie kann sich abhängig von den Einstellungen der \ac{ide} der Studierenden unterscheiden.
+    Dies umfasst die Einrückung von Quellcode mit Tabs oder Leerzeichen sowie die sonstige Platzierung von Leerzeichen um Klammern, Symbole und Bezeichner.
+    Sie kann sich abhängig von den Einstellungen der \ac{ide}, mit der die Lösung verfasst wurde, unterscheiden.
     \item[Kommentare.]
     Kommentare verhalten sich ähnlich wie Leerzeichen und Einrückung insofern, dass sie keinen Einfluss auf die Semantik von Quellcode haben.
-    Es liegt nahe, diese bei der Textsuche zu ignorieren.
+    Es liegt nahe, sie bei der Textsuche zu ignorieren.
     \item[Benennung.]
     Eine naheliegende Ursache von Varianten ist die unterschiedliche Benennung von Bezeichnern.
     Dies umfasst Klassen, Attribute, Methoden, Parameter und lokale Variablen.
@@ -367,14 +367,14 @@ Dafür ist es zunächst sinnvoll, einige Kategorien zu definieren, in denen Vari
         Bei einer Analyse der Methode \code{setPhase(String)} aus Aufgabenblatt 3 ergab sich folgende Verteilung des Parameternamens:
         112 mal \code{phase}, zwei mal \code{value}, je ein mal \code{newPhase}, \code{phrase}\sic, \code{sus} und \code{x}.\label{fn:setPhase}
     }
-    Objekte folgen häufig dem gleichen Muster der Benennung nach ihrer Rolle.\footnote{
+    Objekte folgen häufig dem gleichen Muster der Benennung nach ihrer Rolle, seltener und in eindeutigen Fällen nach ihrem Typ.\footnote{
         Der Parameter der Methode \code{setWinner(Player)} aus Aufgabenblatt 3 wurde wie folgt benannt:
         94 mal \code{winner}, elf mal \code{player}, vier mal \code{value}, drei mal \code{newWinner}, je ein mal \code{p}, \code{sus}, \code{winnePlayer}\sic und \code{x}.\label{fn:setWinner}
     }
     \item[Strukturierung.]
     Diese Kategorie beinhaltet insbesondere die Anordnung von imperativen Quellcode.
     Dazu zählen beispielsweise die Reihenfolge von unabhängigen Anweisungen, die Verschachtelung von \code{if}-Abfragen und Schleifen, die Operanden von kommutativen Operatoren wie \code{+}, \code{*}, \code{&&} oder \code{||}, bool'sche Ausdrücke und Klammersetzung.
-    Wird von der Aufgabenstellung nur das Ergebnis einer Methode verlangt, die eigentliche Implementierung aber frei gelassen, sind die Variationen dieser Kategorie kaum voraussehbar.
+    Wird von der Aufgabenstellung nur das am Ergebnis messbare Verhalten einer Methode verlangt, die eigentliche Implementierung aber freigestellt, sind die Variationen dieser Kategorie kaum voraussehbar.
     \item[Beispielwerte.]
     Die Kreativität bei Beispielwerten macht sich hauptsächlich in Tests bemerkbar.
     Sofern kein konkretes Szenario vorgegeben ist, das vom Test durchgeführt werden soll, sind Studierende frei in der Wahl von Namen, Zahlen und sonstigen Zeichenketten.
@@ -391,7 +391,7 @@ Die Benennung kann durch Angaben in der Aufgabenstellung standardisiert werden.
 In den Programmieraufgaben der Veranstaltung waren das Datenmodell und Methodennamen vorgegeben, wodurch primär Parameter und lokale Variablen unterschiedlich benannt wurden.
 Es hat sich gezeigt, dass die meisten Studierenden ähnliche Namensgebung-Strategien verfolgen\footref{fn:setPhase}~\footref{fn:setWinner} und dadurch die Effektivität nur geringfügig beeinflusst wird.
 Sonstige Bezeichner, beispielsweise \acp{id} von Oberflächenelementen, wurden in den Hausaufgaben 4, 6 und 9 vorgegeben.
-Die zuvor in Abschnitt~\ref{subsec:pm-metrics} betrachtete Metrik für diese Hausaufgaben deutet darauf hin, dass Vorgeben von Bezeichnern mit besserer Code Search-Effektivität verbunden ist.
+Die zuvor in Abschnitt~\ref{subsec:pm-metrics} betrachtete Metrik für diese Hausaufgaben deutet darauf hin, dass das Vorgeben von Bezeichnern mit besserer Code Search-Effektivität verbunden ist.
 
 Für die Strukturierung hat sich im Verlauf der Veranstaltung eine unbeabsichtigte Lösung ergeben.
 Vorwiegend betraf dies die Hausaufgaben 7 und 8.
@@ -406,7 +406,6 @@ Aus diesem Grund ist eine große Bandbreite an Effektivitäts-Werten für Teilau
 Das Problem der Beispielwerte in Tests hat sich über alle Übungsblätter mit solchen bemerkbar gemacht.
 Dort wurden teilweise keine Ergebnisse von Code Search gefunden und somit keine Zeit eingespart.
 \ac{ha}5 stellt dafür ein Extrembeispiel dar, weil sich diese inhaltlich mit dem Test-First-Prinzip befasste und dadurch die Tests einen Großteil der Punkte beisteuerten.
-Weiterhin wurde in diesem Aufgabenblatt verlangt, Mockups anzufertigen, welche keinen Code benötigen und damit nicht für Code Search geeignet sind.
 
 \section{\acl{algods}}\label{sec:algods-2021}
 
@@ -414,8 +413,8 @@ Die Veranstaltung \ac{algods} beschäftigt sich mit den gleichnamigen Konzepten 
 Sie fand zuletzt im Sommersemester 2021 und damit außerhalb des Zeitrahmens dieser Arbeit statt.
 Deshalb wurden Archivdaten von den Betreuern angefragt und nachträglich auf die Verwendbarkeit der zuvor vorgestellten Werkzeuge geprüft.
 Die dafür notwendigen Vorbereitungen werden in Abschnitt~\ref{subsec:algods-preparations} dargelegt.
-Für die Evaluation wurden insgesamt drei der elf Aufgabenblätter von Anfang, Mitte und Ende des Semesters ausgewählt und jeweils etwa 20\% der Abgaben eingeschränkt bewertet.
-Diese werden nachfolgend kurz beschrieben.
+Für die Evaluation wurden exemplarisch drei der elf Aufgabenblätter von Anfang, Mitte und Ende des Semesters ausgewählt und jeweils etwa 20\% der Abgaben eingeschränkt bewertet.
+Die ausgewählten Hausaufgaben werden nachfolgend kurz beschrieben.
 Abschnitt~\ref{subsec:algods-metrics} stellt zuletzt die Ergebnisse in Form von Metriken dar.
 
 \begin{description}
@@ -435,8 +434,8 @@ Abschnitt~\ref{subsec:algods-metrics} stellt zuletzt die Ergebnisse in Form von 
 
 Die Mechanismen für Abgabe und Feedback in \ac{algods} unterscheiden sich stark von denen, die in \ac{pm} verwendet werden.
 Statt GitHub Classroom wird ein eigenes Abgabesystem verwendet, in dem Studierende ihre Lösungen als Archive verpackt einmalig hochladen.
-Bewertende können sich dann eine zufällige Auswahl von Lösungen vom System zuweisen lassen und dieser für die Bewertung herunterladen.
-Ist diese abgeschlossen, wird Feedback über Email an die Studierenden vermittelt.
+Bewertende können sich dann eine zufällige Auswahl von Lösungen vom System zuweisen lassen und sie für die Bewertung herunterladen.
+Ist diese abgeschlossen, wird Feedback per Email an die Studierenden vermittelt.
 Um diesen Ablauf zu unterstützen, wurden einige Erweiterungen an fulib.org vorgenommen.
 Es ist nun möglich, Archive über ein Import-Fenster hochzuladen, wie Abbildung~\ref{fig:assignment-import-files} zeigt.
 Anhand der Dateinamen werden automatisch Abgaben angelegt und in der zugehörigen Tabelle angezeigt.
@@ -458,7 +457,7 @@ Weiterhin wurde darauf verzichtet, Teilaufgaben zu bewerten, deren Lösung nicht
 Die dafür notwendigen Bewertungen wurden dennoch in der Gesamtsumme verrechnet, um einen genäherten Wert der tatsächlich erreichbaren Effektivität zu berechnen.
 
 Tabelle~\ref{tbl:algods-basics} zeigt zunächst einige grundlegenden Metriken.
-Die Anzahl der Teilaufgaben teilt sich \textbf{einbezogene} und \textbf{übersprungene}, wovon letztere diejenigen sind, die nicht mit Quellcode gelöst wurden.
+Die Anzahl der Teilaufgaben teilt sich in \textbf{einbezogene} und \textbf{übersprungene}, wovon letztere diejenigen sind, die nicht mit Quellcode gelöst wurden.
 Von den \textbf{eingereichten Lösungen} wurden 20\% händisch \textbf{betrachtet}.
 Die Auswahl erfolgte nach den jeweils ersten und letzten 10\% der nach Matrikelnummern sortierten Abgabenliste.
 \textbf{Bewertet} verzeichnet schließlich alle Lösungen, für die mindestens eine Bewertung einer Teilaufgabe vorhanden ist.
@@ -481,12 +480,12 @@ Diese Anzahl ist höher als die der betrachteten Abgaben, da einige zusätzliche
 Bei Vergleich der einbezogenen und übersprungenen Teilaufgaben ist bereits ersichtlich, dass in dieser Veranstaltung weniger Programmieraufgaben gestellt wurden, als es bei \ac{pm} der Fall war.
 Die anderen acht Aufgabenblätter geben einen ähnlichen Eindruck.
 Von insgesamt 440 erreichbaren Punkten in der Veranstaltung werden 285 (65\%) in Programmieraufgaben vergeben.
-Dies schränkt insgesamt die Effektivität von Code Search ein.
+Dies schränkt übergreifend die Effektivität von Code Search ein.
 
 Tabelle~\ref{tbl:algods-effectiveness} zeigt nun die Anzahl der Bewertungen für jede Hausaufgabe und die daraus ermittelte Effektivität.
 Bewertungen sind aufgeteilt in die Kategorien \textbf{Händisch}, \textbf{Code Search}, \textbf{Bearbeitet} (von Code Search erstellt und händisch angepasst) und \textbf{Übersprungen} (berechnet aus übersprungenen Teilaufgaben mal betrachtete Abgaben).
 Die \textbf{Effektivität} kann dann als Anteil von Code Search zu Gesamtanzahl berechnet werden.
-In der Spalte \textbf{Link} werden erneut die Assignments auf fulib.org angegeben, von denen die Werte stammen.
+In der Spalte \textbf{Link} werden die Assignments auf fulib.org angegeben, von denen die Werte stammen.
 
 \renewcommand{\thefootnote}{\alph{footnote}}
 \begin{table}
@@ -508,7 +507,7 @@ In der Spalte \textbf{Link} werden erneut die Assignments auf fulib.org angegebe
 \footnotetext[3]{\url{https://dev.fulib.org/assignments/61e43a36f7ed1c59a000d954/statistics}}
 \renewcommand{\thefootnote}{\arabic{footnote}}
 
-Bei \acp{ha} 1 und 6 sind mit 40\% bis 60\% ähnliche gute Ergebnisse zu verzeichnen wie bereits in verschiedenen \ac{pm}-Hausaufgaben.
-\ac{ha}11 stellt mit der sehr niedrigen Effektivität eine Besonderheit dar.
+Bei \acp{ha} 1 und 6 sind mit 40\% bis 60\% ähnlich gute Ergebnisse zu verzeichnen wie in verschiedenen \ac{pm}-Hausaufgaben.
+\ac{ha}11 stellt mit der sehr niedrigen Effektivität von 5\% eine Besonderheit dar.
 Die beiden betrachteten Aufgaben erlaubten große Unterschiede bei der Implementierung, wodurch nur wenige Lösungen ähnlich waren.
 Darüber hinaus verursachen die sieben von elf Teilaufgaben, die keine Programmieraufgaben waren und daher übersprungen wurden, mit 63\% der Bewertungen eine zusätzliche Reduzierung der Effektivität.

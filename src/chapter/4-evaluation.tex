@@ -83,14 +83,33 @@ Die wichtigste Erkenntnis aus den Benutzeranmerkungen war die Art und Weise, wie
 Der Ablauf, der in Abschnitt~\ref{subsec:choosing-code-snippets} beschrieben wurde und beide Werkzeuge symbiotisch kombiniert, wurde erst in einer späteren Version von fulibFeedback eingeführt.
 Zuvor wurde die gesamte Bewertung von Code allein mit fulibFeedback gemacht.
 Mittels Code Actions des \ac{lsp} wurde ein Menü angezeigt, das alle Teilaufgaben anzeigte.
+Abbildung~\ref{fig:fulibFeedback-old-menu} stellt dieses dar.
 Die Aktivierung eines Menüeintrags hat dazu geführt, dass über dem ausgewählten Quellcode ein Kommentar eingefügt wurde, in dem der Remark eingegeben werden konnte.
-In diesem Kommentar konnten zwei Code Actions verwendet werden, um die Bewertung mit minimaler oder maximaler Punktzahl zu erstellen.
+In diesem Kommentar konnten zwei Code Actions verwendet werden, um die Bewertung mit minimaler oder maximaler Punktzahl zu erstellen, wie Abbildung~\ref{fig:fulibFeedback-old-comment} zeigt.
 Diese Vorgehensweise hatte einige erheblich Nachteile:
-% TODO Screenshot?
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.54\textwidth]{images/fulibFeedback-old-menu}
+    \caption{Auswahlmenü in älterer Version von fulibFeedback}
+    \label{fig:fulibFeedback-old-menu}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.63\textwidth]{images/fulibFeedback-old-comment}
+    \caption{Kommentarzeile in älterer Version von fulibFeedback}
+    \label{fig:fulibFeedback-old-comment}
+\end{figure}
 
 \begin{itemize}
     \item Das Menü, das die Teilaufgaben anzeigte, konnte bei einer großen Anzahl unübersichtlich werden und teilweise die Bildschirmhöhe überschreiten.
     Dies hat insbesondere die Effizienz eingeschränkt, da einige Zeit zum Suchen der nächsten unbewerteten Teilaufgabe notwendig war.
+    Während der Entwicklung des Menüs wurden Schritte unternommen, um Menüeinträge kontextabhängig auszublenden.
+    Beispielsweise fehlen in Abbildung~\ref{fig:fulibFeedback-old-menu} die Teilaufgaben für die Klassen \code{Game} und \code{Player}\footnote{
+        Es handelt sich bei diesen Screenshots um das Assignment von \ac{ha}3, welches in Abschnitt~\ref{subsec:creating-assignments} eingerichtet wurde.
+    }.
+    Dies war nur möglich, wenn bestimmte Wörter in der Task-Beschreibung in \verb|``| gesetzt wurden, was zusätzlichen Aufwand erforderte und nicht immer eine sinnvolle Filterung ermöglichte.
     \item Der automatisch erstellte Kommentar enthielt nur die \ac{id} der zuvor ausgewählten Teilaufgaben, aber nicht deren Beschreibung.
     Es kam vor, dass Bewertende versehentlich die falsche Teilaufgabe auswählten und dies nicht bemerkten, bevor die Bewertung erstellt wurde.
     \item Generell erforderte der automatisch erstellte Kommentar einen erheblichen Programmieraufwand seitens des Language Servers.

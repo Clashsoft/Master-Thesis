@@ -93,10 +93,10 @@ Anhand des Commits kann der exakte Stand zum Zeitpunkt der Abgabefrist wiederher
 Ist der Haken \textbf{Code Search} gesetzt, werden neben dem Commit auch die Dateien des Repositories heruntergeladen und separat gespeichert.
 Diese dienen nicht der Reproduzierbarkeit, sondern der Textsuche, wie in Abschnitt~\ref{subsec:code-search} näher erläutert wird.
 Aus diesem Grund wird auch kein Anspruch auf Vollständigkeit der Daten gestellt.
-Vergleichsweise große Dateien (> \SI{64}{\kibi\byte}) werden nicht gespeichert, da gewöhnliche Quellcode-Dateien aus Hausaufgaben-Lösungen diese Größe nicht überschreiten.\footnote{
+Vergleichsweise große Dateien (> \SI{64}{\kibi\byte}\footnote{
     Die Suche nach Quelltext-Dateien größer als \SI{64}{\kibi\byte} in der GitHub-Organisation "sekassel" ergab lediglich Ergebnisse aus Node.js-Projekten, darunter primär \code{package-lock.json}-Dateien und Dateien in versehentlich gepushten \code{node_modules}-Ordnern.
     Da dies generierter \ac{bzw} von Drittanbietern stammender Code ist, handelt es sich nicht um relevante Teile der Lösung, die durchsucht werden müssten.
-}
+}) werden nicht gespeichert, da gewöhnliche Quellcode-Dateien aus Hausaufgaben-Lösungen diese Größe nicht überschreiten.
 
 \begin{figure}
     \centering
@@ -419,10 +419,9 @@ Dafür werden jeweils kurze Stichpunkte zu jedem Wert genannt, um Hinweise auf d
 \begin{description}
     \item[Code Search Effektiveness] ist der Anteil der Bewertungen für diese Teilaufgabe, die automatisch von Code Search angelegt wurden.
     Im Beispiel der Teilaufgabe \textbf{Aufgabe 2 / Test nicht implementiert} wurde eine Bewertung händisch angelegt und auf 14 weitere Abgaben von Code Search kopiert.
-    Dies ergibt eine Effektivität von $\frac{14}{1 + 14} = \frac{14}{15} \approx 93\%$.\footnote{
-        Die Effektivität kann nie 100\% betragen, da Code Search nur ausgehend von einer händischen Bewertung aktiviert wird.
-        Beim Löschen des Originals werden auch davon abstammende Code Search-Bewertungen gelöscht.
-    }
+    Dies ergibt eine Effektivität von $\frac{14}{1 + 14} = \frac{14}{15} \approx 93\%$.
+    Dabei ist zu beachten, dass die Effektivität nie 100\% betragen kann, da Code Search nur ausgehend von einer händischen Bewertung aktiviert wird.
+    Beim Löschen des Originals werden auch davon abstammende Code Search-Bewertungen gelöscht.
     \item[Average Evaluation Time] ist die durchschnittliche Bewertungsdauer der Teilaufgabe.
     Sie wird gemessen, während das Bewertungs-Modalfenster geöffnet ist.
     Das verlängertes Öffnen dieses Fensters, beispielsweise beim Verlassen des Arbeitsplatzes oder beim Einlegen einer Pause, kann die Statistik verfälschen.

@@ -200,19 +200,19 @@ Diese werden nachfolgend kurz erläutert.
     Mit dem \ac{lsp} wird dieses Problem aus Sicht beider Seiten gelöst.
     Sprachautoren können einen Server bereitstellen, der gegen die Schnittstellen des \ac{lsp} entwickelt wird.
     Der Editor kann beliebige Sprachserver über die gleichen Schnittstellen ansprechen.
-    Folglich müssen nur $n + m$ Werkzeuge entwickelt werden.\cite{why-lsp}
+    Folglich müssen nur $n + m$ Werkzeuge entwickelt werden~\cite{why-lsp}.
     \item[Trennung von Technologien.]
     Ein weiterer Vorteil des \acp{lsp} ist die Möglichkeit, Server und Client in unterschiedlichen Programmiersprachen und Frameworks zu entwickeln.
-    Dies kann sprachseitig die Serverentwicklung vereinfachen, da beispielsweise Teile der Implementierung des Compilers wiederverwendet werden können.\cite{why-lsp}
+    Dies kann sprachseitig die Serverentwicklung vereinfachen, da beispielsweise Teile der Implementierung des Compilers wiederverwendet werden können~\cite{why-lsp}.
     \item[Trennung von Prozessen.]
-    Zuletzt nennt Microsoft die Prozesstrennung von Oberfläche und sprachspezifischer Logik als vorteilhaft, da sie die parallele Ausführung von rechenintensiven Aufgaben erlaubt.\cite{why-lsp}
+    Zuletzt nennt Microsoft die Prozesstrennung von Oberfläche und sprachspezifischer Logik als vorteilhaft, da sie die parallele Ausführung von rechenintensiven Aufgaben erlaubt~\cite{why-lsp}.
     Abhängig von der Architektur des Editors ist dies jedoch auch ohne ein solches Protokoll möglich.
     \footnote{Beispielsweise in IntelliJ, das Vorgaben für Multithreading macht um schreibende Aktionen (Texteingabe, \ldots) von lesenden Aufgaben (Syntaxanalyse, Diagnostics, Highlighting, \ldots) zu trennen. Siehe \url{https://plugins.jetbrains.com/docs/intellij/general-threading-rules.html}.}
 \end{description}
 
 Nachfolgend werden einige Editor-Funktionen beschrieben, die das \ac{lsp} anbietet.
 Grundsätzlich werden weder Client noch Server von der Spezifikation verpflichtet, die Funktionen anzubieten.
-Wird eine solche von dem Server nicht unterstützt, so wird standardmäßig keine Aktion durchgeführt.\cite{lsp-overview}
+Wird eine solche von dem Server nicht unterstützt, so wird standardmäßig keine Aktion durchgeführt~\cite{lsp-overview}.
 Gleichermaßen kann der Server verschiedene Editoraktionen aufrufen, die nicht zwangsweise unterstützt werden müssen.
 Beim Start des Servers wird aus diesem Grund kommuniziert, welche Funktionen beide Parteien bereitstellen.\cite[Initialize Request]{lsp-spec}
 
@@ -253,7 +253,7 @@ Elasticsearch\footnote{\url{https://www.elastic.co/elasticsearch/}} bezeichnet e
 Neben der Textsuche bietet Elasticsearch auch Lösungen für verwandte Probleme wie Log-Analyse, Metriken, Datentrends, Geo-Anfragen und Anwendungen der Genetik (Bioinformatik).
 Diese sind jedoch im Folgenden nicht relevant und werden daher nicht weiter erläutert.
 
-Die Textsuche basiert in großen Teilen auf der quelloffenenen Java-Bibliothek Lucene\footnote{\url{https://lucene.apache.org/}} der Apache Foundation.\cite{elastic-and-lucene}
+Die Textsuche basiert in großen Teilen auf der quelloffenenen Java-Bibliothek Lucene\footnote{\url{https://lucene.apache.org/}} der Apache Foundation~\cite{elastic-and-lucene}.
 Elasticsearch implementiert Teile der Textanalyse, Indexierung, Suche, und Highlighting mit Lucene.
 Diese werden nachfolgend detailliert beschrieben.
 
@@ -265,8 +265,8 @@ Die Normalisierung ändert die entstandenen Tokens, sodass bei der Suche ähnlic
 Dafür werden beispielsweise Groß- und Kleinschreibung verworfen, Plural zu Singular geändert, der Wortstamm gebildet (Stemming), oder Synonyme verwendet.
 Weiterhin können sogenannte Stepwords, Wörter die keine semantische Relevanz im Text haben, in der Normalisierung gefiltert werden.
 Um dies sinnvoll umsetzen zu können, muss für gewöhnlich die zugrundeliegende Sprache des Textes definiert werden.
-Tokenisierung und Normalisierung können dann sprachspezifische Syntaxregeln und Wörterbücher verwenden.\cite{elastic-analysis-overview}
-Es ist möglich, eigene Analyseverfahren zu definieren, die aus Zeichenfiltern, Tokenisierer und Stepwordfiltern bestehen.\cite{elastic-custom-analyser}
+Tokenisierung und Normalisierung können dann sprachspezifische Syntaxregeln und Wörterbücher verwenden~\cite{elastic-analysis-overview}.
+Es ist möglich, eigene Analyseverfahren zu definieren, die aus Zeichenfiltern, Tokenisierer und Stepwordfiltern bestehen~\cite{elastic-custom-analyser}.
 So kann beispielsweise die Textanalyse für Programmiersprachen definiert werden, wie in Abschnitt~\ref{subsec:code-search} demonstriert wird.
 
 \subsubsection{Indexierung}
@@ -276,17 +276,17 @@ Ein einfacher Index kann beispielsweise eine Menge von Tokens speichern, die im 
 Dabei werden die Häufigkeit, Position und Form der Wörter im Originaltext nicht beachtet.
 Wird eine Suchanfrage mit gleicher Tokenisierung und Normalisierung analysiert, entsteht eine vergleichbare Menge.
 Ist die aus der Suchanfrage entstehende Menge eine Teilmenge der Tokens des Originaltexts, ist das Originaldokument ein gültiges Suchergebnis.
-Dafür ist für jedes Dokument lediglich eine Mengenoperation notwendig und kein Auslesen und Vergleichen jedes einzelnen Zeichens des Originaltexts.\cite{elastic-index-search-time}
+Dafür ist für jedes Dokument lediglich eine Mengenoperation notwendig und kein Auslesen und Vergleichen jedes einzelnen Zeichens des Originaltexts~\cite{elastic-index-search-time}.
 
 \subsubsection{Suche}
 Für die Textsuche bietet Elasticsearch verschiedenen Arten von Anfragen und Optionen.
-Einfache Beispiele für Anfragetypen sind die exakte Übereinstimmung, Textsuche, Wildcards und die Suche mit regulären Ausdrücken.\cite{elastic-query-dsl}
-Diese können mit bool'schen Operatoren kombiniert werden, wobei zwischen Bedingungen, die das Ranking von Ergebnissen beeinflussen, und Filtern, welche die Inklusion von Ergebnissen ohne Einfluss auf das Ranking kontrollieren, unterschieden wird.\cite{elastic-bool-query}
-Ferner können Optionen für Sortierung, Aggregationen und generelle Datenkontrolle (Anzahl der Ergebnisse, Pagination\footnote{Aufteilung von einer großen Anzahl von Suchergebnissen (>1000) auf mehrere Seiten.}, Timeout, Asynchronität, etc.) angegeben werden.\cite{elastic-search-data}
+Einfache Beispiele für Anfragetypen sind die exakte Übereinstimmung, Textsuche, Wildcards und die Suche mit regulären Ausdrücken~\cite{elastic-query-dsl}.
+Diese können mit bool'schen Operatoren kombiniert werden, wobei zwischen Bedingungen, die das Ranking von Ergebnissen beeinflussen, und Filtern, welche die Inklusion von Ergebnissen ohne Einfluss auf das Ranking kontrollieren, unterschieden wird~\cite{elastic-bool-query}.
+Ferner können Optionen für Sortierung, Aggregationen und generelle Datenkontrolle (Anzahl der Ergebnisse, Pagination\footnote{Aufteilung von einer großen Anzahl von Suchergebnissen (>1000) auf mehrere Seiten.}, Timeout, Asynchronität, etc.) angegeben werden~\cite{elastic-search-data}.
 
 \subsubsection{Highlighting}
 Gewöhnliche Suchanfragen geben lediglich die Ergebnisse zurück, die mit der Anfrage übereinstimmen, jedoch nicht, an welcher Stelle im Text die gesuchten Wörter vorkommen.
-Mit einem Highlighter, der als Suchoption aus Performancegründen explizit aktiviert werden muss, können diese Stellen gefunden werden, um beispielsweise auf einer Seite mit Suchergebnissen die Wörter farblich hervorzuheben.\cite{elastic-highlighting}
+Mit einem Highlighter, der als Suchoption aus Performancegründen explizit aktiviert werden muss, können diese Stellen gefunden werden, um beispielsweise auf einer Seite mit Suchergebnissen die Wörter farblich hervorzuheben~\cite{elastic-highlighting}.
 In Abschnitt~\ref{subsec:code-search} wird dies eingesetzt, um den Originalcode nach einer Suchanfrage zu rekonstruieren.
 
 \subsection{Sonstige}\label{subsec:other-libraries}
@@ -299,8 +299,8 @@ Aufgrund der umfänglichen Auswirkungen der Frameworks auf den Entwicklungsproze
 Die Programmiersprache\footnote{\url{https://www.typescriptlang.org/}} wird für sämtliche Software im Rahmen dieser Arbeit eingesetzt.
 Sie bietet gegenüber JavaScript eine höhere Sicherheit gegen Programmierfehler durch die Typisierung.
 Im Vergleich zu Java ist weniger Boilerplate-Code notwendig, um vergleichbare Features beispielsweise in einem Backend zu implementieren.
-Für die Entwicklung der \ac{vsc}-Erweiterung ist JavaScript oder TypeScript erforderlich, letzteres wird von Microsoft jedoch empfohlen.\cite{vsc-first-extension}
-Der Language Server kann in einer beliebigen Sprache implementiert werden, die Dokumentation von Microsoft bietet jedoch hauptsächlich Beispiele in TypeScript an.\cite{vsc-language-server-guide}
+Für die Entwicklung der \ac{vsc}-Erweiterung ist JavaScript oder TypeScript erforderlich, letzteres wird von Microsoft jedoch empfohlen~\cite{vsc-first-extension}.
+Der Language Server kann in einer beliebigen Sprache implementiert werden, die Dokumentation von Microsoft bietet jedoch hauptsächlich Beispiele in TypeScript an~\cite{vsc-language-server-guide}.
 
 \subsubsection{Angular}
 Das Angular\footnote{\url{https://angular.io/}}-Framework von Google wird für die Implementierung der gesamten Weboberfläche von fulib.org verwendet.

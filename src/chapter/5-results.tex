@@ -7,7 +7,7 @@ Weiterhin werden die Forschungsergebnisse präsentiert, die Antworten auf die Fo
 \section{Zielerfüllung}\label{sec:goals-reached}
 
 Zu Beginn wurden einige Anforderungen und Rahmenbedingungen gestellt, welche die Software erfüllen sollte, die für diese Arbeit entwickelt wurde.
-Diese werden nun abschließend überprüft.
+Diese werden an dieser Stelle abschließend überprüft.
 
 \begin{description}
     \item[Optionale Benutzung und Integration bestehender Vorgänge.]
@@ -36,8 +36,8 @@ Nachfolgend wird abschließend auf die vier Forschungsfragen eingegangen, die da
 
 \subsection[\acs{rq}1]{\ac{rq}1: Kann die Bewertung von Programmieraufgaben sinnvoll automatisiert werden?}\label{subsec:ra1-useful-automation}
 
-Die Verwendung von Code Search hat ergeben, dass dies eindeutig möglich ist, wenn auch mit unterschiedlich guten Ergebnissen abhängig von der Aufgabenstellung.
-An dieser Stelle sollte auch beachtet werden, dass die Arbeit sich nur auf Aufgaben spezialisiert hat, bei denen auch Programmcode geschrieben wird.
+Die Verwendung von Code Search hat ergeben, dass die automatische Bewertung von Programmieraufgaben eindeutig möglich ist, wenn auch mit unterschiedlich guten Ergebnissen abhängig von der Aufgabenstellung.
+An dieser Stelle sollte auch beachtet werden, dass die Arbeit sich nur auf Aufgaben spezialisiert hat, bei denen Programmcode geschrieben wird.
 Die Quellcode-Suche wäre bei geeignetem Dateiformat, beispielsweise Textdateien, für andere Aufgaben einsetzbar.
 Natürliche Sprache bietet jedoch wesentlich mehr Variationen in der Ausdrucksweise, als es bei Programmiersprachen der Fall ist.
 Dies würde die Anwendbarkeit von Code Search erheblich einschränken.
@@ -59,17 +59,17 @@ Auch die Bereitstellung von Tests ist nicht notwendig, sofern diese Teil der Auf
 \subsection[\acs{rq}3]{\ac{rq}3: Welche Effektivität und Effizienz kann von der Automatisierung erwartet werden?}\label{subsec:ra3-effectivity-efficiency}
 
 Die Auswertung hat gezeigt, dass Effektivität und Effizienz eine breite Spanne von Werten annehmen können.
-Bei Aufgaben, die keinen Programmieranteil haben, sind diese trivialerweise bei 0\%.
-Werte von bis zu 88\% konnten unter nahezu optimalen Bedingungen, wie es in einer \ac{pm}-Hausaufgabe der Fall war, beobachtet werden.
+Bei Aufgaben, die keinen Programmieranteil haben, liegt diese bei 0\%.
+Werte von bis zu 88\% konnten unter nahezu optimalen Bedingungen, wie es in der \ac{pm}-Hausaufgabe 4 der Fall war, beobachtet werden.
 Die meisten Ergebnisse sind jedoch im Bereich 40\% bis 60\% zu finden.
 Das bedeutet, dass bei einer durchschnittlichen Programmieraufgabe etwa die Hälfte der Kriterien bei einer ausreichend großen Studierendenanzahl automatisiert bewertet werden können.
 
 Die Effizienz und damit die tatsächlich durch Verwendung der Werkzeuge eingesparte Zeit muss kritisch betrachtet werden, um sinnvolle Schlüsse zu ziehen.
 Während die anhand der Telemetrie berechnete Effizienz mit Werten zwischen 54\% und 80\% erhebliche Zeitersparnisse verspricht, ergibt die angepasste Effizienz geringere Werte.
-Bezieht man die Zeit, die nicht direkt bei der Bewertung von Teilaufgaben, sondern in Oberflächen, beim Clonen, Testen und Ausprobieren von Anwendungen verbracht wird, in die Berechnung ein, sinkt der Bereich auf 23\% bis 65\%.
+Wird die Zeit, die nicht direkt bei der Bewertung von Teilaufgaben, sondern in Oberflächen, beim Clonen, Testen und Ausprobieren von Anwendungen verbracht wird, in die Berechnung einbezogen, sinkt der Bereich auf 23\% bis 65\%.
 Auch diese Werte sind abhängig von der Aufgabenstellung und dem generellen Arbeitsverhalten der Bewertenden.
 
-Über die Veränderung der Metriken im Verlauf einer Veranstaltung oder über Semestergrenzen hinweg kann keine allgemeingültige Aussage gemacht werden.
+Über die Veränderung der Metriken im Verlauf einer Veranstaltung oder über Semestergrenzen hinweg kann keine allgemeingültige Aussage getroffen werden.
 Die Veranstaltungen \ac{pm} und \ac{algods} weisen ähnliche Werte in den zuvor genannten Metriken auf.
 Im Verlauf der Hausaufgaben von \ac{pm} wurden zwei Anwendung begonnen und weiterentwickelt.
 Während das Projekt von \ac{ha}4 bis 8 sinkende Effektivität aufweist, ist diese im zweiten Projekt von \ac{ha}9 bis \ac{ha}11 wieder angestiegen.
@@ -81,5 +81,5 @@ Die Vorgabe von Namen im Datenmodell und Methoden konnte sicherstellen, dass vie
 Die hohe Effektivität von 88\% in \ac{ha}4 ist beispielsweise durch das vorgegebene Datenmodell und die damit verbundenen Teilaufgaben zur Verwendung von fulib entstanden.
 Auch die Projekteinrichtung in \ac{ha}9 hat mit 78\% davon profitiert.
 In \ac{ha}6 wurde ebenfalls ein hoher Wert von 81\% erreicht, da die \acp{id} vorgegeben waren, die zum Erstellen der \ac{fxml}-Dateien notwendig waren und somit Elemente der Oberfläche mit Code Search gesucht werden konnten.
-Mit Vorlagen, welche die Struktur von Klassen und Methodenrümpfe festlegten, konnten in \ac{ha}7 und 8 trotz der komplexen Implementierungsaufgaben akzeptable Effektivitäts-Werte von 56\% \ac{bzw} 59\% erzielt werden.
+Mit Vorlagen, welche die Struktur von Klassen und Methodenrümpfen festlegten, konnten in \ac{ha}7 und 8 trotz der komplexen Implementierungsaufgaben akzeptable Effektivitäts-Werte von 56\% \ac{bzw} 59\% erzielt werden.
 Es ist jedoch zu beachten, dass diese Vorlagen das eigenständigen Entwerfen von Code unterdrücken und damit die Kreativität von Studierenden einschränken können.

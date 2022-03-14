@@ -4,7 +4,7 @@ Die Implementierung dieser Arbeit besteht aus zwei weitgehend getrennten Projekt
 Abschnitt~\ref{sec:expanding-fulib.org} beschreibt zunächst die Änderungen, die an der Webanwendung fulib.org durchgeführt wurden.
 Das dabei entstandene Werkzeug ist bis auf wenige Ausnahmen autonom für die Bewertung von Abgaben einsetzbar.
 Als Erweiterung \ac{bzw} zusätzliches Hilfsmittel dient die \ac{vsc}-Erweiterung fulibFeedback, die in Abschnitt~\ref{sec:fulibFeedback} erläutert wird.
-Insbesondere kann diese Bewertende bei der Bewertung und Studierende bei der Berichtigung von Quellcode unterstützen.
+Insbesondere kann diese Erweiterung Bewertende bei der Bewertung und Studierende bei der Berichtigung von Quellcode unterstützen.
 Ohne fulibFeedback sind die Bewertungsmechanismen von fulib.org nicht mit Bezug zum Quellcode nutzbar.
 
 In diesem Kapitel wird die Hausaufgabe 3\footnote{
@@ -313,7 +313,7 @@ In Abbildung~\ref{fig:evaluation-modal} wurde eine bereits vorhandene Bewertung 
 Die Bewertung von Teilaufgaben mit diesem Vorgehen ist ein wiederkehrender Ablauf, der von Bewertenden viele Male pro Hausaufgabe durchgeführt wird.
 Daher wurde besonderer Wert darauf gelegt, den Ablauf möglichst effizient zu gestalten.
 Während der Bewertung einer Teilaufgabe im Modalfenster wird die Zeit gemessen, die dabei verstrichen ist.
-Darauf basierend wird eine Statistik berechnet, welche in Abschnitt~\ref{subsec:statistics} gezeigt und in Kapitel~\ref{ch:evaluation} für einige Realbeispiele ausgewertet wird.
+Darauf basierend wird eine Statistik \ac{bzw} Metrik berechnet, welche in Abschnitt~\ref{subsec:statistics} gezeigt und in Kapitel~\ref{ch:evaluation} für einige Realbeispiele ausgewertet wird.
 
 \subsubsection{Feedback}
 
@@ -422,7 +422,7 @@ Dafür werden jeweils kurze Stichpunkte zu jedem Wert genannt, um Hinweise auf d
     Beim Löschen des Originals werden auch davon abstammende Code Search-Bewertungen gelöscht.
     \item[Average Evaluation Time] beschreibt die durchschnittliche Bewertungsdauer der Teilaufgabe.
     Sie wird gemessen, während das Bewertungs-Modalfenster geöffnet ist.
-    Das verlängerte Öffnen dieses Fensters, beispielsweise beim Verlassen des Arbeitsplatzes oder beim Einlegen einer Pause, kann die Statistik verfälschen.
+    Wenn das Fenster längere Zeit geöffnet bleibt, beispielsweise beim Verlassen des Arbeitsplatzes oder beim Einlegen einer Pause, kann die Statistik verfälscht werden.
     Um dies zu vermeiden, werden Ausreißer über 60 Sekunden nicht im Durchschnitt verrechnet.
     \item[Code Search Time Savings] bezeichnet die geschätzte Zeit, die durch Code Search bei der Bewertung dieser Teilaufgabe eingespart wurde.
     Sie berechnet sich durch Multiplikation der Average Evaluation Time mit der Anzahl der von Code Search erstellten Bewertungen.
@@ -605,7 +605,7 @@ Die Anzahl der \textbf{Solutions} gibt an, wie viele Abgaben den Code enthalten.
 In jeder Abgabe können \ac{uU} mehrere Dateien gefunden werden, die Gesamtanzahl über alle Abgaben ist in \textbf{Files} summiert.
 Zuletzt gibt \textbf{Hits} die Anzahl der Suchergebnisse an, die auch mehrfach in einer Datei vorhanden sein können.
 Werden diese drei Werte verglichen, kann eine Einschätzung über die Spezifität des Codeabschnitts erfolgen.
-Sind alle drei Werte gleich, wie in Abbildung~\ref{fig:fulibFeedback-snippet-good} der Fall ist, kommt der Codeabschnitt in jeder Lösung exakt ein Mal vor.
+Sind alle drei Werte gleich, wie in Abbildung~\ref{fig:fulibFeedback-snippet-good} der Fall ist, liegt der Codeabschnitt in jeder Lösung exakt ein Mal vor.
 Das deutet darauf hin, dass er problemlos für die automatische Bewertung mit Code Search verwendet werden kann.
 
 Die Wahl des Codeabschnitts ist mitunter maßgeblich für die Effektivität und Korrektheit von Bewertungen mit Code Search.

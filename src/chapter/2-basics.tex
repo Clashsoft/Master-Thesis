@@ -1,38 +1,39 @@
 \chapter{Grundlagen}\label{ch:basics}
 
 Dieser Abschnitt erläutert einige Grundlagen, auf denen die Erkenntnisse und Ergebnisse dieser Arbeit fundieren.
-Es wird zunächst auf den Anwendungsfall und den Kontext eingegangen, die den Nutzungsbereich begrenzen und mögliche Probleme enthalten, die es zu lösen gilt.
+Es wird zunächst auf den Anwendungsfall der Werkzeuge und den Kontext dieser Arbeit eingegangen, die den Nutzungsbereich begrenzen und mögliche Probleme enthalten, die es zu lösen gilt.
 Dies ist Inhalt von Abschnitt~\ref{sec:programming-assignments}.
 Die Technologien, die als Grundlage und Hilfestellung dienen, werden in Abschnitt~\ref{sec:tech} beschrieben.
 
 \section{Übungskonzept}\label{sec:programming-assignments}
 
 Der Anwendungsfall dieser Arbeit umfasst den gesamten Lebenszyklus einer Hausaufgabe als Teil einer Lehrveranstaltung.
-Dieser besteht aus mehreren zeitlichen getrennten Phasen, die nachfolgend beschrieben werden.
-Abschnitt~\ref{subsec:workflow} betrachtet den Ablauf, um die Hintergründe und zu lösende Probleme des zu entwickelnden Werkzeugs zu verdeutlichen.
-Eingangs werden kurz die Personengruppen benannt, welche Teil der Lehrveranstaltung sind und als potentielle Benutzer der Werkzeuge infrage kommen.
+Dieser besteht aus mehreren zeitlich getrennten Phasen, die nachfolgend beschrieben werden.
+Abschnitt~\ref{subsec:workflow} betrachtet den Ablauf und verdeutlicht dabei Hintergründe und Probleme, die bei der Entwicklung der Werkzeuge beachtet werden müssen.
+Eingangs werden kurz die Personengruppen benannt, die Teil der Lehrveranstaltung sind und als potentielle Benutzende der Werkzeuge infrage kommen.
 
 \subsection{Personengruppen}\label{subsec:people}
 
 Verschiedene Parteien nehmen an dem Übungsablauf teil.
-Ein Professor oder Mitarbeiter oder eine Professorin oder Mitarbeiterin, nachfolgend zusammengefasst als Übungsleitung bezeichnet, steuert den Übungsbetrieb.
+Ein:e Professor:in oder Mitarbeiter:in, nachfolgend zusammengefasst als Übungsleitung bezeichnet, steuert den Übungsbetrieb. % TODO Gender :?
 Ihre Tätigkeit ist hauptsächlich didaktischer und organisatorischer Natur und wird durch das Werkzeug dieser Arbeit nur begrenzt unterstützt, weshalb sie im Folgenden nicht weiter diskutiert werden.
 Studierende bearbeiten Aufgaben und erzeugen Abgaben, um einen Lernerfolg durch praktische Anwendung zu erzielen.
-Für die Leistungseinschätzung von Studierenden sind Betreuende zuständig, welche die Abgaben gegen zuvor festgelegte Kriterien bewerten und dabei eine Punktzahl ermitteln.
-Betreuung und Übungsleitung müssen nicht zwangsläufig verschiedene Personen sein, bei einer großen Anzahl von Studierenden werden jedoch aus Zeitgründen weitere Mitarbeitende oder Hilfskräfte mit der Bewertung beauftragt.
+Für die Leistungseinschätzung von Studierenden sind Betreuende zuständig, welche die Abgaben gegen zuvor festgelegte Kriterien bewerten und eine Punktzahl vergeben.
+Betreuung und Übungsleitung müssen nicht zwangsläufig verschiedene Personen sein;
+bei einer großen Anzahl von Studierenden werden jedoch aus Zeitgründen weitere Mitarbeitende oder Hilfskräfte mit der Bewertung beauftragt.
 
 \subsection{Ablauf}\label{subsec:workflow}
 
-Der Ablauf oder Lebenszyklus einer Hausaufgabe im Übungsbetrieb besteht für die Zwecke dieser Arbeit aus vier Phasen unterschiedlicher Länge:
+Der Ablauf oder Lebenszyklus einer Hausaufgabe im Übungsbetrieb besteht für die Zwecke dieser Arbeit aus vier Phasen unterschiedlicher Dauer:
 Konzeption, Vergabe, Bearbeitung, und Bewertung.
 Diese werden nachfolgend näher definiert und beschrieben.
 
 Es ist üblich, dass bei regelmäßiger Hausaufgabenvergabe die Phasen mehrerer unterschiedlicher Hausaufgaben überlappen.
 Abbildung~\ref{fig:overlapping-phases} zeigt eine kalendarische Beispielansicht, welche diesen Sachverhalt visualisiert.
-In diesem Beispiel sind je vier Tage für Konzeptionsphase vorgesehen und die Bearbeitungsfrist und Bewertungszeit beträgt jeweils eine Woche.
+In diesem Beispiel sind je vier Tage für die Konzeptionsphase vorgesehen und die Bearbeitungsfrist und Bewertungszeit beträgt jeweils eine Woche.
 Dabei ist zu erkennen, dass ab der zweiten Woche an jedem Tag mindestens zwei Phasen gleichzeitig verlaufen.
-Am Anfang jeder Woche ist sichtbar, dass Bewertung und Konzeption gleichzeitig stattfinden.
-Folglich ist wie zuvor genannt sinnvoll, dass unterschiedlichen Personen diese beiden Phasen durchführen.
+Zu Beginn jeder Woche ist sichtbar, dass Bewertung und Konzeption gleichzeitig stattfinden.
+Folglich ist es sinnvoll, dass unterschiedlichen Personen diese beiden Phasen betreuen.
 
 \begin{figure}
     \centering
@@ -47,76 +48,75 @@ Folglich ist wie zuvor genannt sinnvoll, dass unterschiedlichen Personen diese b
 
 \subsubsection{Konzeption}
 
-Die Konzeptionsphase umfasst das Verfassen der Aufgabenstellung, die Berechnung und Vergabe der Punktzahlen und einhergehende Bewertungsrichtlinien, sowie bedingt das Erstellen einer Musterlösung.
+Die Konzeptionsphase umfasst das Verfassen der Aufgabenstellung, die Berechnung und Vergabe der Punktzahlen und damit einhergehende Bewertungsrichtlinien, sowie das bedingte Erstellen einer Musterlösung.
 Die Aufgabenstellung entsteht meist in Anlehnung an die in der Vorlesung vermittelten Lehrinhalte, um diese bei Lernenden zu stärken.
 Alternativ kann die Übung einen eigenen Lehrplan verfolgen und von der Vorlesung unabhängig ablaufen, beispielsweise bei einer Trennung von theoretischen und praktischen Lerninhalten.
 In beiden Fällen müssen die Aufgaben selbst und eventuell notwendige Zusatzinformationen, darunter beispielsweise die Abgabemodalitäten oder Kontaktangaben für Rückfragen, verschriftlicht werden.
 Es handelt sich dabei größtenteils um einen kreativen und nicht repetitiven Prozess, dessen Automatisierung oder Unterstützung nicht von dieser Arbeit erstrebt wird.
-Um die Forschungsfrage \acs{rq}4 zu erklären, ist es jedoch notwendig zu untersuchen, ob bereits in dieser Phase Anpassungen vorgenommen werden können, um die nachfolgenden Phasen zu vereinfachen.
+Um die Forschungsfrage \acs{rq}4 zu beantworten, ist es jedoch notwendig zu untersuchen, ob bereits in dieser Phase Anpassungen vorgenommen werden können, um die nachfolgenden Phasen zu vereinfachen.
 Ebenfalls interessant ist der Einfluss einer Musterlösung, welche zwar zu einem zeitlichen Mehraufwand bei der Konzeption führen kann, aber möglicherweise Vorteile in späteren Schritten hervorrufen kann.
 Nicht zuletzt kann eine Musterlösung helfen, die Erfüllbarkeit der Aufgaben zu überprüfen oder eine Demonstration als Teil der Vergabe zu ermöglichen.
 
 \subsubsection{Vergabe}
 
-Die Vergabe bezeichnet den Zeitpunkt, an dem die Aufgabenstellung an die Studierenden veröffentlicht wird.
-Mit deren Einsicht beginnt für gewöhnlich die Bearbeitungszeit, da Vorüberlegungen und Umsetzungsgedanken getroffen werden können.
-Die Vergabe ist folglich gleichzusetzen mit dem Beginn der Bearbeitungszeit.
+Die Vergabe bezeichnet den Zeitpunkt, an dem die Aufgabenstellung für die Studierenden veröffentlicht wird.
+Damit beginnt die Bearbeitungszeit, da Vorüberlegungen und Umsetzungsgedanken seitens der Studierenden getroffen werden können.
 Es bietet sich an, die Vergabe während der Übungsveranstaltung durchzuführen.
-Dabei können die Aufgaben gezeigt und erklärende Bemerkungen gemacht werden.
-Dies ist jedoch nicht zwingend erforderlich, sofern der Text selbst ausreichend detailliert die Aufgabe beschreibt.
-Weiterhin kann hier eine Demonstration der in der Aufgabe geforderten Lernziele gemacht werden.
+Dabei können die Aufgaben gezeigt und erklärt sowie Verständnisfragen beantwortet werden.
+Dies ist jedoch nicht zwingend erforderlich, sofern der Text selbst die Aufgabe ausreichend detailliert beschreibt.
+Weiterhin können hier die in der Aufgabe geforderten Lernziele demonstriert werden.
 Dabei kann das gewünschte Endergebnis oder Quellcode gezeigt werden, sofern letzterer ausreichend angepasst wurde, um nicht die Lösung vorwegzunehmen.
 Ein angepasstes Beispiel kann in diesem Fall die Transferleistung erlauben.
 
 \subsubsection{Bearbeitung}
 
 Die Bearbeitungsphase ist zeitlich genau durch die Vergabe und die Abgabefrist beschränkt.
-Während dieser Zeit sollen Studierende die Aufgabenstellung lesen, verstehen und befolgen, um bis Ablauf der Frist eine fertige Abgabe zu erstellen.
-Dabei ist tatsächliche Bearbeitungsdauer für jeden Studierenden unterschiedlich, abhängig von dessen generellem Verständnis für das Fach, eventuelle Vorerfahrung und Affinität bei der Umsetzung.
+Während dieser Zeit sollen Studierende die Aufgabenstellung lesen, verstehen und befolgen, um bis zum Ablauf der Frist eine fertige Abgabe zu erstellen.
+Dabei ist die tatsächliche Bearbeitungsdauer für jeden Studierenden unterschiedlich, abhängig vom generellen Verständnis für das Fach, eventueller Vorerfahrung und Affinität bei der Umsetzung.
 Die Form der Abgabe kann abhängig von der Aufgabenstellung und Veranstaltung stark variieren.
-Denkbar sind handschriftliche Abgaben in Papierform, digitale Textdateien, Scans oder sonstige Dokumente, oder Quellcode in Form einzelner Dateien oder Projekte.
+Möglich sind handschriftliche Abgaben in Papierform, Scans, digitale Dokumente oder Quellcode in Form von einzelnen Dateien oder Projekten.
 Bei digitalen Abgaben kann sich weiterhin der Transfer der Abgabe unterscheiden.
 Beispiele dafür sind Versand per Email, Hochladen in einen Cloud-Ordner, Lernplattformen wie Moodle\footnote{\url{https://moodle.org/}}, eigene Abgabesysteme oder GitHub Classroom\footnote{\url{https://classroom.github.com/}}.
-In dieser Arbeit wird davon ausgegangen, dass nur Quellcode und Textdateien erstellt und über dateibasierte Abgabesysteme oder GitHub Classroom eingereicht werden.
+In dieser Arbeit wird davon ausgegangen, dass Quellcode und sonstige digitale Dokumente erstellt und über dateibasierte Abgabesysteme oder GitHub Classroom eingereicht werden.
 
 \subsubsection{Bewertung}
 
-Die Bewertungsphase beginnt nach Erreichen der Abgabefrist und ist meist nicht zeitlich beschränkt.
-Es ist jedoch sinnvoll, eine Bewertung einer Hausaufgabe vor Abgabefrist der darauffolgenden Hausaufgabe abzuschließen, um die Anhäufung von Arbeit zu vermeiden.
+Die Bewertungsphase beginnt nach Erreichen der Abgabefrist und ist meist nur durch Notenfristen beschränkt.
+Es ist jedoch sinnvoll, eine Bewertung einer Hausaufgabe vor Abgabefrist der darauffolgenden Hausaufgabe abzuschließen, um die Anhäufung von Arbeit zu vermeiden und Studierenden zeitnahes Feedback zu geben.
+Dies kann besonders bei aufeinander aufbauenden Hausaufgaben zu besseren Erfolgen verhelfen.
 Auch bei dieser Phase ist die tatsächliche Dauer von verschiedenen Faktoren abhängig.
-Darunter fällt die Anzahl der Abgaben und Bewerter, die parallel bewerten können, sowie deren Affinität.
+Darunter fällt die Anzahl der Abgaben und Bewertenden, die parallel arbeiten können, sowie deren fachliche Affinität beim Verstehen der Lösungen.
 Der Umfang der Aufgabenstellung kann ebenfalls proportional Einfluss auf die Bewertungsdauer haben.
 Zudem ist der Anteil der unvollständigen oder fehlerhaften Abgaben entscheidend, welche einerseits die gänzliche Überspringung von Teilaufgaben, andererseits die umfangreiche Bereitstellung von Erklärungen erfordern können.
 
-Der Ablauf der Bewertung kann in wenigen Schritten beschrieben werden.
-Sie beginnt im Fall einer Bewertendenanzahl größer eins mit der Zuteilung von Abgaben oder Teilaufgaben auf die Bewertenden.
-Dafür gibt es zwei Verfahren.
+Die Bewertung beginnt im Fall einer Bewertendenanzahl größer eins mit der Zuteilung von Abgaben oder Teilaufgaben auf die zuständigen Personen.
+Dafür gibt es zwei Verfahren:
 Bei der Teilaufgaben-Verteilung wird jedem Betreuenden eine Teilaufgabe zugewiesen, für die er oder sie alle Abgaben betrachtet, eine Teilpunktzahl berechnet und Begründungen oder Erklärungen in Form von Feedback bereitstellt.
-Danach werden alle Teilpunkte zusammengetragen und das Feedback an die Studierenden verteilt.
+Danach werden alle Teilpunkte zusammengetragen und das gesammelte Feedback an die Studierenden verteilt.
 Dieses Verfahren hat die Vorteile, dass jeder Betreuende nur eine Teilaufgabe kennen und verstehen muss und Plagiate erkennen kann.
 Nachteile sind jedoch der erhöhte Aufwand durch die Berechnung der Gesamtpunktzahl und Zusammenführung des Feedbacks, die möglichen Unterschiede im Zeitaufwand der Teilaufgaben, und der fehlende Zusammenhang bei aufeinander aufbauenden Aufgaben.
 Aus diesem Grund wird nachfolgend nur noch das zweite Verfahren, die Aufteilung nach Abgaben, betrachtet.
-Dabei werden jedem Betreuenden eine bestimmte Anzahl von Abgaben zugewiesen, die vollständig bewertet werden müssen.
-Der Ablauf ist dann für jede Abgabe gleich - zunächst wird die Lösung betrachtet, dabei werden Punkte und Feedback zusammengetragen, und zuletzt werden beide an den Studierenden versandt.
+Dabei wird jedem Betreuenden eine bestimmte Anzahl von Abgaben zugewiesen, die vollständig bewertet werden müssen.
+Der Ablauf ist mit diesem Verfahren für jede Abgabe gleich - zunächst wird die Lösung betrachtet, dabei werden Punkte und Feedback zusammengetragen, und zuletzt wird beides an den Studierenden übermittelt.
 Auch der Transfer des Feedbacks kann verschiedene Formen, abhängig vom Abgabemechanismus, annehmen.
 Beispiele hierfür wären das Feedback per Email, Pull Requests oder Issues auf GitHub, oder Kommentarfunktionen auf Moodle und anderen Abgabesystemen.
 
-Bei der Bewertung handelt es sich meist um eine repetitive Tätigkeit, da eine Vielzahl von Studierenden die gleiche Aufgabe bearbeitet und somit teilweise ähnliche Lösungen produziert hat.
+Bei der Bewertung handelt es sich meist um eine repetitive Tätigkeit, da eine Vielzahl von Studierenden die gleiche Aufgabe bearbeitet und somit teilweise ähnliche Lösungen erstellt hat.
 Darüber hinaus erfordert die korrekte Berechnung einer Punktzahl für eine Abgabe die Summierung der Punkte aller Teilaufgaben.
-Diese rechnerische Tätigkeit kann selten bei vielen Teilaufgaben zu Rechenfehlern führen, die meist von Studierenden bemerkt und beanstandet werden.
-Das Zusammentragen von Feedback und Punktzahl und deren Versand verursachen einen vergleichsweise geringen Zeitaufwand, der sich jedoch bei einer großen Anzahl von Abgaben summieren kann.
+Diese rechnerische Tätigkeit kann in seltenen Fällen zu Rechenfehlern führen, die von Studierenden bemerkt und mit Recht beanstandet werden.
+Das Zusammentragen von Feedback und Punktzahl und deren Übermittlung verursachen einen vergleichsweise geringen Zeitaufwand, der sich jedoch bei einer großen Anzahl von Abgaben summieren kann.
 
 \section{Technologien}\label{sec:tech}
 
-Die Implementierung dieser Arbeit basiert in großen Teilen auf der Weiterentwicklung von bestehenden Projekten sowie der Neuentwicklung eines Werkzeugs.
-Diese verwenden verschiedene Technologien von Dritten, die nachfolgend beschrieben werden.
-In den folgenden Abschnitten wird erläutert, welche Probleme diese Technologien im Kontext des Vorhabens lösen, welche nützlichen Funktionen sie bereitstellen, und welche Gründe für die Auswahl dieser Technologien bestanden.
+Die Implementierung dieser Arbeit basiert in großen Teilen auf der Weiterentwicklung von bestehenden Projekten~\cite{bachelor-thesis} sowie der Neuentwicklung eines Werkzeugs.
+Diese Arbeit verwendet verschiedene Technologien von Dritten, die nachfolgend beschrieben werden.
+In den folgenden Abschnitten wird erläutert, welche Probleme diese Technologien im Kontext des Vorhabens lösen, welche nützlichen Funktionen sie bereitstellen, und welche Gründe für deren Auswahl bestanden.
 
 \subsection{fulib.org}\label{subsec:fulib.org}
 
-fulib.org ist eine Webanwendung, die bereits 2019 im Rahmen des Projekts fulibScenarios~\cite{explain} konzipiert wurde.
+Die Webanwendung fulib.org wurde bereits 2019 im Rahmen des Projekts fulibScenarios~\cite{explain} konzipiert.
 Im Rahmen von~\cite{bachelor-thesis} und weiteren nachfolgenden Projekten wurde sie stetig erweitert.
-Die Website besteht aus einigen unabhängigen Modulen, die nachfolgend kurz beschrieben werden.
+Die Webseite besteht aus einigen unabhängigen Modulen, die nachfolgend kurz beschrieben werden.
 
 \subsubsection{Scenarios}
 Das erste Modul der Anwendung ist ein interaktiver Editor für die fulibScenarios-Sprache aus~\cite{explain}.
@@ -127,30 +127,30 @@ Dafür wurde spezielle Syntax zur Mustererkennung auf Objektstrukturen entwickel
 Nachfolgend werden die Szenario-Sprache und der Editor nicht weiter betrachtet.
 
 \subsubsection{Docs}
-Hier kann die Dokumentation für verwandte Werkzeuge aus dem fulib-Toolkit nachgelesen werden.
+In diesem Modul kann die Dokumentation für verwandte Werkzeuge aus dem fulib-Toolkit nachgelesen werden.
 Diese wird direkt von den jeweiligen GitHub-Repositories bezogen, ist also nicht Teil der Webanwendung selber.
-Insbesondere befindet sich hier das Benutzerhandbuch von fulibFeedback.
+% Insbesondere befindet sich hier das Benutzerhandbuch von fulibFeedback. TODO fulibFeedback sollte hier nicht einfach so genannt werden
 
 \subsubsection{Projects}
-Dieser Teil der Webanwendung ist eine Prototyp für eine Online-\ac{ide}.
+Dieser Teil der Webanwendung ist ein Prototyp für eine Online-\ac{ide}.
 Dort können Projekte erstellt werden, die im Gegensatz zum Szenario-Editor mehrere Dateien umfassen können.
 Insbesondere können hier Gradle\footnote{
     \url{https://gradle.org/}, Build-Tool für Java-Projekte.
 }- und Java-Dateien betrachtet und bearbeitet werden.
-Ein Dateibaum zeigt Ordner und darin befindliche Dateien jeglicher Art.
+Ein Dateibaum zeigt Ordner und darin befindliche Dateien jeglicher Art an.
 Mit einem Web-Terminal können beliebige Kommandozeilenbefehle ausgeführt werden, darunter auch die zum Bauen und Ausführen verwendeten Gradle-Befehle.
-Die Projekte ermöglichen folglich eine eingeschränkte Form der Anwendungsentwicklung in einer Desktop-\ac{ide}.
+Die Projekte ermöglichen folglich eine eingeschränkte Form der Anwendungsentwicklung ähnlich zu einer Desktop-\ac{ide}.
 Nachfolgend werden Projekte nicht weiter eingesetzt, sie bieten sich jedoch für zukünftige Erweiterungen in Abschnitt~\ref{sec:other-ides} an.
 
 \subsubsection{Assignments}
-Das ursprünglich in~\cite{bachelor-thesis} entwickelte Assignments-Modul von fulib.org ist nun erneut Zentrum der Implementierung.
+Das ursprünglich in~\cite{bachelor-thesis} entwickelte Assignments-Modul von fulib.org ist in dieser Arbeit erneut Zentrum der Implementierung.
 In Abschnitt~\ref{sec:expanding-fulib.org} wird näher beleuchtet, welche Änderungen vorgenommen wurden.
-Nun soll zunächst beschrieben werden, wie der Stand des Moduls gegen Ende von~\cite{bachelor-thesis} war.
-Vor dieser Arbeit waren die Assignments, eine eigene Bezeichnung für Hausaufgabenblätter, nur auf Aufgaben in der Szenario-Sprache fokussiert.
+Zunächst soll beschrieben werden, wie der Stand des Moduls gegen Ende von~\cite{bachelor-thesis} war.
+Die Assignments, eine eigene Bezeichnung für Hausaufgabenblätter, waren nur auf Aufgaben in der Szenario-Sprache fokussiert.
 Mit einfachen Formularen konnten Titel, Beschreibung, Abgabefrist und einige Teilaufgaben definiert werden.
 Jede Teilaufgabe bestand mindestens aus Kurzbeschreibung und Punktzahl.
 Optional konnte eine Teilaufgabe mit automatischer Verifizierung in der Szenario-Sprache, vorwiegend mit der Pattern Matching-Syntax aus~\cite{bachelor-thesis}, ausgestattet werden.
-Studierende erhielten nach erfolgreicher Erstellung des Assignments einen Einladungslink, unter dem sie eine Lösung hochladen konnten.
+Studierende erhielten nach erfolgreicher Erstellung des Assignments einen Einladungslink, unter dem sie ihre Lösung einreichen konnten.
 Diese bestand aus einem zusammenhängenden Szenario-Text.
 Nach dem Absenden wurde für jede Teilaufgabe der Verifizierungs-Code zusammen mit der Lösung ausgeführt.
 Bei erfolgreicher Ausführung wurden für die Teilaufgabe volle Punktzahl, im Fehlerfall null Punkte vergeben.
@@ -159,13 +159,13 @@ Somit konnte eine Gesamtpunktzahl errechnet werden.
 \subsection{Visual Studio Code}\label{subsec:visual-studio-code}
 
 \ac{vsc}\footnote{\url{https://code.visualstudio.com/}} ist ein erweiterbarer Code-Editor von Microsoft.
-Neben den Grundfunktionen eines Texteditors hat er Funktionen zur Entwicklerproduktivität wie Syntax-Highlighting und Autovervollständigung.
+Neben den Grundfunktionen eines Texteditors hat er Funktionen zur Entwicklungsproduktivität wie Syntax-Highlighting und Autovervollständigung.
 Durch vorinstallierte Erweiterungen kann Versionsverwaltung mit Git verwendet werden.
 Verschiedene Spracherweiterungen ermöglichen bessere Autovervollständigung und semantisches Highlighting abhängig von Typinformationen sowie die Darstellung von Fehler- und Warnmeldungen im Quellcode.
 Darüber hinaus ist \ac{vsc} beliebig mit Erweiterungen anpassbar, die aus einem von Microsoft bereitgestellten Marketplace bezogen werden können\footnote{\url{https://marketplace.visualstudio.com/VSCode}}.
-Die Schnittstellen für Erweiterungen sind ausführlich dokumentiert und Entwickler können mit geringem Aufwand eigene Erweiterungen publizieren.
+Die Schnittstellen für Erweiterungen sind ausführlich dokumentiert und Entwickelnde können mit geringem Aufwand eigene Erweiterungen publizieren.
 In Abschnitt~\ref{sec:fulibFeedback} wird dies genutzt, um die fulibFeedback-Erweiterung zu veröffentlichen.
-Für Spracherweiterung wirbt \ac{vsc} besonders mit dem \ac{lsp} (siehe~\ref{subsec:language-server-protocol}).
+Für Spracherweiterungen wirbt \ac{vsc} besonders mit dem \ac{lsp} (siehe~\ref{subsec:language-server-protocol}).
 
 \ac{vsc} wurde als Grundlage für diese Arbeit aus zwei Gründen gewählt.
 Einerseits ist die Entwicklung von Erweiterungen im Vergleich zu der \ac{ide} IntelliJ IDEA deutlich einfacher, da die Logik mit dem \ac{lsp} wiederverwendbar implementiert werden kann.
@@ -174,31 +174,31 @@ IntelliJ IDEA bietet dafür keine eigene Unterstützung, stattdessen müssen Plu
 \footnote{\url{https://github.com/lsp4intellij/intellij-lsp-plugin}\label{fn:intellij-lsp-plugin}}
 \footnote{\url{https://github.com/ballerina-platform/lsp4intellij}\label{fn:lsp4intellij}}
 verwendet werden.
-Diese werden teilweise nicht weiterentwickelt\footref{fn:intellij-lsp} \footref{fn:intellij-lsp-plugin}, bieten nur eingeschränkte Funktionen des \ac{lsp}\footref{fn:lsp4intellij}, oder sind nicht mit aktuellen Versionen von IntelliJ IDEA kompatibel\footref{fn:intellij-lsp-plugin}.
-Andererseits war \ac{vsc} ein vorgegebenes Werkzeug in der Veranstaltung \ac{pm} im Wintersemester 2021/22, auf die welche die Evaluation aufbaut.
-Es bot sich an, für die Bewertung die gleiche \ac{ide} zu benutzen wie die Studierenden zur Lösungserstellung.
-Dadurch konnten bestimmte umgebungsabhängige Fehler vermieden werden.
+Diese werden teilweise nicht weiterentwickelt\footref{fn:intellij-lsp} \footref{fn:intellij-lsp-plugin}, bieten nur eingeschränkte Funktionen des \ac{lsp}\footref{fn:lsp4intellij} oder sind nicht mit aktuellen Versionen von IntelliJ IDEA kompatibel\footref{fn:intellij-lsp-plugin}.
+Andererseits war \ac{vsc} ein vorgegebenes Werkzeug in der Veranstaltung \ac{pm} im Wintersemester 2021/22, auf welche die Evaluation aufbaut.
+Es bot sich an, für die Bewertung die gleiche \ac{ide} zu benutzen wie die Studierenden zur Lösungserstellung verwendeten.
+Dadurch konnten Probleme vermieden werden, die durch die Verwendung unterschiedlicher \acp{ide} entstehen können. % TODO Bsp
 
 \subsection{Language Server Protocol}\label{subsec:language-server-protocol}
 
-Das \ac{lsp} bezeichnet eine von Microsoft entwickelte Spezifikation\footnote{\url{https://microsoft.github.io/language-server-protocol/}}, die ein Client/Server-Modell für Sprachunterstützung von Code-Editoren und ein zugehöriges Protokoll vorschlägt.
-Das standardisierte Protokoll soll einige Probleme lösen, die sowohl Entwicklern von Editoren als auch von Programmiersprachen bekannt waren.
+Das \ac{lsp} bezeichnet eine von Microsoft entwickelte Spezifikation\footnote{\url{https://microsoft.github.io/language-server-protocol/}}, die ein Client/Server-Modell zur Sprachunterstützung von Code-Editoren und ein zugehöriges Protokoll vorschlägt.
+Das standardisierte Protokoll soll einige Probleme lösen, die sowohl Entwickelnden von Editoren als auch von Programmiersprachen bekannt waren.
 Diese werden nachfolgend kurz erläutert.
 
 \begin{description}
     \item[Quadratischer Entwicklungsaufwand.]
-    Im Vordergrund stand dieses Problem, welches ohne ein standardisiertes Protokoll auftreten kann.
     Soll eine neue Programmiersprache Verwendung finden, ist es notwendig, Unterstützung in möglichst vielen Editoren zu implementieren.
-    Dies ist teilweise durch Plugins möglich, die von den Sprachautoren bereitgestellt werden können, aber mitunter signifikanten Aufwand benötigen.
-    Aus Sicht der Autoren hat jeder Editor andere Schnittstellen und Funktionen, die studiert und angebunden werden müssen.
+    Dies ist teilweise durch Plugins möglich, die von den Sprachautor:innen bereitgestellt werden können, aber mitunter signifikanten Aufwand benötigen.
+    Aus Sicht der Autor:innen hat jeder Editor andere Schnittstellen und Funktionen, die studiert und angebunden werden müssen.
     Dies kann die Adaption von Sprachen bei begrenztem Entwicklungsbudget einschränken.
-    Aus Sicht der Editor-Autoren ergibt sich ein ähnliches Problem.
+    Aus Sicht der Editor-Autor:innen ergibt sich ein ähnliches Problem.
     Um einen neuen Editor marktfähig zu machen, sollte dieser eine große Anzahl populärer Programmiersprachen unterstützen.
-    Diese können jedoch weitgehend unterschiedliche Schnittstellen und Werkzeuge bereitstellen, abhängig davon, ob die Editorunterstützung von den Sprachautoren bei der Konzeption von Compiler und anderen Tools eingearbeitet wurde.
+    Diese können jedoch weitgehend unterschiedliche Schnittstellen und Werkzeuge bereitstellen.
+    Beispielsweise ist es hilfreich, wenn die Editorunterstützung von den Sprachautor:innen bereits bei der Konzeption von Compiler und anderen Tools eingearbeitet wurde.
     Unter Umständen ist es notwendig, große Teile der Syntax und Semantik dieser Sprachen neu zu implementieren, um Editorunterstützung zu ermöglichen.
     Insgesamt ergibt dies bei $n$ Editoren und $m$ Sprachen einen Aufwand von $n \cdot m$ notwendigen Integrationen.
     Mit dem \ac{lsp} wird dieses Problem aus Sicht beider Seiten gelöst.
-    Sprachautoren können einen Server bereitstellen, der gegen die Schnittstellen des \ac{lsp} entwickelt wird.
+    Sprachautor:innen können einen Server bereitstellen, der gegen die Schnittstellen des \ac{lsp} entwickelt wird.
     Der Editor kann beliebige Sprachserver über die gleichen Schnittstellen ansprechen.
     Folglich müssen nur $n + m$ Werkzeuge entwickelt werden~\cite{why-lsp}.
     \item[Trennung von Technologien.]
@@ -212,44 +212,45 @@ Diese werden nachfolgend kurz erläutert.
 
 Nachfolgend werden einige Editor-Funktionen beschrieben, die das \ac{lsp} anbietet.
 Grundsätzlich werden weder Client noch Server von der Spezifikation verpflichtet, die Funktionen anzubieten.
-Wird eine solche von dem Server nicht unterstützt, so wird standardmäßig keine Aktion durchgeführt~\cite{lsp-overview}.
+Unterstützt der Server eine Funktion nicht, so wird standardmäßig keine Aktion durchgeführt~\cite{lsp-overview}.
 Gleichermaßen kann der Server verschiedene Editoraktionen aufrufen, die nicht zwangsweise unterstützt werden müssen.
 Beim Start des Servers wird aus diesem Grund kommuniziert, welche Funktionen beide Parteien bereitstellen.\cite[Initialize Request]{lsp-spec}
 
 \begin{description}
     \item[Autovervollständigung.]
-    Dieses Feature kommt beim Schreiben von Quellcode zum Einsatz und soll die Produktivität von Entwicklern steigern.
-    Eine einfache Form der Autovervollständigung kann trivial in einem Editor implementiert werden, indem die bereits im der aktuellen Datei verwendeten Wörter vorgeschlagen werden.
-    In vielen Fällen ist dies jedoch nicht hilfreich, beispielsweise wenn die Syntax des Programms an der Stelle des Cursors bestimmte Arten von Bezeichnern verlangt, oder die Vorschläge abhängig von Typen sein sollen.
+    Dieses Feature kommt beim Schreiben von Quellcode zum Einsatz und soll die Produktivität von Entwickelnden steigern.
+    Eine einfache Form der Autovervollständigung kann trivial in einem Editor implementiert werden, indem die bereits in der aktuellen Datei verwendeten Wörter vorgeschlagen werden.
+    In vielen Fällen ist dies jedoch nicht hilfreich, beispielsweise, wenn die Syntax des Programms an der Stelle des Cursors bestimmte Arten von Bezeichnern verlangt, oder die Vorschläge abhängig von Typen sein sollen.
     Language Server können daher anhand der Cursorposition nach Vorschlägen gefragt werden.
     \item[Zur Definition springen und Hover-Dokumentation.]
-    Beim Lesen von Code ist es unter Umständen hilfreich, sich die Definition einer Klasse, Methode oder Variable ansehen zu können.
-    Damit deren Position und Ursprungsdatei gefunden werden können, ist sprachabhängige Analyse notwendig, die ein Language Server bereitstellen kann.
-    Ist lediglich die Dokumentation der Definition gefragt, kann diese beim Hovern über den Bezeichner angezeigt werden, falls dies implementiert wurde.
+    Beim Lesen von Code ist es \ac{uU} hilfreich, sich die Definition einer Klasse, Methode oder Variable ansehen zu können.
+    Damit deren Position und Ursprungsdatei gefunden werden können, ist eine sprachabhängige Analyse notwendig, die ein Language Server bereitstellen kann.
+    Ist lediglich die Dokumentation der Definition gefragt, kann diese beim Bewegen des Mauszeigers über den Bezeichner angezeigt werden, sofern diese Funktion implementiert wurde.
     \item[Diagnostics.]
     Meist handelt es sich hierbei um ein passives Feature, das nicht direkt vom Benutzer ausgelöst wird.
-    Es ist hilfreich, während des Schreibens von Code mögliche Syntaxfehler oder andere Probleme direkt rot oder gelb unterstrichen sichtbar zu machen.
+    Es ist hilfreich, während des Schreibens von Code mögliche Syntaxfehler oder andere Probleme direkt rot oder gelb unterstrichen hervorzuheben.
     Ein Language Server kann dies mittels Diagnostics implementieren.
     Im Gegensatz zu anderen Funktionen werden diese asynchron vom Client/Editor angefragt.
-    Der Server kann dann Diagnostics ermitteln und das Ergebnis nach einiger Zeit per Push an den Client senden, um die Meldungen anzuzeigen.
+    Der Server kann Diagnostics ermitteln und das Ergebnis nach einiger Zeit per Push an den Client senden, um die Meldungen anzuzeigen.
     \item[Code Actions und Refactorings.]
     Ein Language Server kann anhand der aktuellen Cursorposition oder Auswahl eine oder mehrere Aktionen bereitstellen.
-    Diese werden im Editor in einem Kontextmenü oder ähnlichem angezeigt.
-    Eine Aktion kann, wenn sie vom Benutzer ausgewählt wird, Änderungen am Text oder anderen Dateien durchführen.
+    Diese werden im Editor in einem Kontextmenü oder Vergleichbarem angezeigt.
+    Eine Aktion kann, wenn sie vom Benutzenden ausgewählt wird, Änderungen am Text oder anderen Dateien durchführen.
     Beispielsweise können dadurch einfache Refactorings wie das Schachteln in einer neuen Schleife implementiert werden.
-    Nicht möglich ist das Erfragen von weiterem Input des Benutzers.
-    Dadurch können mit Code Actions keine komplexeren Refactorings wie Umbenennen oder Methode Extrahieren umgesetzt werden.
-    Ersteres hat aus diesem Grund eine eigene Schnittstelle.
+    % TODO Geht schon mit Commands, aber wirklich notwendig hier?
+    % Nicht möglich ist das Erfragen von weiterem Input des Benutzers.
+    % Dadurch können mit Code Actions keine komplexeren Refactorings wie Umbenennen oder Methode Extrahieren umgesetzt werden.
+    % Ersteres hat aus diesem Grund eine eigene Schnittstelle.
 \end{description}
 
-Trotz der Bezeichnung Language Server Protocol ist dieses nicht nur für den Einsatz für Programmiersprachen geeignet.
-Mit den bereitgestellten Schnittstellen können auch andere Entwicklerwerkzeuge implementiert werden.
+Trotz der Bezeichnung \emph{Language} Server Protocol ist dieses nicht nur für den Einsatz für Programmiersprachen geeignet.
+Mit den bereitgestellten Schnittstellen können auch andere Entwicklungswerkzeuge implementiert werden.
 Durch Diagnostics können beispielsweise auch Rechtschreibprüfung oder Linter\footnote{Programme, die Quellcode anhand von verschiedener Analyseverfahren auf häufige Fehlerquellen untersuchen} umgesetzt werden.
 In Abschnitt~\ref{sec:fulibFeedback} wird erläutert, wie die fulibFeedback-Erweiterung die Diagnostics und Code Actions des \ac{lsp} anwendet.
 
 \subsection{Elasticsearch}\label{subsec:elasticsearch}
 
-Elasticsearch\footnote{\url{https://www.elastic.co/elasticsearch/}} bezeichnet eine Suchmaschine und dokumentorientierte Datenbank\footnote{Im Gegensatz zu tabellenbasierten Datenbanken erlauben Dokumente meist schemalose und geschachtelte Daten.}, die für verschiedene textuelle und strukturelle Anfragen optimiert ist.
+Elasticsearch\footnote{\url{https://www.elastic.co/elasticsearch/}} bezeichnet eine Suchmaschine und dokumentenorientierte Datenbank\footnote{Im Gegensatz zu tabellenbasierten Datenbanken erlauben Dokumente meist schemalose und geschachtelte Daten.}, die für verschiedene textuelle und strukturelle Anfragen optimiert ist.
 Neben der Textsuche bietet Elasticsearch auch Lösungen für verwandte Probleme wie Log-Analyse, Metriken, Datentrends, Geo-Anfragen und Anwendungen der Genetik (Bioinformatik).
 Diese sind jedoch im Folgenden nicht relevant und werden daher nicht weiter erläutert.
 
@@ -265,7 +266,7 @@ Die Normalisierung ändert die entstandenen Tokens, sodass bei der Suche ähnlic
 Dafür werden beispielsweise Groß- und Kleinschreibung verworfen, Plural zu Singular geändert, der Wortstamm gebildet (Stemming), oder Synonyme verwendet.
 Weiterhin können sogenannte Stepwords, Wörter die keine semantische Relevanz im Text haben, in der Normalisierung gefiltert werden.
 Um dies sinnvoll umsetzen zu können, muss für gewöhnlich die zugrundeliegende Sprache des Textes definiert werden.
-Tokenisierung und Normalisierung können dann sprachspezifische Syntaxregeln und Wörterbücher verwenden~\cite{elastic-analysis-overview}.
+Tokenisierung und Normalisierung können damit sprachspezifische Syntaxregeln und Wörterbücher verwenden~\cite{elastic-analysis-overview}.
 Es ist möglich, eigene Analyseverfahren zu definieren, die aus Zeichenfiltern, Tokenisierer und Stepwordfiltern bestehen~\cite{elastic-custom-analyser}.
 So kann beispielsweise die Textanalyse für Programmiersprachen definiert werden, wie in Abschnitt~\ref{subsec:code-search} demonstriert wird.
 
@@ -275,17 +276,17 @@ Die genaue Form und verwendete Datenstruktur hängt davon ab, welcher Datentyp v
 Ein einfacher Index kann beispielsweise eine Menge von Tokens speichern, die im Text vorkommen.
 Dabei werden die Häufigkeit, Position und Form der Wörter im Originaltext nicht beachtet.
 Wird eine Suchanfrage mit gleicher Tokenisierung und Normalisierung analysiert, entsteht eine vergleichbare Menge.
-Ist die aus der Suchanfrage entstehende Menge eine Teilmenge der Tokens des Originaltexts, ist das Originaldokument ein gültiges Suchergebnis.
-Dafür ist für jedes Dokument lediglich eine Mengenoperation notwendig und kein Auslesen und Vergleichen jedes einzelnen Zeichens des Originaltexts~\cite{elastic-index-search-time}.
+Wenn die aus der Suchanfrage entstehende Menge eine Teilmenge der Tokens des Originaltexts ist, bildet das Originaldokument ein gültiges Suchergebnis.
+Dafür ist für jedes Dokument lediglich eine Mengenoperation und kein Auslesen und Vergleichen jedes einzelnen Zeichens des Originaltexts notwendig~\cite{elastic-index-search-time}.
 
 \subsubsection{Suche}
-Für die Textsuche bietet Elasticsearch verschiedenen Arten von Anfragen und Optionen.
+Für die Textsuche bietet Elasticsearch verschiedene Arten von Anfragen und Optionen.
 Einfache Beispiele für Anfragetypen sind die exakte Übereinstimmung, Textsuche, Wildcards und die Suche mit regulären Ausdrücken~\cite{elastic-query-dsl}.
-Diese können mit bool'schen Operatoren kombiniert werden, wobei zwischen Bedingungen, die das Ranking von Ergebnissen beeinflussen, und Filtern, welche die Inklusion von Ergebnissen ohne Einfluss auf das Ranking kontrollieren, unterschieden wird~\cite{elastic-bool-query}.
+Diese können mit bool'schen Operatoren kombiniert werden, wobei zwischen Bedingungen, welche die Relevanz von Ergebnissen beeinflussen, und Filtern, welche die Inklusion von Ergebnissen ohne Einfluss auf die Relevanz kontrollieren, unterschieden wird~\cite{elastic-bool-query}.
 Ferner können Optionen für Sortierung, Aggregationen und generelle Datenkontrolle (Anzahl der Ergebnisse, Pagination\footnote{Aufteilung von einer großen Anzahl von Suchergebnissen (>1000) auf mehrere Seiten.}, Timeout, Asynchronität, etc.) angegeben werden~\cite{elastic-search-data}.
 
 \subsubsection{Highlighting}
-Gewöhnliche Suchanfragen geben lediglich die Ergebnisse zurück, die mit der Anfrage übereinstimmen, jedoch nicht, an welcher Stelle im Text die gesuchten Wörter vorkommen.
+Gewöhnliche Suchanfragen geben die Ergebnisse zurück, die mit der Anfrage übereinstimmen, jedoch nicht, an welcher Stelle im Text die gesuchten Wörter vorkommen.
 Mit einem Highlighter, der als Suchoption aus Performancegründen explizit aktiviert werden muss, können diese Stellen gefunden werden, um beispielsweise auf einer Seite mit Suchergebnissen die Wörter farblich hervorzuheben~\cite{elastic-highlighting}.
 In Abschnitt~\ref{subsec:code-search} wird dies eingesetzt, um den Originalcode nach einer Suchanfrage zu rekonstruieren.
 
@@ -296,7 +297,7 @@ Diese wurden mit Ausnahme von NestJS ursprünglich für die Implementierung von 
 Aufgrund der umfänglichen Auswirkungen der Frameworks auf den Entwicklungsprozess lohnt es sich an dieser Stelle erneut darauf einzugehen.
 
 \subsubsection{TypeScript}
-Die Programmiersprache\footnote{\url{https://www.typescriptlang.org/}} wird für sämtliche Software im Rahmen dieser Arbeit eingesetzt.
+Die Programmiersprache TypeScript\footnote{\url{https://www.typescriptlang.org/}} wird für sämtliche Software im Rahmen dieser Arbeit eingesetzt.
 Sie bietet gegenüber JavaScript eine höhere Sicherheit gegen Programmierfehler durch die Typisierung.
 Im Vergleich zu Java ist weniger Boilerplate-Code notwendig, um vergleichbare Features beispielsweise in einem Backend zu implementieren.
 Für die Entwicklung der \ac{vsc}-Erweiterung ist JavaScript oder TypeScript erforderlich, letzteres wird von Microsoft jedoch empfohlen~\cite{vsc-first-extension}.
@@ -304,7 +305,7 @@ Der Language Server kann in einer beliebigen Sprache implementiert werden, die D
 
 \subsubsection{Angular}
 Das Angular\footnote{\url{https://angular.io/}}-Framework von Google wird für die Implementierung der gesamten Weboberfläche von fulib.org verwendet.
-Seine Zuständigkeiten umfassen die Entwurfsmuster der komponentenbasierten View, Dependency Injection mittels Services, und Aufteilung von logischen Programmteilen in Module.
+Seine Zuständigkeiten umfassen eine komponentenbasierte View, Dependency Injection mittels Services und die Aufteilung von logischen Programmteilen in Module.
 Angular abstrahiert das Rendering von Komponenten zu \ac{html} für die Darstellung im Browser.
 Services erlauben die Trennung von Anzeigelogik, Business Logic, und Datenzugriff und können mit Dependency Injection verwendet werden.
 Die Verwendung von Angular erfordert die Programmierung mit JavaScript oder TypeScript, da dies geeignete Sprachen für die Ausführung im Browserkontext sind.
@@ -319,11 +320,11 @@ Icons in der Oberfläche stammen aus der \ac{css}-Bibliothek bootstrap-icons\foo
 
 \subsubsection{NestJS}
 Dieses Framework\footnote{\url{https://nestjs.com}} bietet die grundlegende Architektur des Backends, das für die Verwaltung von Assignments und zugehörigen Daten zuständig ist.
-Nach Abschluss von~\cite{bachelor-thesis} wurde von das zuvor verwendete Java-Backend mit NestJS neu geschrieben, da es größere Flexibilität und höhere Produktivität beim Hinzufügen neuer Features anbot.
-Dazu gehören die von Angular bekannte Aufteilung in Module, Services und die zugehörige Dependency Injection, sowie darüber hinaus Controller für, welche die \ac{http}-Schnittstellen definieren.
+Nach Abschluss von~\cite{bachelor-thesis} wurde das zuvor verwendete Java-Backend mit NestJS neu geschrieben, da es größere Flexibilität und höhere Produktivität beim Hinzufügen neuer Features anbot.
+Dazu gehören die von Angular bekannte Aufteilung in Module, Services und die zugehörige Dependency Injection, sowie darüber hinaus Controller, welche die \ac{http}-Schnittstellen definieren.
 Viele Aspekte eines Backend-Dienstes können deklarativ mit sogenannten Decorators implementiert werden.
 Beispiele dafür sind Validierung, Generierung von \ac{api}-Dokumentation, Authentifizierung und Datenbank-Schemata.
 NestJS-Server werden ebenfalls in JavaScript oder bevorzugt TypeScript implementiert.
 Neben dem Einsatz für \ac{http}-Server kann NestJS auch als generelles Dependency Injection-Framework verwendet werden.
 Dadurch ist es ferner möglich, einen Language Server mit NestJS zu implementieren.
-Im Gegensatz zur der dokumentierten\cite{vsc-language-server-guide} Architektur kann dadurch bessere Trennung von Zuständigkeiten und eine generelle erweiterbare Grundstruktur geschaffen werden.
+Im Gegensatz zur dokumentierten\cite{vsc-language-server-guide} Architektur kann dadurch bessere Trennung von Zuständigkeiten und eine generelle erweiterbare Grundstruktur geschaffen werden.

@@ -21,7 +21,8 @@ Die Moodle-\ac{api}\footnote{\url{https://docs.moodle.org/dev/Core_APIs}} bietet
 
 In Abschnitt~\ref{subsec:language-server-protocol} wurde bereits dargelegt, dass das \ac{lsp} für Wiederverwendbarkeit ausgelegt ist.
 Es liegt daher nahe, dass die \ac{vsc}-Erweiterung fulibFeedback auch für andere \acp{ide} mit \ac{lsp}-Unterstützung portiert werden kann.
-Konkret wurde in Betracht gezogen, dies für IntelliJ zu tun, da die Entwicklungsumgebung ebenfalls in den evaluierten Veranstaltungen eingesetzt wurde.
+Konkret wurde in Betracht gezogen, dies für IntelliJ umzusetzen.
+Diese Entwicklungsumgebung wurde in den evaluierten Veranstaltungen bereits eingesetzt.
 Das Vorhaben wurde jedoch verworfen, da in \ac{pm} die Vorgabe von \ac{vsc} bestand und diese \ac{ide} auch für die Bewertung verwendet wurde.
 Darüber hinaus ist die Unterstützung des \ac{lsp} seitens IntelliJ nicht optimal, wie in Abschnitt~\ref{subsec:visual-studio-code} erwähnt wurde.
 
@@ -30,28 +31,28 @@ Die vereinfachte Online-\ac{ide} könnte ebenfalls die Funktionen von fulibFeedb
 Beispielsweise könnte mit einem Button automatisch ein Projekt angelegt und geöffnet werden.
 Dabei entfallen mögliche Probleme bei der Einrichtung, beispielsweise die Installation von \acp{sdk} oder Spracherweiterungen.
 Eine spezialisierte Oberfläche könnte darüber hinaus eine bessere Abstimmung von Quellcode und Bewertung erzielen.
-Das Vorhaben wurde für diese Arbeit verworfen, da in der Veranstaltung \ac{pm} zunehmend Anwendungen und Benutzeroberflächen mit JavaFX implementiert wurden, die im Browserkontext von fulib.org nicht trivial ausführbar sind.
+Dieses Vorhaben wurde für diese Arbeit verworfen, da in der Veranstaltung \ac{pm} zunehmend Anwendungen und Benutzeroberflächen mit JavaFX implementiert wurden, die im Browserkontext von fulib.org nicht trivial ausführbar sind.
 
 \section{Verbesserungen von Code Search}\label{sec:code-search-improvements}
 
-Die intensive Verwendung von Code Search hat einige Verbesserungsvorschläge ergeben, die nicht umgesetzt wurden und nun kurz behandelt werden.
+Die intensive Verwendung von Code Search hat einige Verbesserungsvorschläge ergeben, die nicht umgesetzt wurden und im Folgenden kurz behandelt werden.
 Sie orientieren sich hauptsächlich an den Ursachen für Quellcode-Varianten, die bereits in Abschnitt~\ref{subsec:pm-adaptations} dargelegt wurden.
 
 Während die Einrückung und Formatierung bereits ignoriert werden, sind Kommentare dennoch für die Suche relevant.
 Dies kann Nachteile haben, wenn sie von Studierenden verfasst wurden und Unterschiede hervorrufen.
 Andererseits wurden vorgegebene Kommentare des Öfteren als Kontext für die Suche verwendet, um ungültige Ergebnisse zu vermeiden.
-Es wäre denkbar, optional Kommentare bei der Suche zu ignorieren, beispielsweise mit einem zusätzlichen Haken im Bewertungs-Fenster.
+Es wäre denkbar, Kommentare bei der Suche optional zu ignorieren, beispielsweise mit einem zusätzlichen Haken im Bewertungs-Fenster.
 
 Die unterschiedliche Benennung von Bezeichnern könnte umgangen werden, indem vor der Suche eine automatische Umbenennung stattfindet.
 Denkbar wäre eine laufende Nummerierung wie \code{var1}, \code{var2}, \ldots.
 Eine solche Umbenennung würde konsistente Ergebnisse liefern, sofern die Variablen von jedem Studierenden in der gleichen Reihenfolge deklariert werden.
-Bei einfachen Methoden mit nur einer Variable wäre dies trivialerweise erfüllt, bei komplexeren jedoch selten nützlich.
-Diese Art der Umbenennung ist außerdem nur möglich, wenn ein in sich geschlossener Codeabschnitt, beispielsweise eine ganze Methode, ausgewählt wird und Klassennamen und -Variablen vorgegeben sind.
+Bei einfachen Methoden mit nur einer Variable wäre dies trivial erfüllt, bei komplexeren jedoch selten nützlich.
+Diese Art der Umbenennung ist außerdem nur möglich, wenn ein in sich geschlossener Codeabschnitt, beispielsweise eine ganze Methode, ausgewählt wird und Klassennamen und -variablen vorgegeben sind.
 Wenn hingegen keine Deklaration im ausgewählten Code enthalten ist, kann keine sinnvolle Umbenennung durchgeführt werden, da Variablen syntaktisch nicht von anderen Bezeichnern unterschieden werden können.
 Eine Alternative wäre die identische Behandlung aller Bezeichner, jedoch würde dies nicht die Semantik des Codes erhalten und könnte Ergebnisse liefern, die unterschiedliche Funktionalität haben.
 
 Das Problem der Strukturierung ist nicht ohne sprachspezifische Regeln zum Refactoring umsetzbar.
-Da mit den Werkzeugen dieser Arbeit die Sprachunabhängigkeit angestrebt wurde, war die Lösung dieses Problems nicht geplant.
+Da mit den in dieser Arbeit vorgestellten Werkzeugen die Sprachunabhängigkeit angestrebt wurde, war die Lösung dieses Problems nicht geplant.
 
 Bezüglich der Beispielwerte wäre es denkbar, bei der Auswahl von Codeabschnitten das Festlegen von Lücken zu erlauben.
 Diese könnten von der Suche als Wildcard behandelt werden und somit Quellcode in Lösungen mit anderen Werten ergeben.

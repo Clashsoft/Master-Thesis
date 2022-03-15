@@ -160,7 +160,8 @@ Das Format kann in wenigen Sätzen beschrieben werden.
 Jeder Task wird in eine neue Zeile geschrieben, die entweder der Listensyntax ("\code{-}" am Anfang) oder der Überschriftensyntax (Zwei oder mehrere "\texttt{\#}" am Anfang) von Markdown folgt.
 Nach dem einleitenden Zeichen folgt die Beschreibung und die Punktzahl, optional mit "\code{x/}" vorangestellt und/oder "\code{P}" nachgestellt, in runden Klammern.
 Am Ende der Zeile kann ein \ac{html}-Kommentar weitere Daten des Tasks wie dessen \ac{id} und Dateinamen-Glob in \ac{json} kodiert enthalten.
-Folgt eine Zeile nicht diesem Format, wird sie rot markiert, um den Benutzenden auf das Problem hinzuweisen.
+Ist die \ac{id} nicht auf diese Weise angegeben, wird sie automatisch generiert.
+Wenn eine Zeile dieses Format nicht befolgt, wird sie rot markiert, um den Benutzenden auf das Problem hinzuweisen.
 
 Das Format wurde gewählt, da die Bewertungsrichtlinien der Veranstaltung \ac{pm} bereits vor Beginn dieser Arbeit in ähnlicher Form vorlagen.
 Diese Richtlinien haben ihre Ursprünge aus der Verwendung von GitHub, da Issues, Pull Requests und Kommentare auf dieser Plattform in Markdown verfasst und in Listenform mit Überschriften dargestellt werden.
@@ -479,9 +480,7 @@ Entscheidend ist nur, dass diese gewählt wurden, um für möglichst viele Progr
 Die Syntax für Zahlen, String-Literale, Bezeichner und Symbole orientiert sich an populären Programmiersprachen wie Java, JavaScript, C und Python~\cite{tiobe-index}.
 
 Der \textbf{Filename Glob} dient der Einschränkung der Suche auf bestimmte Dateien.
-Dafür wird die spezielle Glob-Syntax\footnote{
-    \url{https://en.wikipedia.org/wiki/Glob_(programming)}
-} verwendet, welche die Verwendung von Platzhaltern erlaubt.
+Dafür wird die spezielle Glob-Syntax~\cite{glob-patterns} verwendet, welche die Verwendung von Platzhaltern erlaubt.
 Das Beispiel \texttt{**/*Test.java} aus Abbildung~\ref{fig:assignment-code-search} wählt nur Dateien aus, die auf \texttt{Test.java} enden (\texttt{*Test.java}) und sich in einem beliebigen Unterordner des Projekts befinden (\texttt{**/}).
 Für die Suche mit Elasticsearch wird das Glob-Muster in einen regulären Ausdruck übersetzt und als Filterbedingung in der Suchanfrage übergeben.
 

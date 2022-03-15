@@ -82,11 +82,6 @@ Nachfolgend werden einige der wichtigsten Erkenntnisse daraus beschrieben, da si
 Die wichtigste Erkenntnis aus den Anmerkungen der Benutzenden war die Art und Weise, wie Codeabschnitte ausgewählt werden.
 Der Ablauf, der in Abschnitt~\ref{subsec:choosing-code-snippets} beschrieben wurde und beide Werkzeuge symbiotisch kombiniert, wurde erst in einer späteren Version von fulibFeedback eingeführt.
 Zuvor wurde die gesamte Bewertung von Code mit fulibFeedback vorgenommen.
-Mittels Code Actions des \ac{lsp} wurde ein Menü angezeigt, das alle Teilaufgaben anzeigte.
-Abbildung~\ref{fig:fulibFeedback-old-menu} stellt dieses dar.
-Die Aktivierung eines Menüeintrags hat dazu geführt, dass über dem ausgewählten Quellcode ein Kommentar eingefügt wurde, in dem der Remark eingegeben werden konnte.
-In diesem Kommentar konnten zwei Code Actions verwendet werden, um die Bewertung mit minimaler oder maximaler Punktzahl zu erstellen, wie Abbildung~\ref{fig:fulibFeedback-old-comment} zeigt.
-Diese Vorgehensweise hatte einige erhebliche Nachteile:
 
 \begin{figure}
     \centering
@@ -95,12 +90,19 @@ Diese Vorgehensweise hatte einige erhebliche Nachteile:
     \label{fig:fulibFeedback-old-menu}
 \end{figure}
 
+Mittels Code Actions des \ac{lsp} wurde ein Menü angezeigt, das alle Teilaufgaben anzeigte.
+Abbildung~\ref{fig:fulibFeedback-old-menu} stellt dieses dar.
+
 \begin{figure}
     \centering
     \includegraphics[width=0.63\textwidth]{images/fulibFeedback-old-comment}
     \caption{Kommentarzeile in älterer Version von fulibFeedback}
     \label{fig:fulibFeedback-old-comment}
 \end{figure}
+
+Die Aktivierung eines Menüeintrags hat dazu geführt, dass über dem ausgewählten Quellcode ein Kommentar eingefügt wurde, in dem der Remark eingegeben werden konnte.
+In diesem Kommentar konnten zwei Code Actions verwendet werden, um die Bewertung mit minimaler oder maximaler Punktzahl zu erstellen, wie Abbildung~\ref{fig:fulibFeedback-old-comment} zeigt.
+Diese Vorgehensweise hatte einige erhebliche Nachteile:
 
 \begin{itemize}
     \item Das Menü, das die Teilaufgaben anzeigte, konnte bei einer großen Anzahl unübersichtlich werden und teilweise die Bildschirmhöhe überschreiten.
@@ -145,7 +147,7 @@ Da es sich nur um eine Hilfestellung handelt, können erfahrene Benutzende denno
 \subsubsection{Verbesserung der Bedienbarkeit}
 
 Dank dem ausführlichen Feedback der Betreuenden konnte neben den zuvor beschriebenen größeren Änderungen auch eine Reihe von kleinen Bedienbarkeits-Verbesserungen umgesetzt werden.
-Hauptsächlich sind diese in Teilen der fulib.org-Oberfläche angesiedelt, die am häufigsten verwendet werden, darunter insbesondere das Bewertungs-Modalfenster (Abbildung~\ref{fig:evaluation-modal}).
+Hauptsächlich sind diese in Teilen der fulib.org-Oberfläche angesiedelt, die am häufigsten verwendet werden, darunter insbesondere das Bewertungs-Modalfenster~(Abbildung~\ref{fig:evaluation-modal}).
 Dort wurden beispielsweise die Buttons zum schnellen Einstellen der Punktzahl hinzugefügt, da häufig die Angabe der Punktzahl vergessen wurde und das Zahlenfeld schwerer zu bedienen war.
 Die Möglichkeit zum Erweitern des Remark-Felds auf mehrere Zeilen ist entstanden, damit längere Hinweise und Fehlermeldungen angegeben werden können\footnote{\label{fn:nataschu-ha4}
     \url{https://github.com/fujaba/fulib.org/issues/196\#issuecomment-986684825}
@@ -163,19 +165,7 @@ Bei den Bewertenden gab es zudem Unterschiede in der Browser-Präferenz, wodurch
 In der Veranstaltung \ac{pm} konnten dank der integrierten Statistiken von fulib.org eine Vielzahl von Messdaten ermittelt werden.
 Dieser Abschnitt beschreibt einige Metriken, die darauf basieren.
 
-In Tabelle~\ref{tbl:pm-points} werden zunächst einige grundlegende Punktzahlen dargestellt, die als Kontext dienen.
-Für jede Hausaufgabe (\textbf{\acs{ha}}) ist die \textbf{Gesamtpunktzahl} und die Anzahl der \textbf{Teilaufgaben} insgesamt sowie die \textbf{zu bewertenden} angegeben.
-Diese bestehen meist aus Teilaufgaben auf unterster Ebene mit Ausnahme von solchen, die nur für bestimmte Abzüge dienen.
-Außerdem sind Teilaufgaben mit Unteraufgaben ausgenommen, da diese nur der Struktur dienen und meist\footnote{
-    Ausnahme beispielsweise wenn die Aufgabe nicht bearbeitet wurde.
-} nicht bewertet werden.
-Folglich beschreibt diese Zahl die notwendigen Schritte zur Bewertung einer durchschnittlichen Abgabe, bei der alle Aufgaben bearbeitet wurden und keine groben Fehler vorhanden sind.
-Die Anzahl der Teilaufgaben zur Bewertung orientiert sich grob an der Punktzahl und ist stets kleiner oder gleich.
-Differenzen entstehen, wenn in Teilaufgaben mehr als ein Punkt erreichbar ist.
-In der Spalte \textbf{Link} sind jeweils die Assignments auf fulib.org referenziert, aus deren Statistiken alle Werte dieser und folgender Tabellen übernommen wurden.
-
 \renewcommand{\thefootnote}{\roman{footnote}}
-
 \begin{table}
     \centering
     \caption{Punkte-Metriken von \ac{pm}}
@@ -196,7 +186,6 @@ In der Spalte \textbf{Link} sind jeweils die Assignments auf fulib.org referenzi
     \end{tabular}
     \label{tbl:pm-points}
 \end{table}
-
 \footnotetext[1]{\url{https://dev.fulib.org/assignments/617d4fb863af7d2af168cce2/statistics}}
 \footnotetext[2]{\url{https://dev.fulib.org/assignments/618bb3468bdfd2a3e837af84/statistics}}
 \footnotetext[3]{\url{https://dev.fulib.org/assignments/6195011a4eac33e013d0741c/statistics}}
@@ -208,15 +197,18 @@ In der Spalte \textbf{Link} sind jeweils die Assignments auf fulib.org referenzi
 \footnotetext[9]{\url{https://dev.fulib.org/assignments/61fd7bcc50f8a4ad1264c1b1/statistics}}
 \footnotetext[10]{\url{https://dev.fulib.org/assignments/6203bef650f8a4ad1266951c/statistics}}
 \footnotetext[11]{\url{https://dev.fulib.org/assignments/6206733f50f8a4ad126747eb/statistics}}
-
 \renewcommand{\thefootnote}{\arabic{footnote}}
 
-Tabelle~\ref{tbl:pm-solutions} gibt weitere Einsichten in den notwendigen Aufwand.
-Die Anzahl der \textbf{Abgaben} jeder Hausaufgabe (\textbf{\acs{ha}}) ist gleichzeitig die Anzahl der importierten Repositories von GitHub Classroom.
-Einige davon wurden den Bewertenden \textbf{zugewiesen}.
-Jede Abgabe, für die mindestens eine Bewertung einer Teilaufgabe vorhanden ist, wird in der Spalte \textbf{Bewertet} gezählt.
-\textbf{Betrachtet} sind letztlich diejenigen Abgaben, für die eine vollständige Bewertung durchgeführt und eine Punktzahl ermittelt und versendet wurde.
-Die Anzahl der \textbf{Benutzenden} gibt an, wie viele Bewertende in jeder Woche die Werkzeuge verwendet haben.
+In Tabelle~\ref{tbl:pm-points} werden zunächst einige grundlegende Punktzahlen dargestellt, die als Kontext dienen.
+Für jede Hausaufgabe (\textbf{\acs{ha}}) ist die \textbf{Gesamtpunktzahl} und die Anzahl der \textbf{Teilaufgaben} insgesamt sowie die \textbf{zu bewertenden} angegeben.
+Diese bestehen meist aus Teilaufgaben auf unterster Ebene mit Ausnahme von solchen, die nur für bestimmte Abzüge dienen.
+Außerdem sind Teilaufgaben mit Unteraufgaben ausgenommen, da diese nur der Struktur dienen und meist\footnote{
+    Ausnahme beispielsweise wenn die Aufgabe nicht bearbeitet wurde.
+} nicht bewertet werden.
+Folglich beschreibt diese Zahl die notwendigen Schritte zur Bewertung einer durchschnittlichen Abgabe, bei der alle Aufgaben bearbeitet wurden und keine groben Fehler vorhanden sind.
+Die Anzahl der Teilaufgaben zur Bewertung orientiert sich grob an der Punktzahl und ist stets kleiner oder gleich.
+Differenzen entstehen, wenn in Teilaufgaben mehr als ein Punkt erreichbar ist.
+In der Spalte \textbf{Link} sind jeweils die Assignments auf fulib.org referenziert, aus deren Statistiken alle Werte dieser und folgender Tabellen übernommen wurden.
 
 \begin{table}
     \centering
@@ -239,14 +231,14 @@ Die Anzahl der \textbf{Benutzenden} gibt an, wie viele Bewertende in jeder Woche
     \label{tbl:pm-solutions}
 \end{table}
 
-\subsubsection{Effektivität}
+Tabelle~\ref{tbl:pm-solutions} gibt weitere Einsichten in den notwendigen Aufwand.
+Die Anzahl der \textbf{Abgaben} jeder Hausaufgabe (\textbf{\acs{ha}}) ist gleichzeitig die Anzahl der importierten Repositories von GitHub Classroom.
+Einige davon wurden den Bewertenden \textbf{zugewiesen}.
+Jede Abgabe, für die mindestens eine Bewertung einer Teilaufgabe vorhanden ist, wird in der Spalte \textbf{Bewertet} gezählt.
+\textbf{Betrachtet} sind letztlich diejenigen Abgaben, für die eine vollständige Bewertung durchgeführt und eine Punktzahl ermittelt und versendet wurde.
+Die Anzahl der \textbf{Benutzenden} gibt an, wie viele Bewertende in jeder Woche die Werkzeuge verwendet haben.
 
-Die Effektivität von Code Search beschreibt den prozentualen Anteil der Bewertungen, die automatisch erstellt wurden.
-Tabelle~\ref{tbl:pm-effectiveness} zeigt für jede Hausaufgabe (\textbf{\acs{ha}}) die Anzahl der Bewertungen von \textbf{manuell} Bewertenden und von \textbf{Code Search}.
-Die spezielle Kategorie der automatisch erstellten Bewertungen, die später \textbf{bearbeitet} wurden, ist der Vollständigkeit auch aufgeführt.
-Meist sind dort nur sehr wenige Bewertungen verzeichnet, da die Bearbeitung selten notwendig war.
-In wenigen Fällen sind durch Benutzungsfehler oder Code Search jedoch Bewertungen entstanden, die nicht zutreffend waren und deshalb angepasst wurden.
-Die drei Kategorien werden in der Spalte \textbf{Gesamt} summiert, sodass die \textbf{Effektivität} als Anteil von Code Search zu Gesamtanzahl berechnet werden kann.
+\subsubsection{Effektivität}
 
 \begin{table}
     \centering
@@ -268,6 +260,14 @@ Die drei Kategorien werden in der Spalte \textbf{Gesamt} summiert, sodass die \t
     \end{tabular}
     \label{tbl:pm-effectiveness}
 \end{table}
+
+
+Die Effektivität von Code Search beschreibt den prozentualen Anteil der Bewertungen, die automatisch erstellt wurden.
+Tabelle~\ref{tbl:pm-effectiveness} zeigt für jede Hausaufgabe (\textbf{\acs{ha}}) die Anzahl der Bewertungen von \textbf{manuell} Bewertenden und von \textbf{Code Search}.
+Die spezielle Kategorie der automatisch erstellten Bewertungen, die später \textbf{bearbeitet} wurden, ist der Vollständigkeit auch aufgeführt.
+Meist sind dort nur sehr wenige Bewertungen verzeichnet, da die Bearbeitung selten notwendig war.
+In wenigen Fällen sind durch Benutzungsfehler oder Code Search jedoch Bewertungen entstanden, die nicht zutreffend waren und deshalb angepasst wurden.
+Die drei Kategorien werden in der Spalte \textbf{Gesamt} summiert, sodass die \textbf{Effektivität} als Anteil von Code Search zu Gesamtanzahl berechnet werden kann.
 
 In Tabelle~\ref{tbl:pm-effectiveness} ist bereits erkennbar, dass sich die Hausaufgaben deutlich in der Anzahl der Bewertungen unterscheiden.
 Dies liegt hauptsächlich an der Anzahl der Teilaufgaben, welche mitunter abhängig vom Umfang des Aufgabenblatts und der Punkteverteilung ist.
@@ -293,12 +293,6 @@ Die Effizienz bezeichnet die Zeit, die durch die Verwendung von Code Search gesp
 Die Berechnung erfolgt wie in Abschnitt~\ref{subsec:statistics} beschrieben und wurde den Statistiken entnommen.
 Die notwendige Telemetrie wurde erst ab \ac{ha}7 implementiert, wodurch keine Angaben zu vorherigen Hausaufgaben gemacht werden können.
 
-Tabelle~\ref{tbl:pm-efficiency} zeigt die Effizienz der \acp{ha} 7 bis 11 im Vergleich.
-Zunächst ist die durchschnittliche \textbf{Zeit pro Bewertung} einer Teilaufgabe angegeben.
-Diese liegt hier zwischen 7 und 10 Sekunden, was darauf hindeutet, dass es sich bei der Bewertung einzelner Teilaufgaben generell nur um einen kurzen Arbeitsschritt handelt, der häufig wiederholt wird.
-Weiterhin ist jeweils die gesamt verstrichene Zeit der \textbf{manuellen} Bewertung sowie die daraus ermittelte, mit \textbf{Code Search} eingesparte Zeit, angegeben.
-Die \textbf{Effizienz} berechnet sich als prozentualer Anteil von Code Search-Zeitersparnis zu Gesamtdauer (Code Search + manuelle Bewertung).
-
 \begin{table}
     \centering
     \caption{Effizienz der \ac{pm}-Hausaufgaben}
@@ -314,12 +308,11 @@ Die \textbf{Effizienz} berechnet sich als prozentualer Anteil von Code Search-Ze
     \label{tbl:pm-efficiency}
 \end{table}
 
-Bei diesen Werten ist zu beachten, dass sie nur die Zeit verzeichnen, die im Bewertungsfenster verbracht wurde.
-Nicht einbezogen ist die Zeit, die beim Clonen und Öffnen der Lösung, Ausführen von Tests, Ausprobieren der Anwendung oder sonstigen Aktivitäten bei der Bewertung verbracht wird.
-Aus diesem Grund wurde von einem Bewertenden mithilfe des Werkzeugs Wakatime\footnote{
-    \url{https://wakatime.com/}
-} für jede Lösung gemessen, wie lange diese im Editor geöffnet war.
-Tabelle~\ref{tbl:pm-overhead} zeigt die dabei entstanden Messwerte für \acp{ha} 7 bis 11, für die jeweils zehn bis 18 Lösungen von diesem Bewertenden betrachtet wurden.
+Tabelle~\ref{tbl:pm-efficiency} zeigt die Effizienz der \acp{ha} 7 bis 11 im Vergleich.
+Zunächst ist die durchschnittliche \textbf{Zeit pro Bewertung} einer Teilaufgabe angegeben.
+Diese liegt hier zwischen 7 und 10 Sekunden, was darauf hindeutet, dass es sich bei der Bewertung einzelner Teilaufgaben generell nur um einen kurzen Arbeitsschritt handelt, der häufig wiederholt wird.
+Weiterhin ist jeweils die gesamt verstrichene Zeit der \textbf{manuellen} Bewertung sowie die daraus ermittelte, mit \textbf{Code Search} eingesparte Zeit, angegeben.
+Die \textbf{Effizienz} berechnet sich als prozentualer Anteil von Code Search-Zeitersparnis zu Gesamtdauer (Code Search + manuelle Bewertung).
 
 \begin{table}
     \centering
@@ -337,14 +330,12 @@ Tabelle~\ref{tbl:pm-overhead} zeigt die dabei entstanden Messwerte für \acp{ha}
     \label{tbl:pm-overhead}
 \end{table}
 
-Durch Vergleich der Messwerte mit der Zeit, welche der Bewertende in dem Bewertungsfenster verbracht hat, kann bestimmt werden, um welchen Faktor sich tatsächlich benötigte und bei der Bewertung verbrachte Zeit unterscheiden.
-Tabelle~\ref{tbl:pm-adapted-efficiency} spiegelt die errechneten Werte für \acp{ha} 7 bis 11 wieder.
-Mithilfe des Faktors, den Werten aus Tabelle~\ref{tbl:pm-efficiency} und der Formel~\ref{eqn:adapted-efficiency} kann schließlich die \textbf{angepasste Effizienz} berechnet werden.
-Sie repräsentiert die Effizienz von Code Search unter Beachtung des zusätzlichen Zeitaufwands.
-
-\begin{equation}\label{eqn:adapted-efficiency}
-    Effizienz_{angepasst} = \frac{t_{Code Search}}{t_{Code Search} + Faktor \cdot t_{Manuell}}
-\end{equation}
+Bei diesen Werten ist zu beachten, dass sie nur die Zeit verzeichnen, die im Bewertungsfenster verbracht wurde.
+Nicht einbezogen ist die Zeit, die beim Clonen und Öffnen der Lösung, Ausführen von Tests, Ausprobieren der Anwendung oder sonstigen Aktivitäten bei der Bewertung verbracht wird.
+Aus diesem Grund wurde von einem Bewertenden mithilfe des Werkzeugs Wakatime\footnote{
+    \url{https://wakatime.com/}
+} für jede Lösung gemessen, wie lange diese im Editor geöffnet war.
+Tabelle~\ref{tbl:pm-overhead} zeigt die dabei entstanden Messwerte für \acp{ha} 7 bis 11, für die jeweils zehn bis 18 Lösungen von diesem Bewertenden betrachtet wurden.
 
 \begin{table}
     \centering
@@ -360,6 +351,15 @@ Sie repräsentiert die Effizienz von Code Search unter Beachtung des zusätzlich
     \end{tabular}
     \label{tbl:pm-adapted-efficiency}
 \end{table}
+
+Durch Vergleich der Messwerte mit der Zeit, welche der Bewertende in dem Bewertungsfenster verbracht hat, kann bestimmt werden, um welchen Faktor sich tatsächlich benötigte und bei der Bewertung verbrachte Zeit unterscheiden.
+Tabelle~\ref{tbl:pm-adapted-efficiency} spiegelt die errechneten Werte für \acp{ha} 7 bis 11 wieder.
+Mithilfe des Faktors, den Werten aus Tabelle~\ref{tbl:pm-efficiency} und der Formel~\ref{eqn:adapted-efficiency} kann schließlich die \textbf{angepasste Effizienz} berechnet werden.
+Sie repräsentiert die Effizienz von Code Search unter Beachtung des zusätzlichen Zeitaufwands.
+
+\begin{equation}\label{eqn:adapted-efficiency}
+    Effizienz_{angepasst} = \frac{t_{Code Search}}{t_{Code Search} + Faktor \cdot t_{Manuell}}
+\end{equation}
 
 \subsection{Anpassungen}\label{subsec:pm-adaptations}
 
@@ -453,10 +453,6 @@ Statt GitHub Classroom wird ein eigenes Abgabesystem verwendet, in dem Studieren
 Bewertende können sich eine zufällige Auswahl von Lösungen vom System zuweisen lassen und sie für die Bewertung herunterladen.
 Ist diese abgeschlossen, wird Feedback per Email an die Studierenden vermittelt.
 Um diesen Ablauf zu unterstützen, wurden einige Erweiterungen an fulib.org vorgenommen.
-Es ist nun möglich, Archive über ein Import-Fenster hochzuladen, wie Abbildung~\ref{fig:assignment-import-files} zeigt.
-Anhand der Dateinamen werden automatisch Abgaben angelegt und in der zugehörigen Tabelle angezeigt.
-Davon ausgehend können Bewertende den gewohnten Ablauf der Bewertung befolgen.
-Das Versenden von Feedback erfolgt schließlich über den Button \textbf{Draft Mail}, der in Abbildung~\ref{fig:submit-feedback} zu sehen ist.
 
 \begin{figure}
     \centering
@@ -465,21 +461,17 @@ Das Versenden von Feedback erfolgt schließlich über den Button \textbf{Draft M
     \label{fig:assignment-import-files}
 \end{figure}
 
+Es ist nun möglich, Archive über ein Import-Fenster hochzuladen, wie Abbildung~\ref{fig:assignment-import-files} zeigt.
+Anhand der Dateinamen werden automatisch Abgaben angelegt und in der zugehörigen Tabelle angezeigt.
+Davon ausgehend können Bewertende den gewohnten Ablauf der Bewertung befolgen.
+Das Versenden von Feedback erfolgt schließlich über den Button \textbf{Draft Mail}, der in Abbildung~\ref{fig:submit-feedback} zu sehen ist.
+
 \subsection{Metriken}\label{subsec:algods-metrics}
 
 Während der nachträglichen Bewertung dieser Hausaufgaben war noch nicht die Telemetrie vorhanden, die für die Bestimmung der Effizienz notwendig ist.
 Aus diesem Grund wird nachfolgend nur die Effektivität von Code Search bestimmt.
 Weiterhin wurde darauf verzichtet, Teilaufgaben zu bewerten, deren Lösung nicht aus Quellcode bestand.
 Die dafür notwendigen Bewertungen wurden dennoch in der Gesamtsumme verrechnet, um einen genäherten Wert der tatsächlich erreichbaren Effektivität zu berechnen.
-
-Tabelle~\ref{tbl:algods-basics} zeigt zunächst einige grundlegende Metriken.
-Die Anzahl der Teilaufgaben teilt sich in \textbf{einbezogene} und \textbf{übersprungene}, wovon letztere diejenigen sind, die nicht mit Quellcode gelöst wurden.
-Von den \textbf{eingereichten Lösungen} wurden 20\% händisch \textbf{betrachtet}.
-Die Auswahl erfolgte nach den jeweils ersten und letzten 10\% der nach Matrikelnummern sortierten Abgabenliste.
-\textbf{Bewertet} verzeichnet schließlich alle Lösungen, für die mindestens eine Bewertung einer Teilaufgabe vorhanden ist.
-Diese Anzahl ist höher als die der betrachteten Abgaben, da einige zusätzliche Bewertungen von Code Search angelegt wurden.
-Die erreichbare Punktzahl hat in jeder Hausaufgabe den gleichen Wert 40.
-Das bedeutet, dass in einigen Teilaufgaben mehr als ein Punkt erreichbar ist.
 
 \begin{table}
     \centering
@@ -495,15 +487,19 @@ Das bedeutet, dass in einigen Teilaufgaben mehr als ein Punkt erreichbar ist.
     \label{tbl:algods-basics}
 \end{table}
 
+Tabelle~\ref{tbl:algods-basics} zeigt zunächst einige grundlegende Metriken.
+Die Anzahl der Teilaufgaben teilt sich in \textbf{einbezogene} und \textbf{übersprungene}, wovon letztere diejenigen sind, die nicht mit Quellcode gelöst wurden.
+Von den \textbf{eingereichten Lösungen} wurden 20\% händisch \textbf{betrachtet}.
+Die Auswahl erfolgte nach den jeweils ersten und letzten 10\% der nach Matrikelnummern sortierten Abgabenliste.
+\textbf{Bewertet} verzeichnet schließlich alle Lösungen, für die mindestens eine Bewertung einer Teilaufgabe vorhanden ist.
+Diese Anzahl ist höher als die der betrachteten Abgaben, da einige zusätzliche Bewertungen von Code Search angelegt wurden.
+Die erreichbare Punktzahl hat in jeder Hausaufgabe den gleichen Wert 40.
+Das bedeutet, dass in einigen Teilaufgaben mehr als ein Punkt erreichbar ist.
+
 Bei Vergleich der einbezogenen und übersprungenen Teilaufgaben ist bereits ersichtlich, dass in dieser Veranstaltung weniger Programmieraufgaben gestellt wurden, als es bei \ac{pm} der Fall war.
 Die anderen acht Aufgabenblätter geben einen ähnlichen Eindruck.
 Von insgesamt 440 erreichbaren Punkten in der Veranstaltung werden 285 (65\%) in Programmieraufgaben vergeben.
 Dies schränkt übergreifend die Effektivität von Code Search ein.
-
-Tabelle~\ref{tbl:algods-effectiveness} zeigt die Anzahl der Bewertungen für jede Hausaufgabe und die daraus ermittelte Effektivität.
-Bewertungen sind aufgeteilt in die Kategorien \textbf{Händisch}, \textbf{Code Search}, \textbf{Bearbeitet} (von Code Search erstellt und händisch angepasst) und \textbf{Übersprungen} (berechnet aus übersprungenen Teilaufgaben mal betrachtete Abgaben).
-Die \textbf{Effektivität} wird als Anteil von Code Search zur Gesamtanzahl berechnet.
-In der Spalte \textbf{Link} werden die Assignments auf fulib.org angegeben, von denen die Werte stammen.
 
 \renewcommand{\thefootnote}{\alph{footnote}}
 \begin{table}
@@ -519,11 +515,15 @@ In der Spalte \textbf{Link} werden die Assignments auf fulib.org angegeben, von 
     \end{tabular}
     \label{tbl:algods-effectiveness}
 \end{table}
-
 \footnotetext[1]{\url{https://dev.fulib.org/assignments/61e0505bc649b200f39cbe26/statistics}}
 \footnotetext[2]{\url{https://dev.fulib.org/assignments/61e4378af7ed1c59a000d830/statistics}}
 \footnotetext[3]{\url{https://dev.fulib.org/assignments/61e43a36f7ed1c59a000d954/statistics}}
 \renewcommand{\thefootnote}{\arabic{footnote}}
+
+Tabelle~\ref{tbl:algods-effectiveness} zeigt die Anzahl der Bewertungen für jede Hausaufgabe und die daraus ermittelte Effektivität.
+Bewertungen sind aufgeteilt in die Kategorien \textbf{Händisch}, \textbf{Code Search}, \textbf{Bearbeitet} (von Code Search erstellt und händisch angepasst) und \textbf{Übersprungen} (berechnet aus übersprungenen Teilaufgaben mal betrachtete Abgaben).
+Die \textbf{Effektivität} wird als Anteil von Code Search zur Gesamtanzahl berechnet.
+In der Spalte \textbf{Link} werden die Assignments auf fulib.org angegeben, von denen die Werte stammen.
 
 Bei \ac{ha}1 und \ac{ha}6 sind mit 40\% bis 60\% ähnlich gute Ergebnisse der Effektivität zu verzeichnen wie in verschiedenen \ac{pm}-Hausaufgaben.
 \ac{ha}11 stellt mit der sehr niedrigen Effektivität von 5\% eine Besonderheit dar.

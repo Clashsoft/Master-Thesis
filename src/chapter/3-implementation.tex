@@ -77,7 +77,7 @@ Die Beschreibung (\textbf{Description}) kann weitere Informationen über das Ass
 \end{figure}
 
 Auf der nächsten Seite des Formulars sind Angaben für die Integration von GitHub Classroom möglich.
-Abbildung~\ref{fig:assignment-create-classroom} zeigt ein Bild dieses Formulars.
+Abbildung~\ref{fig:assignment-create-classroom} stellt dieses Formular dar.
 Dafür müssen der Name der GitHub-Organisation (\textbf{Organization}) und das Präfix (\textbf{Prefix}) konfiguriert werden.
 Dies ermöglicht den manuellen oder zum Zeitpunkt der Deadline automatischen Import von Lösungen von GitHub.
 Anhand der Search-\ac{api} von GitHub\footnote{
@@ -207,9 +207,6 @@ Dies wird in Kapitel~\ref{ch:evaluation} näher beleuchtet.
 
 \subsubsection{Abgabentabelle}
 
-Begonnen wird in der Tabelle mit allen Abgaben unter dem Tab \textbf{Solutions}.
-Ein Ausschnitt von dieser ist in Abbildung~\ref{fig:assignment-solutions-table} dargestellt.
-
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{images/assignment-solutions-table}
@@ -217,6 +214,8 @@ Ein Ausschnitt von dieser ist in Abbildung~\ref{fig:assignment-solutions-table} 
     \label{fig:assignment-solutions-table}
 \end{figure}
 
+Begonnen wird in der Tabelle mit allen Abgaben unter dem Tab \textbf{Solutions}.
+Ein Ausschnitt von dieser ist in Abbildung~\ref{fig:assignment-solutions-table} dargestellt.
 In diesem Fall wurden die Lösungen automatisch nach Ablauf der Abgabefrist aus GitHub Classroom importiert.
 Die Tabelle gibt Auskunft über den GitHub-Benutzernamen\footnote{
     Für diese Abbildung wurden die Benutzernamen durch \texttt{*}-Symbole ersetzt.
@@ -265,14 +264,12 @@ Der blaue Button mit eingekreistem Haken wird in einem späteren Abschnitt für 
     \label{fig:solution-head}
 \end{figure}
 
-
 Die Detailansicht einer Abgabe öffnet sich nach Klicken des Augen-Buttons in der Abgabetabelle.
 In Abbildung~\ref{fig:solution-head} ist erkennbar, dass auch diese Ansicht in mehrere Tabs aufgeteilt ist, um übersichtlich zu bleiben.
 In der Kopfzeile wird der Name\footnote{
     In Abbildung~\ref{fig:solution-head} wurde der GitHub-Benutzername erneut durch \texttt{*}-Symbole ersetzt.
 } des Studierenden und die Abgabezeit angezeigt.
 Für die Bewertung ist hauptsächlich der Tab \textbf{Solution \& Tasks} wichtig.
-Die Teilaufgaben werden in einer Baumansicht dargestellt, wie in Abbildung~\ref{fig:solution-tasks} erkennbar ist.
 
 \begin{figure}
     \centering
@@ -281,6 +278,7 @@ Die Teilaufgaben werden in einer Baumansicht dargestellt, wie in Abbildung~\ref{
     \label{fig:solution-tasks}
 \end{figure}
 
+Die Teilaufgaben werden in einer Baumansicht dargestellt, die in Abbildung~\ref{fig:solution-tasks} sichtbar ist.
 Jede Teilaufgabe wird abhängig von der Punktzahl farblich markiert.
 Entspricht die vergebene Punktzahl der Minimalpunktzahl eines Tasks, wird dieser rot (\ac{zB} -2/-2).
 Werden die maximal möglichen Punkte erreicht, wird der Task grün (\ac{zB} 0/-1, 3/3).
@@ -293,7 +291,6 @@ Teilaufgaben mit eigenen Unteraufgaben berechnen ihre Punktzahl vereinfacht\foot
 } durch Summieren der untergeordneten Punkte.
 Alle anderen Teilaufgaben erhalten standardmäßig null Punkte.
 Durch Klicken auf \textbf{Grade} oder \textbf{Graded by Name} kann die Bewertung einer Teilaufgabe angelegt oder bearbeitet werden.
-Abbildung~\ref{fig:evaluation-modal} zeigt das sich öffnende Modalfenster.
 
 \begin{figure}
     \centering
@@ -302,6 +299,7 @@ Abbildung~\ref{fig:evaluation-modal} zeigt das sich öffnende Modalfenster.
     \label{fig:evaluation-modal}
 \end{figure}
 
+Abbildung~\ref{fig:evaluation-modal} zeigt das sich öffnende Modalfenster.
 Die Bewertung in diesem Fenster ist zunächst sehr einfach gehalten und für schnelle Bedienbarkeit optimiert.
 Im ersten Eingabefeld kann die Punktzahl eingegeben oder durch die Kürzelbuttons direkt auf den Minimal- oder Maximalwert gesetzt werden.
 Das Feld \textbf{Remark} ermöglicht zusätzliche Hinweise für das Feedback, beispielsweise ein kurzer erklärender Satz oder eine Fehlermeldung.
@@ -318,9 +316,6 @@ Darauf basierend wird eine Statistik \ac{bzw} Metrik berechnet, welche in Abschn
 
 \subsubsection{Feedback}
 
-Der letzte Schritt der Bewertung von Studierenden ist das Versenden des Feedbacks.
-In der Abgabentabelle kann über den zugehörigen Button das Feedback-Modalfenster geöffnet werden, das in Abbildung~\ref{fig:submit-feedback} zu sehen ist.
-
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{images/submit-feedback}
@@ -328,6 +323,8 @@ In der Abgabentabelle kann über den zugehörigen Button das Feedback-Modalfenst
     \label{fig:submit-feedback}
 \end{figure}
 
+Der letzte Schritt der Bewertung von Studierenden ist das Versenden des Feedbacks.
+In der Abgabentabelle kann über den zugehörigen Button das Feedback-Modalfenster geöffnet werden, das in Abbildung~\ref{fig:submit-feedback} zu sehen ist.
 Hier kann anhand der Vorschau abschließend geprüft werden, ob die Bewertung und Punkteberechnung korrekt durchgeführt wurde.
 Daran können einige Aspekte der Feedback-Generierung erklärt werden.
 Zunächst ist erkennbar, dass nicht jede Teilaufgabe des Assignments hier vertreten ist.
@@ -358,16 +355,16 @@ Diese werden sowohl übergreifend als auch pro Teilaufgabe dargestellt.
 Zusätzlich wird Einsicht darüber geboten, welche Teilaufgaben am häufigsten zu Punktabzügen geführt haben.
 Daraus lässt sich ableiten, ob Lernziele möglicherweise nicht erreicht werden konnten oder Schwierigkeiten bei der Umsetzung bestanden.
 
-Die Statistik kann in der Assignment-Übersicht unter dem \textbf{Statistics}-Tab gefunden werden.
-In Abbildung~\ref{fig:assignment-statistics-basics} sind zunächst die übergreifenden Informationen dargestellt.
-Die Seite gliedert sich in vier Abschnitte, \textbf{Solutions}, \textbf{Students}, \textbf{Evaluations} und \textbf{Time Tracking}.
-
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{images/assignment-statistics-basics}
     \caption{Übergreifende Statistiken}
     \label{fig:assignment-statistics-basics}
 \end{figure}
+
+Die Statistik kann in der Assignment-Übersicht unter dem \textbf{Statistics}-Tab gefunden werden.
+In Abbildung~\ref{fig:assignment-statistics-basics} sind zunächst die übergreifenden Informationen dargestellt.
+Die Seite gliedert sich in vier Abschnitte, \textbf{Solutions}, \textbf{Students}, \textbf{Evaluations} und \textbf{Time Tracking}.
 
 Unter Solutions ist die Anzahl der Abgaben insgesamt (\textbf{Total}) sowie mit angefangener (\textbf{Evaluated}) und abgeschlossener Bewertung (\textbf{Graded}) sichtbar.
 Zudem wird unter \textbf{Students} die durchschnittlich erreichte Punktzahl (\textbf{Average Grade}) der abgeschlossenen Abgaben sowie die Anzahl der bestehenden (\textbf{Passing}) Studierenden angezeigt\footnote{
@@ -436,19 +433,19 @@ Dafür werden jeweils kurze Stichpunkte zu jedem Wert genannt, um Hinweise auf d
 
 \subsection{Code Search}\label{subsec:code-search}
 
-Wie zuvor erwähnt handelt es sich bei Code Search um eine Suchmaschine für Quellcode in Assignments.
-Es gibt zwei Wege diese zu aktivieren.
-Einerseits kann der dafür vorgesehene Tab in der Assignment-Übersicht verwendet werden, der in Abbildung~\ref{fig:assignment-code-search} dargestellt ist.
-Andererseits wird Code Search verwendet, um automatisch Bewertungen von Teilaufgaben anhand von ausgewählten Codeabschnitten zu erstellen.
-Dies wird in Abschnitt~\ref{sec:fulibFeedback} detailliert beschrieben.
-Zunächst wird nur der Code Search-Tab erläutert, um einen Einblick in die Hintergründe der Suchmaschine zu bieten.
-
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{images/assignment-code-search.png}
     \caption{Code Search Tab eines Assignments}
     \label{fig:assignment-code-search}
 \end{figure}
+
+Wie zuvor erwähnt handelt es sich bei Code Search um eine Suchmaschine für Quellcode in Assignments.
+Es gibt zwei Wege diese zu aktivieren.
+Einerseits kann der dafür vorgesehene Tab in der Assignment-Übersicht verwendet werden, der in Abbildung~\ref{fig:assignment-code-search} dargestellt ist.
+Andererseits wird Code Search verwendet, um automatisch Bewertungen von Teilaufgaben anhand von ausgewählten Codeabschnitten zu erstellen.
+Dies wird in Abschnitt~\ref{sec:fulibFeedback} detailliert beschrieben.
+Zunächst wird nur der Code Search-Tab erläutert, um einen Einblick in die Hintergründe der Suchmaschine zu bieten.
 
 Die wichtigste Eingabe auf diesem Tab ist das \textbf{Code Snippet}, welches die Suchanfrage bildet.
 Diese wird an die Elasticsearch-Datenbank, welche beim Import von Lösungen mit deren Dateien gefüllt wurde, gestellt.
@@ -558,9 +555,6 @@ Andernfalls wird der Pfad der zuerst geöffneten Datei betrachtet und wie in Bei
 
 Damit das Präfix gefunden werden kann, müssen anhand der eingestellten \acs{id} das Assignment und dessen Classroom-Präfix ermittelt werden.
 Andernfalls kann auch der GitHub-Name und der relative Pfad nicht bestimmt werden.
-Bei erfolgreicher Bestimmung der Lösung wird eine Hinweismeldung angezeigt, die in Abbildung~\ref{fig:fulibFeedback-notification} dargestellt ist und Auskunft über den Titel des Assignments und den Namen des Studierenden\footnote{
-    In der Abbildung wurde dieser erneut durch \texttt{*}-Symbole ersetzt.
-} gibt.
 
 \begin{figure}
     \centering
@@ -568,6 +562,10 @@ Bei erfolgreicher Bestimmung der Lösung wird eine Hinweismeldung angezeigt, die
     \caption{Benachrichtigung nach erfolgreicher Ermittlung von Assignment und Solution}
     \label{fig:fulibFeedback-notification}
 \end{figure}
+
+Bei erfolgreicher Bestimmung der Lösung wird eine Hinweismeldung angezeigt, die in Abbildung~\ref{fig:fulibFeedback-notification} dargestellt ist und Auskunft über den Titel des Assignments und den Namen des Studierenden\footnote{
+    In der Abbildung wurde dieser erneut durch \texttt{*}-Symbole ersetzt.
+} gibt.
 
 \subsection{Auswahl von Codeabschnitten}\label{subsec:choosing-code-snippets}
 
@@ -649,7 +647,6 @@ Stattdessen ist aufgabenspezifisch die Auswahl des Setters sinnvoller, da in die
 
 Bewertungen, bei denen Codeabschnitte hinterlegt wurden, können von fulibFeedback im Editor angezeigt werden.
 Dies ist besonders für Studierende nützlich, die nach der Einrichtung der Erweiterungseinstellungen betrachten können, welche Stellen im Code zu Punktabzügen geführt haben und welche Teilaufgaben betroffen sind.
-Abbildung~\ref{fig:fulibFeedback-negative} zeigt die Markierung im Code sowie den Hilfetext, der beim Hovern über die betroffene Stelle dargestellt wird.
 
 \begin{figure}
     \centering
@@ -658,6 +655,7 @@ Abbildung~\ref{fig:fulibFeedback-negative} zeigt die Markierung im Code sowie de
     \label{fig:fulibFeedback-negative}
 \end{figure}
 
+Abbildung~\ref{fig:fulibFeedback-negative} zeigt die Markierung im Code sowie den Hilfetext, der beim Bewegen des Mauszeigers über die betroffene Stelle dargestellt wird.
 Abhängig von der vergebenen Punktzahl ändert sich die Farbe der gewellten Linie, welche die Markierung ausmacht.
 Wurde die maximale Punktzahl für die Teilaufgabe erreicht, ist die Linie blau.
 Abzüge oder positive Teilaufgaben mit null Punkten färben die Linie rot wie in Abbildung~\ref{fig:fulibFeedback-negative}.

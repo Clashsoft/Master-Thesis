@@ -113,8 +113,8 @@ Diese Vorgehensweise hatte einige erhebliche Nachteile:
     \item Der automatisch erstellte Kommentar enthielt nur die \ac{id} der zuvor ausgewählten Teilaufgaben, aber nicht deren Beschreibung.
     Es kam vor, dass Bewertende versehentlich die falsche Teilaufgabe auswählten und dies nicht bemerkten, bevor die Bewertung erstellt wurde.
     \item Generell erforderte der automatisch erstellte Kommentar einen erheblichen Programmieraufwand seitens des Language Servers.
-    Dies ist der Einschränkung des \ac{lsp} verschuldet, keine Möglichkeit zu bieten, als Teil einer Code Action den Benutzenden des Editors nach einer Eingabe zu fragen. % TODO geht schon, nur nicht ohne weiteres (Commands)
-    Wäre dies möglich, hätten Remark und Punktzahl beispielsweise über ein Prompt-Dialog erfasst werden können.
+    Dies ist der Einschränkung des \ac{lsp} verschuldet, keine direkte Möglichkeit zu bieten, als Teil einer Code Action den Benutzenden des Editors nach einer Eingabe zu fragen.
+    Mit einem Prompt-Dialog wäre es beispielsweise möglich, Remark und Punktzahl zu erfassen.
     Die hinzugefügten Kommentarzeilen erwiesen sich besonders als Problem, indem sie die darunterliegenden Zeilennummern verschoben, obwohl diese für die Hinterlegung von Codeabschnitten und für die Anzeige des Feedbacks auf GitHub relevant sind.
     \item Der Ablauf erlaubte nicht die Auswahl mehrere Codeabschnitte als Teil einer Bewertung in einem Schritt.
     Es war notwendig, zuerst einen Abschnitt auszuwählen, eine Bewertung zu erstellen, einen weiteren Abschnitt auszuwählen, und zuletzt die Bewertung zu bearbeiten.

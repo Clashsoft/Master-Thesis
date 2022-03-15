@@ -85,7 +85,7 @@ Anhand der Search-\ac{api} von GitHub\footnote{
 } wird nach allen Repositories in der angegebenen Organisation gesucht, deren Name mit dem Präfix beginnt.
 Damit private Repositories in der Organisation gefunden werden können, muss ein \textbf{GitHub Token} angegeben werden.
 Der Hilfetext des Eingabefelds gibt Auskunft darüber, wie dieses erstellt werden kann.
-Aus dem Repository-Name ohne Präfix kann der GitHub-Benutzername des Studierenden ermittelt werden, der für die Zuordnung der Lösung verwendet wird.
+Aus dem Repository-Name ohne Präfix kann der GitHub-Anmeldename des Studierenden ermittelt werden, der für die Zuordnung der Lösung verwendet wird.
 In Abschnitt~\ref{subsec:grading} ist ein Beispiel für die entstehende Abgabentabelle sichtbar.
 Weiterhin wird der neueste Commit zum Zeitpunkt des Imports gespeichert, um die Reproduzierbarkeit einer Bewertung zu gewährleisten.
 Insbesondere wird dadurch sichergestellt, dass Studierende ihre Lösungen nicht verfälschen, indem sie Änderungen am Quellcode nach Ablauf der Abgabefrist durchführen oder hochladen.
@@ -217,8 +217,8 @@ Dies wird in Kapitel~\ref{ch:evaluation} näher beleuchtet.
 Begonnen wird in der Tabelle mit allen Abgaben unter dem Tab \textbf{Solutions}.
 Ein Ausschnitt von dieser ist in Abbildung~\ref{fig:assignment-solutions-table} dargestellt.
 In diesem Fall wurden die Lösungen automatisch nach Ablauf der Abgabefrist aus GitHub Classroom importiert.
-Die Tabelle gibt Auskunft über den GitHub-Benutzernamen\footnote{
-    Für diese Abbildung wurden die Benutzernamen durch \texttt{*}-Symbole ersetzt.
+Die Tabelle gibt Auskunft über den GitHub-Anmeldenamen\footnote{
+    Für diese Abbildung wurden die Anmeldenamen durch \texttt{*}-Symbole ersetzt.
 } und das Abgabedatum (\textbf{Submitted}), welches dem letzten Push\footnote{
     Bezeichnet die Aktion der Versionskontroll-Software Git, bei der lokale Commits auf den Remote-Server hochgeladen werden.
 }-Zeitpunkt vor der Frist entspricht.
@@ -267,7 +267,7 @@ Der blaue Button mit eingekreistem Haken wird in einem späteren Abschnitt für 
 Die Detailansicht einer Abgabe öffnet sich nach Klicken des Augen-Buttons in der Abgabetabelle.
 In Abbildung~\ref{fig:solution-head} ist erkennbar, dass auch diese Ansicht in mehrere Tabs aufgeteilt ist, um übersichtlich zu bleiben.
 In der Kopfzeile wird der Name\footnote{
-    In Abbildung~\ref{fig:solution-head} wurde der GitHub-Benutzername erneut durch \texttt{*}-Symbole ersetzt.
+    In Abbildung~\ref{fig:solution-head} wurde der GitHub-Anmeldename erneut durch \texttt{*}-Symbole ersetzt.
 } des Studierenden und die Abgabezeit angezeigt.
 Für die Bewertung ist hauptsächlich der Tab \textbf{Solution \& Tasks} wichtig.
 

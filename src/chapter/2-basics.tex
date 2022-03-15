@@ -226,7 +226,7 @@ Beim Start des Servers wird aus diesem Grund kommuniziert, welche Funktionen bei
     Damit deren Position und Ursprungsdatei gefunden werden können, ist eine sprachabhängige Analyse notwendig, die ein Language Server bereitstellen kann.
     Ist lediglich die Dokumentation der Definition gefragt, kann diese beim Bewegen des Mauszeigers über den Bezeichner angezeigt werden, sofern diese Funktion implementiert wurde.
     \item[Diagnostics.]
-    Meist handelt es sich hierbei um ein passives Feature, das nicht direkt vom Benutzer ausgelöst wird.
+    Meist handelt es sich hierbei um ein passives Feature, das nicht direkt vom Benutzenden ausgelöst wird.
     Es ist hilfreich, während des Schreibens von Code mögliche Syntaxfehler oder andere Probleme direkt rot oder gelb unterstrichen hervorzuheben.
     Ein Language Server kann dies mittels Diagnostics implementieren.
     Im Gegensatz zu anderen Funktionen werden diese asynchron vom Client/Editor angefragt.
@@ -237,7 +237,7 @@ Beim Start des Servers wird aus diesem Grund kommuniziert, welche Funktionen bei
     Eine Aktion kann, wenn sie vom Benutzenden ausgewählt wird, Änderungen am Text oder anderen Dateien durchführen.
     Beispielsweise können dadurch einfache Refactorings wie das Schachteln in einer neuen Schleife implementiert werden.
     % TODO Geht schon mit Commands, aber wirklich notwendig hier?
-    % Nicht möglich ist das Erfragen von weiterem Input des Benutzers.
+    % Nicht möglich ist das Erfragen von weiterem Input des Benutzenden.
     % Dadurch können mit Code Actions keine komplexeren Refactorings wie Umbenennen oder Methode Extrahieren umgesetzt werden.
     % Ersteres hat aus diesem Grund eine eigene Schnittstelle.
 \end{description}

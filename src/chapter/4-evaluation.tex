@@ -293,6 +293,12 @@ Die Effizienz bezeichnet die Zeit, die durch die Verwendung von Code Search gesp
 Die Berechnung erfolgt wie in Abschnitt~\ref{subsec:statistics} beschrieben und wurde den Statistiken entnommen.
 Die notwendige Telemetrie wurde erst ab \ac{ha}7 implementiert, wodurch keine Angaben zu vorherigen Hausaufgaben möglich sind.
 
+Tabelle~\ref{tbl:pm-efficiency} zeigt die Effizienz der \acp{ha} 7 bis 11 im Vergleich.
+Zunächst ist die durchschnittliche \textbf{Zeit pro Bewertung} einer Teilaufgabe angegeben.
+Diese liegt hier zwischen 7 und 10 Sekunden, was darauf hindeutet, dass es sich bei der Bewertung einzelner Teilaufgaben generell nur um einen kurzen Arbeitsschritt handelt, der häufig wiederholt wird.
+Weiterhin ist jeweils die gesamt verstrichene Zeit der \textbf{manuellen} Bewertung sowie die daraus ermittelte, mit \textbf{Code Search} eingesparte Zeit, angegeben.
+Die \textbf{Effizienz} berechnet sich als prozentualer Anteil von Code Search-Zeitersparnis zu Gesamtdauer (Code Search + manuelle Bewertung).
+
 \begin{table}
     \centering
     \caption{Effizienz der \ac{pm}-Hausaufgaben}
@@ -308,11 +314,12 @@ Die notwendige Telemetrie wurde erst ab \ac{ha}7 implementiert, wodurch keine An
     \label{tbl:pm-efficiency}
 \end{table}
 
-Tabelle~\ref{tbl:pm-efficiency} zeigt die Effizienz der \acp{ha} 7 bis 11 im Vergleich.
-Zunächst ist die durchschnittliche \textbf{Zeit pro Bewertung} einer Teilaufgabe angegeben.
-Diese liegt hier zwischen 7 und 10 Sekunden, was darauf hindeutet, dass es sich bei der Bewertung einzelner Teilaufgaben generell nur um einen kurzen Arbeitsschritt handelt, der häufig wiederholt wird.
-Weiterhin ist jeweils die gesamt verstrichene Zeit der \textbf{manuellen} Bewertung sowie die daraus ermittelte, mit \textbf{Code Search} eingesparte Zeit, angegeben.
-Die \textbf{Effizienz} berechnet sich als prozentualer Anteil von Code Search-Zeitersparnis zu Gesamtdauer (Code Search + manuelle Bewertung).
+Bei diesen Werten ist zu beachten, dass sie nur die Zeit verzeichnen, die im Bewertungsfenster verbracht wurde.
+Nicht einbezogen ist die Zeit, die beim Clonen und Öffnen der Lösung, Ausführen von Tests, Ausprobieren der Anwendung oder sonstigen Aktivitäten bei der Bewertung verbracht wird.
+Aus diesem Grund wurde von einem Bewertenden mithilfe des Werkzeugs Wakatime\footnote{
+    \url{https://wakatime.com/}
+} für jede Lösung gemessen, wie lange diese im Editor geöffnet war.
+Tabelle~\ref{tbl:pm-overhead} zeigt die dabei entstanden Messwerte für \acp{ha} 7 bis 11, für die jeweils zehn bis 18 Lösungen von diesem Bewertenden betrachtet wurden.
 
 \begin{table}
     \centering
@@ -330,12 +337,11 @@ Die \textbf{Effizienz} berechnet sich als prozentualer Anteil von Code Search-Ze
     \label{tbl:pm-overhead}
 \end{table}
 
-Bei diesen Werten ist zu beachten, dass sie nur die Zeit verzeichnen, die im Bewertungsfenster verbracht wurde.
-Nicht einbezogen ist die Zeit, die beim Clonen und Öffnen der Lösung, Ausführen von Tests, Ausprobieren der Anwendung oder sonstigen Aktivitäten bei der Bewertung verbracht wird.
-Aus diesem Grund wurde von einem Bewertenden mithilfe des Werkzeugs Wakatime\footnote{
-    \url{https://wakatime.com/}
-} für jede Lösung gemessen, wie lange diese im Editor geöffnet war.
-Tabelle~\ref{tbl:pm-overhead} zeigt die dabei entstanden Messwerte für \acp{ha} 7 bis 11, für die jeweils zehn bis 18 Lösungen von diesem Bewertenden betrachtet wurden.
+Tabelle~\ref{tbl:pm-adapted-efficiency} wiederholt die \textbf{Gesamtzeit} aus Tabelle~\ref{tbl:pm-overhead} und gibt an, wie viel Zeit die Person im Bewertungsfenster verbracht hat (\textbf{Bewertet}).
+Die Division beider Werte ergibt jeweils den \textbf{Faktor}, der eine Hochrechnung auf alle Bewertenden ermöglicht.
+Mithilfe der Formel~\ref{eqn:adapted-efficiency} kann schließlich die \textbf{angepasste Effizienz} berechnet werden.
+Sie repräsentiert die Effizienz von Code Search unter Beachtung des zusätzlichen Zeitaufwands.
+Die Werte $t_{Code Search}$ und $t_{Manuell}$ entstammen der Tabelle~\ref{tbl:pm-efficiency}.
 
 \begin{table}
     \centering
@@ -351,12 +357,6 @@ Tabelle~\ref{tbl:pm-overhead} zeigt die dabei entstanden Messwerte für \acp{ha}
     \end{tabular}
     \label{tbl:pm-adapted-efficiency}
 \end{table}
-
-Tabelle~\ref{tbl:pm-adapted-efficiency} wiederholt die \textbf{Gesamtzeit} aus Tabelle~\ref{tbl:pm-overhead} und gibt an, wie viel Zeit die Person im Bewertungsfenster verbracht hat (\textbf{Bewertet}).
-Die Division beider Werte ergibt jeweils den \textbf{Faktor}, der eine Hochrechnung auf alle Bewertenden ermöglicht.
-Mithilfe der Formel~\ref{eqn:adapted-efficiency} kann schließlich die \textbf{angepasste Effizienz} berechnet werden.
-Sie repräsentiert die Effizienz von Code Search unter Beachtung des zusätzlichen Zeitaufwands.
-Die Werte $t_{Code Search}$ und $t_{Manuell}$ entstammen der Tabelle~\ref{tbl:pm-efficiency}.
 
 \begin{equation}\label{eqn:adapted-efficiency}
     Effizienz_{angepasst} = \frac{t_{Code Search}}{t_{Code Search} + Faktor \cdot t_{Manuell}}

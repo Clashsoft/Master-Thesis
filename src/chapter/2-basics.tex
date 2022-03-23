@@ -120,7 +120,7 @@ Die Webseite besteht aus einigen unabhängigen Modulen, die nachfolgend kurz bes
 
 \begin{description}
     \item[Scenarios.]
-    Das erste Modul der Anwendung ist ein interaktiver Editor für die fulibScenarios-Sprache aus \textit{Explaining Business Process Software with Fulib-Scenarios}~\cite{explain}.
+    Das erste Modul von fulib.org ist ein interaktiver Editor für die fulibScenarios-Sprache aus \textit{Explaining Business Process Software with Fulib-Scenarios}~\cite{explain}.
     Diese besteht aus textuellen Beispielszenarien, die einer festen Grammatik folgen.
     Ein Compiler übersetzt die Szenarien in Java-Code und generiert dabei Klassen für ein Datenmodell mit der fulib-Bibliothek\footnote{\url{https://github.com/fujaba/fulib}}.
     In~\cite{bachelor-thesis} wurde erstmals eine Erweiterung der Sprache umgesetzt, die gezielt die Bewertung von Aufgaben ermöglichen sollte.
@@ -128,7 +128,7 @@ Die Webseite besteht aus einigen unabhängigen Modulen, die nachfolgend kurz bes
     Nachfolgend werden die Szenario-Sprache und der Editor nicht weiter betrachtet.
     \item[Docs.]
     In diesem Modul kann die Dokumentation für verwandte Werkzeuge aus dem fulib-Toolkit nachgelesen werden.
-    Diese wird direkt von den jeweiligen GitHub-Repositories bezogen, ist also nicht Teil der Webanwendung selber.
+    Die Inhalte werden direkt von den jeweiligen GitHub-Repositories der Werkzeuge bezogen und können unabhängig von der Webanwendung aktualisiert werden.
     \item[Projects.]
     Dieser Teil der Webanwendung ist ein Prototyp für eine Online-\ac{ide}.
     Dort können Projekte erstellt werden, die im Gegensatz zum Szenario-Editor mehrere Dateien umfassen können.
@@ -254,7 +254,7 @@ Diese sind jedoch im Folgenden nicht relevant und werden daher nicht weiter erl�
 
 Die Textsuche basiert in großen Teilen auf der quelloffenenen Java-Bibliothek Lucene\footnote{\url{https://lucene.apache.org/}} der Apache Foundation~\cite{elastic-and-lucene}.
 Elasticsearch implementiert Teile der Textanalyse, Indexierung, Suche, und Highlighting mit Lucene.
-Diese werden nachfolgend detailliert beschrieben.
+Diese werden nachfolgend beschrieben.
 
 \subsubsection{Analyse}
 Die Analyse von Textdaten umfasst im Fall von natürlicher Sprache zwei Schritte, die Tokenisierung und Normalisierung.

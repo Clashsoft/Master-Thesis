@@ -4,25 +4,25 @@ Die Bewertung von Programmieraufgaben in einer Lehrveranstaltung mit vielen Teil
 Abhängig von der Aufgabenstellung müssen viele Zeilen Quellcode gelesen und verstanden werden, um akkurat die Richtigkeit einzuschätzen.
 Die Arbeit der Bewertenden ist meist repetitiv und kann zu Flüchtigkeitsfehlern führen, wodurch Studierende möglicherweise nicht auf Fehler hingewiesen werden und eine Lerngelegenheit versäumen.
 Alle Studierenden bearbeiten jedoch die gleiche Aufgabenstellung.
-Folglich sollte es naheliegen, dass auch ähnliche Lösungen entstehen.
+Folglich liegt es nahe, dass auch ähnliche Lösungen entstehen.
 Die vorliegende Arbeit beabsichtigt, dieses Phänomen zu untersuchen und durch Automatisierung die Bewertenden zu entlasten.
 Sie stellt Werkzeuge vor, die für diesen Anwendungszweck entwickelt wurden und bei der Bewertung gemäß der Zielsetzung (Abschnitt~\ref{sec:goals}) unterstützen sollen.
 Um einen breiteren Kontext zu schaffen, werden in Abschnitt~\ref{sec:related-work} verwandte Arbeiten diskutiert.
 Die wissenschaftlichen Ziele werden in Abschnitt~\ref{sec:research-questions} anhand von \acp{rq} gesetzt.
-Zuletzt gibt Abschnitt~\ref{sec:structure} einen tieferen Einblick in die Struktur dieser Arbeit.
+Anschließend gibt Abschnitt~\ref{sec:structure} einen tieferen Einblick in die Struktur dieser Arbeit.
 
 \section{Zielsetzung}\label{sec:goals}
 
-Diese Arbeit verfolgt das allgemeine Ziel, Software-Werkzeuge zu entwickeln, die bei der Bewertung von Programmieraufgaben unterstützt.
+Diese Arbeit verfolgt das allgemeine Ziel, Software-Werkzeuge zu entwickeln, die bei der Bewertung von Programmieraufgaben unterstützen.
 Nachfolgend werden einige Aspekte beschrieben, die darüber hinaus angestrebt werden.
 
 \begin{description}
     \item[Optionale Benutzung und Integration bestehender Vorgänge.]
     Die Software soll bestehende Abläufe ergänzen und optional anwendbar sein.
-    Insbesondere umfasst dies, dass Studierende die Software nicht für die Abgabe verwenden müssen.
+    Insbesondere umfasst dies, dass Studierende die Software nicht für die Abgabe von Lösungen verwenden müssen.
     Bewertungen sollen in einem Format eingereicht werden können, welches auch ohne die Werkzeuge verfügbar ist.
     Beispielsweise soll die Verwendung von GitHub Classroom als Abgabemechanismus und GitHub Issues als Format für Feedback unterstützt werden.
-    In anderen Worten sollen die Werkzeuge eine Integration für diese bestehenden Technologien bieten.
+    Folglich sollen die Werkzeuge eine Integration für diese bestehenden Technologien bieten.
     \item[Nachvollziehbarkeit.]
     Die Software soll die Konzepte Hausaufgaben, Teilaufgaben, Abgaben \ac{bzw} Lösungen und Bewertungen von Teilaufgaben trennen, sodass eine Gesamtbewertung ermöglicht wird.
     Sowohl Gesamtpunktzahl als auch deren Zusammensetzung aus einzelnen Teilpunkten sollen aufgezeichnet werden.
@@ -44,10 +44,10 @@ Mit der automatischen Bewertung wurden Vorteile wie "Geschwindigkeit, Verfügbar
     Übersetzt aus dem Englischen: "speed, availability, consistency and objectivity".
 }, ferner sogar die "Unmöglichkeit, ausführliche, gültige, verlässliche Bewertung ohne [Software-Hilfsmittel bereitzustellen]"~\cite{kay-1994}\footnote{
     Übersetzt aus dem Englischen: "impossibility of thorough, valid, reliable assessment without [software tools]".
-}, festgestellt.
+}, erkannt.
 Eine gängige Vorgehensweise ist es, die abgegebenen Programme mit bestimmten Eingaben auszuführen und die entstehenden Ausgaben zu überprüfen.
 In dieser Arbeit wird stattdessen ein Ansatz der textorientierten Suche vorgeschlagen.
-Dieser wurde bisher hauptsächlich für das Finden von Plagiaten eingesetzt~\cite{aiken-2002,prechelt-2003}.
+Dieser wurde bereits für das Finden von Plagiaten eingesetzt~\cite{aiken-2002,prechelt-2003}.
 
 \section{Forschungsfragen}\label{sec:research-questions}
 
@@ -57,7 +57,7 @@ Die folgenden vier Forschungsfragen sollen als Leitfaden für diese Arbeit diene
 \subsection[\acs{rq}1]{\ac{rq}1: Kann die Bewertung von Programmieraufgaben sinnvoll automatisiert werden?}\label{subsec:rq1-useful-automation}
 
 Wie eingangs erwähnt, bietet sich die Automatisierung der Bewertung von Programmieraufgaben bei vielen Studierenden mit ähnlichen Lösungen an.
-Dies setzt voraus, dass eine einheitliche Aufgabenstellung vorhanden ist, wie es bei Hausaufgaben in Lehrveranstaltungen, nicht aber bei Projekten der Fall ist.
+Dies setzt voraus, dass eine einheitliche Aufgabenstellung vorhanden ist, wie es bei Hausaufgaben in Lehrveranstaltungen, nicht aber bei Projekten, der Fall ist.
 Mit dieser Frage soll erforscht werden, ob und welche Arten von Aufgaben besonders für die automatische Bewertung geeignet sind.
 
 \subsection[\acs{rq}2]{\ac{rq}2: Welcher Mehraufwand wird für die automatisierte Bewertung benötigt?}\label{subsec:rq2-additional-effort}

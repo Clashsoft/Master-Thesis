@@ -111,18 +111,21 @@ Diese Vorgehensweise hatte einige erhebliche Nachteile:
     Beispielsweise fehlen in Abbildung~\ref{fig:fulibFeedback-old-menu} die Teilaufgaben für die Klassen \code{Game} und \code{Player}\footnote{
         Es handelt sich bei diesen Screenshots um das Assignment von \ac{ha}3, welches in Abschnitt~\ref{subsec:creating-assignments} eingerichtet wurde.
     }.
-    Dies war nur möglich, wenn bestimmte Wörter in der Task-Beschreibung in \verb|``| gesetzt wurden, was zusätzlichen Aufwand erforderte und nicht immer eine sinnvolle Filterung ermöglichte.
+    Dies war nur möglich, wenn bestimmte Wörter in der Task-Beschreibung in Backticks (\verb|``|) gesetzt wurden.
+    Es entstand zusätzlicher Aufwand, der jedoch nicht immer eine sinnvolle Filterung ermöglichte.
     \item Der automatisch erstellte Kommentar enthielt nur die \ac{id} der zuvor ausgewählten Teilaufgaben, aber nicht deren Beschreibung.
     Es kam vor, dass Bewertende versehentlich die falsche Teilaufgabe auswählten und dies nicht bemerkten, bevor die Bewertung erstellt wurde.
     \item Generell erforderte der automatisch erstellte Kommentar einen erheblichen Programmieraufwand seitens des Language Servers.
     Dies ist der Einschränkung des \ac{lsp} verschuldet, keine direkte Möglichkeit zu bieten, als Teil einer Code Action den Benutzenden des Editors nach einer Eingabe zu fragen.
     Mit einem Prompt-Dialog wäre es beispielsweise möglich, Remark und Punktzahl zu erfassen.
     Die hinzugefügten Kommentarzeilen erwiesen sich besonders als Problem, indem sie die darunterliegenden Zeilennummern verschoben, obwohl diese für die Hinterlegung von Codeabschnitten und für die Anzeige des Feedbacks auf GitHub relevant sind.
-    \item Der Ablauf erlaubte nicht die Auswahl mehrere Codeabschnitte als Teil einer Bewertung in einem Schritt.
+    \item Der Ablauf erlaubte nicht die Auswahl mehrerer Codeabschnitte als Teil einer Bewertung in einem Schritt.
     Es war notwendig, zuerst einen Abschnitt auszuwählen, eine Bewertung zu erstellen, einen weiteren Abschnitt auszuwählen, und zuletzt die Bewertung zu bearbeiten.
     Dies erforderte erheblichen Aufwand bei der korrekten Implementierung von Code Search.
     Bewertungen von anderen Lösungen, die anhand des ersten Codeabschnitts automatisch erstellt wurden, mussten wieder angepasst oder gelöscht werden, falls der zweite Codeabschnitt in der anderen Lösung nicht mehr gefunden wurde.
-    Damit verbundene Probleme haben sich besonders in \ac{ha}3 von \ac{pm} manifestiert.
+    Damit verbundene Probleme haben sich besonders in \ac{ha}3 von \ac{pm} manifestiert\footnote{
+        \url{https://github.com/fujaba/fulib.org/issues/196\#issuecomment-981629981}
+    }.
 \end{itemize}
 
 Generell erwies sich diese Art der Bewertung als sehr umständlich für die Bewertenden.
@@ -135,13 +138,15 @@ Die Einführung des neuen Ablaufs aus Abschnitt~\ref{subsec:choosing-code-snippe
 
 Die Bewertung einer großen Anzahl von Studierenden kann dazu führen, dass auch die Bewertenden Fehler machen.
 Dies hat sich während der Evaluationsphase in \ac{pm} zunehmend gezeigt und besonders bemerkbar gemacht, da fehlerhafte Bewertungen von einem Bewertenden auf Abgaben eines anderen von Code Search übertragen wurden.
-Bei groben Fehlern führte dies dazu, dass vermeintlich bewertete Teilaufgaben nochmal überprüft werden mussten, was zusätzlichen Zeitaufwand erforderte.
+Bei groben Fehlern führte dies dazu, dass vermeintlich bewertete Teilaufgaben nochmal überprüft werden mussten, wodurch zusätzlicher Zeitaufwand entstand.
 Das Problem betraf besonders \ac{ha}7 von \ac{pm}\footnote{
     \url{https://github.com/fujaba/fulib.org/issues/196\#issuecomment-1022086613}
 }.
-Hauptursache war die Auswahl von Codeabschnitten, welche nicht eindeutig waren und unzureichenden Kontexts enthielten.
+Hauptursache war die Auswahl von Codeabschnitten, welche nicht eindeutig waren und unzureichenden Kontext enthielten.
 Aus diesem Grund wurden die in Abschnitt~\ref{subsec:choosing-code-snippets}, Abbildungen~\ref{fig:fulibFeedback-snippet-bad} und~\ref{fig:fulibFeedback-snippet-worst} dargestellten Informationstexte eingefügt, welche die Anzahl der von Code Search gefundenen Ergebnisse anzeigen und die Spezifität der Codeabschnitte einschätzen.
-Dies erwies sich als nützlich genug, um die Benutzungsfehler zu reduzieren.
+Dies erwies sich als nützlich genug, um die Benutzungsfehler zu reduzieren\footnote{
+    \url{https://github.com/fujaba/fulib.org/issues/196\#issuecomment-1025851695}
+}.
 Da es sich nur um eine Hilfestellung handelt, können erfahrene Benutzende dennoch Code auswählen, der nicht eindeutig ist, sofern dies als akzeptabel befunden wird.
 
 \subsubsection{Verbesserung der Bedienbarkeit}
@@ -206,7 +211,7 @@ Außerdem sind Teilaufgaben mit Unteraufgaben ausgenommen, da diese nur der Stru
     Ausnahme beispielsweise wenn die Aufgabe nicht bearbeitet wurde.
 } nicht bewertet werden.
 Folglich beschreibt diese Zahl die notwendigen Schritte zur Bewertung einer durchschnittlichen Abgabe, bei der alle Aufgaben bearbeitet wurden und keine groben Fehler vorhanden sind.
-Die Anzahl der Teilaufgaben zur Bewertung orientiert sich grob an der Punktzahl und ist stets kleiner oder gleich.
+Die Anzahl der Teilaufgaben zur Bewertung orientiert sich an der Punktzahl und ist stets kleiner oder gleich.
 Differenzen entstehen, wenn in Teilaufgaben mehr als ein Punkt erreichbar ist.
 In der Spalte \textbf{Link} sind jeweils die Assignments auf fulib.org referenziert, aus deren Statistiken alle Werte dieser und folgender Tabellen übernommen wurden.
 
@@ -264,7 +269,7 @@ Die Anzahl der \textbf{Benutzenden} gibt an, wie viele Bewertende in jeder Woche
 
 Die Effektivität von Code Search beschreibt den prozentualen Anteil der Bewertungen, die automatisch erstellt wurden.
 Tabelle~\ref{tbl:pm-effectiveness} zeigt für jede Hausaufgabe (\textbf{\acs{ha}}) die Anzahl der Bewertungen von \textbf{manuell} Bewertenden und von \textbf{Code Search}.
-Die spezielle Kategorie der automatisch erstellten Bewertungen, die später \textbf{bearbeitet} wurden, ist der Vollständigkeit auch aufgeführt.
+Die spezielle Kategorie der automatisch erstellten Bewertungen, die später \textbf{bearbeitet} wurden, ist zur Vollständigkeit aufgeführt.
 Meist sind dort nur sehr wenige Bewertungen verzeichnet, da die Bearbeitung selten notwendig war.
 In wenigen Fällen sind durch Benutzungsfehler mit Code Search jedoch Bewertungen entstanden, die nicht zutreffend waren und deshalb angepasst wurden.
 Die drei Kategorien werden in der Spalte \textbf{Gesamt} summiert, sodass die \textbf{Effektivität} als Anteil von Code Search zu Gesamtanzahl berechnet werden kann.
@@ -277,19 +282,19 @@ Gegen Ende der Veranstaltung reduzierte sich die Anzahl der Teilnehmenden durch 
 Besonderheiten sind zunächst bei den \acp{ha} 1, 2 und 5 erkennbar, da Code Search bei diesen keine Bewertungen vorgenommen hat.
 Die ersten beiden Hausaufgaben enthielten keine Programmieraufgaben, wodurch Code Search keine Verwendung hatte.
 In \ac{ha}5 wurden Wireframes angefertigt, die ebenfalls keinen Code umfassen.
-Weiterhin wurden dort Tests und Implementierung nach dem Test-First-Prinzip entwickelt, was zu hohen Varianzen des entstandenen Codes geführt hat.
+Weiterhin wurden dort Tests und Implementierung nach dem Test-First-Prinzip entwickelt, welche hohen Varianzen des entstandenen Codes erlaubten.
 Somit hätte die Verwendung von Code Search zu Mehraufwand geführt und wurde unterlassen.
 
 Die beste Effektivität wurde mit 88\% in \ac{ha}4 erreicht (Tabelle~\ref{tbl:pm-effectiveness}).
-Der Grund dafür ist die Vielzahl von Teilaufgaben, bei denen mit fulib das Datenmodell generiert wurde.
+Der Grund dafür ist die Vielzahl von Teilaufgaben, bei denen das Datenmodell mit fulib generiert wurde.
 Dabei kam eine deklarative und kompakte Beschreibung der Attribute und Assoziationen zum Einsatz, die aufgrund der vorgegebenen Namen kaum individuelle Variationen erlaubte.
 Der zweite Teil der Aufgabe bestand aus der Implementierung der initialen Spielsituation und zugehörigen Tests.
-Ein Teil der Punkte dafür war in zwei Teilaufgaben angesiedelt, die hauptsächlich händisch bewertet wurden.
+Ein Teil der Punkte dafür war in zwei Teilaufgaben angesiedelt, die hauptsächlich manuell bewertet wurden.
 Die verbleibenden Punkte konnten aufgrund von strikten Vorgaben ebenfalls automatisch bewertet werden.
 
 \subsubsection{Effizienz}
 
-Die Effizienz bezeichnet die Zeit, die durch die Verwendung von Code Search gespart werden kann.
+Die Effizienz bezeichnet die Zeit, die durch die Verwendung von Code Search eingespart werden kann.
 Die Berechnung erfolgt wie in Abschnitt~\ref{subsec:statistics} beschrieben und wurde den Statistiken entnommen.
 Die notwendige Telemetrie wurde erst ab \ac{ha}7 implementiert, wodurch keine Angaben zu vorherigen Hausaufgaben möglich sind.
 
@@ -367,13 +372,13 @@ Die Werte $t_{Code Search}$ und $t_{Manuell}$ entstammen der Tabelle~\ref{tbl:pm
 Im Verlauf des Übungsbetriebs von \ac{pm} wurde deutlich, dass einige Anpassungen an der Aufgabenstellung zu besseren Ergebnissen mit Code Search führen können.
 Es liegt nahe, dass die exakte Suche von Code Search genau dann weniger Ergebnisse erzielt, wenn Studierende eine große Vielfalt von unterschiedlichem Code abgeben.
 Folglich kann die Effektivität gesteigert werden, wenn die Aufgabenstellung zur Abgabe von weniger unterschiedlichem Code verleitet.
-In diesem Abschnitt werden einige Möglichkeiten zur Optimierung, die in der Veranstaltung ausprobiert wurden und sich ergeben haben, beschrieben.
+In diesem Abschnitt werden einige Möglichkeiten zur Optimierung beschrieben, die in der Veranstaltung ausprobiert wurden.
 Dafür ist es zunächst sinnvoll, einige Kategorien zu definieren, in denen Varianten von Quellcode fallen können, welche die Effektivität von Code Search verringern.
 
 \begin{description}
     \item[Einrückung und sonstige Formatierung.]
     Dies umfasst die Einrückung von Quellcode mit Tabs oder Leerzeichen sowie die sonstige Platzierung von Leerzeichen um Klammern, Symbole und Bezeichner.
-    Sie kann sich abhängig von den Einstellungen der \ac{ide}, mit der die Lösung verfasst wurde, unterscheiden.
+    Sie kann sich abhängig von den Einstellungen der \ac{ide}, mit der die Lösung verfasst und formatiert wurde, unterscheiden.
     \item[Kommentare.]
     Kommentare verhalten sich ähnlich wie Leerzeichen und Einrückung insofern, dass sie keinen Einfluss auf die Semantik von Quellcode haben.
     Es liegt nahe, sie bei der Textsuche zu ignorieren.
@@ -381,12 +386,12 @@ Dafür ist es zunächst sinnvoll, einige Kategorien zu definieren, in denen Vari
     Eine naheliegende Ursache von Varianten ist die unterschiedliche Benennung von Bezeichnern.
     Dies umfasst Klassen, Attribute, Methoden, Parameter und lokale Variablen.
     Die Benennung folgt meist einem bestimmten Muster abhängig vom Typ:
-    \code{int}-Variablen werden häufig mit Buchstaben wie \code{i}, \code{j}, \code{x} oder \code{n} benannt.
+    Einfache \code{int}-Variablen werden oft mit Buchstaben wie \code{i}, \code{j}, \code{x} oder \code{n} benannt.
     \code{String}s werden häufig nach ihrer Rolle benannt, beispielsweise \code{name}, \code{phase}, seltener generisch wie \code{x} oder \code{value}\footnote{
         Bei einer Analyse der Methode \code{setPhase(String)} aus Aufgabenblatt 3 ergab sich folgende Verteilung des Parameternamens:
         112 mal \code{phase}, zwei mal \code{value}, je ein mal \code{newPhase}, \code{phrase}\sic, \code{sus} und \code{x}.\label{fn:setPhase}
     }.
-    Objekte folgen häufig dem gleichen Muster der Benennung nach ihrer Rolle, seltener und in eindeutigen Fällen nach ihrem Typ\footnote{
+    Objekte folgen meist dem gleichen Muster der Benennung nach ihrer Rolle, seltener und in eindeutigen Fällen nach ihrem Typ\footnote{
         Der Parameter der Methode \code{setWinner(Player)} aus Aufgabenblatt 3 wurde wie folgt benannt:
         94 mal \code{winner}, elf mal \code{player}, vier mal \code{value}, drei mal \code{newWinner}, je ein mal \code{p}, \code{sus}, \code{winnePlayer}\sic und \code{x}.\label{fn:setWinner}
     }.
@@ -402,12 +407,12 @@ Dafür ist es zunächst sinnvoll, einige Kategorien zu definieren, in denen Vari
 Das Problem der unterschiedlichen Einrückung und Formatierung wird bereits von Code Search gelöst, indem die Tokenisierung sämtliche Leerzeichen ignoriert und nicht in die Suche einbezieht.
 Kommentare werden hingegen nicht ignoriert, da sie bei einigen Hausaufgaben hilfreich für die Einschränkung von Code Search durch Kontext waren.
 Darüber hinaus haben einige Aufgabenblätter (\acp{ha} 7, 8, 10 und 11) verlangt, dass besondere \code{TODO}-Kommentare entfernt werden.
-Dies wäre mit Code Search nicht prüfbar gewesen, wenn die Kommentare wie Leerzeichen behandelt worden wären.
+Dies wäre mit Code Search nicht prüfbar, wenn die Kommentare wie Leerzeichen behandelt werden.
 
 Die Benennung kann durch Angaben in der Aufgabenstellung standardisiert werden.
 In den Programmieraufgaben der Veranstaltung waren das Datenmodell und Methodennamen vorgegeben, wodurch primär Parameter und lokale Variablen unterschiedlich benannt wurden.
 Es hat sich gezeigt, dass die meisten Studierenden ähnliche Strategien zur Namensgebung verfolgen\footref{fn:setPhase}~\footref{fn:setWinner} und dadurch die Effektivität nur geringfügig beeinflusst wird.
-Sonstige Bezeichner, beispielsweise \acp{id} von Oberflächenelementen, wurden in den Hausaufgaben 4, 6 und 9 vorgegeben.
+Sonstige Bezeichner, beispielsweise \acp{id} von Oberflächenelementen, wurden in den \acp{ha} 4, 6 und 9 vorgegeben.
 Die zuvor in Abschnitt~\ref{subsec:pm-metrics} betrachtete Metrik für diese Hausaufgaben deutet darauf hin, dass das Vorgeben von Bezeichnern mit besserer Code Search-Effektivität verbunden ist.
 
 Für die Strukturierung hat sich im Verlauf der Veranstaltung eine unbeabsichtigte Lösung ergeben.
@@ -450,7 +455,7 @@ Abschnitt~\ref{subsec:algods-metrics} stellt zuletzt die Ergebnisse in Form von 
 \subsection{Vorbereitungen}\label{subsec:algods-preparations}
 
 Die Mechanismen für Abgabe und Feedback in \ac{algods} unterscheiden sich stark von denen, die in \ac{pm} verwendet werden.
-Statt GitHub Classroom wird ein eigenes Abgabesystem verwendet, in dem Studierende ihre Lösungen als Archive verpackt einmalig hochladen.
+Statt GitHub Classroom wird ein eigenes Abgabesystem verwendet, in dem Studierende ihre Lösungen als Archivdateien verpackt hochladen.
 Bewertende können sich eine zufällige Auswahl von Lösungen vom System zuweisen lassen und sie für die Bewertung herunterladen.
 Ist diese abgeschlossen, wird Feedback per Email an die Studierenden vermittelt.
 Um diesen Ablauf zu unterstützen, wurden einige Erweiterungen an fulib.org vorgenommen.
@@ -470,7 +475,7 @@ Das Versenden von Feedback erfolgt schließlich über den Button \textbf{Draft M
 \subsection{Metriken}\label{subsec:algods-metrics}
 
 Während der nachträglichen Bewertung dieser Hausaufgaben war noch nicht die Telemetrie vorhanden, die für die Bestimmung der Effizienz notwendig ist.
-Aus diesem Grund wird nachfolgend nur die Effektivität von Code Search bestimmt.
+Aus diesem Grund wird nachfolgend nur die Effektivität von Code Search ermittelt.
 Weiterhin wurde darauf verzichtet, Teilaufgaben zu bewerten, deren Lösung nicht aus Quellcode bestand.
 Die dafür notwendigen Bewertungen wurden dennoch in der Gesamtsumme verrechnet, um einen genäherten Wert der tatsächlich erreichbaren Effektivität zu berechnen.
 
@@ -509,7 +514,7 @@ Dies schränkt übergreifend die Effektivität von Code Search ein.
     \begin{tabular}{|l|l|l|l|l|l|l|l|}
     \hline
         ~ & \multicolumn{5}{c|}{Bewertungen} & ~ & ~ \\
-        \acs{ha} & Händisch & Code Search & Bearbeitet & Übersprungen & Gesamt & Effektivität & Link \\ \hline
+        \acs{ha} & Manuell & Code Search & Bearbeitet & Übersprungen & Gesamt & Effektivität & Link \\ \hline
         1  & 199 & 438 & 1 & 408 & 1046 & 42\% & \footnotemark[1] \\ \hline
         6  & 165 & 482 & 0 & 120 &  767 & 63\% & \footnotemark[2] \\ \hline
         11 &  62 &  10 & 0 & 126 &  198 & 5\% & \footnotemark[3] \\ \hline
@@ -522,11 +527,11 @@ Dies schränkt übergreifend die Effektivität von Code Search ein.
 \renewcommand{\thefootnote}{\arabic{footnote}}
 
 Tabelle~\ref{tbl:algods-effectiveness} zeigt die Anzahl der Bewertungen für jede Hausaufgabe und die daraus ermittelte Effektivität.
-Bewertungen sind aufgeteilt in die Kategorien \textbf{Händisch}, \textbf{Code Search}, \textbf{Bearbeitet} (von Code Search erstellt und händisch angepasst) und \textbf{Übersprungen} (berechnet aus übersprungenen Teilaufgaben mal betrachtete Abgaben).
+Bewertungen sind aufgeteilt in die Kategorien \textbf{Manuell}, \textbf{Code Search}, \textbf{Bearbeitet} (von Code Search erstellt und händisch angepasst) und \textbf{Übersprungen} (berechnet aus übersprungenen Teilaufgaben mal betrachtete Abgaben).
 Die \textbf{Effektivität} wird als Anteil von Code Search zur Gesamtanzahl berechnet.
 In der Spalte \textbf{Link} werden die Assignments auf fulib.org angegeben, von denen die Werte stammen.
 
-Bei \ac{ha}1 und \ac{ha}6 sind mit 40\% bis 60\% ähnlich gute Ergebnisse der Effektivität zu verzeichnen wie in verschiedenen \ac{pm}-Hausaufgaben.
+Bei \ac{ha}1 und \ac{ha}6 sind mit 42\% und 63\% ähnlich gute Ergebnisse der Effektivität zu verzeichnen wie in verschiedenen \ac{pm}-Hausaufgaben.
 \ac{ha}11 stellt mit der sehr niedrigen Effektivität von 5\% eine Besonderheit dar.
 Die beiden betrachteten Aufgaben erlaubten große Unterschiede bei der Implementierung, wodurch nur wenige Lösungen ähnlich waren.
 Darüber hinaus verursachen die sieben von elf Teilaufgaben, die keine Programmieraufgaben waren und daher übersprungen wurden, mit 63\% der Bewertungen eine zusätzliche Reduzierung der Effektivität.

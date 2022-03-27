@@ -497,7 +497,7 @@ Die Bewertung von Quellcode auf fulib.org ist zwar möglich, kann aber toolgest�
 Dafür wurde die \ac{vsc}-Erweiterung fulibFeedback entwickelt, die in diesem Abschnitt vorgestellt wird.
 Die Erweiterung hat nur eine geringfügige Oberfläche und ist hauptsächlich im Hintergrund tätig.
 Nachfolgend wird die Benutzung in der Reihenfolge beschrieben, wie sie für Betreuende und Studierende chronologisch abläuft:
-Installation, Einrichtung, Auswahl von Codeabschnitten zur Bewertung, und Darstellung von Bewertungen für Studierende.
+Installation, Einrichtung, Auswahl von Codeabschnitten zur Bewertung und Darstellung von Bewertungen für Studierende.
 Daraufhin wird ein kurzer Einblick in die technische Umsetzung der Erweiterung geboten.
 
 \subsection{Installation}
@@ -522,10 +522,11 @@ Abbildung~\ref{fig:fulibFeedback-settings} zeigt den Abschnitt von fulibFeedback
 Einmalig müssen Bewertende hier ihren Namen unter \textbf{User Name} eingeben.
 Dies dient der Zuordnung von ausgewählten Codeabschnitten im weiteren Verlauf.
 Für jede Hausaufgabe müssen die \textbf{\acs{id}} und \textbf{Token} des zugehörigen Assignments angegeben werden.
-Studierende haben nicht das Token des Assignments, dafür jedoch eine Solution mit einer \textbf{\acs{id}} und zugehörigem \textbf{Token}.
+Studierende müssen statt Assignment-Token eine Solution mit einer \textbf{\acs{id}} und zugehörigem \textbf{Token} angeben.
+Diese können der Fußzeile des Feedbacks entnommen werden.
 Der \textbf{\acs{api} Server} kann für Entwicklungszwecke geändert werden.
 
-Um die Einrichtung zu beschleunigen, müssen diese Einstellung \ac{idR} nicht von Hand getätigt werden.
+Um die Einrichtung zu beschleunigen, müssen die Einstellungen \ac{idR} nicht von Hand getätigt werden.
 Es genügt, die \textbf{Configure}-Buttons unter den \textbf{Sharing}-Tabs von Assignment\footnote{
     Siehe Abbildung~\ref{fig:assignment-share}.
 } oder Solution\footnote{
@@ -553,7 +554,7 @@ Andernfalls wird der Pfad der zuerst geöffneten Datei betrachtet und wie in Bei
 \end{equation}
 
 Damit das Präfix gefunden werden kann, müssen anhand der eingestellten \acs{id} das Assignment und dessen Classroom-Präfix ermittelt werden.
-Andernfalls kann auch der GitHub-Name und der relative Pfad nicht bestimmt werden.
+Andernfalls können der GitHub-Name und der relative Pfad nicht bestimmt werden.
 
 \begin{figure}
     \centering
@@ -568,9 +569,10 @@ Bei erfolgreicher Bestimmung der Lösung wird eine Hinweismeldung angezeigt, die
 
 \subsection{Auswahl von Codeabschnitten}\label{subsec:choosing-code-snippets}
 
-Die wichtigste Funktion von fulibFeedback für Bewertende ist die Auswahl von Codeabschnitten.
-Auswahl bezeichnet hier die Aktion, die mit Maus oder Tastatur in gewöhnlichen Texteditoren durchgeführt wird, um beispielsweise Text zum Kopieren zu markieren.
-fulibFeedback erkennt dies und sendet den ausgewählten Code zusammen mit Kontextdaten wie Assignment, Solution, Datei und Zeilen- und Spaltennummern an den Backend-Dienst von fulib.org.
+Die wichtigste Funktion von fulibFeedback für Bewertende ist die Auswahl\footnote{
+    Bezeichnet die Aktion, die mit Maus oder Tastatur in gewöhnlichen Texteditoren durchgeführt wird, um beispielsweise Text zum Kopieren zu markieren.
+} von Codeabschnitten.
+fulibFeedback erkennt dies und sendet den ausgewählten Code zusammen mit Kontextdaten wie Assignment, Solution, Datei sowie Zeilen- und Spaltennummern an den Backend-Dienst von fulib.org.
 Wurde auf fulib.org zuvor ein Bewertungs-Modalfenster für die gleiche Abgabe geöffnet, wird der ausgewählte Code dort angezeigt.
 
 \begin{figure}
@@ -587,22 +589,25 @@ Alternativ kann im Textfeld \textbf{Comment} ein Kommentar für den Codeabschnit
 Dieser unterscheidet sich vom Remark insofern, dass er Abschnitt-spezifische Hinweise erlaubt.
 Dies ist besonders hilfreich, wenn mehrere Abschnitte zur gleichen Bewertung hinzugefügt werden.
 
+Bei jeder Auswahl eines Codeabschnitts wird Code Search für diesen durchgeführt.
+Dies ergibt eine Liste von Suchergebnissen, aus der drei Metriken ermittelt werden können.
+Die Anzahl der \textbf{Solutions} gibt an, wie viele Abgaben den Code enthalten.
+In jeder Abgabe können \ac{uU} mehrere Dateien gefunden werden;
+die Gesamtanzahl über alle Abgaben ist in \textbf{Files} summiert.
+Zuletzt gibt \textbf{Hits} die Anzahl der Suchergebnisse an, die auch mehrfach in einer Datei vorhanden sein können.
+Werden diese drei Werte verglichen, kann eine Einschätzung über die Spezifität des Codeabschnitts erfolgen.
+Sind alle drei Werte gleich, wie in Abbildung~\ref{fig:fulibFeedback-snippet-good} der Fall ist, liegt der Codeabschnitt in jeder Lösung exakt ein Mal vor.
+Das deutet darauf hin, dass er problemlos für die automatische Bewertung mit Code Search verwendet werden kann.
+
 Nach Hinzufügen eines Codeabschnitts wird mit \textbf{Submit} die Bewertung angelegt.
 Nun kommt der Haken \textbf{Code Search} zum Einsatz.
 Ist dieser aktiviert, sucht Code Search in allen anderen Lösungen nach dem Codeabschnitt.
 Die Bewertung, insbesondere die Kommentare, Punktzahl und Remark, wird auf alle Abgaben übertragen, die den Code enthalten.
 Dadurch ist es möglich, abhängig von der Einzigartigkeit des Codes eine Vielzahl von Abgaben in einem Schritt zu bewerten.
 Die Übertragung der Bewertung erfolgt ohne erkennbare Verzögerung nach Betätigen des Buttons.
-Eine Toast-Nachricht weist abschließend darauf hin, wie viele weitere Abgaben tatsächlich betroffen sind.
-
-Bei jeder Auswahl eines Codeabschnitts wird Code Search für diesen durchgeführt.
-Dies ergibt eine Liste von Suchergebnissen, aus der drei Metriken ermittelt werden können.
-Die Anzahl der \textbf{Solutions} gibt an, wie viele Abgaben den Code enthalten.
-In jeder Abgabe können \ac{uU} mehrere Dateien gefunden werden, die Gesamtanzahl über alle Abgaben ist in \textbf{Files} summiert.
-Zuletzt gibt \textbf{Hits} die Anzahl der Suchergebnisse an, die auch mehrfach in einer Datei vorhanden sein können.
-Werden diese drei Werte verglichen, kann eine Einschätzung über die Spezifität des Codeabschnitts erfolgen.
-Sind alle drei Werte gleich, wie in Abbildung~\ref{fig:fulibFeedback-snippet-good} der Fall ist, liegt der Codeabschnitt in jeder Lösung exakt ein Mal vor.
-Das deutet darauf hin, dass er problemlos für die automatische Bewertung mit Code Search verwendet werden kann.
+Eine Toast-Nachricht weist abschließend darauf hin, wie viele weitere Abgaben tatsächlich betroffen sind\footnote{
+    Dies kann sich von der Vorschau unterscheiden, wenn andere Abgaben bereits eine Bewertung für die Teilaufgaben enthalten.
+}.
 
 Die Wahl des Codeabschnitts ist mitunter maßgeblich für die Effektivität und Korrektheit von Bewertungen mit Code Search.
 Kapitel~\ref{ch:evaluation} untersucht diesen Zusammenhang ausführlich anhand einiger Realbeispiele.
@@ -620,7 +625,7 @@ In Abbildung~\ref{fig:fulibFeedback-snippet-bad} wurde ein Codeabschnitt ausgew�
 Das deutet darauf hin, dass der Code in manchen Lösungen mehrfach in der gleichen Datei vorhanden war.
 Bezieht sich die Teilaufgabe beispielsweise auf eine bestimmte Methode, wie in diesem Fall einen Test, kann dies zu unerwünschten Bewertungen führen.
 In diesem Beispiel war die Aufgabe, eine neue Testmethode in der vorgegebenen Testklasse \code{HA03Test} hinzuzufügen.
-In dieser musste unter anderem ein Datenmodell initialisiert werden.
+Im Test musste unter anderem ein Datenmodell initialisiert werden.
 Der ausgewählte Code in Abbildung~\ref{fig:fulibFeedback-snippet-bad} wurde jedoch in dieser Klasse schon in einer anderen Methode vorgegeben.
 Dies ist auch daran ersichtlich, dass nahezu alle Abgaben diesen Code enthalten (124 von 125).
 Der ausgewählte Code ist folglich kein sinnvolles Indiz dafür, dass die Aufgabe "Test implementieren" korrekt umgesetzt wurde.
@@ -659,8 +664,8 @@ Abhängig von der vergebenen Punktzahl ändert sich die Farbe der gewellten Lini
 Wurde die maximale Punktzahl für die Teilaufgabe erreicht, ist die Linie blau.
 Abzüge oder positive Teilaufgaben mit null Punkten färben die Linie rot wie in Abbildung~\ref{fig:fulibFeedback-negative}.
 Teilpunkte werden mit gelber Farbe signalisiert.
-Der Hilfetext enthält die Beschreibung der Teilaufgabe (\texttt{Aufgabe 1 / Assoziationen / Game -- Field (fields) \dots}), die vergebene Punktzahl (\texttt{(-1P)}), den zum Codeabschnitt gehörenden Kommentar (\texttt{Hier fehlt oldGame.withoutFields(this)}) sowie Remark (\texttt{Rückrichtung nicht gesetzt}) und Autor:in (\texttt{Adrian Kunz}) der Bewertung.
-Wurden mehrere Codeabschnitte hinterlegt, werden Links angezeigt, die auf andere betroffene Dateien und Zeilen verweisen und den zugehörigen Kommentar angeben (\texttt{Game.java(115, 1): Sehr gut!} und \texttt{Game.java(130, 1): Richtig}).
+Der Hilfetext enthält die Beschreibung der Teilaufgabe ("\texttt{Aufgabe 1 / Assoziationen / Game -- Field (fields) \dots}"), die vergebene Punktzahl ("\texttt{(-1P)}"), den zum Codeabschnitt gehörenden Kommentar ("\texttt{Hier fehlt oldGame.withoutFields(this)}") sowie Remark ("\texttt{Rückrichtung nicht gesetzt}") und Autor:in ("\texttt{Adrian Kunz}") der Bewertung.
+Wurden mehrere Codeabschnitte hinterlegt, werden Links angezeigt, die auf andere betroffene Dateien und Zeilen verweisen und den zugehörigen Kommentar angeben ("\texttt{Game.java(115, 1): Sehr gut!}" und "\texttt{Game.java(130, 1): Richtig}").
 
 \subsection{Technische Umsetzung}\label{subsec:fulibFeedback-tech}
 
@@ -678,15 +683,15 @@ Es genügt die Angabe des Dateipfades des Servers, eines Selektors für Dateien,
 Weiterhin implementiert der Client einen Protokoll-Handler, der spezielle \acp{url}\footnote{
     Beispiel: \url{vscode://fulib.fulibfeedback/configure?api_server=https\%3A\%2F\%2Fdev.fulib.org&assignment=61dd5ac35c1dfa2b0b7c7898&token=1b3a-0558-29d1-6dd3}
 } erkennt und dadurch automatisch die Einstellungen anpassen kann, wenn in der fulib.org-Oberfläche ein Configure-Button betätigt wird.
-Die Einstellungen werden in einer Paketdatei anhand von Typ, Auswahlmöglichkeiten, Beschreibung, regulären Ausdrücke für die Validierung und zugehörigen Fehlermeldungen angegeben.
-Darauf basierend werden automatisch die Eingabefelder in den Einstellungen von \ac{vsc} gezeigt, wie es in Abbildung~\ref{fig:fulibFeedback-settings} zu sehen war.
+Die Einstellungen werden in einer Paketdatei anhand von Typ, Auswahlmöglichkeiten, Beschreibung, regulären Ausdrücken für die Validierung und zugehörigen Fehlermeldungen angegeben.
+Darauf basierend werden automatisch die Eingabefelder in den Einstellungen von \ac{vsc} gezeigt, wie in Abbildung~\ref{fig:fulibFeedback-settings} zu sehen war.
 
 Der Server wurde, anders als von Microsoft in Tutorials vorgeschlagen~\cite{vsc-language-server-guide}, mit NestJS implementiert.
-Das Framework erlaubte eine bessere Strukturierung durch verschiedene Dienste (Services) für Sprachfeatures.
+Das Framework erlaubte eine bessere Strukturierung durch verschiedene Services für Sprachfeatures.
 Nachfolgend wird kurz beschrieben, welche für die verschiedenen Features von fulibFeedback eingesetzt wurden.
 
 Die Auswahl von Codeabschnitten basiert auf Code Actions.
-Es handelt sich dabei nicht direkt um die intendierte Verwendung dieses Sprachfeatures, da es nicht für die generelle Erkennung der Auswahl, sondern zur Bereitstellung von Aktionen gedacht ist.
+Es handelt sich dabei nicht direkt um die intendierte Verwendung dieses Sprachfeatures, da es nicht für die generelle Erkennung der Auswahl, sondern zur Bereitstellung von Aktionen vorgesehen ist.
 Da es von \ac{vsc} jedoch immer dann ausgelöst wird, wenn Benutzende eine Auswahl vornehmen, kann es für diesen Einsatzzweck dienen, auch wenn keine Aktionen bereitgestellt werden.
 In einer früheren Version von fulibFeedback wurde dies auch verwendet, um die gesamte Bewertung in der \ac{ide} durchzuführen.
 Dies wird in Abschnitt~\ref{subsec:user-feedback} näher beschrieben.
